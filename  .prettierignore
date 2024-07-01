@@ -1,0 +1,8 @@
+# Ignore artifacts:
+build
+coverage
+.eslintrc.cjs
+.gitignore
+package.json
+pnpm-lock.yaml
+vite.config.js
