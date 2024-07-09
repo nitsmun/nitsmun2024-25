@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className={styles.parent}>
       <components.Navbar />
-      Home
+      <components.Hero />
     </div>
   );
 };
