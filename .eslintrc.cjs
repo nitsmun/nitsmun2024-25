@@ -16,5 +16,9 @@ module.exports = {
     indent: ["error", 2],
     "linebreak-style": 1,
     quotes: ["error", "double"],
+    "react/no-unescaped-entities": 0,
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "no-irregular-whitespace": "off",
   },
 };
