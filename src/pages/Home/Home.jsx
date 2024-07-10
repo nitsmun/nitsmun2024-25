@@ -8,6 +8,7 @@ const Home = () => {
     <div className={styles.parent}>
       <components.Navbar />
       Home
+      <components.Testimonial />
       <Collaboration />
       <What />
     </div>

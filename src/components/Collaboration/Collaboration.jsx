@@ -1,10 +1,8 @@
 import React from "react";
 import styles from "./Collaboration.module.scss";
 
-
 function Collaboration() {
   return (
-    
     //Everything is inside the section with class container.
     <div className={styles.container}>
       <div className={styles.header}>
@@ -43,7 +41,6 @@ function Collaboration() {
           alt="side-img"
         />
 
-        
         <p className={styles.colabtxt}>
           "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae

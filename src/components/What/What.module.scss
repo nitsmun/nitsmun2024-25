@@ -1,101 +1,98 @@
-.container{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
-    background: 
-    linear-gradient((to bottom) ,
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+      (to bottom),
       rgba(39, 83, 138, 0.8),
       rgba(12, 53, 105, 0.7),
       rgba(39, 79, 112, 0.5),
-      rgba(16, 57, 90, 0.6))
-    ,url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    color: #ffffff;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    overflow-x: hidden;
+      rgba(16, 57, 90, 0.6)
+    ),
+    url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: hidden;
 
+  .headtxt {
+    margin-top: 5rem;
+    font-size: 4rem;
 
-    .headtxt{
-        margin-top: 5rem;
-        font-size: 4rem;
+    @media screen and (min-width: 450px) {
+      margin-top: 0rem;
+    }
+    @media screen and (min-width: 550px) {
+      margin-top: 4rem;
+    }
+  }
 
-        @media screen and (min-width: 450px){
-            margin-top: 0rem;
-        }
-        @media screen and (min-width: 550px){
-            margin-top: 4rem;
-        }
+  .txtsctn {
+    // border: 2px solid black;
+    box-shadow:
+      -2px -1px 2px #fff,
+      0px 1px 2px #fff;
+    width: 90%;
+    height: 80%;
+    padding: 1rem 0;
+    border-radius: 4rem;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.3)
+    );
+    backdrop-filter: blur(10px);
+    z-index: 0;
+
+    .muntxt {
+      font-size: 8rem;
+      margin-top: 1rem;
+      z-index: 6;
+
+      font-weight: 800;
+      letter-spacing: 0.5rem;
+      background: url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720416020/q9vnvxcubsljxsa0z51c.jpg")
+        20% 20%;
+      background-size: cover;
+      background-clip: padding-box;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+
+      @media screen and (min-width: 300px) {
+        font-size: 5rem;
+      }
+
+      @media screen and (min-width: 450px) {
+        font-size: 8rem;
+      }
     }
 
-    .txtsctn{
-        // border: 2px solid black;
-        box-shadow: -2px -1px 2px #fff, 0px 1px 2px #fff;
-        width: 90%;
-        height: 80%;
-        padding: 1rem 0;
-        border-radius: 4rem;
-        background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
-        backdrop-filter: blur(10px);
-        z-index: 0;
+    p {
+      padding: 0 1rem;
+      z-index: 6;
 
-        .muntxt{
-            font-size: 8rem;
-            margin-top: 1rem;
-            z-index: 6;
-            
-            font-weight: 800;
-            letter-spacing: 0.5rem;
-            background: url('https://res.cloudinary.com/dludtk5vz/image/upload/v1720416020/q9vnvxcubsljxsa0z51c.jpg') 20% 20%;
-            background-size: cover;
-            background-clip: padding-box;
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            
-
-            @media screen and (min-width: 300px){
-                font-size: 5rem;
-            }
-
-            @media screen and (min-width: 450px){
-                font-size: 8rem;
-            }
-
-        }
-
-        p{
-            padding: 0 1rem;
-            z-index: 6;
-
-            @media screen and (min-width: 450px){
-                margin-top: -2rem;
-            }
-
-        
-        }
-
-        .abtbtn{
-            background-color: rgba(39, 157, 255, 1);
-            width: 8rem;
-            border-radius: 2rem;
-            margin-top: 1.5rem;
-            margin-bottom: 2.5rem;
-            transition: 0.5s;
-            
-        }
-
-        .abtbtn:hover{
-            background-color: rgb(27, 133, 220);
-            outline: none;
-        }
-        
-
-        
+      @media screen and (min-width: 450px) {
+        margin-top: -2rem;
+      }
     }
 
-    
+    .abtbtn {
+      background-color: rgba(39, 157, 255, 1);
+      width: 8rem;
+      border-radius: 2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+      transition: 0.5s;
+    }
+
+    .abtbtn:hover {
+      background-color: rgb(27, 133, 220);
+      outline: none;
+    }
+  }
 }
