@@ -1,13 +1,14 @@
 .testimonialcontainer {
-  background: linear-gradient(
-      to top,
-      rgba(21, 49, 72, 0.6),
-      rgba(46, 120, 170, 0.6)
-    ),
-    url("https://res.cloudinary.com/dprjiwgfo/image/upload/v1720423200/lyvnjxmtu3uypwgdgwlf.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  // background: linear-gradient(
+  //     to top,
+  //     rgba(21, 49, 72, 0.6),
+  //     rgba(46, 120, 170, 0.6)
+  //   ),
+  //   url("https://res.cloudinary.com/dprjiwgfo/image/upload/v1720423200/lyvnjxmtu3uypwgdgwlf.jpg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
+
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -95,7 +96,7 @@
   text-align: left;
   margin-left: 100px;
   color: rgb(255, 255, 255);
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-top: 10px;
 
   @media screen and (max-width: 768px) {

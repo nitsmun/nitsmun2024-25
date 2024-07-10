@@ -52,11 +52,11 @@ const Testimonial = () => {
   };
 
   return (
-    <div
-      className={styles.testimonialcontainerr}
-      style={{ display: "flex", justifyContent: "center", marginTop: 10 }}
-    >
-      <div style={{ width: "90%", textAlign: "center" }}>
+    <div className={styles.testimonialcontainerr}>
+      <div className={styles.header}>
+        <h1>People say about us ...</h1>
+      </div>
+      <div style={{ margin: "4rem auto", width: "90%", textAlign: "center" }}>
         <Slider
           prevArrow={<PreviousBtn />}
           {...settings}
@@ -75,9 +75,6 @@ const Testimonial = () => {
 const Slide = () => {
   return (
     <div className={styles.testimonialcontainer}>
-      <div className={styles.header}>
-        <h1>People say about us ...</h1>
-      </div>
       <div className={styles.box}>
         <div className={styles.upperbox}>
           <div className={styles.person1}>
