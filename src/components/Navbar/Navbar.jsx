@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./Navbar.module.scss";
 const Navbar = () => {
-  const [menu, setMenu] = useState();
+  const [menu, setMenu] = useState(0);
   const [mobileMenu, setmobileMenu] = useState();
 
   const toggleMenu = () => {
