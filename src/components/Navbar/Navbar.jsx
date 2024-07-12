@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./Navbar.module.scss";
 const Navbar = () => {
+
   const [menu, setMenu] = useState();
   const [mobileMenu, setmobileMenu] = useState();
 

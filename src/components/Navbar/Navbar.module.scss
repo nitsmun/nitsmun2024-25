@@ -45,6 +45,7 @@
     align-items: center;
     width: 45%;
     height: 100px;
+
     margin-left: 200px;
 
     @media (max-width: 1081px) {
@@ -58,6 +59,19 @@
     @media (max-width: 1286px) {
       gap: 0.8rem;
     }
+
+    // border: 2px solid red;
+    margin-left: 200px;
+
+    @media (max-width: 1031px) {
+      gap: 1.2rem;
+    }
+    // @media screen and (min-width:350px){
+    //   display: none;
+    // }
+    // @media screen and (min-width:800px){
+    //   display: flex;
+    // }
 
     li {
       list-style: none;
@@ -75,6 +89,11 @@
       @media (max-width: 1155px) {
         font-size: 1.1rem;
       }
+
+      font-size: 1.2rem;
+      font-weight: 500;
+      // border: 2px solid green;
+      padding: 1rem 2rem;
     }
   }
   i {
