@@ -48,8 +48,12 @@
     // border: 2px solid red;
     margin-left: 200px;
 
-    @media (max-width: 1031px) {
-      gap: 1.2rem;
+    @media (max-width: 1081px) {
+      gap: 0.8rem;
+    }
+
+    @media (max-width: 1286px) {
+      gap: 0.8rem;
     }
     // @media screen and (min-width:350px){
     //   display: none;
@@ -61,10 +65,16 @@
     li {
       list-style: none;
       color: white;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 500;
       // border: 2px solid green;
       padding: 1rem 2rem;
+
+      @media (max-width: 1081px) {
+        font-size: 1rem;
+        margin-right: -10px;
+        padding: 1rem 1rem;
+      }
     }
   }
   i {
