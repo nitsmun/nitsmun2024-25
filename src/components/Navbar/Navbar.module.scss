@@ -51,6 +51,10 @@
     @media (max-width: 1081px) {
       gap: 0.8rem;
     }
+    @media (max-width: 1155px) {
+      gap: 0.7rem;
+      font-size: 1.1rem;
+    }
 
     @media (max-width: 1286px) {
       gap: 0.8rem;
@@ -74,6 +78,10 @@
         font-size: 1rem;
         margin-right: -10px;
         padding: 1rem 1rem;
+      }
+
+      @media (max-width: 1155px) {
+        font-size: 1.1rem;
       }
     }
   }
