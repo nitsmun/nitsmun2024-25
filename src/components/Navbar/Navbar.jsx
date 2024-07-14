@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./Navbar.module.scss";
 const Navbar = () => {
   const [menu, setMenu] = useState(0);
-  const [mobileMenu, setmobileMenu] = useState();
+  const [mobileMenu, setmobileMenu] = useState(0);
 
   const toggleMenu = () => {
     if (innerWidth < 800) {
