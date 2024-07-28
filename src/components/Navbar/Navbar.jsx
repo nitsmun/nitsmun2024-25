@@ -29,7 +29,7 @@ const Navbar = () => {
 
         <div className={styles.ul} style={{ height: `${mobileMenu}rem` }}>
           <a href="#">
-            <li>HOME</li>
+            <li>Home</li>
           </a>
           <a href="#">
             <li>Events</li>

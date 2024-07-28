@@ -1,5 +1,5 @@
 .navbar {
-  height: 100px;
+  height: 80px;
   width: 100%;
   background: #02162e;
   color: #ffffff;
@@ -12,6 +12,7 @@
   justify-content: space-between;
   // position: sticky;
   z-index: 50;
+  font-family: "Jost", "sans-serif";
 
   .logo {
     display: flex;
