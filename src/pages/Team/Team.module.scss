@@ -1,5 +1,50 @@
 .parent {
-  background-color: #ffffff;
+  // background-color: #ffffff;
+  position: absolute;
   min-height: 100vh;
   width: 100vw;
+  font-family: "Jost", "sans-serif";
+  background: linear-gradient(
+      (to top),
+      rgba(41, 126, 196, 0.6),
+      rgba(39, 79, 112, 0.5),
+      rgba(12, 53, 105, 0.7),
+      rgba(6, 36, 73, 0.8)
+    ),
+    url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+
+  .header {
+    color: #ffffff;
+    // background-color: #ffffff;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+
+    @media screen and (min-width: 400px) {
+      font-size: 3rem;
+    }
+
+    @media screen and (max-width: 400px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .photodesk {
+    // border: 2px solid red;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    min-height: 100vh;
+    margin-bottom: 1rem;
+    padding: 2rem 0;
+    margin-bottom: 6rem;
+  }
 }
