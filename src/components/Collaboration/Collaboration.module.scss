@@ -73,10 +73,10 @@
       padding: 2rem;
       background: radial-gradient(
         circle,
-        rgba(102, 102, 102, 0.6),
-        rgba(252, 252, 252, 0.2)
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 254, 254, 0.2)
       );
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(20px);
 
       @media screen and (min-width: 400px) {
         font-size: 0.8rem;
