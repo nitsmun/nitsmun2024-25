@@ -14,6 +14,8 @@ const Home = () => {
       <components.Testimonial />
       <Collaboration />
       <What />
+      <components.letterFaculty />
+      <components.letterSec />
     </div>
   );
 };

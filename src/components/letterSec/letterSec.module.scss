@@ -1,0 +1,181 @@
+.lett {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+      0.33deg,
+      rgba(41, 126, 196, 0.32) 0.28%,
+      rgba(39, 79, 112, 0.32) 33.43%,
+      rgba(12, 53, 105, 0.32) 66.57%,
+      rgba(6, 36, 73, 0.32) 99.72%
+    ),
+    url("https://res.cloudinary.com/dffke2hbp/image/upload/v1724768758/oxootzqv8s4vpkr74abs.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Jost", "sans-serif";
+  position: absolute;
+  top: 242.2rem;
+
+  @media screen and (max-width: 901px) {
+    position: absolute;
+    top: 246rem;
+  }
+
+  @media screen and (max-width: 836px) {
+    position: absolute;
+    top: 252rem;
+  }
+
+  @media screen and (max-width: 769px) {
+    position: absolute;
+    top: 282rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    position: absolute;
+    top: 285.6rem;
+  }
+
+  @media screen and (max-width: 560px) {
+    position: absolute;
+    top: 275.6rem;
+  }
+
+  @media screen and (max-width: 481px) {
+    position: absolute;
+    top: 263.4rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    position: absolute;
+    top: 261.8rem;
+  }
+  @media screen and (max-width: 441px) {
+    position: absolute;
+    top: 263.4rem;
+  }
+
+  @media screen and (max-width: 400px) {
+    position: absolute;
+    top: 263.4rem;
+  }
+
+  .tittle {
+    margin: 0;
+    padding: 4rem;
+    // position: absolute;
+    // left: 18rem;
+    text-align: center;
+    color: white;
+    text-shadow: 12px 4px 8px #000;
+    font-size: 3rem;
+    font-weight: 700;
+
+    @media screen and (max-width: 1100px) {
+      font-size: 3rem;
+    }
+
+    @media screen and (max-width: 800px) {
+      font-size: 3rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      font-size: 2rem;
+    }
+    @media screen and (max-width: 417px) {
+      margin-top: -2rem;
+    }
+
+    @media screen and (max-width: 400px) {
+      font-size: 1.9rem;
+      text-align: start;
+      padding: 0;
+      margin-left: 1rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .body {
+    height: 60vh;
+    width: 75%;
+    position: absolute;
+    top: 11rem;
+    right: 4rem;
+    font-size: 1.2rem;
+    text-align: justify;
+    color: white;
+    // text-shadow: 12px 4px 8px #000;
+
+    @media screen and (max-width: 1100px) {
+      font-size: 1rem;
+    }
+
+    @media screen and (max-width: 800px) {
+      font-size: 0.9rem;
+      margin-right: -3rem;
+      margin-top: 2rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      font-size: 0.8rem;
+    }
+
+    @media screen and (max-width: 500px) {
+      margin-top: 6rem;
+      margin-right: 0.8rem;
+      font-size: 0.7rem;
+    }
+
+    @media screen and (max-width: 400px) {
+      position: absolute;
+      left: 1rem;
+      top: 12rem;
+      width: 19rem;
+      // margin-left: 1rem;
+      font-size: 0.7rem;
+    }
+  }
+
+  .img {
+    background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1724781092/dynpperhhlcepkpk97vg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 25vh;
+    width: 10%;
+    // background-color: blue;
+    position: absolute;
+    left: 5rem;
+    top: 8rem;
+    border-radius: 1rem;
+
+    @media screen and (max-width: 1100px) {
+      height: 18vh;
+      width: 12%;
+      margin-left: -3rem;
+    }
+
+    @media screen and (max-width: 800px) {
+      height: 18vh;
+      width: 15%;
+      margin-left: -4rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      height: 16vh;
+      width: 15%;
+    }
+
+    @media screen and (max-width: 500px) {
+      width: 23%;
+      margin-left: 6rem;
+      margin-top: 1rem;
+    }
+
+    @media screen and (max-width: 400px) {
+      height: 18vh;
+      width: 33%;
+      margin-left: -4rem;
+    }
+  }
+}
