@@ -6,3 +6,6 @@ import Mockmun from "./Mockmun/Mockmun";
 import Annual from "./Annual/First";
 
 export { Home, Team, Events, Youth, Mockmun, Annual };
+import Contact from "./Contact/Contact";
+
+export { Home, Team, Events, Youth, Mockmun, Annual, Contact };

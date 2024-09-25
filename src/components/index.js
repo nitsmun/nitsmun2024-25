@@ -7,3 +7,4 @@ export { Navbar };
 export { Testimonial };
 export { letterFaculty };
 export { letterSec };
+export { Navbar, Testimonial };
