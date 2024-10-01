@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./Testimonial.module.scss";
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
+import data from "../../assets/testimonials.json";
 
 const PreviousBtn = (props) => {
   console.log(props);
@@ -54,58 +55,67 @@ const Testimonial = () => {
   return (
     <div className={styles.testimonialcontainerr}>
       <div className={styles.header}>
-        <h1>People say about us ...</h1>
+        <h1 className={styles.h1}>People say about us ...</h1>
       </div>
-      <div style={{ margin: "4rem auto", width: "90%", textAlign: "center" }}>
+      <div
+        style={{
+          margin: "4rem auto",
+          padding: "1rem",
+          width: "80%",
+          textAlign: "center",
+        }}
+      >
         <Slider
           prevArrow={<PreviousBtn />}
           {...settings}
           nextArrow={<NextBtn />}
           dots
         >
-          <Slide />
-          <Slide />
-          <Slide />
+          {data.map((item) => (
+            <>
+              <Slide
+                src={item.person1.src}
+                alt={item.person1.alt}
+                name={item.person1.name}
+                year={item.person1.year}
+                testimonial={item.person1.testimonial}
+                serial={1}
+              />
+              <Slide
+                src={item.person2.src}
+                alt={item.person2.alt}
+                name={item.person2.name}
+                year={item.person2.year}
+                testimonial={item.person2.testimonial}
+                serial={2}
+              />
+            </>
+          ))}
         </Slider>
       </div>
     </div>
   );
 };
 
-const Slide = () => {
+const Slide = (props) => {
   return (
     <div className={styles.testimonialcontainer}>
       <div className={styles.box}>
-        <div className={styles.upperbox}>
-          <div className={styles.person1}>
-            <img src="" alt="" />
-          </div>
-          <div className={styles.talk1}>
-            <p className={styles.talky1}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
-              eaque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Assumenda harum dicta error nobis similique eius accusantium
-              temporibus iste voluptas nostrum, eum dolorem consequatur
-              aspernatur dcorrupti sunt iure veniam. Debitis atque libero
-              voluptatum minima me eligendi illo ad nam.
-            </p>
-            <div className={styles.designation1}>Vivek Sharma, 1st year</div>
-          </div>
-        </div>
-        <div className={styles.lowerbox}>
-          <div className={styles.talk2}>
-            <p className={styles.talky2}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Adipisicing, ad sequi fuga quo nisi at quis nam, consectetur,
-              aperiam ipsum unde consequatur debitis repudiandae deserunt. Ab
-              ratione maxime expedita aspernatur provident placeat quae deserunt
-              repellat, eaque optio tempora impedit debitis, dicta dolor quis
-              consequatur eos.
-            </p>
-            <div className={styles.designation2}>Barnil Sarma, 3rd year</div>
-          </div>
-          <div className={styles.person2}>
-            <img src="" alt="" />
+        <div
+          className={`${props.serial === 1 ? styles.upperCont : styles.lowerCont}`}
+        >
+          <div
+            className={`${props.serial === 1 ? styles.upperbox : styles.lowerbox}`}
+          >
+            <div className={styles.person1}>
+              <img src={props.src} alt={props.alt} />
+            </div>
+            <div className={styles.talk1}>
+              <p className={styles.talky1}>{props.testimonial}</p>
+              <div className={styles.designation1}>
+                {props.name}, {props.year}
+              </div>
+            </div>
           </div>
         </div>
       </div>
