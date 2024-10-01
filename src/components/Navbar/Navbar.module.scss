@@ -46,9 +46,10 @@
     align-items: center;
     width: 45%;
     height: 100px;
-
     margin-left: 200px;
-
+    .navItem {
+      color: #ffffff;
+    }
     @media (max-width: 1081px) {
       gap: 0.8rem;
     }
