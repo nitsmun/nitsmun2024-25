@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      
+      "text": "This is an amazing service! Highly recommend it.",
+      "designation": "CEO, Company A"
+    },
+    {
+      "id": 2,
+      
+      "text": "A wonderful experience from start to finish.",
+      "designation": "Manager, Company B"
+    },
+    {
+      "id": 3,
+    
+      "text": "I couldn't be happier with the results!",
+      "designation": "Founder, Company C"
+    }
+  ]
+  

@@ -10,17 +10,34 @@ const Hero = () => {
         <button className={styles.btntwo}>Sign Up</button>
       </div>
       <div className={styles.logoitems}>
+        <div className={styles.logoHolder}>
+          <img src={logoUrl} alt="" className={styles.logoimage} />
+        </div>
+        <div className={styles.borderCont}>
+          <div className={styles.borderline}></div>
+        </div>
         <div className={styles.textarea}>
-          <h1>
+          <h1 className={styles.heading}>
             <span>NIT&nbsp;</span>Silchar
           </h1>
-          <p>
+          <p className={styles.bodyPara}>
             Model United <br />
             Nations
           </p>
         </div>
-        <div className={styles.borderline}></div>
-        <img src={logoUrl} alt="" className={styles.logoimage} />
+        {/*<div>
+          <div className={styles.textarea}>
+            <h1 className={styles.heading}>
+              <span>NIT&nbsp;</span>Silchar
+            </h1>
+            <p className={styles.bodyPara}>
+              Model United <br />
+              Nations
+            </p>
+          </div>
+          <div className={styles.borderline}></div>
+        </div>
+        <img src={logoUrl} alt="" className={styles.logoimage} />*/}
       </div>
     </div>
   );

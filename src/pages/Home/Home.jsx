@@ -12,7 +12,7 @@ const Home = () => {
       <components.Navbar />
       Home
       <Hero />
-      <components.Testimonial />
+      <components.Testimonials/>
       <Collaboration />
       <What />
       <components.Objective />
