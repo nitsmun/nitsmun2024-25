@@ -20,7 +20,6 @@ function App() {
 
           <Route path="/Events/Contact" element={<pages.Contact />} />
           <Route path="/Events/Faqs" element={<pages.FaqSection />} />
-
         </Routes>
       </BrowserRouter>
     </>
