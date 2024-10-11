@@ -7,7 +7,7 @@ const Navbar = () => {
   const [mobileMenu, setmobileMenu] = useState(0);
   const toggleMenu = () => {
     if (innerWidth < 800) {
-      mobileMenu ? setmobileMenu(0) : setmobileMenu(26);
+      mobileMenu ? setmobileMenu(0) : setmobileMenu(20);
     }
     menu ? setMenu(0) : setMenu(13);
     // console.log("Hello");

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./First.module.scss";
+import styles from "./Firstone.module.scss";
 
 const First = () => {
   return (
