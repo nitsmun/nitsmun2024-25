@@ -1,5 +1,5 @@
 // import React from 'react'
-import styles from "./Events.module.scss";
+import styles from "./Eventstwo.module.scss";
 
 import React from "react";
 import { Link } from "react-router-dom";
