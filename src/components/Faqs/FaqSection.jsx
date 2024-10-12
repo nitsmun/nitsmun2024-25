@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./FaqSection.module.scss"; // Ensure this path is correct
+import styles from "./FaqSection.module.scss"; 
 
 const faqData = [
   {

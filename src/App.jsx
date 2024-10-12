@@ -19,7 +19,7 @@ function App() {
           <Route path="/Events/Annual" element={<pages.Annual />} />
 
           <Route path="/Events/Contact" element={<pages.Contact />} />
-          <Route path="/Events/Faqs" element={<pages.FaqSection />} />
+          
         </Routes>
       </BrowserRouter>
     </>

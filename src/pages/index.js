@@ -5,10 +5,9 @@ import Youth from "./Youth/Youth";
 import Mockmun from "./Mockmun/Mockmun";
 import Annual from "./Annual/First";
 
-
 import Contact from "../components/Contact/Contact";
-import FaqSection from "./Faqs/FaqSection";
 
-export { Home, Team, Events, Youth, Mockmun, Annual, Contact, FaqSection };
+
+export { Home, Team, Events, Youth, Mockmun, Annual, Contact  };
 
 
