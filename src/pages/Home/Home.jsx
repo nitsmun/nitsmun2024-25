@@ -19,7 +19,6 @@ const Home = () => {
       <What />
       <Collaboration />
       <components.Testimonials />
-      {/* <components.Objective /> */}
     </div>
   );
 };
