@@ -1,249 +1,50 @@
-.main_container{
-    background: linear-gradient(
-        to top,
-        rgba(0, 10, 17, 0.6),
-        rgba(21, 91, 138, 0.6)
-      ),
-    url("https://res.cloudinary.com/dprjiwgfo/image/upload/v1720423200/lyvnjxmtu3uypwgdgwlf.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 99%;
-    height: auto;
-    overflow: hidden;
+.main_container {
+  color: #ffffff;
+
+  .head {
+    font-size: 3rem;
+    font-weight: bold;
+
+    @media screen and (min-width: 300px) {
+      font-size: 2rem;
+    }
+
+    @media screen and (min-width: 705px) {
+      font-size: 4rem;
+    }
+  }
+
+  .swiperCont {
+    padding: 2rem;
+    width: 70%;
+    @media screen and (min-width: 700px) {
+      width: 50%;
+    }
+    .testimonial {
+      min-height: 20rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      box-shadow: 16.22px -16.22px 16.22px #03002a;
+      background-color: #ffffff69;
+      backdrop-filter: blur(32.43950653076172px);
+      border: 0 solid transparent;
+      border-radius: 3rem;
+      .photo {
+        height: 5rem;
+        width: 5rem;
+        border: 0 solid transparent;
+        border-radius: 5rem;
+        object-fit: cover;
+      }
+      .upperBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+  }
 }
-
-
-
-.head {
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white ;
-   // background-color: beige; 
-   padding:20px ;
-    
-    font-weight:700 ;
-
-    @media screen and (min-width: 413px) { // Target devices wider than 412px
-        font-size: 2rem; // Adjust font size for mobile
-        
-    }
-
-    @media screen and (min-width: 768px) {
-        font-size: 4.5rem; // Standard font size for larger screens
-        padding:10px ;
-        padding-top:40px ;
-    }
-}
-
-.upperbox {
-    height: 35vh;
-    width: 70vw;
-    //background-color: red;
-    margin: 70px;
-    margin-top:10px ;
-    display: flex;
-    flex-direction: row; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: flex-end; /* Space between items */
-    
-    @media screen and (min-width: 413px) { // Target devices wider than 412px
-        height: auto; // Allow height to adjust based on content
-        width: 70vw; // Use a larger width percentage
-        margin: 10px auto; // Center align and reduce margin
-        margin-bottom:80px ;
-        padding: 10px; // Add padding for better spacing
-        margin-left:10px ;
-        
-    }
-
-    @media screen and (min-width: 768px) {
-        height: 45vh;
-        width: 75vw;
-        margin: auto;
-        margin-top: 60px;
-
-        flex-direction: row; /* Change to row for wider screens */
-        justify-content: space-around; /* Distribute space evenly */
-    }
-}
-
-.person1 {
-    background-color: blue; 
-    border-radius: 50%; 
-    height: 100px;  // Adjust size for mobile devices
-    width: 100px;  // Adjust size for mobile devices
-    margin-right:10px ;
-
-    @media screen and (min-width: 413px) { // Target devices wider than 412px
-        height: 100px; // Increase height for desktop
-        width: 150px; // Increase width for desktop
-    }
-
-    @media screen and (min-width: 768px) { // Optional: further adjustments for larger screens
-        height: 200px; // Increase height for larger desktop screens
-        width: 200px; // Increase width for larger desktop screens
-    }
-}
-
-.textarea1 {
-    background-color: rgba(241, 241, 251, 0.2);
-    backdrop-filter: blur(60px);
-    // height: 300px;
-    width: 12rem;
-    // margin-left: 75px;
-    // margin-top: 0px;
-    // margin-right: 20px;
-    // margin-bottom: 10px;
-    border-radius: 15px;
-    box-shadow: -16px 29px 5px rgb(14, 2, 40);
-    color: white;
-    backdrop-filter: blur(100px);
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
-    font-size: 1.5rem;
-    padding-left:50px ;
-    padding-top:20px ;
-
-    @media screen and (min-width: 413px) { // Target devices wider than 412px
-        height: 60%; // Adjust height for mobile
-        width: 90%; // Make it wider on mobile
-        margin:10px;
-        margin-left:35px ;
-        font-size: 1.2rem;
-        padding-left:10px ;
-        padding-top:20px ;
-        
-    }
-}
-
-.designation1 {
-    height: 70px;
-    width: 200px;
-    background-color: black;
-    font-size:14px ;
-
-    // padding:20px ;
-    // padding-bottom: 30px ;
-    //     font-size:9px ;
-    //     border-radius:10px;
-        
-
-    /* Push designation to the bottom */
-    margin-top: auto; /* This will push it down in a column layout */
-
-    @media screen and (min-width: 413px) {
-        height: 10%; // Adjust height for mobile
-        width: 50%; // Make it wider on mobile
-        margin-top: 170px; // Add margin for spacing
-        margin-left: 50px;
-        
-    }
-}
-
-.lowerbox {
-    height: 35vh;
-    width: 70vw; 
-    //background-color: red; 
-    margin: 70px; 
-    display: flex; 
-    flex-direction: row-reverse; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    
-    @media screen and (min-width: 413px) { // Target devices wider than 412px
-        height: auto; // Allow height to adjust based on content
-        width: 70vw; // Use a larger width percentage
-        margin: 10px auto; // Center align and reduce margin
-        margin-bottom:80px ;
-        padding: 10px; // Add padding for better spacing
-        margin-right:10px ;
-    }
-
-    @media screen and (min-width: 768px) {
-        height: 45vh; 
-        width: 75vw; 
-        margin: auto; 
-        margin-top: 60px;
-
-        flex-direction: row-reverse; /* Change to row for wider screens */
-        justify-content: space-around; /* Distribute space evenly */
-    }
-}
-
-.person2 {
-    background-color: blue; 
-    border-radius: 50%; 
-    height: 100px;  // Adjust size for mobile devices
-    width: 100px;  // Adjust size for mobile devices
-    margin-left:10px ;
-
-    @media screen and (min-width: 413px) { // Target devices wider than 412px
-        height: 100px; // Increase height for desktop
-        width: 150px; // Increase width for desktop
-    }
-
-    @media screen and (min-width: 768px) { // Optional: further adjustments for larger screens
-        height: 200px; // Increase height for larger desktop screens
-        width: 200px; // Increase width for larger desktop screens
-    }
-}
-
-
-.textarea2 {
-    background-color: rgba(241, 241, 251, 0.2);
-    backdrop-filter: blur(60px);
-    // height: 300px;
-    width: 12rem;
-    // margin-left: 75px;
-    // margin-top: 0px;
-    // margin-right: 20px;
-    // margin-bottom: 10px;
-    border-radius: 15px;
-    box-shadow: -16px 29px 5px rgb(14, 2, 40);
-    color: white;
-    backdrop-filter: blur(100px);
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
-    font-size: 1.5rem;
-    padding-left:50px ;
-    padding-top:20px ;
-
-    @media screen and (min-width: 413px) { // Target devices wider than 412px
-        height: 60%; // Adjust height for mobile
-        width: 90%; // Make it wider on mobile
-        margin:10px;
-        margin-left:35px ;
-        font-size: 1.2rem;
-        padding-left:10px ;
-        padding-top:20px ;
-    }
-}
-
-.designation2 {
-    height: 70px;
-    width: 200px;
-    background-color: black;
-    font-size:14px ;
-    // padding:20px ;
-    // padding-bottom: 30px ;
-    //     font-size:9px ;
-    //     border-radius:10px;
-        
-
-    /* Push designation to the bottom */
-    margin-top: auto; /* This will push it down in a column layout */
-
-    @media screen and (min-width: 413px) {
-        height: 10%; // Adjust height for mobile
-        width: 50%; // Make it wider on mobile
-        margin-top: 170px; // Add margin for spacing
-        margin-left: 50px;
-        
-    }
-}
-
-

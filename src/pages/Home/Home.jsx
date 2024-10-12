@@ -12,10 +12,10 @@ const Home = () => {
       <components.Navbar />
       Home
       <Hero />
-      <components.Testimonials/>
-      <Collaboration />
       <What />
-      <components.Objective />
+      <Collaboration />
+      <components.Testimonials />
+      {/* <components.Objective /> */}
     </div>
   );
 };

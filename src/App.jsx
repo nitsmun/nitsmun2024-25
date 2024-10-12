@@ -17,9 +17,9 @@ function App() {
           <Route path="/Events/Youth" element={<pages.Youth />} />
           <Route path="/Events/Mockmun" element={<pages.Mockmun />} />
           <Route path="/Events/Annual" element={<pages.Annual />} />
-
-          <Route path="/Events/Contact" element={<pages.Contact />} />
-          <Route path="/Events/Faqs" element={<pages.FaqSection />} />
+          <Route path="/contact" element={<pages.Contact />} />
+          <Route path="/faqs" element={<pages.FaqSection />} />
+          <Route path="/about" element={<pages.About />} />
         </Routes>
       </BrowserRouter>
     </>

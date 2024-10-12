@@ -1,13 +1,13 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css'; // Swiper styles
-import 'swiper/css/navigation'; // Swiper navigation styles
-import 'swiper/css/pagination'; // Swiper pagination styles
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-import { Navigation, Pagination } from 'swiper/modules'; // Swiper v7+ import
+import { Navigation, Pagination } from "swiper/modules";
 
-import styles from './Testimonials.module.scss'; // Ensure path is correct
-import testimonialsData from './Testimonials.json'; // Ensure path is correct
+import styles from "./Testimonials.module.scss";
+import testimonialsData from "./Testimonials.json";
 
 const Testimonials = () => {
   return (
@@ -15,29 +15,23 @@ const Testimonials = () => {
       <div className={styles.head}> People Say About Us ... </div>
 
       <Swiper
-        modules={[Navigation, Pagination]} // Add Swiper modules
-        spaceBetween={30} // Space between slides
-        slidesPerView={1} // Number of slides to show at once
-        navigation // Enable navigation buttons
-        pagination={{ clickable: true }} // Enable pagination bullets
+        modules={[Navigation, Pagination]}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        className={styles.swiperCont}
       >
         {testimonialsData.map((testimonial) => (
-          <SwiperSlide key={testimonial.id}>
-            {/* Upper Box */}
+          <SwiperSlide className={styles.testimonial} key={testimonial.id}>
+            <img src={testimonial.photo} alt="photo" className={styles.photo} />
             <div className={styles.upperbox}>
-              <div className={styles.person1}>{testimonial.person}</div> {/* Display the person's name */}
+              {/* <div className={styles.photoCont}>
+                <img src={testimonial.photo} alt="photo" className={styles.photo} />
+              </div> */}
+              <div className={styles.personCont}>{testimonial.person}</div>{" "}
               <div className={styles.textarea1}>
-                <p>{testimonial.text}</p> {/* Display the testimonial text */}
-                <div className={styles.designation1}>{testimonial.designation}</div> {/* Display the person's designation */}
-              </div>
-            </div>
-            
-            {/* Lower Box */}
-            <div className={styles.lowerbox}>
-              <div className={styles.person2}>{testimonial.person}</div> {/* Display the person's name again or another content */}
-              <div className={styles.textarea2}>
-                <p>{testimonial.text}</p> {/* Display the testimonial text */}
-                <div className={styles.designation2}>{testimonial.designation}</div> {/* Display the person's designation */}
+                <p>{testimonial.text}</p>
               </div>
             </div>
           </SwiperSlide>

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Youth.module.scss";
+import styles from "./Youthone.module.scss";
 
 const Youth = () => {
   return (

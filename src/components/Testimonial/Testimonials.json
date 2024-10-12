@@ -1,21 +1,23 @@
 [
-    {
-      "id": 1,
-      
-      "text": "This is an amazing service! Highly recommend it.",
-      "designation": "CEO, Company A"
-    },
-    {
-      "id": 2,
-      
-      "text": "A wonderful experience from start to finish.",
-      "designation": "Manager, Company B"
-    },
-    {
-      "id": 3,
-    
-      "text": "I couldn't be happier with the results!",
-      "designation": "Founder, Company C"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "person":"Suraj Gupta",
+    "photo":"https://res.cloudinary.com/dp92qug2f/image/upload/v1702064587/Suraj_gupta_rbpgfl___dltb8o.jpg",
+    "text": "The organisation team was awesome. worth it every penny spent! Special thanks to the chair, NATO. Taught us so many things in such a short span of time. Was a first timer in MUN but i am confident enough to participate more in next MUN. Thank you.",
+    "designation": ""
+  },
+  {
+    "id": 2,
+    "person":"Nikhil Basfor",
+    "photo":"https://res.cloudinary.com/dp92qug2f/image/upload/c_scale,w_360,f_auto,fl_lossy/v1678047253/nitsmun/IMG_20230219_113737_660_-_CSE_135_NIKHIL_BASFOR_pehrj4.webp",
+    "text": "Nothing much for a feedback, everything went absolutely great and i personally had a LOT of fun and I'm looking forward for more conferences.",
+    "designation": ""
+  },
+  {
+    "id": 3,
+    "person":"Rishi Dutta",
+    "photo":"https://res.cloudinary.com/dp92qug2f/image/upload/v1702064588/IMG_20230220_185136_-_RISHI_DUTTA-min_new_x9udnw___nqdt3s.jpg",
+    "text": "Nothing much for a feedback, everything went absolutely great and i personally had a LOT of fun and I'm looking forward for more conferences.",
+    "designation": ""
+  }
+]
