@@ -10,14 +10,14 @@ const Events = () => {
       <h1 className={styles.tittle}>OUR EVENTS</h1>
       <div className={styles.innerCont}>
         <div className={styles.firstRow}>
-          <Link to="/Events/Youth">
+          <Link className={styles.link} to="/Events/Youth">
             <div className={styles.youth}>
               <div className={styles.pic}>
                 <h2>YOUTH PARLIAMENT</h2>
               </div>
             </div>
           </Link>
-          <Link to="/Events/Mockmun">
+          <Link className={styles.link} to="/Events/Mockmun">
             <div className={styles.mock}>
               <div className={styles.pic}>
                 <h2>MOCK MUN</h2>
@@ -25,7 +25,7 @@ const Events = () => {
             </div>
           </Link>
         </div>
-        <Link to="/Events/Annual">
+        <Link className={styles.link} to="/Events/Annual">
           <div className={styles.annual}>
             <div className={styles.pic}>
               <h2>ANNUAL CONFERENCE</h2>
