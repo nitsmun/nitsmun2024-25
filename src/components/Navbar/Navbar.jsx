@@ -35,10 +35,10 @@ const Navbar = () => {
           <Link to="/Events" className={styles.navItem}>
             Events
           </Link>
-          <Link to="#" className={styles.navItem}>
+          <Link to="/about" className={styles.navItem}>
             About Us
           </Link>
-          <Link to="#" className={styles.navItem}>
+          <Link to="/contact" className={styles.navItem}>
             Contact Us
           </Link>
         </div>
