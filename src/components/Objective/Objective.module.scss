@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Kumbh+Sans:wght@100..900&family=Quicksand:wght@300..700&display=swap");
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 50vw;
+  // background: linear-gradient(
+  //     to top,
+  //     rgba(41, 126, 196, 0.6),
+  //     rgba(39, 79, 112, 0.5),
+  //     rgba(12, 53, 105, 0.7),
+  //     rgba(6, 36, 73, 0.8)
+  //   ),
+  //   url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
+  font-family: "Jost", "sans-serif";
+}
+
+.left {
+  height: 100vh;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  height: 100vh;
+  width: 40vw;
+}
+
+.objhead {
+  font-size: 5rem;
+  margin-top: 100px;
+  padding: 50px;
+  text-align: center;
+  color: white;
+}
+
+.parag {
+  background: radial-gradient(
+    circle,
+    rgba(102, 102, 102, 0.6),
+    rgba(252, 252, 252, 0.2)
+  );
+  backdrop-filter: blur(10px);
+
+  font-size: 1.5rem;
+  border-radius: 40px;
+  padding: 70px;
+  margin: 90px;
+  margin-top: 20px;
+  border: 1px solid rgb(152, 147, 147);
+  color: rgb(200, 196, 196);
+}
+
+.objpic img {
+  height: 600px;
+  width: 430px;
+  margin-left: 110px;
+  margin-top: 220px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    height: auto;
+  }
+
+  .objhead {
+    font-size: 3rem;
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  .objpic {
+    order: 2; /* Ensure image comes after heading but before paragraph */
+    margin-top: 20px;
+    text-align: center; /* Center the image on mobile */
+  }
+
+  .objpic img {
+    height: auto;
+    width: 80%; /* Adjust image width for better responsiveness */
+    margin: 20px auto;
+  }
+
+  .parag {
+    order: 3; /* Ensure paragraph is last */
+    font-size: 1.2rem;
+    padding: 30px;
+    margin: 50px;
+    margin-bottom: 20px;
+  }
+}
