@@ -12,11 +12,14 @@ const Home = () => {
       <components.Navbar />
       Home
       <Hero />
-      <components.Testimonials/>
-      <Collaboration />
       <What />
+
       <components.Objective />
       <FaqSection/>
+
+      <Collaboration />
+      <components.Testimonials />
+      
     </div>
   );
 };

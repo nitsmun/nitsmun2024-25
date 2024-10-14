@@ -34,11 +34,13 @@ const FaqSection = () => {
 
   return (
     <div className={styles.faqSection}>
-      <h2>
-        <span className={styles.bold}>F</span>requently
-        <span className={styles.bold}> A</span>sked
-        <span className={styles.bold}> Q</span>uestions
-      </h2>
+      <div className={styles.headCont}>
+        <h2>
+          <span className={styles.bold}>F</span>requently
+          <span className={styles.bold}> A</span>sked
+          <span className={styles.bold}> Q</span>uestions
+        </h2>
+      </div>
       <div className={styles.faqList}>
         {faqData.map((item, index) => (
           <div
