@@ -18,6 +18,7 @@ function App() {
           <Route path="/Events/Mockmun" element={<pages.Mockmun />} />
           <Route path="/Events/Annual" element={<pages.Annual />} />
           <Route path="/contact" element={<pages.Contact />} />
+          <Route path="/Error" element={<pages.Error />} />
         </Routes>
       </BrowserRouter>
     </>
