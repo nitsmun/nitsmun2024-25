@@ -1,0 +1,87 @@
+.error {
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background: linear-gradient(
+      (to top),
+      rgba(41, 126, 196, 0.6),
+      rgba(39, 79, 112, 0.5),
+      rgba(12, 53, 105, 0.7),
+      rgba(6, 36, 73, 0.8)
+    ),
+    url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .innerbox {
+    height: 23rem;
+    width: 75%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15rem;
+    border-radius: 2rem;
+    color: black;
+    font-family: "Jost", "sans-serif";
+
+    @media screen and (min-width: 800px) {
+      height: 27rem;
+    }
+
+    @media screen and (min-width: 1300px) {
+      width: 50%;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      font-weight: 500;
+
+      @media screen and (min-width: 800px) {
+        margin-top: 0;
+        font-size: 4rem;
+      }
+    }
+
+    h1 {
+      margin-top: -1rem;
+      font-size: 5rem;
+      font-weight: 700;
+
+      @media screen and (min-width: 800px) {
+        margin-top: -4rem;
+        font-size: 7rem;
+      }
+    }
+
+    h3 {
+      margin-top: -2rem;
+      font-size: 1.3rem;
+      font-weight: 500;
+
+      @media screen and (min-width: 800px) {
+        // margin-top: 0;
+        font-size: 1.5rem;
+      }
+    }
+
+    p {
+      margin-top: 0;
+      font-size: 0.8rem;
+      font-weight: 300;
+      padding: 2px;
+
+      @media screen and (min-width: 800px) {
+        // margin-top: 0;
+        font-size: 1rem;
+        padding: 4px;
+      }
+    }
+  }
+}

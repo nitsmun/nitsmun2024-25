@@ -19,6 +19,7 @@ const Home = () => {
       <What />
       <Collaboration />
       <components.Testimonials />
+      <components.Footer />
     </div>
   );
 };
