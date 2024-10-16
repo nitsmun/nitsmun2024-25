@@ -7,6 +7,7 @@ import Annual from "./Annual/First";
 import Contact from "./Contact/Contact";
 import About from "./About/About";
 import FaqSection from "./Faqs/FaqSection";
+import Error from "./Error/Error";
 export {
   Home,
   Team,
@@ -17,4 +18,5 @@ export {
   Contact,
   About,
   FaqSection,
+  Error,
 };

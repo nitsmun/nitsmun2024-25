@@ -11,13 +11,11 @@
     url("https://res.cloudinary.com/dffke2hbp/image/upload/v1721570830/idwzvqzab9mswfpypoyf.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   // position: absolute;
   margin-top: 7rem;
   display: flex;
   flex-direction: column;
   font-family: "Jost", "sans-serif";
-  color: #ffffff;
   .tittle {
     display: flex;
     font-size: 2rem;
@@ -46,9 +44,6 @@
     @media screen and (min-width: 800px) {
       display: flex;
       flex-direction: row;
-    }
-    .link {
-      color: #ffffff;
     }
     .firstRow {
       display: flex;

@@ -20,6 +20,7 @@ function App() {
           <Route path="/contact" element={<pages.Contact />} />
           <Route path="/faqs" element={<pages.FaqSection />} />
           <Route path="/about" element={<pages.About />} />
+          <Route path="/Error" element={<pages.Error />} />
         </Routes>
       </BrowserRouter>
     </>
