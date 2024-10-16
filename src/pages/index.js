@@ -6,7 +6,7 @@ import Mockmun from "./Mockmun/Mockmun";
 import Annual from "./Annual/First";
 import Contact from "./Contact/Contact";
 import About from "./About/About";
-import FaqSection from "./Faqs/FaqSection";
+import FaqSection from "../components/Faqs/FaqSection";
 import Error from "./Error/Error";
 export {
   Home,
