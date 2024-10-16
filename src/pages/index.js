@@ -4,10 +4,19 @@ import Events from "./Events/Events";
 import Youth from "./Youth/Youth";
 import Mockmun from "./Mockmun/Mockmun";
 import Annual from "./Annual/First";
-
-import Contact from "../components/Contact/Contact";
-
-
-export { Home, Team, Events, Youth, Mockmun, Annual, Contact  };
-
-
+import Contact from "./Contact/Contact";
+import About from "./About/About";
+import FaqSection from "./Faqs/FaqSection";
+import Error from "./Error/Error";
+export {
+  Home,
+  Team,
+  Events,
+  Youth,
+  Mockmun,
+  Annual,
+  Contact,
+  About,
+  FaqSection,
+  Error,
+};
