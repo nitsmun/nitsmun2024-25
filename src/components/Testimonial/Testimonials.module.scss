@@ -1,0 +1,50 @@
+.main_container {
+  color: #ffffff;
+
+  .head {
+    font-size: 3rem;
+    font-weight: bold;
+
+    @media screen and (min-width: 300px) {
+      font-size: 2rem;
+    }
+
+    @media screen and (min-width: 705px) {
+      font-size: 4rem;
+    }
+  }
+
+  .swiperCont {
+    padding: 2rem;
+    width: 70%;
+    @media screen and (min-width: 700px) {
+      width: 50%;
+    }
+    .testimonial {
+      min-height: 20rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      box-shadow: 16.22px -16.22px 16.22px #03002a;
+      background-color: #ffffff69;
+      backdrop-filter: blur(32.43950653076172px);
+      border: 0 solid transparent;
+      border-radius: 3rem;
+      .photo {
+        height: 5rem;
+        width: 5rem;
+        border: 0 solid transparent;
+        border-radius: 5rem;
+        object-fit: cover;
+      }
+      .upperBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+  }
+}

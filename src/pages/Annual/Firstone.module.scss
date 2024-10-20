@@ -1,0 +1,414 @@
+.mainpage {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  color: #ffffff;
+  background: linear-gradient(to top, rgba(24, 37, 88, 0.8), rgba(0, 0, 0, 0.9)),
+    url("https://res.cloudinary.com/dffke2hbp/image/upload/v1721583782/wvfue2qcw6driycqdzwp.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+
+  @media screen and (min-width: 800px) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .tittle {
+    display: flex;
+    font-size: 0.7rem;
+    margin-top: 1rem;
+    text-align: justify;
+    margin-left: 2.5rem;
+
+    @media screen and (min-width: 800px) {
+      font-size: 0.9rem;
+      margin-left: 2rem;
+    }
+
+    @media screen and (min-width: 1100px) {
+      font-size: 1.2rem;
+      margin-left: 2rem;
+    }
+
+    @media screen and (min-width: 1300px) {
+      margin-left: 5rem;
+    }
+  }
+
+  .content {
+    width: 70%;
+    height: 100%;
+    font-size: 0.6rem;
+    text-align: justify;
+
+    @media screen and (min-width: 800px) {
+      font-size: 1rem;
+      margin-right: 3rem;
+    }
+
+    @media screen and (min-width: 1100px) {
+      font-size: 1.1rem;
+    }
+
+    @media screen and (min-width: 1300px) {
+      font-size: 1.2rem;
+      width: 60%;
+      margin-right: 8rem;
+    }
+  }
+}
+
+.new {
+  width: 100%;
+  min-height: 120vh;
+  background: linear-gradient(
+      (to top),
+      rgba(41, 126, 196, 0.6),
+      rgba(39, 79, 112, 0.5),
+      rgba(12, 53, 105, 0.7),
+      rgba(6, 36, 73, 0.8)
+    ),
+    url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .box {
+    min-height: 90vh;
+    width: 80vw;
+    margin: auto;
+    border-radius: 63px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 3rem;
+    box-shadow: -1px -1px 2px white;
+
+    .text {
+      width: 80%;
+      height: 80%;
+      font-size: 0.6rem;
+      text-align: justify;
+      margin-left: 1.7rem;
+      margin-top: 2rem;
+
+      @media screen and (min-width: 400px) {
+        font-size: 0.7rem;
+      }
+
+      @media screen and (min-width: 600px) {
+        font-size: 0.8rem;
+      }
+
+      @media screen and (min-width: 800px) {
+        width: 90%;
+        font-size: 1rem;
+        margin-top: 3rem;
+      }
+
+      @media screen and (min-width: 1100px) {
+        font-size: 1.1rem;
+      }
+
+      @media screen and (min-width: 1300px) {
+        margin-top: 3.5rem;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  min-height: 120vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+      (to top),
+      rgba(41, 126, 196, 0.6),
+      rgba(39, 79, 112, 0.5),
+      rgba(12, 53, 105, 0.7),
+      rgba(6, 36, 73, 0.8)
+    ),
+    url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  margin-top: -1rem;
+
+  .textCom {
+    font-size: 2rem;
+    font-family: "Jost", "sans-serif";
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 12px 4px 8px #000;
+    margin-left: 1%;
+    margin-top: 8rem;
+
+    @media screen and (min-width: 800px) {
+      font-size: 4rem;
+      margin-left: -18rem;
+    }
+  }
+  .mainsectn {
+    //   transform: translate(-50%, -50%);
+    width: 80%;
+    margin: 0 auto;
+    height: 30rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 4rem;
+    box-shadow: -1px -1px 2px white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 800px) {
+      display: flex;
+      flex-direction: row;
+      height: 25rem;
+      width: 90%;
+    }
+
+    @media screen and (min-width: 1300px) {
+      height: 28rem;
+    }
+
+    .imgbox {
+      background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1722452312/esr3nnbmozekhydvmzzy.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-color: rgba(255, 255, 255, 0.5);
+      width: 80%;
+      height: 50%;
+      border-top-left-radius: 2rem;
+      border-bottom-left-radius: 2rem;
+      margin-top: 2rem;
+
+      @media screen and (min-width: 800px) {
+        height: 85%;
+        margin-left: 1rem;
+      }
+
+      .heading {
+        h1 {
+          margin-right: 2rem;
+          font-weight: 700;
+          font-size: 1rem;
+
+          @media screen and (min-width: 1300px) {
+            font-size: 1.9rem;
+            margin-left: -19rem;
+          }
+        }
+
+        p {
+          font-size: 0.7rem;
+          margin-top: -1rem;
+
+          @media screen and (min-width: 1100px) {
+            font-size: 1rem;
+          }
+
+          @media screen and (min-width: 1300px) {
+            margin-right: 8rem;
+          }
+        }
+      }
+    }
+
+    .textbox {
+      width: 80%;
+      // border: 2px solid red;
+      height: 90%;
+      color: #fff;
+
+      @media screen and (min-width: 800px) {
+        padding: 2rem;
+        width: 100%;
+      }
+
+      p {
+        text-align: justify;
+        font-size: 0.6rem;
+
+        @media screen and (min-width: 800px) {
+          margin-top: 1.5rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      .btn {
+        //   float: right;
+        margin-right: 2rem;
+        margin-top: 1rem;
+        border-radius: 2px;
+        border: 0.5px solid white;
+        font-size: 0.8rem;
+        width: 9rem;
+        height: 3rem;
+
+        @media screen and (min-width: 1300px) {
+          margin-top: 10rem;
+        }
+
+        //   @media screen and (min-width:400px){
+        //     margin-left: 40rem;
+        //   }
+      }
+    }
+  }
+}
+
+.executive {
+  width: 100%;
+  min-height: 120vh;
+  background: linear-gradient(
+      (to top),
+      rgba(41, 126, 196, 0.6),
+      rgba(39, 79, 112, 0.5),
+      rgba(12, 53, 105, 0.7),
+      rgba(6, 36, 73, 0.8)
+    ),
+    url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin-top: -1.8rem;
+
+  .textEx {
+    font-size: 2.5rem;
+    margin-top: 5rem;
+
+    @media screen and (min-width: 800px) {
+      margin-top: 6rem;
+      font-size: 3rem;
+    }
+
+    @media screen and (min-width: 1000px) {
+      margin-top: 9rem;
+      font-size: 4rem;
+    }
+  }
+
+  .cardbody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 800px) {
+      display: flex;
+      flex-direction: row;
+      // margin-left: 1rem;
+      margin-top: 7rem;
+    }
+
+    @media screen and (min-width: 1000px) {
+      margin-top: 4rem;
+    }
+
+    .card {
+      height: 19rem;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      border-radius: 63px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 4rem;
+      box-shadow: -1px -1px 2px white;
+      margin: auto;
+      margin-top: 1rem;
+
+      @media screen and (min-width: 800px) {
+        height: 19rem;
+        // width: 70%;
+        margin-left: 1rem;
+        margin-right: 2rem;
+      }
+
+      @media screen and (min-width: 1000px) {
+        height: 23rem;
+      }
+
+      @media screen and (min-width: 1250px) {
+        height: 28rem;
+      }
+
+      .head {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .img {
+          height: 6rem;
+          width: 5rem;
+          border-radius: 40px;
+          // background-color: black;
+          background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1722533947/r7dtohfthopercnupzrt.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          margin-top: 1rem;
+          margin-left: -2rem;
+        }
+
+        h1 {
+          font-size: 1rem;
+          margin-left: 1rem;
+
+          @media screen and (min-width: 800px) {
+            font-size: 1.5rem;
+          }
+
+          @media screen and (min-width: 1000px) {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      p {
+        width: 80%;
+        font-size: 0.5rem;
+        text-align: justify;
+        margin-left: 1.4rem;
+
+        @media screen and (min-width: 480px) {
+          font-size: 0.6rem;
+        }
+
+        @media screen and (min-width: 580px) {
+          font-size: 0.7rem;
+        }
+
+        @media screen and (min-width: 800px) {
+          font-size: 0.6rem;
+        }
+
+        @media screen and (min-width: 1000px) {
+          font-size: 0.8rem;
+        }
+
+        @media screen and (min-width: 1250px) {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

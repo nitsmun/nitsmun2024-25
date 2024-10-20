@@ -1,12 +1,13 @@
 import { useState } from "react";
 import styles from "./Navbar.module.scss";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const [menu, setMenu] = useState(0);
   const [mobileMenu, setmobileMenu] = useState(0);
-
   const toggleMenu = () => {
     if (innerWidth < 800) {
-      mobileMenu ? setmobileMenu(0) : setmobileMenu(26);
+      mobileMenu ? setmobileMenu(0) : setmobileMenu(20);
     }
     menu ? setMenu(0) : setMenu(13);
     // console.log("Hello");
@@ -28,18 +29,18 @@ const Navbar = () => {
         </div>
 
         <div className={styles.ul} style={{ height: `${mobileMenu}rem` }}>
-          <a href="#">
-            <li>Home</li>
-          </a>
-          <a href="#">
-            <li>Events</li>
-          </a>
-          <a href="#">
-            <li>About Us</li>
-          </a>
-          <a href="#">
-            <li>Contact Us</li>
-          </a>
+          <Link to="/" className={styles.navItem}>
+            Home
+          </Link>
+          <Link to="/Events" className={styles.navItem}>
+            Events
+          </Link>
+          <Link to="/about" className={styles.navItem}>
+            About Us
+          </Link>
+          <Link to="/contact" className={styles.navItem}>
+            Contact Us
+          </Link>
         </div>
         <div className={styles.hidden} style={{ height: `${menu}rem` }}>
           <a href="#">Secreteriat</a>

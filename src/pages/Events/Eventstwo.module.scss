@@ -1,0 +1,320 @@
+.events {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      rgba(6, 61, 132, 0.8),
+      rgba(6, 61, 132, 0.4)
+    ),
+    url("https://res.cloudinary.com/dffke2hbp/image/upload/v1721570830/idwzvqzab9mswfpypoyf.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  // position: absolute;
+  margin-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  font-family: "Jost", "sans-serif";
+  .tittle {
+    display: flex;
+    font-size: 2rem;
+    margin-top: 5rem;
+    font-weight: bold;
+
+    @media screen and (min-width: 480px) {
+      font-size: 2rem;
+      margin-top: 3rem;
+      font-weight: bold;
+      margin-left: 5rem;
+    }
+
+    @media screen and (min-width: 800px) {
+      font-size: 4rem;
+      margin-top: 3rem;
+      font-weight: bold;
+      margin-left: 0;
+    }
+  }
+
+  .innerCont {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 800px) {
+      display: flex;
+      flex-direction: row;
+    }
+    .firstRow {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      @media screen and (min-width: 800px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .youth {
+        height: 15vh;
+        width: 45vw;
+        background-color: #070d32;
+        border-radius: 0px 1.8rem 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        margin-left: 0rem;
+
+        @media screen and (min-width: 480px) {
+          height: 20vh;
+          width: 33vw;
+          // margin-left: -3rem;
+        }
+
+        @media screen and (min-width: 800px) {
+          height: 25vh;
+          width: 30vw;
+        }
+
+        @media screen and (min-width: 1100px) {
+          height: 32vh;
+          width: 30vw;
+        }
+
+        .pic {
+          height: 14vh;
+          width: 41vw;
+          // background-color: red;
+          background: linear-gradient(
+              (to bottom),
+              rgba(0, 0, 0, 0.297),
+              rgba(28, 28, 28, 0.226),
+              rgba(5, 5, 5, 0.989)
+            ),
+            url("https://res.cloudinary.com/dffke2hbp/image/upload/v1721582847/vgp6wg9mdrqb01mr0nre.png");
+          background-size: cover;
+          background-repeat: no-repeat;
+          margin-top: 0.5rem;
+          border-radius: 0.6rem 3.1rem 0 0;
+
+          @media screen and (min-width: 480px) {
+            height: 18vh;
+            width: 30vw;
+            // margin-left: -2rem;
+          }
+
+          @media screen and (min-width: 800px) {
+            height: 23vh;
+            width: 28vw;
+          }
+
+          @media screen and (min-width: 1100px) {
+            height: 30vh;
+            width: 28vw;
+          }
+
+          h2 {
+            font-size: 0.6rem;
+            margin-top: 4rem;
+
+            @media screen and (min-width: 480px) {
+              font-size: 0.8rem;
+              margin-top: 6.5rem;
+            }
+
+            @media screen and (min-width: 800px) {
+              font-size: 1.2rem;
+              margin-top: 8rem;
+            }
+
+            @media screen and (min-width: 1100px) {
+              font-size: 1.5rem;
+              margin-top: 11rem;
+            }
+          }
+        }
+      }
+
+      .mock {
+        height: 15vh;
+        width: 45vw;
+        background-color: #070d32;
+        border-radius: 0px 1.8rem 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0.8rem;
+        margin-top: 1rem;
+
+        @media screen and (min-width: 480px) {
+          height: 20vh;
+          width: 33vw;
+        }
+
+        @media screen and (min-width: 800px) {
+          height: 25vh;
+          width: 30vw;
+        }
+
+        @media screen and (min-width: 1100px) {
+          height: 32vh;
+          width: 30vw;
+        }
+
+        .pic {
+          height: 14vh;
+          width: 41vw;
+          // background-color: red;
+          background: linear-gradient(
+              (to bottom),
+              rgba(0, 0, 0, 0.297),
+              rgba(28, 28, 28, 0.226),
+              rgba(5, 5, 5, 0.989)
+            ),
+            url("https://res.cloudinary.com/dffke2hbp/image/upload/v1721583405/hs8djvvjr0asytjzmrgu.png");
+          background-size: cover;
+          background-repeat: no-repeat;
+          margin-top: 0.5rem;
+          margin-left: 0.5rem;
+          border-radius: 0.6rem 3.1rem 0 0;
+
+          @media screen and (min-width: 480px) {
+            height: 19vh;
+            width: 30vw;
+          }
+
+          @media screen and (min-width: 800px) {
+            height: 23vh;
+            width: 28vw;
+          }
+
+          @media screen and (min-width: 1100px) {
+            height: 30vh;
+            width: 28vw;
+          }
+
+          h2 {
+            margin-top: 4rem;
+            font-size: 0.8rem;
+
+            @media screen and (min-width: 480px) {
+              font-size: 1.2rem;
+              margin-top: 6.5rem;
+            }
+
+            @media screen and (min-width: 800px) {
+              font-size: 1.2rem;
+              margin-top: 8rem;
+            }
+
+            @media screen and (min-width: 1100px) {
+              font-size: 1.5rem;
+              margin-top: 11rem;
+            }
+          }
+        }
+      }
+    }
+    .annual {
+      width: 90vw;
+      height: 30vh;
+      background-color: #070d32;
+      border-radius: 0px 1.87rem 0 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+      margin-left: 0.4rem;
+
+      @media screen and (min-width: 480px) {
+        height: 45vh;
+        width: 72vw;
+        margin-left: 5rem;
+      }
+
+      @media screen and (min-width: 800px) {
+        height: 54vh;
+        width: 60vw;
+        margin-left: 2rem;
+      }
+
+      @media screen and (min-width: 1100px) {
+        height: 68vh;
+        width: 60vw;
+        margin-left: 2rem;
+      }
+
+      @media screen and (min-width: 1300px) {
+        height: 68vh;
+        width: 55vw;
+        margin-left: 4rem;
+      }
+
+      .pic {
+        width: 86vw;
+        height: 28vh;
+        // background-color: red;
+        background: linear-gradient(
+            (to bottom),
+            rgba(0, 0, 0, 0.297),
+            rgba(28, 28, 28, 0.226),
+            rgba(5, 5, 5, 0.989)
+          ),
+          url("https://res.cloudinary.com/dffke2hbp/image/upload/v1721583782/wvfue2qcw6driycqdzwp.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-left: 0.5rem;
+        margin-top: 0.5rem;
+        border-radius: 0px 5rem 0 0;
+
+        @media screen and (min-width: 480px) {
+          height: 42vh;
+          width: 67vw;
+        }
+
+        @media screen and (min-width: 800px) {
+          height: 52vh;
+          width: 58vw;
+        }
+
+        @media screen and (min-width: 1100px) {
+          height: 65vh;
+          width: 58vw;
+        }
+
+        @media screen and (min-width: 1300px) {
+          height: 65vh;
+          width: 53vw;
+        }
+
+        h2 {
+          margin-top: 10.5rem;
+          margin-left: 0rem;
+          font-size: 1rem;
+
+          @media screen and (min-width: 480px) {
+            font-size: 1.6rem;
+            margin-top: 16rem;
+          }
+
+          @media screen and (min-width: 800px) {
+            font-size: 1.2rem;
+            margin-top: 21rem;
+          }
+
+          @media screen and (min-width: 1100px) {
+            font-size: 2rem;
+            margin-top: 26rem;
+          }
+        }
+      }
+    }
+  }
+}
