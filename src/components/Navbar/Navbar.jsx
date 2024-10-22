@@ -38,16 +38,23 @@ const Navbar = () => {
           <Link to="/about" className={styles.navItem}>
             About Us
           </Link>
-          <Link to="/contact" className={styles.navItem}>
-            Contact Us
+          <Link to="/team" className={styles.navItem}>
+            Secreteriat
           </Link>
+          <Link to="/gallery" className={styles.navItem}>
+            Photo Gallery
+          </Link>
+          {/* <Link to="/contact" className={styles.navItem}>
+            Contact Us
+          </Link> */}
         </div>
-        <div className={styles.hidden} style={{ height: `${menu}rem` }}>
+        {/* <div className={styles.hidden} style={{ height: `${menu}rem` }}>
           <Link to="/team">Secreteriat</Link>
           <Link to="/">Photo Gallery</Link>
-          {/* <Link href="#">Archieve</a> */}
+        </div> */}
+        <div className={styles.hamburger}>
+          <i className="fa fa-bars" onClick={toggleMenu}></i>
         </div>
-        <i className="fa fa-bars" onClick={toggleMenu}></i>
       </div>
     </>
   );
