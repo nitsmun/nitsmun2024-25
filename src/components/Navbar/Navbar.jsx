@@ -43,9 +43,9 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={styles.hidden} style={{ height: `${menu}rem` }}>
-          <a href="#">Secreteriat</a>
-          <a href="#">Photo Gallery</a>
-          <a href="#">Archieve</a>
+          <Link to="/team">Secreteriat</Link>
+          <Link to="/">Photo Gallery</Link>
+          {/* <Link href="#">Archieve</a> */}
         </div>
         <i className="fa fa-bars" onClick={toggleMenu}></i>
       </div>

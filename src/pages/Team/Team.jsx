@@ -1,20 +1,14 @@
 import { useEffect } from "react";
 import { Navbar } from "../../components/index.js";
 import styles from "./Team.module.scss";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.css";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 
 import {
   Secretariat,
   Secretariatjr,
-  // Secretariatmediajr,
-  // Secretariatresearchjr,
-  // Secretariatprjr,
-  // Secretariatwebjr,
+  Secretariatmediajr,
+  Secretariatresearchjr,
+  Secretariatprjr,
+  Secretariatwebjr,
 } from "./TeamData.jsx";
 import Card from "./Card.jsx";
 
@@ -27,35 +21,141 @@ const Team = () => {
     <div className={styles.parent}>
       <Navbar />
 
-      <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={0}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-      >
-        <SwiperSlide>
+      <div>
+        <div>
           <h1 className={styles.header}>Secretariat</h1>
 
           <div className={styles.photodesk}>
             {Secretariat.map((item) => (
-              <Card img={item.imgsrc} name={item.name} key={item.id} />
+              <Card
+                img={item.imgsrc}
+                name={item.name}
+                key={item.id}
+                fb={item.fb ? item.fb : ""}
+                insta={item.insta ? item.insta : ""}
+                linkedin={item.linkedin ? item.linkedin : ""}
+                post={item.post ? item.post : ""}
+              />
             ))}
           </div>
-        </SwiperSlide>
+        </div>
 
         {/* Second Slide */}
-        <SwiperSlide>
-          <h1 className={styles.header}>Meet Team</h1>
+        <div>
+          <h1
+            className={styles.header}
+            style={{ marginLeft: "20vw", marginRight: "20vw" }}
+          >
+            <hr />
+          </h1>
 
           <div className={styles.photodesk}>
             {Secretariatjr.map((item) => (
-              <Card img={item.imgsrc} name={item.name} key={item.id} />
+              <Card
+                img={item.imgsrc}
+                name={item.name}
+                key={item.id}
+                fb={item.fb ? item.fb : ""}
+                insta={item.insta ? item.insta : ""}
+                linkedin={item.linkedin ? item.linkedin : ""}
+                post={item.post ? item.post : ""}
+              />
             ))}
           </div>
-        </SwiperSlide>
-      </Swiper>
+        </div>
+
+        <div>
+          <h1
+            className={styles.header}
+            style={{ marginLeft: "20vw", marginRight: "20vw" }}
+          >
+            <hr />
+          </h1>
+
+          <div className={styles.photodesk}>
+            {Secretariatmediajr.map((item) => (
+              <Card
+                img={item.imgsrc}
+                name={item.name}
+                key={item.id}
+                fb={item.fb ? item.fb : ""}
+                insta={item.insta ? item.insta : ""}
+                linkedin={item.linkedin ? item.linkedin : ""}
+                post={item.post ? item.post : ""}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h1
+            className={styles.header}
+            style={{ marginLeft: "20vw", marginRight: "20vw" }}
+          >
+            <hr />
+          </h1>
+
+          <div className={styles.photodesk}>
+            {Secretariatresearchjr.map((item) => (
+              <Card
+                img={item.imgsrc}
+                name={item.name}
+                key={item.id}
+                fb={item.fb ? item.fb : ""}
+                insta={item.insta ? item.insta : ""}
+                linkedin={item.linkedin ? item.linkedin : ""}
+                post={item.post ? item.post : ""}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h1
+            className={styles.header}
+            style={{ marginLeft: "20vw", marginRight: "20vw" }}
+          >
+            <hr />
+          </h1>
+
+          <div className={styles.photodesk}>
+            {Secretariatprjr.map((item) => (
+              <Card
+                img={item.imgsrc}
+                name={item.name}
+                key={item.id}
+                fb={item.fb ? item.fb : ""}
+                insta={item.insta ? item.insta : ""}
+                linkedin={item.linkedin ? item.linkedin : ""}
+                post={item.post ? item.post : ""}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h1
+            className={styles.header}
+            style={{ marginLeft: "20vw", marginRight: "20vw" }}
+          >
+            <hr />
+          </h1>
+
+          <div className={styles.photodesk}>
+            {Secretariatwebjr.map((item) => (
+              <Card
+                img={item.imgsrc}
+                name={item.name}
+                key={item.id}
+                fb={item.fb ? item.fb : ""}
+                insta={item.insta ? item.insta : ""}
+                linkedin={item.linkedin ? item.linkedin : ""}
+                post={item.post ? item.post : ""}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
