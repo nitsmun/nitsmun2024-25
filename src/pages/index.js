@@ -8,6 +8,7 @@ import Contact from "./Contact/Contact";
 import About from "./About/About";
 import FaqSection from "./Faqs/FaqSection";
 import Error from "./Error/Error";
+import Gallery from "./Gallery/Gallery";
 export {
   Home,
   Team,
@@ -19,4 +20,5 @@ export {
   About,
   FaqSection,
   Error,
+  Gallery,
 };
