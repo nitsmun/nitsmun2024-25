@@ -6,8 +6,7 @@ const Hero = () => {
   return (
     <div className={styles.hero}>
       <div className={styles.loginbtns}>
-        <button className={styles.btnone}>Log in</button>
-        <button className={styles.btntwo}>Sign Up</button>
+        {/* <button className={styles.btnone}>Log in</button> */}
       </div>
       <div className={styles.logoitems}>
         <div className={styles.logoHolder}>

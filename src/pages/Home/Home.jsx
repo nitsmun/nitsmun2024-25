@@ -18,6 +18,7 @@ const Home = () => {
       </div>
       <What />
       <Collaboration />
+      <components.Achievements />
       <components.Testimonials />
       <components.Footer />
     </div>
