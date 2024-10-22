@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Mockmun.module.scss";
+import styles from "./Mockmunone.module.scss";
 
 const Mockmun = () => {
   return (
