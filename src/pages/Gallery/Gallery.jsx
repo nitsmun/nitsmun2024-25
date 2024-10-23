@@ -6,8 +6,11 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 // No need for swiper/css/effect-coverflow import
 import { Pagination, Navigation, EffectCoverflow } from "swiper/modules";
-
+import { useEffect } from "react";
 const Gallery = () => {
+  useEffect(() => {
+    document.title = "NITSMUN | GALLERY";
+  }, []);
   const photos = [
     {
       sl: 1,
@@ -88,6 +91,7 @@ const Gallery = () => {
           {photos.map((item, index) => (
             <SwiperSlide key={index}>
               <div className={styles.imagebox_container}>
+                <img src={item.src} alt="Gallery photo" />
                 <img src={item.src} alt="Gallery photo" />
               </div>
             </SwiperSlide>

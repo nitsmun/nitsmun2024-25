@@ -2,9 +2,13 @@
 import styles from "./Eventstwo.module.scss";
 
 import React from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Events = () => {
+  useEffect(() => {
+    document.title = "NITSMUN | EVENTS";
+  }, []);
   return (
     <div className={styles.eventsParent}>
       <div className={styles.events}>
