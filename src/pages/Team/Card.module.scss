@@ -39,12 +39,11 @@
   .socialLinks {
     position: absolute;
     right: 0;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 2rem;
     padding-right: 1rem;
     margin-top: 1rem;
-
     a {
       color: #fff;
       text-decoration: none;
@@ -69,4 +68,7 @@
 
 .box:hover .personName {
   visibility: visible;
+}
+.box:hover .socialLinks {
+  display: flex;
 }
