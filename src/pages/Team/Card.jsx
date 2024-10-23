@@ -5,7 +5,11 @@ const Card = (props) => {
     <div className={styles.box}>
       <img src={props.img} alt="" />
       <div className={styles.backbox}>
-        <h2 className={styles.personName}>{props.name}</h2>
+        <h2 className={styles.personName}>
+          {props.name}
+          <br />
+          <span style={{ fontSize: "0.7rem" }}>{props.post}</span>
+        </h2>
         {/* <h4 className={styles.personName}>{props.post}</h4> */}
         <div className={styles.socialLinks}>
           {props.fb && (

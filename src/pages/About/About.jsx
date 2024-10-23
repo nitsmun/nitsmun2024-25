@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "./About.module.scss";
-
+import { useEffect } from "react";
 const About = () => {
+  useEffect(() => {
+    document.title = "NITSMUN | ABOUT US";
+  }, []);
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>

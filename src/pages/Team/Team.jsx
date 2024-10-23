@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { Navbar } from "../../components/index.js";
 import styles from "./Team.module.scss";
-
 import {
   Secretariat,
   Secretariatjr,
@@ -71,7 +70,7 @@ const Team = () => {
           >
             <hr />
           </h1>
-
+          <h1 className={styles.header}>Media & Design Team</h1>
           <div className={styles.photodesk}>
             {Secretariatmediajr.map((item) => (
               <Card
@@ -94,7 +93,7 @@ const Team = () => {
           >
             <hr />
           </h1>
-
+          <h1 className={styles.header}>Research Team</h1>
           <div className={styles.photodesk}>
             {Secretariatresearchjr.map((item) => (
               <Card
@@ -117,7 +116,9 @@ const Team = () => {
           >
             <hr />
           </h1>
-
+          <h1 className={styles.header}>
+            Public Relations, Marketing and Outreach Team
+          </h1>
           <div className={styles.photodesk}>
             {Secretariatprjr.map((item) => (
               <Card
@@ -140,7 +141,7 @@ const Team = () => {
           >
             <hr />
           </h1>
-
+          <h1 className={styles.header}>Technical Team</h1>
           <div className={styles.photodesk}>
             {Secretariatwebjr.map((item) => (
               <Card
