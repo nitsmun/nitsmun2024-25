@@ -6,5 +6,17 @@ import Mockmun from "./Mockmun/Mockmun";
 import Annual from "./Annual/First";
 import Contact from "./Contact/Contact";
 import About from "./About/About";
-
-export { Home, Team, Events, Youth, Mockmun, Annual, Contact, About };
+import Gallery from "./Gallery/Gallery";
+import Error from "./Error/Error";
+export {
+  Home,
+  Team,
+  Events,
+  Youth,
+  Mockmun,
+  Annual,
+  Contact,
+  About,
+  Gallery,
+  Error,
+};

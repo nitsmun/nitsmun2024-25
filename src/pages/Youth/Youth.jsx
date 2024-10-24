@@ -3,25 +3,35 @@ import styles from "./Youthone.module.scss";
 
 const Youth = () => {
   return (
-    <>
+    <div className={styles.parent}>
       <div className={styles.mainpage}>
         <div className={styles.tittle}>
           <h1>YOUTH PARLIAMENT</h1>
         </div>
         <div className={styles.content}>
-          "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-          ab illo inventore veritatis et quasi architecto beatae vitae dicta
-          sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-          aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
-          qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-          dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-          quia non numquam eius modi tempora incidunt ut labore et dolore magnam
-          aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
-          exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex
-          ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in
-          ea voluptate velit esse quam nihil molestiae consequatur, vel illum
-          qui dolorem eum fugiat quo voluptas nulla pariatur?"
+          Get ready for a day filled with electrifying debates, passionate
+          discussions, and the chance to make your voice heard at the NITSMUN
+          Youth Parliament 2023! Mark your calendars for October 26, 2024,
+          because we're about to dive headfirst into the hot topics of "One
+          Nation, One Election" and "Unrest in Manipur".
+          <br />
+          <br />
+          Hey there! We know that politics and diplomacy might sound a bit
+          daunting, but we promise, this event will be anything but boring.
+          We're bringing a fresh perspective to the table, and we want you to
+          join the conversation.
+          <br />
+          <br />
+          Picture this: You, your friends, and some of the brightest young
+          minds, all gathered under one roof to discuss the biggest issues being
+          faced by our nation. Whether you're a seasoned debater or just getting
+          started, there's a place for everyone at NITSMUN Youth Parliament.
+          <br />
+          <br />
+          This isn't just another event. It's a chance to be part of the change
+          you want to see in the world. Get ready to have a blast while tackling
+          serious matters.Join us, and let's make politics fun, engaging, and
+          interactive. The event takes place on 5th November, 2023.
         </div>
       </div>
 
@@ -126,7 +136,26 @@ const Youth = () => {
           </div>
         </div>
       </div>
-    </>
+      <div className={styles.sponsorsCont}>
+        <h1 className={styles.heading}>OUR SPONSORS</h1>
+        <div className={styles.sponsors}>
+          <div className={styles.sponsorCard}>
+            <img
+              src="https://res.cloudinary.com/dhry5xscm/image/upload/v1729607349/nitsmun/sachkahu_a6kcyh.png"
+              alt="Sach Kahu"
+              className={styles.sponsorImg}
+            />
+          </div>
+          <div className={styles.sponsorCard}>
+            <img
+              src="https://res.cloudinary.com/dhry5xscm/image/upload/v1729607350/nitsmun/easemytrip_dkb6cb.jpg"
+              alt="Ease My Trip"
+              className={styles.sponsorImg}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

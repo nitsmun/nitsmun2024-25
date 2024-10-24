@@ -50,6 +50,12 @@
     .navItem {
       color: #ffffff;
     }
+    .hamburger {
+      display: flex;
+      margin-right: 1rem;
+      font-size: 1rem;
+      width: 100%;
+    }
     @media (max-width: 1081px) {
       gap: 0.8rem;
     }

@@ -4,5 +4,15 @@ import Objective from "./Objective/Objective";
 import FacultyAdv from "./Letters/FacultyAdv/FacultyAdv";
 import SecGen from "./Letters/SecGen/SecGen";
 import Footer from "./Footer/Footer";
-
-export { Navbar, Testimonials, Objective, FacultyAdv, SecGen, Footer };
+import Faqs from "./Faqs/FaqSection";
+import Achievements from "./Achievements/Achievements";
+export {
+  Navbar,
+  Testimonials,
+  Objective,
+  FacultyAdv,
+  SecGen,
+  Footer,
+  Faqs,
+  Achievements,
+};

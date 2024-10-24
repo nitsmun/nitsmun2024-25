@@ -3,10 +3,13 @@ import * as components from "../../components/index";
 import Collaboration from "../../components/Collaboration/Collaboration";
 import What from "../../components/What/What";
 import Hero from "../../components/Hero/Hero";
-
+import { useEffect } from "react";
 // import Events from "../Events/Events";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "NITSMUN";
+  }, []);
   return (
     <div className={styles.parent}>
       <components.Navbar />
@@ -18,6 +21,7 @@ const Home = () => {
       </div>
       <What />
       <Collaboration />
+      <components.Achievements />
       <components.Testimonials />
       <components.Footer />
     </div>
