@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 // No need for swiper/css/effect-coverflow import
 import { Pagination, Navigation, EffectCoverflow } from "swiper/modules";
 import { useEffect } from "react";
+import { Footer } from "../../components";
 const Gallery = () => {
   useEffect(() => {
     document.title = "NITSMUN | GALLERY";
@@ -97,6 +98,7 @@ const Gallery = () => {
           ))}
         </Swiper>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Navbar } from "../../components/index.js";
+import { Navbar, Footer } from "../../components/index.js";
 import styles from "./Team.module.scss";
 import {
   Secretariat,
@@ -169,6 +169,7 @@ const Team = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

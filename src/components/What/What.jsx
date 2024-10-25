@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./What.module.scss";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 const What = () => {
   return (
     <div className={styles.container}>
@@ -16,7 +16,9 @@ const What = () => {
           empowered individuals for active participation in
           international affairs
         </p>
-        <Link to="/about" className={styles.abtbtn}>About</Link>
+        <Link to="/about" className={styles.abtbtn}>
+          About
+        </Link>
       </div>
     </div>
   );

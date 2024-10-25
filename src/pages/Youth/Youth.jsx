@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./Youthone.module.scss";
-import { useNavigate } from "react-router-dom";
-
+import { Footer } from "../../components";
 const Youth = () => {
-  const navigate = useNavigate();
   return (
     <div className={styles.parent}>
       {/* <div className={styles.banner}>
@@ -20,7 +18,9 @@ const Youth = () => {
           Get ready for a day filled with electrifying debates, passionate
           discussions, and the chance to make your voice heard at the NITSMUN
           Youth Parliament 2024! Mark your calendars for October 26, 2024,
-          because we're about to dive headfirst into the hot topics of "Deliberation on the nation-wide implementation of the Uniform Civil Code Waqf Amendment Bill" and "Discussion on the Waqf Amendment Bill".
+          because we're about to dive headfirst into the hot topics of
+          "Deliberation on the nation-wide implementation of the Uniform Civil
+          Code Waqf Amendment Bill" and "Discussion on the Waqf Amendment Bill".
           <br />
           <br />
           Hey there! We know that politics and diplomacy might sound a bit
@@ -100,7 +100,12 @@ const Youth = () => {
               At present, the Lok Sabha has 545 members.
             </p>
 
-            <a href="https://drive.google.com/file/d/1rVdRvdRc370R47rpuudQx74ML-h0qlOB/view?usp=sharing" target="_blank" rel="noreferrer"  className={styles.btn}>
+            <a
+              href="https://drive.google.com/file/d/1rVdRvdRc370R47rpuudQx74ML-h0qlOB/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.btn}
+            >
               Background Guide
             </a>
           </div>
@@ -185,6 +190,7 @@ const Youth = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
