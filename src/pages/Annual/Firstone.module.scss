@@ -3,7 +3,6 @@
   padding: 0;
   width: 100%;
   min-height: 100vh;
-  color: #ffffff;
   background: linear-gradient(to top, rgba(24, 37, 88, 0.8), rgba(0, 0, 0, 0.9)),
     url("https://res.cloudinary.com/dffke2hbp/image/upload/v1721583782/wvfue2qcw6driycqdzwp.png");
   background-size: cover;
@@ -67,7 +66,7 @@
 
 .new {
   width: 100%;
-  min-height: 120vh;
+  height: 120vh;
   background: linear-gradient(
       (to top),
       rgba(41, 126, 196, 0.6),
@@ -86,7 +85,7 @@
   justify-content: center;
 
   .box {
-    min-height: 90vh;
+    height: 90vh;
     width: 80vw;
     margin: auto;
     border-radius: 63px;
@@ -97,10 +96,10 @@
     .text {
       width: 80%;
       height: 80%;
-      font-size: 0.6rem;
+      font-size: 0.56rem;
       text-align: justify;
       margin-left: 1.7rem;
-      margin-top: 2rem;
+      margin-top: 1rem;
 
       @media screen and (min-width: 400px) {
         font-size: 0.7rem;
@@ -112,8 +111,8 @@
 
       @media screen and (min-width: 800px) {
         width: 90%;
-        font-size: 1rem;
-        margin-top: 3rem;
+        font-size: 0.9rem;
+        margin-top: 2rem;
       }
 
       @media screen and (min-width: 1100px) {
@@ -121,8 +120,9 @@
       }
 
       @media screen and (min-width: 1300px) {
-        margin-top: 3.5rem;
-        font-size: 1.3rem;
+        margin-top: 2.3rem;
+        font-size: 1.2rem;
+        margin-left: 3.5rem;
       }
     }
   }
@@ -130,7 +130,7 @@
 
 .container {
   width: 100%;
-  min-height: 120vh;
+  height: 120vh;
   display: flex;
   flex-direction: column;
   background: linear-gradient(
@@ -245,8 +245,12 @@
         text-align: justify;
         font-size: 0.6rem;
 
+        span {
+          font-weight: 700;
+        }
+
         @media screen and (min-width: 800px) {
-          margin-top: 1.5rem;
+          margin-top: 9rem;
           font-size: 0.9rem;
         }
       }
@@ -254,7 +258,7 @@
       .btn {
         //   float: right;
         margin-right: 2rem;
-        margin-top: 1rem;
+        // margin-top: 1rem;
         border-radius: 2px;
         border: 0.5px solid white;
         font-size: 0.8rem;
@@ -275,7 +279,7 @@
 
 .executive {
   width: 100%;
-  min-height: 120vh;
+  height: 120vh;
   background: linear-gradient(
       (to top),
       rgba(41, 126, 196, 0.6),
@@ -357,12 +361,25 @@
         justify-content: center;
         align-items: center;
 
-        .img {
-          height: 6rem;
-          width: 5rem;
+        .img1 {
+          height: 8rem;
+          width: 7rem;
           border-radius: 40px;
           // background-color: black;
-          background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1722533947/r7dtohfthopercnupzrt.png");
+          background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1729795568/qumj14h432pwevt36piw.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          margin-top: 1rem;
+          margin-left: -2rem;
+        }
+
+        .img2 {
+          height: 8rem;
+          width: 7rem;
+          border-radius: 40px;
+          // background-color: black;
+          background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1729795735/c5kseurtrpkatpypgcp8.jpg");
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center;
@@ -380,6 +397,7 @@
 
           @media screen and (min-width: 1000px) {
             font-size: 2rem;
+            margin-top: 3rem;
           }
         }
       }
@@ -388,7 +406,7 @@
         width: 80%;
         font-size: 0.5rem;
         text-align: justify;
-        margin-left: 1.4rem;
+        margin-left: 4rem;
 
         @media screen and (min-width: 480px) {
           font-size: 0.6rem;
@@ -408,6 +426,7 @@
 
         @media screen and (min-width: 1250px) {
           font-size: 1.2rem;
+          margin-top: 4rem;
         }
       }
     }
