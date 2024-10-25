@@ -1,17 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+.parent {
+  background: linear-gradient(
+      (to top),
+      rgba(41, 126, 196, 0.6),
+      rgba(39, 79, 112, 0.5),
+      rgba(12, 53, 105, 0.7),
+      rgba(6, 36, 73, 0.8)
+    ),
+    url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: "Jost", sans-serif;
+}
+
+.banner {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  // background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1729797741/xgjiwhxazlyvjydghbtw.jpg");
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6rem;
+}
 .mainpage {
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to top, rgba(24, 37, 88, 0.8), rgba(0, 0, 0, 0.9)),
+  background: linear-gradient(
+      to right,
+      rgba(24, 37, 88, 0.8),
+      rgba(0, 0, 0, 0.712)
+    ),
     url("https://res.cloudinary.com/dffke2hbp/image/upload/v1721582847/vgp6wg9mdrqb01mr0nre.png");
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: 0 0 6rem #000000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 4rem;
+  // margin-top: 4rem;
 
   @media screen and (min-width: 800px) {
     display: flex;
@@ -24,7 +66,7 @@
     margin-top: 1rem;
     text-align: justify;
     margin-left: 2.5rem;
-
+    text-shadow: 0 0 10rem #2b00ff;
     @media screen and (min-width: 800px) {
       font-size: 0.9rem;
       margin-left: 2rem;
@@ -65,17 +107,17 @@
 .new {
   width: 100%;
   height: 120vh;
-  background: linear-gradient(
-      (to top),
-      rgba(41, 126, 196, 0.6),
-      rgba(39, 79, 112, 0.5),
-      rgba(12, 53, 105, 0.7),
-      rgba(6, 36, 73, 0.8)
-    ),
-    url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  // background: linear-gradient(
+  //     (to top),
+  //     rgba(41, 126, 196, 0.6),
+  //     rgba(39, 79, 112, 0.5),
+  //     rgba(12, 53, 105, 0.7),
+  //     rgba(6, 36, 73, 0.8)
+  //   ),
+  //   url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
   color: #ffffff;
   display: flex;
   flex-direction: row;
@@ -120,6 +162,7 @@
       @media screen and (min-width: 1300px) {
         margin-top: 3.5rem;
         font-size: 1.3rem;
+        margin-left: 4rem;
       }
     }
   }
@@ -130,17 +173,17 @@
   height: 120vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(
-      (to top),
-      rgba(41, 126, 196, 0.6),
-      rgba(39, 79, 112, 0.5),
-      rgba(12, 53, 105, 0.7),
-      rgba(6, 36, 73, 0.8)
-    ),
-    url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  // background: linear-gradient(
+  //     (to top),
+  //     rgba(41, 126, 196, 0.6),
+  //     rgba(39, 79, 112, 0.5),
+  //     rgba(12, 53, 105, 0.7),
+  //     rgba(6, 36, 73, 0.8)
+  //   ),
+  //   url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
   color: #ffffff;
   margin-top: -1rem;
 
@@ -187,6 +230,8 @@
       background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1722452312/esr3nnbmozekhydvmzzy.png");
       background-repeat: no-repeat;
       background-size: cover;
+      background-color: #000000;
+      background-blend-mode: darken;
       background-position: center;
       background-color: rgba(255, 255, 255, 0.5);
       width: 80%;
@@ -228,10 +273,12 @@
       p {
         text-align: justify;
         font-size: 0.6rem;
-
+        font-family: "Jost", sans-serif;
+        font-weight: 700;
         @media screen and (min-width: 800px) {
-          margin-top: 1.5rem;
+          margin-top: 7rem;
           font-size: 0.9rem;
+          display: flex;
         }
       }
 
@@ -239,14 +286,17 @@
         //   float: right;
         margin-right: 2rem;
         margin-top: 1rem;
-        border-radius: 2px;
+        border-radius: 4px;
+        font-family: "Jost", sans-serif;
+        font-weight: 700;
         border: 0.5px solid white;
         font-size: 0.8rem;
         width: 9rem;
         height: 3rem;
-
+        background-color: #02162e;
+        color: #fefbc8;
         @media screen and (min-width: 1300px) {
-          margin-top: 10rem;
+          margin-top: 7rem;
         }
 
         //   @media screen and (min-width:400px){
@@ -346,10 +396,10 @@
           width: 5rem;
           border-radius: 40px;
           // background-color: black;
-          background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1722533947/r7dtohfthopercnupzrt.png");
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-position: center;
+          // background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1722533947/r7dtohfthopercnupzrt.png");
+          // background-repeat: no-repeat;
+          // background-size: cover;
+          // background-position: center;
           margin-top: 1rem;
           margin-left: -2rem;
         }
@@ -373,7 +423,8 @@
         font-size: 0.5rem;
         text-align: justify;
         margin-left: 1.4rem;
-
+        font-family: "Jost", sans-serif;
+        font-weight: 700;
         @media screen and (min-width: 480px) {
           font-size: 0.6rem;
         }
@@ -392,6 +443,57 @@
 
         @media screen and (min-width: 1250px) {
           font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+.sponsorsCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 100%;
+  .heading {
+    color: #ffffff;
+    font-family: "Jost", "sans-serif";
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 12px 4px 8px #000;
+  }
+  .sponsors {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @media screen and (min-width: 815px) {
+      flex-direction: row;
+    }
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+    .sponsorCard {
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      background-color: #d9d9d9;
+      width: 10rem;
+      height: 10rem;
+      box-shadow: 0px 4px 188.1px 0px #00000040;
+      @media screen and (min-width: 500px) {
+        width: 15rem;
+        height: 15rem;
+      }
+      .sponsorImg {
+        width: 100%;
+        height: 5rem;
+        @media screen and (min-width: 500px) {
+          height: 8rem;
         }
       }
     }

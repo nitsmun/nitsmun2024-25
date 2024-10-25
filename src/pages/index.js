@@ -6,8 +6,9 @@ import Mockmun from "./Mockmun/Mockmun";
 import Annual from "./Annual/First";
 import Contact from "./Contact/Contact";
 import About from "./About/About";
-import FaqSection from "./Faqs/FaqSection";
+import Gallery from "./Gallery/Gallery";
 import Error from "./Error/Error";
+import Achievement from "./Achievement/Achievement";
 export {
   Home,
   Team,
@@ -17,6 +18,7 @@ export {
   Annual,
   Contact,
   About,
-  FaqSection,
+  Gallery,
   Error,
+  Achievement,
 };

@@ -59,7 +59,7 @@ importers:
         specifier: ^1.8.1
         version: 1.8.1(jquery@3.7.1)
       swiper:
-        specifier: ^11.1.5
+        specifier: ^11.1.14
         version: 11.1.14
     devDependencies:
       "@types/react":

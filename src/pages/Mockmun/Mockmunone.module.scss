@@ -99,7 +99,8 @@
       font-size: 0.6rem;
       text-align: justify;
       margin-left: 1.7rem;
-      margin-top: 2rem;
+      margin-top: 3rem;
+      padding: 1rem 0;
 
       @media screen and (min-width: 400px) {
         font-size: 0.7rem;
@@ -241,8 +242,12 @@
         text-align: justify;
         font-size: 0.6rem;
 
+        span {
+          font-weight: 700;
+        }
+
         @media screen and (min-width: 800px) {
-          margin-top: 1.5rem;
+          margin-top: 8rem;
           font-size: 0.9rem;
         }
       }
@@ -258,7 +263,7 @@
         height: 3rem;
 
         @media screen and (min-width: 1300px) {
-          margin-top: 10rem;
+          margin-top: 6rem;
         }
 
         //   @media screen and (min-width:400px){
@@ -353,12 +358,25 @@
         justify-content: center;
         align-items: center;
 
-        .img {
+        .img1 {
+          height: 8rem;
+          width: 7rem;
+          border-radius: 40px;
+          // background-color: black;
+          background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1729795104/rm6vbj5bykzl3ng1emog.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          margin-top: 1rem;
+          margin-left: -2rem;
+        }
+
+        .img2 {
           height: 6rem;
           width: 5rem;
           border-radius: 40px;
           // background-color: black;
-          background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1722533947/r7dtohfthopercnupzrt.png");
+          background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1729795104/rm6vbj5bykzl3ng1emog.jpg");
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center;
@@ -382,9 +400,10 @@
 
       p {
         width: 80%;
+        margin-top: 2rem;
         font-size: 0.5rem;
         text-align: justify;
-        margin-left: 1.4rem;
+        margin-left: 5rem;
 
         @media screen and (min-width: 480px) {
           font-size: 0.6rem;
