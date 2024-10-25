@@ -1,5 +1,5 @@
 import styles from "./Footer.module.scss";
-
+import {Link} from "react-router-dom";
 import React from "react";
 
 const Footer = () => {
@@ -55,21 +55,21 @@ const Footer = () => {
         <hr />
         <div className={styles.nav}>
           {/* <ul> */}
-          <a href="">
+          <Link to="/">
             <li>Home</li>
-          </a>
-          <a href="">
+          </Link>
+          <Link to="/Events">
             <li>Events</li>
-          </a>
-          <a href="">
+          </Link>
+          <Link to="/about">
             <li>About Us</li>
-          </a>
-          <a href="">
+          </Link>
+          <Link to="/team">
             <li>Secretariat</li>
-          </a>
-          <a href="">
+          </Link>
+          <Link to="/gallery">
             <li>Gallery</li>
-          </a>
+          </Link>
           {/* </ul> */}
         </div>
       </div>

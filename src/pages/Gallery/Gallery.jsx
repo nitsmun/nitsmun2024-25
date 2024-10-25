@@ -92,7 +92,6 @@ const Gallery = () => {
             <SwiperSlide key={index}>
               <div className={styles.imagebox_container}>
                 <img src={item.src} alt="Gallery photo" />
-                <img src={item.src} alt="Gallery photo" />
               </div>
             </SwiperSlide>
           ))}

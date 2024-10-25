@@ -6,12 +6,12 @@ const Youth = () => {
   const navigate = useNavigate();
   return (
     <div className={styles.parent}>
-      <div className={styles.banner}>
+      {/* <div className={styles.banner}>
         <img
           src="https://res.cloudinary.com/dffke2hbp/image/upload/v1729797741/xgjiwhxazlyvjydghbtw.jpg"
-          alt=""
+          alt="banner"
         />
-      </div>
+      </div> */}
       <div className={styles.mainpage}>
         <div className={styles.tittle}>
           <h1>YOUTH PARLIAMENT</h1>
@@ -19,9 +19,8 @@ const Youth = () => {
         <div className={styles.content}>
           Get ready for a day filled with electrifying debates, passionate
           discussions, and the chance to make your voice heard at the NITSMUN
-          Youth Parliament 2023! Mark your calendars for October 26, 2024,
-          because we're about to dive headfirst into the hot topics of "One
-          Nation, One Election" and "Unrest in Manipur".
+          Youth Parliament 2024! Mark your calendars for October 26, 2024,
+          because we're about to dive headfirst into the hot topics of "Deliberation on the nation-wide implementation of the Uniform Civil Code Waqf Amendment Bill" and "Discussion on the Waqf Amendment Bill".
           <br />
           <br />
           Hey there! We know that politics and diplomacy might sound a bit
@@ -39,7 +38,7 @@ const Youth = () => {
           This isn't just another event. It's a chance to be part of the change
           you want to see in the world. Get ready to have a blast while tackling
           serious matters.Join us, and let's make politics fun, engaging, and
-          interactive. The event takes place on 5th November, 2023.
+          interactive. The event takes place on 26th October, 2024.
         </div>
       </div>
 
@@ -101,9 +100,9 @@ const Youth = () => {
               At present, the Lok Sabha has 545 members.
             </p>
 
-            <button onClick={() => navigate()} className={styles.btn}>
+            <a href="https://drive.google.com/file/d/1rVdRvdRc370R47rpuudQx74ML-h0qlOB/view?usp=sharing" target="_blank" rel="noreferrer"  className={styles.btn}>
               Background Guide
-            </button>
+            </a>
           </div>
         </section>
       </div>
@@ -160,6 +159,27 @@ const Youth = () => {
             <img
               src="https://res.cloudinary.com/dhry5xscm/image/upload/v1729607350/nitsmun/easemytrip_dkb6cb.jpg"
               alt="Ease My Trip"
+              className={styles.sponsorImg}
+            />
+          </div>
+          <div className={styles.sponsorCard}>
+            <img
+              src="https://res.cloudinary.com/dhry5xscm/image/upload/v1729807171/nitsmun/83991643920_bthtxo.png"
+              alt="Firefly"
+              className={styles.sponsorImg}
+            />
+          </div>
+          <div className={styles.sponsorCard}>
+            <img
+              src="https://res.cloudinary.com/dhry5xscm/image/upload/v1729807164/nitsmun/images_1_utgmeq.jpg"
+              alt="Kumbli"
+              className={styles.sponsorImg}
+            />
+          </div>
+          <div className={styles.sponsorCard}>
+            <img
+              src="https://res.cloudinary.com/dhry5xscm/image/upload/v1729807170/nitsmun/image_g662hs.png"
+              alt="Cogg"
               className={styles.sponsorImg}
             />
           </div>

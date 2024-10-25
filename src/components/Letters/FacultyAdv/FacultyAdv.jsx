@@ -7,7 +7,7 @@ const FacultyAdv = () => {
       <div className={styles.innerCont}>
         <div className={styles.photoCont}>
           <img
-            src="https://res.cloudinary.com/dhry5xscm/image/upload/v1701965729/ecs-website/wasim-img_orgqul.jpg"
+            src="https://res.cloudinary.com/dhry5xscm/image/upload/v1729409434/nitsmun/debjitbhowmick_jn2bg4.jpg"
             alt="Faculty Advisor"
             className={styles.photo}
           />

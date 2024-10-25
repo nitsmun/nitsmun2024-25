@@ -467,11 +467,11 @@
   }
   .sponsors {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     width: 100%;
-    @media screen and (min-width: 815px) {
-      flex-direction: row;
-    }
+    // @media screen and (min-width: 815px) {
+    //   flex-direction: row;
+    // }
     align-items: center;
     justify-content: space-evenly;
     gap: 2rem;
