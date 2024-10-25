@@ -10,6 +10,12 @@ const Youth = () => {
           alt="banner"
         />
       </div> */}
+      {/* <div className={styles.banner}>
+        <img
+          src="https://res.cloudinary.com/dffke2hbp/image/upload/v1729797741/xgjiwhxazlyvjydghbtw.jpg"
+          alt="banner"
+        />
+      </div> */}
       <div className={styles.mainpage}>
         <div className={styles.tittle}>
           <h1>YOUTH PARLIAMENT</h1>
@@ -38,7 +44,8 @@ const Youth = () => {
           This isn't just another event. It's a chance to be part of the change
           you want to see in the world. Get ready to have a blast while tackling
           serious matters.Join us, and let's make politics fun, engaging, and
-          interactive. The event takes place on 26th October, 2024.
+          interactive. The event takes place on 26th October, 2024. interactive.
+          The event takes place on 26th October, 2024.
         </div>
       </div>
 
@@ -50,11 +57,25 @@ const Youth = () => {
               Lok Sabha. He or she is responsible for leading the government's
               business in the House. The Leader of the Opposition is the leader
               of the largest opposition party in the Lok Sabha. He or she is
-              responsible for holding the government to account.
+              responsible for holding the government to account. The Leader of
+              the House is the leader of the majority party in the Lok Sabha. He
+              or she is responsible for leading the government's business in the
+              House. The Leader of the Opposition is the leader of the largest
+              opposition party in the Lok Sabha. He or she is responsible for
+              holding the government to account.
             </div>
 
             <div className={styles.text}>
               The two main political alliances in India as of October 2024 are:
+              <br />
+              <br />
+              National Democratic Alliance (NDA): The NDA is a centre-right
+              alliance led by the Bharatiya Janata Party (BJP). It is the ruling
+              alliance at the central level and has governments in 17 states and
+              union territories. The NDA has 38 constituents, including many
+              smaller regional outfits. Some of the key members of the NDA
+              include the AIADMK, Lok Janshakti Party, and Shiv Sena. The two
+              main political alliances in India as of October 2024 are:
               <br />
               <br />
               National Democratic Alliance (NDA): The NDA is a centre-right
@@ -72,6 +93,13 @@ const Youth = () => {
               central level and has governments in 7 states. The INDIA alliance
               has 28 constituents, including many regional parties. Some of the
               key members of the INDIA alliance include the Trinamool Congress,
+              Dravida Munnetra Kazhagam, and Rashtriya Janata Dal. Indian
+              National Developmental Inclusive Alliance (INDIA): The INDIA
+              alliance is a centre-left alliance led by the Indian National
+              Cangress (INC). It is the main opposition alliance at the central
+              level and has governments in 7 states. The INDIA alliance has 28
+              constituents, including many regional parties. Some of the key
+              members of the INDIA alliance include the Trinamool Congress,
               Dravida Munnetra Kazhagam, and Rashtriya Janata Dal.
             </div>
           </p>
@@ -114,12 +142,20 @@ const Youth = () => {
 
       {/* <div className={styles.executive}> */}
       {/* <h1 className={styles.textEx}>EXECUTIVE BOARD</h1> */}
+      {/* <div className={styles.executive}> */}
+      {/* <h1 className={styles.textEx}>EXECUTIVE BOARD</h1> */}
 
       {/* <div className={styles.cardbody}> */}
       {/* <div className={styles.card}> */}
       {/* <div className={styles.head}> */}
       {/* <div className={styles.img}><img src="" alt="" /></div>
+      {/* <div className={styles.cardbody}> */}
+      {/* <div className={styles.card}> */}
+      {/* <div className={styles.head}> */}
+      {/* <div className={styles.img}><img src="" alt="" /></div>
               <h1>Username</h1>
+            </div> */}
+      {/* <p>
             </div> */}
       {/* <p>
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -133,10 +169,16 @@ const Youth = () => {
       {/* </div> */}
       {/* <div className={`${styles.card} ${styles.cardtwo}`}> */}
       {/* <div className={styles.head}>
+            </p> */}
+      {/* </div> */}
+      {/* <div className={`${styles.card} ${styles.cardtwo}`}> */}
+      {/* <div className={styles.head}>
               <div className={styles.img}>
                 <img src="" alt="" />
               </div>
               <h1>Username</h1>
+            </div> */}
+      {/* <p>
             </div> */}
       {/* <p>
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
