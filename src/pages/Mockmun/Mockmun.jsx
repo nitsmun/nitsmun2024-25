@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Mockmunone.module.scss";
-
+import { Footer } from "../../components";
 const Mockmun = () => {
   return (
     <>
@@ -112,6 +112,7 @@ const Mockmun = () => {
             </p>
           </div> */}
         </div>
+        <Footer />
       </div>
     </>
   );
