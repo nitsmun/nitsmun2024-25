@@ -36,6 +36,7 @@ const Team = () => {
                     insta={item.insta ? item.insta : ""}
                     linkedin={item.linkedin ? item.linkedin : ""}
                     post={item.post ? item.post : ""}
+                    mail={item.mail ? item.mail : ""}
                   />
                 ))}
               </div>
@@ -62,6 +63,7 @@ const Team = () => {
                     insta={item.insta ? item.insta : ""}
                     linkedin={item.linkedin ? item.linkedin : ""}
                     post={item.post ? item.post : ""}
+                    mail={item.mail ? item.mail : ""}
                   />
                 ))}
               </div>
@@ -85,6 +87,7 @@ const Team = () => {
                     insta={item.insta ? item.insta : ""}
                     linkedin={item.linkedin ? item.linkedin : ""}
                     post={item.post ? item.post : ""}
+                    mail={item.mail ? item.mail : ""}
                   />
                 ))}
               </div>
@@ -108,6 +111,7 @@ const Team = () => {
                     insta={item.insta ? item.insta : ""}
                     linkedin={item.linkedin ? item.linkedin : ""}
                     post={item.post ? item.post : ""}
+                    mail={item.mail ? item.mail : ""}
                   />
                 ))}
               </div>
@@ -133,6 +137,7 @@ const Team = () => {
                     insta={item.insta ? item.insta : ""}
                     linkedin={item.linkedin ? item.linkedin : ""}
                     post={item.post ? item.post : ""}
+                    mail={item.mail ? item.mail : ""}
                   />
                 ))}
               </div>
@@ -156,6 +161,7 @@ const Team = () => {
                     insta={item.insta ? item.insta : ""}
                     linkedin={item.linkedin ? item.linkedin : ""}
                     post={item.post ? item.post : ""}
+                    mail={item.mail ? item.mail : ""}
                   />
                 ))}
               </div>
