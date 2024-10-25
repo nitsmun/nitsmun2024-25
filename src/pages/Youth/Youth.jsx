@@ -39,33 +39,47 @@ const Youth = () => {
         <div className={styles.box}>
           <p>
             <div className={styles.text}>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum."
+              Ignite the Change at NITSMUN Youth Parliament 2024! Prepare
+              yourself for an unforgettable day of debates, passionate
+              exchanges, and opportunities to make your voice heard at the
+              NITSMUN Youth Parliament 2024! Circle the date: October 26, 2024.
+              This is more than just an event—it’s your chance to contribute to
+              conversations that are shaping the future of our country.
             </div>
 
             <div className={styles.text}>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum."
+              This Year’s Spotlight Issues: Uniform Civil Code (UCC) and Waqf
+              These aren’t just terms from legal textbooks; the Uniform Civil
+              Code and Waqf influence every layer of our society, weaving into
+              the fabric of justice, equality, and identity in India. The
+              discussion surrounding UCC delves into how our laws can be uniform
+              across religions while respecting diversity. Similarly, the
+              concept of Waqf plays a critical role in community welfare,
+              property management, and religious endowments. Through these
+              topics, we’ll explore questions of unity, freedom, and what it
+              truly means to be inclusive.
             </div>
 
             <div className={styles.text}>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum."
+              Why This Isn’t Just Another Debate Event We understand that
+              politics and diplomacy can sometimes seem intimidating or, worse,
+              tedious. But trust us: this event is crafted to bring a whole new
+              perspective. We’re making sure that every session is interactive,
+              every discussion is accessible, and every participant feels
+              empowered to speak up. Whether you’re a seasoned debater or just
+              testing the waters, there’s a place for everyone here at NITSMUN
+              Youth Parliament.
+              <br />
+              <br />
+              <br />
+              Imagine the Scene Picture this: You’re surrounded by like-minded
+              peers from across the country, each one of them bringing unique
+              perspectives, ideas, and arguments to the table. You’ll be
+              standing shoulder-to-shoulder with some of the brightest minds of
+              your generation, each one eager to voice their opinions and create
+              meaningful change. This is your chance to develop not just your
+              debating skills but also your knowledge, empathy, and
+              understanding of the diverse issues that shape our nation.
             </div>
           </p>
         </div>
@@ -84,13 +98,15 @@ const Youth = () => {
 
           <div className={styles.textbox}>
             <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum."
+              The Lok Sabha, or House of the People, is India’s primary
+              legislative body, made up of directly elected representatives.
+              It’s where major national issues are debated, laws are created,
+              and the government is held accountable. With the power to
+              introduce and pass key bills, especially financial ones, it plays
+              a crucial role in shaping India’s future. Elections for the Lok
+              Sabha take place every five years, and the party with the majority
+              forms the government. It’s a cornerstone of Indian democracy,
+              giving voice to the people’s interests and concerns.
             </p>
 
             <button className={styles.btn}>Background Guide</button>

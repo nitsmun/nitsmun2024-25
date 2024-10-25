@@ -177,7 +177,7 @@
 
     @media screen and (min-width: 800px) {
       font-size: 4rem;
-      margin-left: -18rem;
+      // margin-left: -18rem;
     }
   }
   .mainsectn {
@@ -252,8 +252,9 @@
         text-align: justify;
         font-size: 0.6rem;
         font-family: "Jost", sans-serif;
-        font-weight: 700;
-        @media screen and (min-width: 800px) {
+        font-weight: 500;
+        padding: 2rem;
+        gir @media screen and (min-width: 800px) {
           margin-top: 1.5rem;
           font-size: 0.9rem;
         }
