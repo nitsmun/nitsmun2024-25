@@ -3,7 +3,6 @@
   padding: 0;
   width: 100%;
   min-height: 100vh;
-  color: #ffffff;
   background: linear-gradient(to top, rgba(24, 37, 88, 0.8), rgba(0, 0, 0, 0.9)),
     url("https://res.cloudinary.com/dffke2hbp/image/upload/v1721583405/hs8djvvjr0asytjzmrgu.png");
   background-size: cover;
@@ -67,7 +66,7 @@
 
 .new {
   width: 100%;
-  min-height: 120vh;
+  height: 120vh;
   background: linear-gradient(
       (to top),
       rgba(41, 126, 196, 0.6),
@@ -86,7 +85,7 @@
   justify-content: center;
 
   .box {
-    min-height: 90vh;
+    height: 90vh;
     width: 80vw;
     margin: auto;
     border-radius: 63px;
@@ -100,7 +99,8 @@
       font-size: 0.6rem;
       text-align: justify;
       margin-left: 1.7rem;
-      margin-top: 2rem;
+      margin-top: 3rem;
+      padding: 1rem 0;
 
       @media screen and (min-width: 400px) {
         font-size: 0.7rem;
@@ -130,7 +130,7 @@
 
 .container {
   width: 100%;
-  min-height: 120vh;
+  height: 120vh;
   display: flex;
   flex-direction: column;
   background: linear-gradient(
@@ -242,8 +242,12 @@
         text-align: justify;
         font-size: 0.6rem;
 
+        span {
+          font-weight: 700;
+        }
+
         @media screen and (min-width: 800px) {
-          margin-top: 1.5rem;
+          margin-top: 8rem;
           font-size: 0.9rem;
         }
       }
@@ -259,7 +263,7 @@
         height: 3rem;
 
         @media screen and (min-width: 1300px) {
-          margin-top: 10rem;
+          margin-top: 6rem;
         }
 
         //   @media screen and (min-width:400px){
@@ -272,7 +276,7 @@
 
 .executive {
   width: 100%;
-  min-height: 120vh;
+  height: 120vh;
   background: linear-gradient(
       (to top),
       rgba(41, 126, 196, 0.6),
@@ -354,12 +358,25 @@
         justify-content: center;
         align-items: center;
 
-        .img {
+        .img1 {
+          height: 8rem;
+          width: 7rem;
+          border-radius: 40px;
+          // background-color: black;
+          background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1729795104/rm6vbj5bykzl3ng1emog.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          margin-top: 1rem;
+          margin-left: -2rem;
+        }
+
+        .img2 {
           height: 6rem;
           width: 5rem;
           border-radius: 40px;
           // background-color: black;
-          background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1722533947/r7dtohfthopercnupzrt.png");
+          background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1729795104/rm6vbj5bykzl3ng1emog.jpg");
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center;
@@ -383,9 +400,10 @@
 
       p {
         width: 80%;
+        margin-top: 2rem;
         font-size: 0.5rem;
         text-align: justify;
-        margin-left: 1.4rem;
+        margin-left: 5rem;
 
         @media screen and (min-width: 480px) {
           font-size: 0.6rem;

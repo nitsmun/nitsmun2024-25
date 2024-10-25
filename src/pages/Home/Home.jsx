@@ -23,7 +23,6 @@ const Home = () => {
       <Collaboration />
       <components.Achievements />
       <components.Testimonials />
-      <components.Footer />
     </div>
   );
 };

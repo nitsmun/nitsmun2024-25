@@ -41,12 +41,13 @@
 
   .ul {
     display: flex;
-    gap: 2.5rem;
+    gap: 3rem;
     padding: 0 1rem;
     align-items: center;
     width: 45%;
     height: 100px;
     margin-left: 200px;
+    font-size: 1.4rem;
     .navItem {
       color: #ffffff;
     }
@@ -107,6 +108,10 @@
   i {
     font-size: 2.25rem;
     margin-right: 1rem;
+
+    @media screen and (min-width: 800px) {
+      visibility: hidden;
+    }
 
     @media screen and (min-width: 350px) {
       display: flex;
