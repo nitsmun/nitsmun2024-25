@@ -32,7 +32,7 @@ const Register = () => {
     formData.append("branch", data.branch);
     formData.append("choice1", data.choice1);
     formData.append("choice2", data.choice2);
-    formData.append("choice2", data.choice2);
+    formData.append("choice3", data.choice3);
     formData.append("allotted", data.allotted);
     formData.append("portfolio", data.portfolio);
 
