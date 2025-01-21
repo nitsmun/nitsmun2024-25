@@ -10,6 +10,7 @@ import Gallery from "./Gallery/Gallery";
 import Error from "./Error/Error";
 import Achievement from "./Achievement/Achievement";
 import Register from "./Register/Register";
+import ApplicationSuccessfull from "./Register/ApplicationSuccessfull";
 export {
   Home,
   Team,
@@ -23,4 +24,5 @@ export {
   Error,
   Achievement,
   Register,
+  ApplicationSuccessfull
 };
