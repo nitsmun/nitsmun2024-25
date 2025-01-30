@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./Youthone.module.scss";
-import { Footer } from "../../components";
+// import { useNavigate } from "react-router-dom";
+
 const Youth = () => {
+  // const navigate = useNavigate();
   return (
     <div className={styles.parent}>
       {/* <div className={styles.banner}>
@@ -21,31 +23,30 @@ const Youth = () => {
           <h1>YOUTH PARLIAMENT</h1>
         </div>
         <div className={styles.content}>
-          Get ready for a day filled with electrifying debates, passionate
-          discussions, and the chance to make your voice heard at the NITSMUN
-          Youth Parliament 2024! Mark your calendars for October 26, 2024,
-          because we're about to dive headfirst into the hot topics of
-          "Deliberation on the nation-wide implementation of the Uniform Civil
-          Code Waqf Amendment Bill" and "Discussion on the Waqf Amendment Bill".
+          <strong>Ignite Change at NITSMUN Youth Parliament 2024! </strong>
+          <br />
+          Gear up for an electrifying day of debate, exchange, and empowerment
+          on October 26, 2024. The NITSMUN Youth Parliament invites you to dive
+          into impactful discussions on Uniform Civil Code (UCC) and Waqf—issues
+          that shape justice, equality, and unity in our country.
           <br />
           <br />
-          Hey there! We know that politics and diplomacy might sound a bit
-          daunting, but we promise, this event will be anything but boring.
-          We're bringing a fresh perspective to the table, and we want you to
-          join the conversation.
+          <strong>What’s in Store? </strong> These debates aren’t just legal
+          discussions; they tackle questions that lie at the heart of our
+          society. Whether it's the UCC’s role in unifying laws or Waqf’s
+          significance in community welfare, this event aims to deepen your
+          understanding of India’s diverse legal and cultural landscape.
           <br />
           <br />
-          Picture this: You, your friends, and some of the brightest young
-          minds, all gathered under one roof to discuss the biggest issues being
-          faced by our nation. Whether you're a seasoned debater or just getting
-          started, there's a place for everyone at NITSMUN Youth Parliament.
-          <br />
-          <br />
-          This isn't just another event. It's a chance to be part of the change
-          you want to see in the world. Get ready to have a blast while tackling
-          serious matters.Join us, and let's make politics fun, engaging, and
-          interactive. The event takes place on 26th October, 2024. interactive.
-          The event takes place on 26th October, 2024.
+          <strong>More Than Just Debate </strong>
+          This isn’t another debate event. Every session is crafted to be
+          accessible, interactive, and empowering, welcoming both seasoned
+          debaters and newcomers. Surrounded by bright minds from across India,
+          you’ll gain skills, knowledge, and friendships that last. Join Us!
+          Step into the shoes of decision-makers and engage with real-world
+          issues. If you’re ready to make your mark, October 26, 2024, is your
+          chance. Come share your ideas, spark change, and shape a
+          brighter future with us.
         </div>
       </div>
 
@@ -232,7 +233,6 @@ const Youth = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
