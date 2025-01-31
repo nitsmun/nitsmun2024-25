@@ -8,11 +8,38 @@ import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
   const [selectedValue, setSelectedValue] = useState("Yes");
+  const [isGroup, setIsGroup] = useState("No");
+  const [numMembers,setNumMembers]=useState(1);
   const [committee1, setCommitee1] = useState(false);
   const [committee2, setCommitee2] = useState(false);
   const [committee3, setCommitee3] = useState(false);
   const navigate = useNavigate();
   const [val, setVal] = useState("");
+  const [data, setData] = useState({
+    name: "",
+    email: localStorage.getItem("email") ?? "",
+    institute: "NIT SILCHAR",
+    phone: "",
+    paymentProof: "",
+    scholar_id: "",
+    previousExperience: "",
+    branch: "",
+    year: "",
+    choice1: "Commitee 1",
+    choice2: "Commitee 1",
+    choice3: "Commitee 1",
+    members: [],
+    portfolioC11: "",
+    portfolioC12: "",
+    portfolioC13: "",
+    portfolioC21: "",
+    portfolioC22: "",
+    portfolioC23: "",
+    portfolioC31: "",
+    portfolioC32: "",
+    portfolioC33: ""
+  });
+
   const handleClick = () => {
     console.log("ok");
     signInWithPopup(auth, provider).then((data) => {
@@ -29,21 +56,17 @@ const Register = () => {
     event.preventDefault();
     setSelectedValue(event.target.value);
   };
-  const [data, setData] = useState({
-    name: "",
-    email: localStorage.getItem("email") ?? "",
-    institute: "NIT SILCHAR",
-    phone: "",
-    paymentProof: "",
-    scholar_id: "",
-    previousExperience: "",
-    branch: "",
-    year: "",
-    choice1: "Commitee 1",
-    choice2: "Commitee 1",
-    choice3: "Commitee 1",
-  });
-
+  const handleRadioChangeIsGroup = (event) => {
+    event.preventDefault();
+    setIsGroup(event.target.value);
+    setData(prev=>(
+      {
+        ...prev,
+        members:[...prev.members,""]
+      }
+    ));
+  };
+  console.log(`Members:${data.members}`);
   const onSubmitHandler = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -58,6 +81,16 @@ const Register = () => {
     formData.append("choice1", data.choice1);
     formData.append("choice2", data.choice2);
     formData.append("choice3", data.choice3);
+    formData.append("members", data.members);
+    formData.append("portfolioC11", data.portfolioC11);
+    formData.append("portfolioC12", data.portfolioC12);
+    formData.append("portfolioC13", data.portfolioC13);
+    formData.append("portfolioC21", data.portfolioC21);
+    formData.append("portfolioC22", data.portfolioC22);
+    formData.append("portfolioC23", data.portfolioC23);
+    formData.append("portfolioC31", data.portfolioC31);
+    formData.append("portfolioC32", data.portfolioC32);
+    formData.append("portfolioC33", data.portfolioC33);
 
     //Api call
     const response = await axios.post(
@@ -95,6 +128,16 @@ const Register = () => {
         choice1: "Commitee 1",
         choice2: "Commitee 1",
         choice3: "Commitee 1",
+        members: [],
+        portfolioC11: "",
+        portfolioC12: "",
+        portfolioC13: "",
+        portfolioC21: "",
+        portfolioC22: "",
+        portfolioC23: "",
+        portfolioC31: "",
+        portfolioC32: "",
+        portfolioC33: ""
       });
       navigate("/events/Annual/successfull");
     } else {
@@ -308,7 +351,66 @@ const Register = () => {
               disabled={!localStorage.getItem("email")}
             />
           </div>
-
+          <label htmlFor="IsGroup">Are you participating in a group?</label>
+          <div className={styles.formBranch}>
+            <div>
+              <input
+                type="radio"
+                name="isGroup"
+                value="Yes"
+                id="Yes"
+                checked={isGroup === "Yes"}
+                onChange={handleRadioChangeIsGroup}
+                disabled={!localStorage.getItem("email")}
+              />
+              <span>Yes</span>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="isGroup"
+                value="No"
+                id="No"
+                checked={isGroup === "No"}
+                onChange={handleRadioChangeIsGroup}
+                disabled={!localStorage.getItem("email")}
+              />
+              <span>No</span>
+            </div>
+          </div>
+          {
+            isGroup === "Yes" ?
+              <div>
+                {Array(numMembers).fill(null).map((_, index) => (
+                  <div key={index}><h5>Member {index+1}</h5><input type="text" value={data.members[index]} onChange={(e)=>setData(prev=>({
+                    ...prev,
+                    members: prev.members.map((member, i) =>
+                      i === index ? e.target.value : member
+                    ),
+                  }))}  placeholder={`Member ${index+1}`} /></div>
+                ))}
+                <button onClick={(e)=>{
+                  e.preventDefault();
+                  setNumMembers(numMembers+1);
+                  setData(prev=>(
+                    {
+                      ...prev,
+                      members:[...prev.members,""]
+                    }
+                  ));
+                }}>Add Member</button>
+                {numMembers>1?<button onClick={(e)=>{
+                  e.preventDefault();
+                  setNumMembers(numMembers-1);
+                  setData(prev=>(
+                    {
+                      ...prev,
+                      members: prev.members.slice(0, -1)
+                    }
+                  ));
+                }}>Delete Member</button>:null}
+              </div> : null
+          }
           <label htmlFor="Experiences">Previous MUN Experiences (if any)</label>
           <div className={styles.formBranch}>
             <textarea
@@ -331,120 +433,171 @@ const Register = () => {
             preference are not always met and are not guaranteed.)
           </p>
 
-          <div className={styles.formRadio}>
-            <div>
-              <label htmlFor="Preference 1">Preference 1</label>
-              <select
-                value={data.choice1} // Controlled value linked to state
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    choice1: e.target.value, // Update the `choice1` key with the selected value
-                  }))
-                }
-                disabled={!localStorage.getItem("email")}
-              >
-                {!committee1 && (
-                  <option
-                    value="Committee 1"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    Committee 1
-                  </option>
-                )}
-                {!committee2 && (
-                  <option
-                    value="Committee 2"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    Committee 2
-                  </option>
-                )}
-                {!committee3 && (
-                  <option
-                    value="Committee 3"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    Committee 3
-                  </option>
-                )}
-              </select>
+          <div className={styles.prefParent}>
+            <div className={styles.prefCont}>
+              <div className={styles.prefInner}>
+                <label htmlFor="Preference 1">Preference 1</label>
+                <select
+                  value={data.choice1} // Controlled value linked to state
+                  onChange={(e) =>
+                    setData((prevData) => ({
+                      ...prevData,
+                      choice1: e.target.value, // Update the `choice1` key with the selected value
+                    }))
+                  }
+                  disabled={!localStorage.getItem("email")}
+                >
+                  {!committee1 && (
+                    <option
+                      value="Committee 1"
+                      disabled={!localStorage.getItem("email")}
+                    >
+                      Committee 1
+                    </option>
+                  )}
+                  {!committee2 && (
+                    <option
+                      value="Committee 2"
+                      disabled={!localStorage.getItem("email")}
+                    >
+                      Committee 2
+                    </option>
+                  )}
+                  {!committee3 && (
+                    <option
+                      value="Committee 3"
+                      disabled={!localStorage.getItem("email")}
+                    >
+                      Committee 3
+                    </option>
+                  )}
+                </select>
+              </div>
+              <div className={styles.portWrap}>
+                <h4>Portfolio Preferences</h4>
+                <input type="text" placeholder="Portfolio Preference 1" value={data.portfolioC11} onChange={(e) => setData((prev) => ({
+                  ...prev,
+                  portfolioC11: e.target.value
+                }))} />
+                <input type="text" placeholder="Portfolio Preference 2" value={data.portfolioC12} onChange={(e) => setData((prev) => ({
+                  ...prev,
+                  portfolioC12: e.target.value
+                }))} />
+                <input type="text" placeholder="Portfolio Preference 3" value={data.portfolioC13} onChange={(e) => setData((prev) => ({
+                  ...prev,
+                  portfolioC13: e.target.value
+                }))} />
+              </div>
             </div>
-            <div>
-              <label htmlFor="Preference 2">Preference 2</label>
-              <select
-                value={data.choice2} // Controlled value linked to state
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    choice2: e.target.value, // Update the `choice1` key with the selected value
-                  }))
-                }
-                disabled={!localStorage.getItem("email")}
-              >
-                {!committee1 && (
-                  <option
-                    disabled={!localStorage.getItem("email")}
-                    value="Committee 1"
-                  >
-                    Committee 1
-                  </option>
-                )}
-                {!committee2 && (
-                  <option
-                    disabled={!localStorage.getItem("email")}
-                    value="Committee 2"
-                  >
-                    Committee 2
-                  </option>
-                )}
-                {!committee3 && (
-                  <option
-                    disabled={!localStorage.getItem("email")}
-                    value="Committee 3"
-                  >
-                    Committee 3
-                  </option>
-                )}
-              </select>
+            <div className={styles.prefCont}>
+              <div className={styles.prefInner}>
+                <label htmlFor="Preference 2">Preference 2</label>
+                <select
+                  value={data.choice2} // Controlled value linked to state
+                  onChange={(e) =>
+                    setData((prevData) => ({
+                      ...prevData,
+                      choice2: e.target.value, // Update the `choice1` key with the selected value
+                    }))
+                  }
+                  disabled={!localStorage.getItem("email")}
+                >
+                  {!committee1 && (
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="Committee 1"
+                    >
+                      Committee 1
+                    </option>
+                  )}
+                  {!committee2 && (
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="Committee 2"
+                    >
+                      Committee 2
+                    </option>
+                  )}
+                  {!committee3 && (
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="Committee 3"
+                    >
+                      Committee 3
+                    </option>
+                  )}
+                </select>
+              </div>
+              <div className={styles.portWrap}>
+                <h4>Portfolio Preferences</h4>
+                <input type="text" placeholder="Portfolio Preference 1" value={data.portfolioC21} onChange={(e) => setData((prev) => ({
+                  ...prev,
+                  portfolioC21: e.target.value
+                }))} />
+                <input type="text" placeholder="Portfolio Preference 2" value={data.portfolioC22} onChange={(e) => setData((prev) => ({
+                  ...prev,
+                  portfolioC22: e.target.value
+                }))} />
+                <input type="text" placeholder="Portfolio Preference 3" value={data.portfolioC23} onChange={(e) => setData((prev) => ({
+                  ...prev,
+                  portfolioC23: e.target.value
+                }))} />
+              </div>
             </div>
-            <div>
-              <label htmlFor="Preference 3">Preference 3</label>
-              <select
-                value={data.choice3} // Controlled value linked to state
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    choice3: e.target.value, // Update the `choice1` key with the selected value
-                  }))
-                }
-                disabled={!localStorage.getItem("email")}
-              >
-                {!committee1 && (
-                  <option
-                    disabled={!localStorage.getItem("email")}
-                    value="Committee 1"
-                  >
-                    Committee 1
-                  </option>
-                )}
-                {!committee2 && (
-                  <option
-                    disabled={!localStorage.getItem("email")}
-                    value="Committee 2"
-                  >
-                    Committee 2
-                  </option>
-                )}
-                {!committee3 && (
-                  <option
-                    disabled={!localStorage.getItem("email")}
-                    value="Committee 3"
-                  >
-                    Committee 3
-                  </option>
-                )}
-              </select>
+            <div className={styles.prefCont}>
+              <div className={styles.prefInner}>
+                <label htmlFor="Preference 3">Preference 3</label>
+                <select
+                  value={data.choice3} // Controlled value linked to state
+                  onChange={(e) =>
+                    setData((prevData) => ({
+                      ...prevData,
+                      choice3: e.target.value, // Update the `choice1` key with the selected value
+                    }))
+                  }
+                  disabled={!localStorage.getItem("email")}
+                >
+                  {!committee1 && (
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="Committee 1"
+                    >
+                      Committee 1
+                    </option>
+                  )}
+                  {!committee2 && (
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="Committee 2"
+                    >
+                      Committee 2
+                    </option>
+                  )}
+                  {!committee3 && (
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="Committee 3"
+                    >
+                      Committee 3
+                    </option>
+                  )}
+                </select>
+              </div>
+              <div className={styles.portWrap}>
+                <h4>Portfolio Preferences</h4>
+                <input type="text" placeholder="Portfolio preference 1" value={data.portfolioC31} onChange={(e) => setData((prev) => ({
+                  ...prev,
+                  portfolioC31: e.target.value
+                }))} />
+                <input type="text" placeholder="Portfolio preference 2" value={data.portfolioC32} onChange={(e) => setData((prev) => ({
+                  ...prev,
+                  portfolioC32: e.target.value
+                }))} />
+                <input type="text" placeholder="Portfolio preference 3" value={data.portfolioC33} onChange={(e) => setData((prev) => ({
+                  ...prev,
+                  portfolioC33: e.target.value
+                }))} />
+              </div>
             </div>
           </div>
           <p className={styles.formPayment}>Payment</p>

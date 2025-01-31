@@ -171,7 +171,33 @@
         display: flex;
         color: rgba(102, 102, 102, 1);
       }
-
+      .prefParent{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        @media screen and (min-width:600px) {
+          flex-direction: row;
+        }
+        .prefCont{
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          flex-direction: column;
+          .prefInner{
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+          }
+          .portWrap{
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+          }
+        }
+      }
       .formRadio {
         display: flex;
         justify-content: space-between;
@@ -179,7 +205,6 @@
         @media screen and (max-width: 500px) {
           flex-direction: column;
         }
-
         .field {
           display: flex;
           gap: 1rem;
