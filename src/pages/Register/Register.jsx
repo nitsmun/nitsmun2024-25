@@ -7,12 +7,13 @@ import { auth, provider } from "../../config";
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
+  const url = `http://localhost:${import.meta.env.VITE_PORT}`;
   const [selectedValue, setSelectedValue] = useState("Yes");
   const [isGroup, setIsGroup] = useState("No");
-  const [numMembers,setNumMembers]=useState(1);
-  const [committee1, _setCommitee1] = useState(false);
-  const [committee2, _setCommitee2] = useState(false);
-  const [committee3, _setCommitee3] = useState(false);
+  const [numMembers, setNumMembers] = useState(1);
+  const [committee1, setCommitee1] = useState(false);
+  const [committee2, setCommitee2] = useState(false);
+  const [committee3, setCommitee3] = useState(false);
   const navigate = useNavigate();
   const [val, setVal] = useState("");
   const [data, setData] = useState({
@@ -59,10 +60,10 @@ const Register = () => {
   const handleRadioChangeIsGroup = (event) => {
     event.preventDefault();
     setIsGroup(event.target.value);
-    setData(prev=>(
+    setData(prev => (
       {
         ...prev,
-        members:[...prev.members,""]
+        members: [...prev.members, ""]
       }
     ));
   };
@@ -164,7 +165,7 @@ const Register = () => {
     }
   };
   return (
-    <div className={styles.register}>
+    <div className={styles.register} onChange={onSubmitHandler}>
       <h1 className={styles.registerHeading}>Register Now</h1>
 
       <form action="" className={styles.registerForm}>
@@ -208,7 +209,9 @@ const Register = () => {
           <label htmlFor="Name">Name</label>
           <div className={styles.formBranch}>
             <input
+
               type="text"
+
               name="name"
               value={data.name}
               onChange={(e) =>
@@ -219,6 +222,7 @@ const Register = () => {
               }
               disabled={!localStorage.getItem("email")}
               required
+
             />
           </div>
           <label htmlFor="IsNITS">Are you a student of NIT Silchar?</label>
@@ -270,7 +274,7 @@ const Register = () => {
               <div className={styles.formId}>
                 <div className={styles.year}>
                   <label htmlFor="">Year</label>
-                  <input
+                  {/* <input
                     type="text"
                     value={data.year}
                     onChange={(e) =>
@@ -280,7 +284,42 @@ const Register = () => {
                       }))
                     }
                     disabled={!localStorage.getItem("email")}
-                  />
+                  /> */}
+                  <select
+                    value={data.year}
+                    onChange={(e) =>
+                      setData((prevData) => ({
+                        ...prevData,
+                        year: e.target.value,
+                      }))
+                    }
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="FIRST"
+                    >
+                      FIRST
+                    </option>
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="SECOND"
+                    >
+                      SECOND
+                    </option>
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="THIRD"
+                    >
+                      THIRD
+                    </option>
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="FOURTH"
+                    >
+                      FOURTH
+                    </option>
+                  </select>
                 </div>
                 <div className={styles.year}>
                   <label htmlFor="">Scholar ID</label>
@@ -382,33 +421,33 @@ const Register = () => {
             isGroup === "Yes" ?
               <div>
                 {Array(numMembers).fill(null).map((_, index) => (
-                  <div key={index}><h5>Member {index+1}</h5><input type="text" value={data.members[index]} onChange={(e)=>setData(prev=>({
+                  <div key={index}><h5>Member {index + 1}</h5><input type="text" value={data.members[index]} onChange={(e) => setData(prev => ({
                     ...prev,
                     members: prev.members.map((member, i) =>
                       i === index ? e.target.value : member
                     ),
-                  }))}  placeholder={`Member ${index+1}`} /></div>
+                  }))} placeholder={`Member ${index + 1}`} /></div>
                 ))}
-                <button onClick={(e)=>{
+                <button onClick={(e) => {
                   e.preventDefault();
-                  setNumMembers(numMembers+1);
-                  setData(prev=>(
+                  setNumMembers(numMembers + 1);
+                  setData(prev => (
                     {
                       ...prev,
-                      members:[...prev.members,""]
+                      members: [...prev.members, ""]
                     }
                   ));
                 }}>Add Member</button>
-                {numMembers>1?<button onClick={(e)=>{
+                {numMembers > 1 ? <button onClick={(e) => {
                   e.preventDefault();
-                  setNumMembers(numMembers-1);
-                  setData(prev=>(
+                  setNumMembers(numMembers - 1);
+                  setData(prev => (
                     {
                       ...prev,
                       members: prev.members.slice(0, -1)
                     }
                   ));
-                }}>Delete Member</button>:null}
+                }}>Delete Member</button> : null}
               </div> : null
           }
           <label htmlFor="Experiences">Previous MUN Experiences (if any)</label>
@@ -561,6 +600,8 @@ const Register = () => {
                     <option
                       disabled={!localStorage.getItem("email")}
                       value="Committee 1"
+
+                      onClick={setCommitee1}
                     >
                       Committee 1
                     </option>
@@ -569,6 +610,7 @@ const Register = () => {
                     <option
                       disabled={!localStorage.getItem("email")}
                       value="Committee 2"
+                      onClick={setCommitee2}
                     >
                       Committee 2
                     </option>
@@ -577,6 +619,7 @@ const Register = () => {
                     <option
                       disabled={!localStorage.getItem("email")}
                       value="Committee 3"
+                      onClick={setCommitee3}
                     >
                       Committee 3
                     </option>
@@ -625,7 +668,7 @@ const Register = () => {
             </div>
             <div className={styles.upiImage}>
               <img
-                src="https://res.cloudinary.com/dludtk5vz/image/upload/v1736580186/66876b366a3e9f39d6dcce4f06110fde_dyqlvy.png"
+                src="https://res.cloudinary.com/dludtk5vz/image/upload/v1738597970/WhatsApp_Image_2025-02-03_at_21.21.27_6e441ace_wtlyay.jpg"
                 alt=""
               />
             </div>

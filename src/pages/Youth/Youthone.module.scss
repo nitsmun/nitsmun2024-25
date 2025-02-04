@@ -214,6 +214,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
 
     @media screen and (min-width: 800px) {
       display: flex;
@@ -268,6 +269,7 @@
       @media screen and (min-width: 800px) {
         padding: 2rem;
         width: 100%;
+        height: auto;
       }
 
       p {
@@ -275,17 +277,22 @@
         font-size: 0.6rem;
         font-family: "Jost", sans-serif;
         font-weight: 700;
+        // border: 2px solid red;
+
         @media screen and (min-width: 800px) {
           margin-top: 7rem;
           font-size: 0.9rem;
           display: flex;
+          margin-bottom: 5rem;
+          padding: 2rem;
+          margin-top: -2rem;
         }
       }
 
       .btn {
         //   float: right;
         margin-right: 2rem;
-        margin-top: 1rem;
+        margin-top: 4rem;
         border-radius: 4px;
         font-family: "Jost", sans-serif;
         font-weight: 700;
@@ -295,8 +302,11 @@
         height: 3rem;
         background-color: #02162e;
         color: #fefbc8;
+        padding: 0.2rem;
+
         @media screen and (min-width: 1300px) {
           margin-top: 7rem;
+          padding: 1rem;
         }
 
         //   @media screen and (min-width:400px){
