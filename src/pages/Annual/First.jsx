@@ -3,6 +3,12 @@ import styles from "./Firstone.module.scss";
 import { Firstone } from "./data";
 import Committee from "./committee";
 import ExecutiveBoard from "./ExecutiveBoard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import { Navigation, Pagination } from "swiper/modules";
 
 
 const First = () => {
@@ -82,13 +88,27 @@ const First = () => {
       <div className={styles.committeeone}>
         <h1 className={styles.textEx}>COMMITTEES</h1>
         <div className={styles.commiteeParent}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          className={styles.swiperCont}
+        >
           {Firstone.map((committee) => (
-            <Committee key={committee.id} committee={committee} />
+            <SwiperSlide>
+              <Committee 
+                key={committee.id} 
+                committee={committee}
+              />
+            </SwiperSlide>
           ))}
+          </Swiper>
         </div>
       </div>
 
-
+      
       <ExecutiveBoard />
     </>
   );
