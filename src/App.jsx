@@ -25,7 +25,8 @@ function App() {
           <Route path="/gallery" element={<pages.Gallery />} />
           <Route path="/achievement" element={<pages.Achievement />} />
           <Route path="/events/annual/register" element={<pages.Register />} />
-          <Route path="/events/annual/successfull" element={<pages.ApplicationSuccessfull/>} />
+          <Route path="/events/Annual/register" element={<pages.Register />} />
+          <Route path="/events/annual/successfull" element={<pages.ApplicationSuccessfull/>} />\
         </Routes>
         <Footer />
       </BrowserRouter>

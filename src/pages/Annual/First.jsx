@@ -9,25 +9,11 @@ const First = () => {
           <h1>ANNUAL CONFERENCE</h1>
         </div>
         <div className={styles.content}>
-          Step into a world where ideas dance, perspectives collide, and
-          innovation takes center stage! We're thrilled to unveil the theme of
-          our upcoming conference: 'Hues of Harmony'! Picture this as a vibrant
-          canvas of ideas, perspectives, and talents colliding to create
-          something extraordinary. It's like a lively painting where each color
-          plays a crucial role. This isn't your typical conference, it's a
-          fusion of minds, a celebration of diversity, and a journey into the
-          art of collaboration. We're not just talking about it, we're living
-          it! Join us for an adventure where every voice counts, connections
-          spark, and brilliance shines. Are you ready to become a part of it?
-          <br />
-          <br />
-          Step into the realm of strategy and security with the Intelligence
-          Bureau (IB) Committee at NITSMUN Annual Conference 2024! Join us on a
-          journey to analyze, plan, and safeguard important events, all in the
-          mission to protect the country and its integrity. Your voice matters
-          in addressing concerns and playing a pivotal role in ensuring
-          security. Join the conference to contribute your perspective to the
-          strategic discussions.
+          Step into a world where ideas fight, perspectives collide, and diplomacy thrives.
+          We are thrilled to unveil the theme of our upcoming annual conference, 'Democracy Nexus'!
+          This isn't a typical conference; it is a symphony of budding minds coming together to create something extraordinary. The conference will bring together young, promising minds to debate, discuss, and brainstorm ideas to solve the challenges that have wreaked havoc on our world.
+          So, join us on a journey where you will be seated in positions of power, and your decisions will impact the lives of millions.
+          It's a journey that you don’t want to miss!
         </div>
       </div>
 
@@ -35,29 +21,24 @@ const First = () => {
         <div className={styles.box}>
           <p>
             <div className={styles.text}>
-              The "Special Council of Hastinapur" (Mahabharat) committee is
-              designed to simulate pivotal diplomatic events from the
-              Mahabharat, offering delegates a platform to navigate intricate
-              political landscapes, forge alliances, and strategize for the
-              kingdom of Hastinapur. Prepare for intense debates, historical
-              intricacies, and an immersive diplomatic experience. Secure your
-              spot, and let's write history together!
+              Step into the United Nations High Commissioner for Refugees (UNHCR), where every decision shapes the fate of those caught in a web of uncertainty. Amidst the tangled realities of displacement—woven with conflict, persecution, and disaster—millions seek a path to safety, dignity, and hope.
+              As a delegate, you will navigate this maze of compassion and crisis, working to ensure protection, dignity, and hope for those who need it most.
+
+              Will you rise above the chaos to craft solutions that ensure safety and a future for those lost in the labyrinth of conflict? The UNHCR calls upon you to lead with compassion and clarity.
             </div>
 
             <div className={styles.text}>
-              The United Nations Human Rights Council (UNHRC)"" committee is a
-              cornerstone of intellectual discourse in the vibrant tapestry of
-              Incandescence! This committee is crafted to emulate the dynamic
-              realm of international diplomacy, where delegates will grapple
-              with pressing human rights issues, engage in diplomatic maneuvers,
-              and work towards collaborative solutions. Get ready for
-              impassioned debates, diplomatic intricacies, and a profound
-              exploration of global affairs. Embrace the opportunity to be a
-              part of this consequential council, where your voice shapes the
-              discourse on human rights. Secure your spot, and let the spirit of
-              diplomacy illuminate the path to constructive resolutions.
-              Together, let's embark on a journey to make a lasting impact on
-              the world stage!
+              Enter the United Nations Security Council (UNSC), where the world’s most critical issues converge in a maze of diplomacy and power. In this world of shifting alliances and concealed threats, every word you speak and every move you make can unravel chaos or weave clarity. As you navigate the intricate paths of global conflict, political unrest, and fragile peace, your decisions will echo far beyond the chamber.
+
+              Will you find your way through the labyrinth of diplomacy to foster clarity and resolution, or be lost in its complexities? The UNSC awaits your voice.
+
+            </div>
+            <div className={styles.text}>
+              In the intricate web of global power and diplomacy, where secrets are the ultimate currency and alliances hang by a thread, we introduce the Marvel Global Security Council. This elite committee will test your ability to navigate a world of complex challenges, hidden agendas, and shifting loyalties.
+
+              Step into a realm of uncertainty and intrigue, where every decision carries weight and every ally may become a foe.
+
+              Will you unravel the chaos to secure peace, or will you lose yourself in its endless twists? The path is yours to shape—prepare to confront the unknown.
             </div>
 
             <div className={styles.text}>
@@ -74,9 +55,8 @@ const First = () => {
         </div>
       </div>
 
-      <div className={styles.container}>
+      {/* <div className={styles.container}>
         <h1 className={styles.textCom}>Commitees</h1>
-
         <section className={styles.mainsectn}>
           <div className={styles.imgbox}>
             <div className={styles.heading}>
@@ -95,8 +75,49 @@ const First = () => {
             <button className={styles.btn}>Background Guide</button>
           </div>
         </section>
-      </div>
+      </div> */}
 
+      {/* <div className={styles.executive}>
+        <h1 className={styles.textEx}>COMMITEES</h1>
+        <div className={styles.commiteeParent}>
+          <div className={styles.commiteeCont}>
+            <div className={styles.leftImgCont}>
+              image
+            </div>
+            <div className={styles.rightTextCont}>
+              <p>hello</p>
+              <a>Background Guide</a>
+            </div>
+          </div>
+          <div className={styles.commiteeCont}>
+            <div className={styles.leftImgCont}>
+              image
+            </div>
+            <div className={styles.rightTextCont}>
+              <p>hello</p>
+              <a>Background Guide</a>
+            </div>
+          </div>
+          <div className={styles.commiteeCont}>
+            <div className={styles.leftImgCont}>
+              image
+            </div>
+            <div className={styles.rightTextCont}>
+              <p>hello</p>
+              <a>Background Guide</a>
+            </div>
+          </div>
+          <div className={styles.commiteeCont}>
+            <div className={styles.leftImgCont}>
+              image
+            </div>
+            <div className={styles.rightTextCont}>
+              <p>hello</p>
+              <a>Background Guide</a>
+            </div>
+          </div>
+        </div>
+      </div> */}
       <div className={styles.executive}>
         <h1 className={styles.textEx}>EXECUTIVE BOARD</h1>
 

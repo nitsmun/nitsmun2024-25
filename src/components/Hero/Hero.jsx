@@ -3,7 +3,7 @@ import {useState,useEffect} from "react";
 import { auth, provider } from "../../config";
 import { signInWithPopup } from "firebase/auth";
 const Hero = () => {
-  // const [val,setVal]=useState("");
+  const [val,setVal]=useState("");
   const handleClick = () => {
     console.log("ok");
     signInWithPopup(auth, provider).then((data) => {

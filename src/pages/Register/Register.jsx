@@ -7,9 +7,10 @@ import { auth, provider } from "../../config";
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
+  const url = `http://localhost:${import.meta.env.VITE_PORT}`;
   const [selectedValue, setSelectedValue] = useState("Yes");
   const [isGroup, setIsGroup] = useState("No");
-  const [numMembers,setNumMembers]=useState(1);
+  const [numMembers, setNumMembers] = useState(1);
   const [committee1, setCommitee1] = useState(false);
   const [committee2, setCommitee2] = useState(false);
   const [committee3, setCommitee3] = useState(false);
@@ -59,10 +60,10 @@ const Register = () => {
   const handleRadioChangeIsGroup = (event) => {
     event.preventDefault();
     setIsGroup(event.target.value);
-    setData(prev=>(
+    setData(prev => (
       {
         ...prev,
-        members:[...prev.members,""]
+        members: [...prev.members, ""]
       }
     ));
   };
@@ -164,7 +165,7 @@ const Register = () => {
     }
   };
   return (
-    <div className={styles.register}>
+    <div className={styles.register} onChange={onSubmitHandler}>
       <h1 className={styles.registerHeading}>Register Now</h1>
 
       <form action="" className={styles.registerForm}>
@@ -208,7 +209,9 @@ const Register = () => {
           <label htmlFor="Name">Name</label>
           <div className={styles.formBranch}>
             <input
+
               type="text"
+
               name="name"
               value={data.name}
               onChange={(e) =>
@@ -219,6 +222,7 @@ const Register = () => {
               }
               disabled={!localStorage.getItem("email")}
               required
+
             />
           </div>
           <label htmlFor="IsNITS">Are you a student of NIT Silchar?</label>
@@ -270,7 +274,7 @@ const Register = () => {
               <div className={styles.formId}>
                 <div className={styles.year}>
                   <label htmlFor="">Year</label>
-                  <input
+                  {/* <input
                     type="text"
                     value={data.year}
                     onChange={(e) =>
@@ -280,7 +284,42 @@ const Register = () => {
                       }))
                     }
                     disabled={!localStorage.getItem("email")}
-                  />
+                  /> */}
+                  <select
+                    value={data.year}
+                    onChange={(e) =>
+                      setData((prevData) => ({
+                        ...prevData,
+                        year: e.target.value,
+                      }))
+                    }
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="FIRST"
+                    >
+                      FIRST
+                    </option>
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="SECOND"
+                    >
+                      SECOND
+                    </option>
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="THIRD"
+                    >
+                      THIRD
+                    </option>
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="FOURTH"
+                    >
+                      FOURTH
+                    </option>
+                  </select>
                 </div>
                 <div className={styles.year}>
                   <label htmlFor="">Scholar ID</label>
@@ -382,33 +421,33 @@ const Register = () => {
             isGroup === "Yes" ?
               <div>
                 {Array(numMembers).fill(null).map((_, index) => (
-                  <div key={index}><h5>Member {index+1}</h5><input type="text" value={data.members[index]} onChange={(e)=>setData(prev=>({
+                  <div key={index}><h5>Member {index + 1}</h5><input type="text" value={data.members[index]} onChange={(e) => setData(prev => ({
                     ...prev,
                     members: prev.members.map((member, i) =>
                       i === index ? e.target.value : member
                     ),
-                  }))}  placeholder={`Member ${index+1}`} /></div>
+                  }))} placeholder={`Member ${index + 1}`} /></div>
                 ))}
-                <button onClick={(e)=>{
+                <button onClick={(e) => {
                   e.preventDefault();
-                  setNumMembers(numMembers+1);
-                  setData(prev=>(
+                  setNumMembers(numMembers + 1);
+                  setData(prev => (
                     {
                       ...prev,
-                      members:[...prev.members,""]
+                      members: [...prev.members, ""]
                     }
                   ));
                 }}>Add Member</button>
-                {numMembers>1?<button onClick={(e)=>{
+                {numMembers > 1 ? <button onClick={(e) => {
                   e.preventDefault();
-                  setNumMembers(numMembers-1);
-                  setData(prev=>(
+                  setNumMembers(numMembers - 1);
+                  setData(prev => (
                     {
                       ...prev,
                       members: prev.members.slice(0, -1)
                     }
                   ));
-                }}>Delete Member</button>:null}
+                }}>Delete Member</button> : null}
               </div> : null
           }
           <label htmlFor="Experiences">Previous MUN Experiences (if any)</label>
@@ -615,9 +654,9 @@ const Register = () => {
           <div className={styles.paymentCredentials}>
             <div className={styles.textCredentials}>
               <div className={styles.upiCredentials}>
-                <p>Lorem ipsum dolor sit.</p>
-                <p>Lorem ipsum dolor sit.</p>
-                <p>Lorem ipsum dolor sit.</p>
+                <p>aditi.khataniar@okaxis</p>
+                {/* <p>Lorem ipsum dolor sit.</p>
+                <p>Lorem ipsum dolor sit.</p> */}
               </div>
 
               <div className={styles.proof}>
@@ -634,11 +673,11 @@ const Register = () => {
               />
             </div>
           </div>
-
+          <label>For any queries, feel free to contact us</label>
           <div className={styles.formQueries}>
-            <p>Lorem ipsum dolor sit.</p>
-            <p>Lorem ipsum dolor sit.</p>
-            <p>Lorem ipsum dolor sit.</p>
+            <p>+91{"  "}86587-72500</p>
+            <p>+91{"  "}91013-75958</p>
+            {/* <p>Lorem ipsum dolor sit.</p> */}
           </div>
         </div>
       </form>
