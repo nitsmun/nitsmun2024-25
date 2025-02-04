@@ -10,9 +10,9 @@ const Register = () => {
   const [selectedValue, setSelectedValue] = useState("Yes");
   const [isGroup, setIsGroup] = useState("No");
   const [numMembers,setNumMembers]=useState(1);
-  const [committee1, setCommitee1] = useState(false);
-  const [committee2, setCommitee2] = useState(false);
-  const [committee3, setCommitee3] = useState(false);
+  const [committee1, _setCommitee1] = useState(false);
+  const [committee2, _setCommitee2] = useState(false);
+  const [committee3, _setCommitee3] = useState(false);
   const navigate = useNavigate();
   const [val, setVal] = useState("");
   const [data, setData] = useState({
