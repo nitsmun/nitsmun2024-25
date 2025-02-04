@@ -654,9 +654,9 @@ const Register = () => {
           <div className={styles.paymentCredentials}>
             <div className={styles.textCredentials}>
               <div className={styles.upiCredentials}>
-                <p>Lorem ipsum dolor sit.</p>
-                <p>Lorem ipsum dolor sit.</p>
-                <p>Lorem ipsum dolor sit.</p>
+                <p>aditi.khataniar@okaxis</p>
+                {/* <p>Lorem ipsum dolor sit.</p>
+                <p>Lorem ipsum dolor sit.</p> */}
               </div>
 
               <div className={styles.proof}>
@@ -673,11 +673,11 @@ const Register = () => {
               />
             </div>
           </div>
-
+          <label>For any queries, feel free to contact us</label>
           <div className={styles.formQueries}>
-            <p>Lorem ipsum dolor sit.</p>
-            <p>Lorem ipsum dolor sit.</p>
-            <p>Lorem ipsum dolor sit.</p>
+            <p>+91{"  "}86587-72500</p>
+            <p>+91{"  "}91013-75958</p>
+            {/* <p>Lorem ipsum dolor sit.</p> */}
           </div>
         </div>
       </form>
