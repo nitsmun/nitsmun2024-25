@@ -206,13 +206,14 @@
     font-size: 5rem;
     font-family: "Jost", "sans-serif";
     text-transform: uppercase;
-    position: absolute;
-    top: 6rem;
+    // position: absolute;
+    // top: 6rem;
     color: #fff;
-    left: 5rem;
+    // left: 5rem;
     font-weight: 700;
     text-shadow: 12px 4px 8px #000;
-    margin-left: 4.5%;
+    // margin-left: 4.5%;
+    margin: auto;
 
     @media screen and (max-width: 400px) {
       font-size: 2.5rem;

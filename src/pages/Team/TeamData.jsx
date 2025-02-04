@@ -195,11 +195,23 @@ export const Secretariat = [
     alt: "Dipan Patgiri",
     name: "Dipan Patgiri",
     post: "DIRECTOR of Photo Journalism",
-    linkedin: "https://www.linkedin.com/in/bhargavi-nath-9a8a81223",
-    fb: "https://www.facebook.com/bhargavi.nath",
-    mail: "mailto:bhargavinath.24@gmail.com",
+    linkedin: "https://www.linkedin.com/in/dipan-patgiri-a04473148/",
+    fb: "https://www.facebook.com/search/top?q=dipon%20patgiri",
+    mail: "",
   },
-
+  {
+    id: 17,
+    cName: "team-sec",
+    imgsrc:
+      "https://res.cloudinary.com/dhry5xscm/image/upload/v1729893804/nitsmun/Suryanshu_pfw0sn.jpg",
+    alt: "Suryanshu Kedar",
+    name: "Suryanshu Kedar",
+    post: "Director of Logistics",
+    linkedin:
+      "https://www.linkedin.com/in/suryanshu-kedar-231701240?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    fb: "https://www.facebook.com/profile.php?id=100012627250706&mibextid=ZbWKwL",
+    mail: "",
+  },
   // --------------------------------------------------
 ];
 export const Secretariatjr = [

@@ -7,48 +7,13 @@ import "swiper/css/navigation";
 // No need for swiper/css/effect-coverflow import
 import { Pagination, Navigation, EffectCoverflow } from "swiper/modules";
 import { useEffect } from "react";
+import { GalleryData } from "./GalleryData";
+
 const Gallery = () => {
   useEffect(() => {
     document.title = "NITSMUN | GALLERY";
   }, []);
-  const photos = [
-    {
-      sl: 1,
-      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1707127538/nitsmun/mockmun1_ulokow.jpg",
-    },
-    {
-      sl: 2,
-      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1707127536/nitsmun/mockmun2_qehbza.jpg",
-    },
-    {
-      sl: 3,
-      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1707127534/nitsmun/mockmun3_lp3fn7.jpg",
-    },
-    {
-      sl: 4,
-      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706712669/nitsmun/gallery6_vw08yg.webp",
-    },
-    {
-      sl: 5,
-      src: "https://res.cloudinary.com/dp92qug2f/image/upload/v1679132667/nitsmun/juniormun2021/jmun_ss6_ka2xo6.webp",
-    },
-    {
-      sl: 6,
-      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706712667/nitsmun/gallery1_srwzf8.webp",
-    },
-    {
-      sl: 7,
-      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706712667/nitsmun/gallery5_n3dynj.webp",
-    },
-    {
-      sl: 8,
-      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706712666/nitsmun/gallery3_x2blej.webp",
-    },
-    {
-      sl: 9,
-      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706712666/nitsmun/gallery4_eyrcjr.webp",
-    },
-  ];
+
   return (
     <div className={styles.gallery}>
       <h1 className={styles.gallery_head}>Photo Gallery</h1>
@@ -88,11 +53,10 @@ const Gallery = () => {
             },
           }}
         >
-          {photos.map((item, index) => (
+          {GalleryData.map((item, index) => (
             <SwiperSlide key={index}>
               <div className={styles.imagebox_container}>
-                <img src={item.src} alt="Gallery photo" />
-                <img src={item.src} alt="Gallery photo" />
+                <img src={item.imgName} alt="Gallery photo" />
               </div>
             </SwiperSlide>
           ))}

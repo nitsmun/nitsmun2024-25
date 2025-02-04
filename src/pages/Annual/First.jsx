@@ -1,5 +1,9 @@
 import React from "react";
 import styles from "./Firstone.module.scss";
+import { Firstone } from "./data";
+import Committee from "./committee";
+import ExecutiveBoard from "./ExecutiveBoard";
+
 
 const First = () => {
   return (
@@ -74,64 +78,21 @@ const First = () => {
         </div>
       </div>
 
-      <div className={styles.container}>
-        <h1 className={styles.textCom}>Commitees</h1>
 
-        <section className={styles.mainsectn}>
-          <div className={styles.imgbox}>
-            <div className={styles.heading}>
-              <h1>UNHRC</h1>
-              <p>(United Nations Human Resource Council)</p>
-            </div>
-          </div>
-
-          <div className={styles.textbox}>
-            <p>
-              <span>Agenda:</span> Addressing the Ongoing Atrocities in
-              Israel-Palestine with Main Focus On Violence Against Women and
-              childern
-            </p>
-
-            <button className={styles.btn}>Background Guide</button>
-          </div>
-        </section>
-      </div>
-
-      <div className={styles.executive}>
-        <h1 className={styles.textEx}>EXECUTIVE BOARD</h1>
-
-        <div className={styles.cardbody}>
-          <div className={styles.card}>
-            <div className={styles.head}>
-              <div className={styles.img1}>{/* <img src="" alt="" /> */}</div>
-              <h1>Sounak Sengupta</h1>
-            </div>
-            <p>
-              Mr Sounak Sengupta as the Chairperson for Intelligence Bureau.
-              Sounak Sengupta, a physics post graduate student, has been doing
-              MUNs since 2018. Apart from his academic persuasions, he takes
-              keen interest in debates and public speaking.
-            </p>
-          </div>
-          <div className={`${styles.card} ${styles.cardtwo}`}>
-            <div className={styles.head}>
-              <div className={styles.img2}>
-                <img src="" alt="" />
-              </div>
-              <h1>Prathmesh Repal</h1>
-            </div>
-            <p>
-              Mr. Prathamesh Repal as the Chairperson for UNHRC. As he takes the
-              helm as the Chairperson for the UNHRC simulation at NITS 2024, his
-              passion for fostering a conducive and inclusive committee
-              atmosphere shines through. He strives to uphold the essence of
-              MUNs as a breeding ground for creative ideas and solutions.
-            </p>
-          </div>
+      <div className={styles.committeeone}>
+        <h1 className={styles.textEx}>COMMITTEES</h1>
+        <div className={styles.commiteeParent}>
+          {Firstone.map((committee) => (
+            <Committee key={committee.id} committee={committee} />
+          ))}
         </div>
       </div>
+
+
+      <ExecutiveBoard />
     </>
   );
 };
+
 
 export default First;
