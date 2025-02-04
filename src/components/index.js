@@ -6,6 +6,7 @@ import SecGen from "./Letters/SecGen/SecGen";
 import Footer from "./Footer/Footer";
 import Faqs from "./Faqs/FaqSection";
 import Achievements from "./Achievements/Achievements";
+import Vision from "./Vision/Vision";
 export {
   Navbar,
   Testimonials,
@@ -15,4 +16,5 @@ export {
   Footer,
   Faqs,
   Achievements,
+  Vision,
 };

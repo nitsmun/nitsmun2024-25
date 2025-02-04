@@ -3,19 +3,19 @@
 .container {
   display: flex;
   flex-direction: row;
-  width: 100vw;
-  height: 50vw;
-  // background: linear-gradient(
-  //     to top,
-  //     rgba(41, 126, 196, 0.6),
-  //     rgba(39, 79, 112, 0.5),
-  //     rgba(12, 53, 105, 0.7),
-  //     rgba(6, 36, 73, 0.8)
-  //   ),
-  //   url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(
+      to top,
+      rgba(41, 126, 196, 0.6),
+      rgba(39, 79, 112, 0.5),
+      rgba(12, 53, 105, 0.7),
+      rgba(6, 36, 73, 0.8)
+    ),
+    url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   font-family: "Jost", "sans-serif";
 }
 
@@ -33,7 +33,7 @@
 
 .objhead {
   font-size: 5rem;
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 50px;
   text-align: center;
   color: white;
@@ -47,17 +47,17 @@
   );
   backdrop-filter: blur(10px);
 
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   border-radius: 40px;
-  padding: 70px;
+  padding: 50px;
   margin: 90px;
-  margin-top: 20px;
+  margin-top: 10px;
   border: 1px solid rgb(152, 147, 147);
   color: rgb(200, 196, 196);
 }
 
 .objpic img {
-  height: 600px;
+  height: 400px;
   width: 430px;
   margin-left: 110px;
   margin-top: 220px;

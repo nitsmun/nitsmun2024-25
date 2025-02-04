@@ -561,6 +561,8 @@ const Register = () => {
                     <option
                       disabled={!localStorage.getItem("email")}
                       value="Committee 1"
+
+                      onClick={setCommitee1}
                     >
                       Committee 1
                     </option>
@@ -569,6 +571,7 @@ const Register = () => {
                     <option
                       disabled={!localStorage.getItem("email")}
                       value="Committee 2"
+                      onClick={setCommitee2}
                     >
                       Committee 2
                     </option>
@@ -577,6 +580,7 @@ const Register = () => {
                     <option
                       disabled={!localStorage.getItem("email")}
                       value="Committee 3"
+                      onClick={setCommitee3}
                     >
                       Committee 3
                     </option>
@@ -625,7 +629,7 @@ const Register = () => {
             </div>
             <div className={styles.upiImage}>
               <img
-                src="https://res.cloudinary.com/dludtk5vz/image/upload/v1736580186/66876b366a3e9f39d6dcce4f06110fde_dyqlvy.png"
+                src="https://res.cloudinary.com/dludtk5vz/image/upload/v1738597970/WhatsApp_Image_2025-02-03_at_21.21.27_6e441ace_wtlyay.jpg"
                 alt=""
               />
             </div>
