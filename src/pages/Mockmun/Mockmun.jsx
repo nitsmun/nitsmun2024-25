@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Mockmunone.module.scss";
 import { Footer } from "../../components";
+import ExecutiveBoard from "./ExecutiveBoard";
 const Mockmun = () => {
   return (
     <>
@@ -73,47 +74,7 @@ const Mockmun = () => {
         </section>
       </div>
 
-      <div className={styles.executive}>
-        <h1 className={styles.textEx}>EXECUTIVE BOARD</h1>
-
-        <div className={styles.cardbody}>
-          <div className={styles.card}>
-            <div className={styles.head}>
-              <div className={styles.img1}>{/* <img src="" alt="" /> */}</div>
-              <h1>MAYURAKHI KHAUND</h1>
-            </div>
-            <p>
-              Hey! I am Mayurakhi Khaund. I am 2nd year Civil Undergraduate
-              student at NITS. Also, I work as a content writer and as a
-              marketing executive for various clubs. MUN has always been
-              something that intrigues me and it's just an incredible platform
-              to furnish skills in an individual. I am really grateful to
-              NITSMUN for giving me the opportunity to participate and organise
-              amazing conferences and now, to chair one! Looking forward to
-              creating unforgettable memories in here. See you at the next
-              upcoming session!
-            </p>
-          </div>
-          {/* <div className={`${styles.card} ${styles.cardtwo}`}>
-            <div className={styles.head}>
-              <div className={styles.img2}>
-                <img src="" alt="" />
-              </div>
-              <h1>Username</h1>
-            </div>
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </p>
-          </div> */}
-        </div>
-        <Footer />
-      </div>
+      <ExecutiveBoard />
     </>
   );
 };

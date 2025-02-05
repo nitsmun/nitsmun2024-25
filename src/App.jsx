@@ -24,6 +24,7 @@ function App() {
           <Route path="/error" element={<pages.Error />} />
           <Route path="/gallery" element={<pages.Gallery />} />
           <Route path="/achievement" element={<pages.Achievement />} />
+          <Route path="/register" element={<pages.Register />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -3,17 +3,12 @@ import styles from "./Navbar.module.scss";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [menu, setMenu] = useState(0);
-  const [mobileMenu, setmobileMenu] = useState(0);
+  const [mobileMenu, setMobileMenu] = useState(0);
+
   const toggleMenu = () => {
-    if (innerWidth < 800) {
-      mobileMenu ? setmobileMenu(0) : setmobileMenu(20);
+    if (window.innerWidth < 800) {
+      setMobileMenu((prev) => (prev === 0 ? 20 : 0));
     }
-    menu ? setMenu(0) : setMenu(13);
-    // console.log("Hello");
-    // const showMenu = document.querySelector(".ul");
-    // showMenu.classList.add("myStyle");
-    // }
   };
 
   return (
@@ -24,7 +19,6 @@ const Navbar = () => {
             src="https://res.cloudinary.com/dybbffhed/image/upload/v1720419652/mf2h9pxyvxylqialegvn.png"
             alt=""
           />
-
           <p>NITSMUN</p>
         </div>
 
@@ -44,14 +38,8 @@ const Navbar = () => {
           <Link to="/gallery" className={styles.navItem}>
             Photo Gallery
           </Link>
-          {/* <Link to="/contact" className={styles.navItem}>
-            Contact Us
-          </Link> */}
         </div>
-        {/* <div className={styles.hidden} style={{ height: `${menu}rem` }}>
-          <Link to="/team">Secreteriat</Link>
-          <Link to="/">Photo Gallery</Link>
-        </div> */}
+
         <div className={styles.hamburger}>
           <i className="fa fa-bars" onClick={toggleMenu}></i>
         </div>
@@ -59,4 +47,5 @@ const Navbar = () => {
     </>
   );
 };
+
 export default Navbar;

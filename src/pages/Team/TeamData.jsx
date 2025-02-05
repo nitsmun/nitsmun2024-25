@@ -934,7 +934,7 @@ export const Secretariatwebjr = [
     id: 1,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dffke2hbp/image/upload/v1725382260/vxr39cahyjtjlfcrlhnd.jpg",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1738769663/oidl3qpukzyjva1ss25k.jpg",
     alt: "Dhananjoy Das",
     name: "Dhananjoy Das",
     post: "Technical Team",
