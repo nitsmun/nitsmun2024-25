@@ -32,7 +32,7 @@ const First = () => {
           <br />
           <br />
           Step into the realm of strategy and security with the Intelligence
-          Bureau (IB) Committee at NITSMUN Annual Conference 2024! Join us on a
+          Bureau (IB) Committee at NITSMUN Annual Conference 2025! Join us on a
           journey to analyze, plan, and safeguard important events, all in the
           mission to protect the country and its integrity. Your voice matters
           in addressing concerns and playing a pivotal role in ensuring
@@ -45,13 +45,8 @@ const First = () => {
         <div className={styles.box}>
           <p>
             <div className={styles.text}>
-              The "Special Council of Hastinapur" (Mahabharat) committee is
-              designed to simulate pivotal diplomatic events from the
-              Mahabharat, offering delegates a platform to navigate intricate
-              political landscapes, forge alliances, and strategize for the
-              kingdom of Hastinapur. Prepare for intense debates, historical
-              intricacies, and an immersive diplomatic experience. Secure your
-              spot, and let's write history together!
+            Marvel Global Security Council (MGSC) tackles a pivotal issue that balances global security with individual freedom:
+            "Reforming the Sokovia Accords and Establishing Global Oversight for Superhero Activities in the Post-Ultron Era.
             </div>
 
             <div className={styles.text}>
@@ -109,7 +104,7 @@ const First = () => {
       </div>
 
       
-      <ExecutiveBoard />
+      {/* <ExecutiveBoard /> */}
     </>
   );
 };

@@ -74,7 +74,7 @@ const Mockmun = () => {
         </section>
       </div>
 
-      <ExecutiveBoard />
+      {/* <ExecutiveBoard /> */}
     </>
   );
 };
