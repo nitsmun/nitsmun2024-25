@@ -3,24 +3,22 @@ import styles from "./FaqSection.module.scss"; // Ensure this path is correct
 
 const faqData = [
   {
-    question: "What is this website about?",
+    question: "What is NITSMUN?",
     answer:
-      "This website is a platform to provide information about our services and products. You can find detailed information and answers to your queries here.",
+      "NITSMUN is a club in NIT Silchar , which from its inception has been trying to develop a culture of MUNs in the campus",
   },
   {
-    question: "How can I contact support?",
+    question: "What is Model United Nations?",
     answer:
-      "You can contact support through our Contact Us page. We have various support channels available.",
+      "Model United Nations is an academic simulation of the United Nations that aims to educate and encourage participants to discuss about major issues regarding the world ",
   },
   {
-    question: "How can I contact support?",
-    answer:
-      "You can contact support through our Contact Us page. We have various support channels available.",
+    question: "Will the conference be online or offline?",
+    answer: "Offline",
   },
   {
-    question: "How can I contact support?",
-    answer:
-      "You can contact support through our Contact Us page. We have various support channels available.",
+    question: "Who can participate in NITSMUN Annual Conference 2025?",
+    answer: "Anyone from any institute with an interest of MUNs can take part",
   },
   // Add more FAQ items as needed
 ];

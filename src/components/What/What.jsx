@@ -8,12 +8,12 @@ const What = () => {
       <div className={styles.txtsctn}>
         <h1 className={styles.muntxt}>NITS MUN</h1>
         <p>
-          NITSMUN, the National Institute of Technology Model United Nations
-          Club, is a dynamic platform cultivating global leaders. Committed to
-          fostering diplomacy, critical thinking, and public speaking, NITSMUN
-          provides students with opportunities to engage in enriching
-          discussions, simulations, and conferences, shaping informed and
-          empowered individuals for active participation in
+          NITSMUN, the National Institute of Technology Silchar Model United
+          Nations Club, is a dynamic platform cultivating global leaders.
+          Committed to fostering diplomacy, critical thinking, and public
+          speaking, NITSMUN provides students with opportunities to engage in
+          enriching discussions, simulations, and conferences, shaping informed
+          and empowered individuals for active participation in
           international affairs
         </p>
         <Link to="/about" className={styles.abtbtn}>
