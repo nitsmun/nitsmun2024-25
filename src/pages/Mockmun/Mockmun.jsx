@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Mockmunone.module.scss";
-import { Footer } from "../../components";
+// import { Footer } from "../../components";
 import ExecutiveBoard from "./ExecutiveBoard";
 const Mockmun = () => {
   return (

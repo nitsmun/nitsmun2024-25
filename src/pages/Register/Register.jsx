@@ -7,12 +7,11 @@ import { auth, provider } from "../../config";
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
-  const url = `http://localhost:${import.meta.env.VITE_PORT}`;
   const [selectedValue, setSelectedValue] = useState("Yes");
   const [isGroup, setIsGroup] = useState("No");
   const [numMembers, setNumMembers] = useState(1);
   const navigate = useNavigate();
-  const [val, setVal] = useState("");
+  // const [val, setVal] = useState("");
   const [data, setData] = useState({
     name: "",
     email: localStorage.getItem("email") ?? "",
@@ -47,7 +46,7 @@ const Register = () => {
     signInWithPopup(auth, provider).then((data) => {
       if (data.user && data.user.email) {
         const userEmail = data.user.email.toLowerCase();
-        setVal(userEmail);
+        // setVal(userEmail);
         localStorage.setItem("email", userEmail);
       } else {
         console.error("Error retrieving user data during sign-in.");
@@ -174,7 +173,7 @@ const Register = () => {
     }
   };
   return (
-    <div className={styles.register} onChange={onSubmitHandler}>
+    <div className={styles.register}>
       <h1 className={styles.registerHeading}>Register Now</h1>
 
       <form action="" className={styles.registerForm}>
