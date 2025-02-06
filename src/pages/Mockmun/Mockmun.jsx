@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Mockmunone.module.scss";
 // import { Footer } from "../../components";
-import ExecutiveBoard from "./ExecutiveBoard";
+// import ExecutiveBoard from "./ExecutiveBoard";
 const Mockmun = () => {
   return (
     <>
@@ -81,8 +81,7 @@ const Mockmun = () => {
         </section>
       </div>
 
-      <ExecutiveBoard />
-      <ExecutiveBoard />
+      {/*       <ExecutiveBoard /> */}
     </>
   );
 };

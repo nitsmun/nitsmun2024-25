@@ -475,6 +475,18 @@ const Register = () => {
             preference are not always met and are not guaranteed.)
           </p>
 
+          <h4>
+            There are a number of portfolios available under each committee.
+            Please checkout this doc to find the portfolios
+          </h4>
+          <a
+            href="https://docs.google.com/spreadsheets/d/1rE8QYHugXYnRQJQqBZqa5oYuvGTRKb5BIFs2sujZk48/edit?usp=sharing"
+            style={{ textDecoration: "underline", display: "inline" }}
+            target="#"
+          >
+            Visit here
+          </a>
+
           <div className={styles.prefParent}>
             <div className={styles.prefCont}>
               <div className={styles.prefInner}>
