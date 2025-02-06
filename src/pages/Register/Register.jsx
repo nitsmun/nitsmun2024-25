@@ -6,151 +6,124 @@ import { Toaster, toast } from "sonner";
 import { auth, provider } from "../../config";
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import { z } from "zod";
+
+const schema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
+  institute: z.string().min(1, "Institute is required"),
+  phone: z.string().min(10, "Phone number must be at least 10 digits"),
+  paymentProof: z.string().min(1, "Payment proof is required"),
+  scholar_id: z.string().optional(),
+  previousExperience: z.string().optional(),
+  branch: z.string().optional(),
+  year: z.enum(["FIRST", "SECOND", "THIRD", "FOURTH"]),
+  choice1: z.string().min(1, "Choice 1 is required"),
+  choice2: z.string().min(1, "Choice 2 is required"),
+  choice3: z.string().min(1, "Choice 3 is required"),
+  choice4: z.string().min(1, "Choice 4 is required"),
+  members: z.array(z.string()).optional(),
+  portfolioC11: z.string().optional(),
+  portfolioC12: z.string().optional(),
+  portfolioC13: z.string().optional(),
+  portfolioC21: z.string().optional(),
+  portfolioC22: z.string().optional(),
+  portfolioC23: z.string().optional(),
+  portfolioC31: z.string().optional(),
+  portfolioC32: z.string().optional(),
+  portfolioC33: z.string().optional(),
+  portfolioC41: z.string().optional(),
+  portfolioC42: z.string().optional(),
+  portfolioC43: z.string().optional(),
+});
+
 const Register = () => {
   const [selectedValue, setSelectedValue] = useState("Yes");
   const [isGroup, setIsGroup] = useState("No");
   const [numMembers, setNumMembers] = useState(1);
   const navigate = useNavigate();
-  // const [val, setVal] = useState("");
-  const [data, setData] = useState({
-    name: "",
-    email: localStorage.getItem("email") ?? "",
-    institute: "NIT SILCHAR",
-    phone: "",
-    paymentProof: "",
-    scholar_id: "",
-    previousExperience: "",
-    branch: "",
-    year: "FIRST",
-    choice1: "UNHCR",
-    choice2: "UNHCR",
-    choice3: "UNHCR",
-    choice4: "UNHCR",
-    members: [],
-    portfolioC11: "",
-    portfolioC12: "",
-    portfolioC13: "",
-    portfolioC21: "",
-    portfolioC22: "",
-    portfolioC23: "",
-    portfolioC31: "",
-    portfolioC32: "",
-    portfolioC33: "",
-    portfolioC41: "",
-    portfolioC42: "",
-    portfolioC43: ""
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setValue,
+    watch,
+  } = useForm({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      name: "",
+      email: localStorage.getItem("email") ?? "",
+      institute: "NIT SILCHAR",
+      phone: "",
+      paymentProof: "",
+      scholar_id: "",
+      previousExperience: "",
+      branch: "",
+      year: "FIRST",
+      choice1: "UNHCR",
+      choice2: "UNHCR",
+      choice3: "UNHCR",
+      choice4: "UNHCR",
+      members: [],
+      portfolioC11: "",
+      portfolioC12: "",
+      portfolioC13: "",
+      portfolioC21: "",
+      portfolioC22: "",
+      portfolioC23: "",
+      portfolioC31: "",
+      portfolioC32: "",
+      portfolioC33: "",
+      portfolioC41: "",
+      portfolioC42: "",
+      portfolioC43: "",
+    },
   });
 
   const handleClick = () => {
-    console.log("ok");
     signInWithPopup(auth, provider).then((data) => {
       if (data.user && data.user.email) {
         const userEmail = data.user.email.toLowerCase();
-        // setVal(userEmail);
         localStorage.setItem("email", userEmail);
+        setValue("email", userEmail);
       } else {
         console.error("Error retrieving user data during sign-in.");
       }
     });
   };
+
   const handleRadioChangeNITS = (event) => {
-    event.preventDefault();
     setSelectedValue(event.target.value);
   };
+
   const handleRadioChangeIsGroup = (event) => {
-    event.preventDefault();
     setIsGroup(event.target.value);
-    setData(prev => (
-      {
-        ...prev,
-        members: [...prev.members, ""]
-      }
-    ));
-  };
-  console.log(`Members:${data.members}`);
-  const onSubmitHandler = async (event) => {
-    event.preventDefault();
-    const formData = new FormData();
-    console.log(data);
-    formData.append("name", data.name);
-    formData.append("email", data.email);
-    formData.append("institute", data.institute);
-    formData.append("phone", data.phone);
-    formData.append("paymentProof", data.paymentProof);
-    formData.append("scholar_id", data.scholar_id);
-    formData.append("branch", data.branch);
-    formData.append("choice1", data.choice1);
-    formData.append("choice2", data.choice2);
-    formData.append("choice3", data.choice3);
-    formData.append("choice4", data.choice4);
-    formData.append("members", data.members);
-    formData.append("portfolioC11", data.portfolioC11);
-    formData.append("portfolioC12", data.portfolioC12);
-    formData.append("portfolioC13", data.portfolioC13);
-    formData.append("portfolioC21", data.portfolioC21);
-    formData.append("portfolioC22", data.portfolioC22);
-    formData.append("portfolioC23", data.portfolioC23);
-    formData.append("portfolioC31", data.portfolioC31);
-    formData.append("portfolioC32", data.portfolioC32);
-    formData.append("portfolioC33", data.portfolioC33);
-    formData.append("portfolioC41", data.portfolioC41);
-    formData.append("portfolioC42", data.portfolioC42);
-    formData.append("portfolioC43", data.portfolioC43);
-
-    //Api call
-    const response = await axios.post(
-      `${import.meta.env.VITE_APP_API}/participant/add`,
-      data,
-    );
-
-    // if (response.data.success) {
-    //   setData({
-    //     name: "",
-    //     email: "",
-    //     institute: "",
-    //     paymentProof: "",
-    //     scholar_id: 0,
-    //     branch: "",
-    //     year: "",
-    //     choice1: "",
-    //     choice2: "",
-    //     choice3: ""
-    //   });
-    //   console.log(response);
-    // }
-    if (response.status === 200) {
-      toast.success("Registration successful!");
-      setData({
-        name: "",
-        email: "",
-        institute: "NIT SILCHAR",
-        phone: "",
-        paymentProof: "",
-        scholar_id: "",
-        previousExperience: "",
-        branch: "",
-        year: "FIRST",
-        choice1: "UNHCR",
-        choice2: "UNHCR",
-        choice3: "UNHCR",
-        choice4: "UNHCR",
-        members: [],
-        portfolioC11: "",
-        portfolioC12: "",
-        portfolioC13: "",
-        portfolioC21: "",
-        portfolioC22: "",
-        portfolioC23: "",
-        portfolioC31: "",
-        portfolioC32: "",
-        portfolioC33: "",
-        portfolioC41: "",
-        portfolioC42: "",
-        portfolioC43: ""
-      });
-      navigate("/successfull");
+    if (event.target.value === "Yes") {
+      setValue("members", [""]);
     } else {
-      toast.error("Something went wrong. Please try again.");
+      setValue("members", []);
+    }
+  };
+
+  const onSubmitHandler = async (data) => {
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_APP_API}/participant/add`,
+        data,
+      );
+
+      if (response.status === 200) {
+        toast.success("Registration successful!");
+        navigate("/successfull");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again.");
     }
   };
 
@@ -165,21 +138,21 @@ const Register = () => {
         "https://api.cloudinary.com/v1_1/dhry5xscm/image/upload",
         data,
       );
-      // setData((prev)=>{...prev,"paymentProof":res.data.url});
-      setData((prev) => ({
-        ...prev,
-        paymentProof: res.data.url,
-      }));
+      setValue("paymentProof", res.data.url);
     }
   };
+
   return (
     <div className={styles.register}>
       <h1 className={styles.registerHeading}>Register Now</h1>
 
-      <form action="" className={styles.registerForm}>
+      <form
+        onSubmit={handleSubmit(onSubmitHandler)}
+        className={styles.registerForm}
+      >
         <div className={styles.headingForm}>
           <div className={styles.textBox}>
-            <h1>Youth Parliament Online Registration Form</h1>
+            <h1>Annual Conference Online Registration Form</h1>
             {!localStorage.getItem("email") ? (
               <p>
                 You need to{" "}
@@ -217,22 +190,16 @@ const Register = () => {
           <label htmlFor="Name">Name</label>
           <div className={styles.formBranch}>
             <input
-
               type="text"
-
-              name="name"
-              value={data.name}
-              onChange={(e) =>
-                setData((prev) => ({
-                  ...prev,
-                  name: e.target.value,
-                }))
-              }
+              {...register("name")}
               disabled={!localStorage.getItem("email")}
               required
-
             />
+            {errors.name && (
+              <p className={styles.error}>{errors.name.message}</p>
+            )}
           </div>
+
           <label htmlFor="IsNITS">Are you a student of NIT Silchar?</label>
           <div className={styles.formBranch}>
             <div>
@@ -260,88 +227,48 @@ const Register = () => {
               <span>No</span>
             </div>
           </div>
+
           {selectedValue === "Yes" ? (
             <>
               <label htmlFor="Branch">Branch</label>
               <div className={styles.formBranch}>
                 <input
                   type="text"
-                  name="branch"
-                  value={data.branch}
-                  onChange={(e) =>
-                    setData((prev) => ({
-                      ...prev,
-                      branch: e.target.value,
-                    }))
-                  }
+                  {...register("branch")}
                   disabled={!localStorage.getItem("email")}
                   required
                 />
+                {errors.branch && (
+                  <p className={styles.error}>{errors.branch.message}</p>
+                )}
               </div>
 
               <div className={styles.formId}>
                 <div className={styles.year}>
                   <label htmlFor="">Year</label>
-                  {/* <input
-                    type="text"
-                    value={data.year}
-                    onChange={(e) =>
-                      setData((prev) => ({
-                        ...prev,
-                        year: e.target.value,
-                      }))
-                    }
-                    disabled={!localStorage.getItem("email")}
-                  /> */}
                   <select
-                    value={data.year}
-                    onChange={(e) =>
-                      setData((prevData) => ({
-                        ...prevData,
-                        year: e.target.value,
-                      }))
-                    }
+                    {...register("year")}
                     disabled={!localStorage.getItem("email")}
                   >
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="FIRST"
-                    >
-                      FIRST
-                    </option>
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="SECOND"
-                    >
-                      SECOND
-                    </option>
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="THIRD"
-                    >
-                      THIRD
-                    </option>
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="FOURTH"
-                    >
-                      FOURTH
-                    </option>
+                    <option value="FIRST">FIRST</option>
+                    <option value="SECOND">SECOND</option>
+                    <option value="THIRD">THIRD</option>
+                    <option value="FOURTH">FOURTH</option>
                   </select>
+                  {errors.year && (
+                    <p className={styles.error}>{errors.year.message}</p>
+                  )}
                 </div>
                 <div className={styles.year}>
                   <label htmlFor="">Scholar ID</label>
                   <input
                     type="text"
-                    value={data.scholar_id}
-                    onChange={(e) =>
-                      setData((prev) => ({
-                        ...prev,
-                        scholar_id: e.target.value,
-                      }))
-                    }
+                    {...register("scholar_id")}
                     disabled={!localStorage.getItem("email")}
                   />
+                  {errors.scholar_id && (
+                    <p className={styles.error}>{errors.scholar_id.message}</p>
+                  )}
                 </div>
               </div>
             </>
@@ -351,53 +278,43 @@ const Register = () => {
               <div className={styles.formBranch}>
                 <input
                   type="text"
-                  name="name"
-                  value={selectedValue === "No" ? "" : data.institute}
-                  onChange={(e) =>
-                    setData((prev) => ({
-                      ...prev,
-                      institute: e.target.value,
-                    }))
-                  }
+                  {...register("institute")}
                   required
                   disabled={!localStorage.getItem("email")}
                 />
+                {errors.institute && (
+                  <p className={styles.error}>{errors.institute.message}</p>
+                )}
               </div>
             </>
           )}
+
           <label htmlFor="Email">Email</label>
           <div className={styles.formBranch}>
             <input
               type="email"
-              name="email"
-              value={localStorage.getItem("email") ?? data.email}
+              {...register("email")}
               disabled={true}
-              onChange={(e) =>
-                setData((prev) => ({
-                  ...prev,
-                  email: e.target.value,
-                }))
-              }
               required
             />
+            {errors.email && (
+              <p className={styles.error}>{errors.email.message}</p>
+            )}
           </div>
 
           <label htmlFor="Phone">Phone Number</label>
           <div className={styles.formBranch}>
             <input
               type="text"
-              name="phone"
-              value={data.phone}
-              onChange={(e) =>
-                setData((prev) => ({
-                  ...prev,
-                  phone: e.target.value,
-                }))
-              }
+              {...register("phone")}
               required
               disabled={!localStorage.getItem("email")}
             />
+            {errors.phone && (
+              <p className={styles.error}>{errors.phone.message}</p>
+            )}
           </div>
+
           <label htmlFor="IsGroup">Are you participating in a group?</label>
           <div className={styles.formBranch}>
             <div>
@@ -425,53 +342,60 @@ const Register = () => {
               <span>No</span>
             </div>
           </div>
-          {
-            isGroup === "Yes" ?
-              <div>
-                {Array(numMembers).fill(null).map((_, index) => (
-                  <div key={index}><h5>Member {index + 1}</h5><input type="text" value={data.members[index]} onChange={(e) => setData(prev => ({
-                    ...prev,
-                    members: prev.members.map((member, i) =>
-                      i === index ? e.target.value : member
-                    ),
-                  }))} placeholder={`Member ${index + 1}`} /></div>
+
+          {isGroup === "Yes" && (
+            <div>
+              {Array(numMembers)
+                .fill(null)
+                .map((_, index) => (
+                  <div key={index}>
+                    <h5>Member {index + 1}</h5>
+                    <input
+                      type="text"
+                      {...register(`members.${index}`)}
+                      placeholder={`Member ${index + 1}`}
+                    />
+                    {errors.members && errors.members[index] && (
+                      <p className={styles.error}>
+                        {errors.members[index].message}
+                      </p>
+                    )}
+                  </div>
                 ))}
-                <button onClick={(e) => {
+              <button
+                onClick={(e) => {
                   e.preventDefault();
                   setNumMembers(numMembers + 1);
-                  setData(prev => (
-                    {
-                      ...prev,
-                      members: [...prev.members, ""]
-                    }
-                  ));
-                }}>Add Member</button>
-                {numMembers > 1 ? <button onClick={(e) => {
-                  e.preventDefault();
-                  setNumMembers(numMembers - 1);
-                  setData(prev => (
-                    {
-                      ...prev,
-                      members: prev.members.slice(0, -1)
-                    }
-                  ));
-                }}>Delete Member</button> : null}
-              </div> : null
-          }
+                  setValue("members", [...watch("members"), ""]);
+                }}
+              >
+                Add Member
+              </button>
+              {numMembers > 1 && (
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setNumMembers(numMembers - 1);
+                    setValue("members", watch("members").slice(0, -1));
+                  }}
+                >
+                  Delete Member
+                </button>
+              )}
+            </div>
+          )}
+
           <label htmlFor="Experiences">Previous MUN Experiences (if any)</label>
           <div className={styles.formBranch}>
             <textarea
-              name="experience"
-              value={data.previousExperience}
-              onChange={(e) =>
-                setData((prev) => ({
-                  ...prev,
-                  previousExperience: e.target.value,
-                }))
-              }
-              id=""
+              {...register("previousExperience")}
               disabled={!localStorage.getItem("email")}
             ></textarea>
+            {errors.previousExperience && (
+              <p className={styles.error}>
+                {errors.previousExperience.message}
+              </p>
+            )}
           </div>
 
           <label htmlFor="committee">Committee Preferences</label>
@@ -481,239 +405,54 @@ const Register = () => {
           </p>
 
           <div className={styles.prefParent}>
-            <div className={styles.prefCont}>
-              <div className={styles.prefInner}>
-                <label htmlFor="Preference 1">Preference 1</label>
-                <select
-                  value={data.choice1} // Controlled value linked to state
-                  onChange={(e) =>
-                    setData((prevData) => ({
-                      ...prevData,
-                      choice1: e.target.value, // Update the `choice1` key with the selected value
-                    }))
-                  }
-                  disabled={!localStorage.getItem("email")}
-                >
-                  <option
-                    value="UNHCR"
+            {[1, 2, 3, 4].map((index) => (
+              <div className={styles.prefCont} key={index}>
+                <div className={styles.prefInner}>
+                  <label htmlFor={`Preference ${index}`}>
+                    Preference {index}
+                  </label>
+                  <select
+                    {...register(`choice${index}`)}
                     disabled={!localStorage.getItem("email")}
                   >
-                    UNHCR
-                  </option>
-                  <option
-                    value="UNSC"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    UNSC
-                  </option>
-                  <option
-                    value="MGSC"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    MGSC
-                  </option>
-                  <option
-                    value="IPC"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    IPC
-                  </option>
-                </select>
+                    <option value="UNHCR">UNHCR</option>
+                    <option value="UNSC">UNSC</option>
+                    <option value="MGSC">MGSC</option>
+                    <option value="IPC">IPC</option>
+                  </select>
+                  {errors[`choice${index}`] && (
+                    <p className={styles.error}>
+                      {errors[`choice${index}`].message}
+                    </p>
+                  )}
+                </div>
+                <div className={styles.portWrap}>
+                  <h4>Portfolio Preferences</h4>
+                  {[1, 2, 3].map((subIndex) => (
+                    <input
+                      key={subIndex}
+                      type="text"
+                      placeholder={`Portfolio Preference ${subIndex}`}
+                      {...register(`portfolioC${index}${subIndex}`)}
+                    />
+                  ))}
+                </div>
               </div>
-              <div className={styles.portWrap}>
-                <h4>Portfolio Preferences</h4>
-                <input type="text" placeholder="Portfolio Preference 1" value={data.portfolioC11} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC11: e.target.value
-                }))} />
-                <input type="text" placeholder="Portfolio Preference 2" value={data.portfolioC12} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC12: e.target.value
-                }))} />
-                <input type="text" placeholder="Portfolio Preference 3" value={data.portfolioC13} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC13: e.target.value
-                }))} />
-              </div>
-            </div>
-            <div className={styles.prefCont}>
-              <div className={styles.prefInner}>
-                <label htmlFor="Preference 2">Preference 2</label>
-                <select
-                  value={data.choice2} // Controlled value linked to state
-                  onChange={(e) =>
-                    setData((prevData) => ({
-                      ...prevData,
-                      choice2: e.target.value, // Update the `choice1` key with the selected value
-                    }))
-                  }
-                  disabled={!localStorage.getItem("email")}
-                >
-                  <option
-                    value="UNHCR"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    UNHCR
-                  </option>
-                  <option
-                    value="UNSC"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    UNSC
-                  </option>
-                  <option
-                    value="MGSC"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    MGSC
-                  </option>
-                  <option
-                    value="IPC"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    IPC
-                  </option>
-                </select>
-              </div>
-              <div className={styles.portWrap}>
-                <h4>Portfolio Preferences</h4>
-                <input type="text" placeholder="Portfolio Preference 1" value={data.portfolioC21} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC21: e.target.value
-                }))} />
-                <input type="text" placeholder="Portfolio Preference 2" value={data.portfolioC22} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC22: e.target.value
-                }))} />
-                <input type="text" placeholder="Portfolio Preference 3" value={data.portfolioC23} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC23: e.target.value
-                }))} />
-              </div>
-            </div>
-            <div className={styles.prefCont}>
-              <div className={styles.prefInner}>
-                <label htmlFor="Preference 3">Preference 3</label>
-                <select
-                  value={data.choice3} // Controlled value linked to state
-                  onChange={(e) =>
-                    setData((prevData) => ({
-                      ...prevData,
-                      choice3: e.target.value, // Update the `choice1` key with the selected value
-                    }))
-                  }
-                  disabled={!localStorage.getItem("email")}
-                ><option
-                  value="UNHCR"
-                  disabled={!localStorage.getItem("email")}
-                >
-                    UNHCR
-                  </option>
-                  <option
-                    value="UNSC"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    UNSC
-                  </option>
-                  <option
-                    value="MGSC"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    MGSC
-                  </option>
-                  <option
-                    value="IPC"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    IPC
-                  </option>
-                </select>
-              </div>
-              <div className={styles.portWrap}>
-                <h4>Portfolio Preferences</h4>
-                <input type="text" placeholder="Portfolio preference 1" value={data.portfolioC31} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC31: e.target.value
-                }))} />
-                <input type="text" placeholder="Portfolio preference 2" value={data.portfolioC32} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC32: e.target.value
-                }))} />
-                <input type="text" placeholder="Portfolio preference 3" value={data.portfolioC33} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC33: e.target.value
-                }))} />
-              </div>
-            </div>
-            <div className={styles.prefCont}>
-              <div className={styles.prefInner}>
-                <label htmlFor="Preference 4">Preference 4</label>
-                <select
-                  value={data.choice4} // Controlled value linked to state
-                  onChange={(e) =>
-                    setData((prevData) => ({
-                      ...prevData,
-                      choice4: e.target.value, // Update the `choice1` key with the selected value
-                    }))
-                  }
-                  disabled={!localStorage.getItem("email")}
-                ><option
-                  value="UNHCR"
-                  disabled={!localStorage.getItem("email")}
-                >
-                    UNHCR
-                  </option>
-                  <option
-                    value="UNSC"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    UNSC
-                  </option>
-                  <option
-                    value="MGSC"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    MGSC
-                  </option>
-                  <option
-                    value="IPC"
-                    disabled={!localStorage.getItem("email")}
-                  >
-                    IPC
-                  </option>
-                </select>
-              </div>
-              <div className={styles.portWrap}>
-                <h4>Portfolio Preferences</h4>
-                <input type="text" placeholder="Portfolio preference 1" value={data.portfolioC41} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC41: e.target.value
-                }))} />
-                <input type="text" placeholder="Portfolio preference 2" value={data.portfolioC42} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC42: e.target.value
-                }))} />
-                <input type="text" placeholder="Portfolio preference 3" value={data.portfolioC43} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC43: e.target.value
-                }))} />
-              </div>
-            </div>
+            ))}
           </div>
 
           <p className={styles.formPayment}>Payment</p>
           <p className={styles.formPaymentDesc}>
             To participate in the NITS-MUN Annual Conference 2025, a
             registration fee of <span>Rs 499</span> is needed to be paid by
-            every delegate. If you are participating in a group, you will need to pay a discounted price of <span>Rs 399</span>
+            every delegate. If you are participating in a group, you will need
+            to pay a discounted price of <span>Rs 399</span>
           </p>
 
           <div className={styles.paymentCredentials}>
             <div className={styles.textCredentials}>
               <div className={styles.upiCredentials}>
                 <p>aditi.khataniar@okaxis</p>
-                {/* <p>Lorem ipsum dolor sit.</p>
-                <p>Lorem ipsum dolor sit.</p> */}
               </div>
 
               <div className={styles.proof}>
@@ -721,7 +460,7 @@ const Register = () => {
                 <input type="file" onChange={handleImageUpload} />
               </div>
 
-              <button onClick={onSubmitHandler}> Submit </button>
+              <button type="submit">Submit</button>
             </div>
             <div className={styles.upiImage}>
               <img
@@ -730,11 +469,11 @@ const Register = () => {
               />
             </div>
           </div>
+
           <label>For any queries, feel free to contact us</label>
           <div className={styles.formQueries}>
-            <p>+91{"  "}86587-72500</p>
-            <p>+91{"  "}91013-75958</p>
-            {/* <p>Lorem ipsum dolor sit.</p> */}
+            <p>+91 86587-72500</p>
+            <p>+91 91013-75958</p>
           </div>
         </div>
       </form>
