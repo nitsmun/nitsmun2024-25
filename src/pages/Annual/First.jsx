@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Firstone.module.scss";
 import { Firstone } from "./data";
 import Committee from "./committee";
-import ExecutiveBoard from "./ExecutiveBoard";
+// import ExecutiveBoard from "./ExecutiveBoard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import "swiper/css/navigation";
@@ -103,7 +103,7 @@ const First = () => {
         </div>
       </div>
 
-{/*       <ExecutiveBoard /> */}
+      {/*       <ExecutiveBoard /> */}
     </>
   );
 };
