@@ -96,8 +96,8 @@ const First = () => {
           pagination={{ clickable: true }}
           className={styles.swiperCont}
         >
-          {Firstone.map((committee,index) => (
-            <SwiperSlide key={index}>
+          {Firstone.map((committee) => (
+            <SwiperSlide>
               <Committee 
                 key={committee.id} 
                 committee={committee}

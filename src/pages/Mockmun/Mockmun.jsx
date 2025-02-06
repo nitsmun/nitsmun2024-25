@@ -17,6 +17,13 @@ const Mockmun = () => {
           conference will be conducted online, giving a chance to students from
           any nook and corner of the country or around the world to participate.
           We will be having three committees this year
+          After conducting numerous conferences, both online and offline, and
+          hosting delegates from different schools and colleges from across the
+          country, NITSMUN is all set for its conference scheduled to be held on
+          the 12 and 13 March, 2022. Owing to the current situation, this
+          conference will be conducted online, giving a chance to students from
+          any nook and corner of the country or around the world to participate.
+          We will be having three committees this year
         </div>
       </div>
 
@@ -74,6 +81,7 @@ const Mockmun = () => {
         </section>
       </div>
 
+      <ExecutiveBoard />
       <ExecutiveBoard />
     </>
   );
