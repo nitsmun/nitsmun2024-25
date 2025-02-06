@@ -24,5 +24,5 @@ export {
   Error,
   Achievement,
   Register,
-  ApplicationSuccessfull
+  ApplicationSuccessfull,
 };
