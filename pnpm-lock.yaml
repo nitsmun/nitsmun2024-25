@@ -112,7 +112,7 @@ importers:
         specifier: ^3.3.2
         version: 3.4.2
       vite:
-        specifier: ^5.3.1
+        specifier: ^5.4.11
         version: 5.4.11(@types/node@22.10.7)(sass@1.83.4)
 
 packages:

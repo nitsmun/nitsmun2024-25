@@ -11,9 +11,6 @@ const Register = () => {
   const [selectedValue, setSelectedValue] = useState("Yes");
   const [isGroup, setIsGroup] = useState("No");
   const [numMembers, setNumMembers] = useState(1);
-  const [committee1, setCommitee1] = useState(false);
-  const [committee2, setCommitee2] = useState(false);
-  const [committee3, setCommitee3] = useState(false);
   const navigate = useNavigate();
   const [val, setVal] = useState("");
   const [data, setData] = useState({
@@ -25,10 +22,11 @@ const Register = () => {
     scholar_id: "",
     previousExperience: "",
     branch: "",
-    year: "",
-    choice1: "Commitee 1",
-    choice2: "Commitee 1",
-    choice3: "Commitee 1",
+    year: "FIRST",
+    choice1: "UNHCR",
+    choice2: "UNHCR",
+    choice3: "UNHCR",
+    choice4: "UNHCR",
     members: [],
     portfolioC11: "",
     portfolioC12: "",
@@ -38,7 +36,10 @@ const Register = () => {
     portfolioC23: "",
     portfolioC31: "",
     portfolioC32: "",
-    portfolioC33: ""
+    portfolioC33: "",
+    portfolioC41: "",
+    portfolioC42: "",
+    portfolioC43: ""
   });
 
   const handleClick = () => {
@@ -82,6 +83,7 @@ const Register = () => {
     formData.append("choice1", data.choice1);
     formData.append("choice2", data.choice2);
     formData.append("choice3", data.choice3);
+    formData.append("choice4", data.choice4);
     formData.append("members", data.members);
     formData.append("portfolioC11", data.portfolioC11);
     formData.append("portfolioC12", data.portfolioC12);
@@ -92,6 +94,9 @@ const Register = () => {
     formData.append("portfolioC31", data.portfolioC31);
     formData.append("portfolioC32", data.portfolioC32);
     formData.append("portfolioC33", data.portfolioC33);
+    formData.append("portfolioC41", data.portfolioC41);
+    formData.append("portfolioC42", data.portfolioC42);
+    formData.append("portfolioC43", data.portfolioC43);
 
     //Api call
     const response = await axios.post(
@@ -125,10 +130,11 @@ const Register = () => {
         scholar_id: "",
         previousExperience: "",
         branch: "",
-        year: "",
-        choice1: "Commitee 1",
-        choice2: "Commitee 1",
-        choice3: "Commitee 1",
+        year: "FIRST",
+        choice1: "UNHCR",
+        choice2: "UNHCR",
+        choice3: "UNHCR",
+        choice4: "UNHCR",
         members: [],
         portfolioC11: "",
         portfolioC12: "",
@@ -138,9 +144,12 @@ const Register = () => {
         portfolioC23: "",
         portfolioC31: "",
         portfolioC32: "",
-        portfolioC33: ""
+        portfolioC33: "",
+        portfolioC41: "",
+        portfolioC42: "",
+        portfolioC43: ""
       });
-      navigate("/events/Annual/successfull");
+      navigate("/successfull");
     } else {
       toast.error("Something went wrong. Please try again.");
     }
@@ -486,30 +495,30 @@ const Register = () => {
                   }
                   disabled={!localStorage.getItem("email")}
                 >
-                  {!committee1 && (
-                    <option
-                      value="Committee 1"
-                      disabled={!localStorage.getItem("email")}
-                    >
-                      Committee 1
-                    </option>
-                  )}
-                  {!committee2 && (
-                    <option
-                      value="Committee 2"
-                      disabled={!localStorage.getItem("email")}
-                    >
-                      Committee 2
-                    </option>
-                  )}
-                  {!committee3 && (
-                    <option
-                      value="Committee 3"
-                      disabled={!localStorage.getItem("email")}
-                    >
-                      Committee 3
-                    </option>
-                  )}
+                  <option
+                    value="UNHCR"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    UNHCR
+                  </option>
+                  <option
+                    value="UNSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    UNSC
+                  </option>
+                  <option
+                    value="MGSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    MGSC
+                  </option>
+                  <option
+                    value="IPC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    IPC
+                  </option>
                 </select>
               </div>
               <div className={styles.portWrap}>
@@ -541,30 +550,30 @@ const Register = () => {
                   }
                   disabled={!localStorage.getItem("email")}
                 >
-                  {!committee1 && (
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="Committee 1"
-                    >
-                      Committee 1
-                    </option>
-                  )}
-                  {!committee2 && (
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="Committee 2"
-                    >
-                      Committee 2
-                    </option>
-                  )}
-                  {!committee3 && (
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="Committee 3"
-                    >
-                      Committee 3
-                    </option>
-                  )}
+                  <option
+                    value="UNHCR"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    UNHCR
+                  </option>
+                  <option
+                    value="UNSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    UNSC
+                  </option>
+                  <option
+                    value="MGSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    MGSC
+                  </option>
+                  <option
+                    value="IPC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    IPC
+                  </option>
                 </select>
               </div>
               <div className={styles.portWrap}>
@@ -595,35 +604,30 @@ const Register = () => {
                     }))
                   }
                   disabled={!localStorage.getItem("email")}
+                ><option
+                  value="UNHCR"
+                  disabled={!localStorage.getItem("email")}
                 >
-                  {!committee1 && (
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="Committee 1"
-
-                      onClick={setCommitee1}
-                    >
-                      Committee 1
-                    </option>
-                  )}
-                  {!committee2 && (
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="Committee 2"
-                      onClick={setCommitee2}
-                    >
-                      Committee 2
-                    </option>
-                  )}
-                  {!committee3 && (
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="Committee 3"
-                      onClick={setCommitee3}
-                    >
-                      Committee 3
-                    </option>
-                  )}
+                    UNHCR
+                  </option>
+                  <option
+                    value="UNSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    UNSC
+                  </option>
+                  <option
+                    value="MGSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    MGSC
+                  </option>
+                  <option
+                    value="IPC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    IPC
+                  </option>
                 </select>
               </div>
               <div className={styles.portWrap}>
@@ -642,13 +646,67 @@ const Register = () => {
                 }))} />
               </div>
             </div>
+            <div className={styles.prefCont}>
+              <div className={styles.prefInner}>
+                <label htmlFor="Preference 4">Preference 4</label>
+                <select
+                  value={data.choice4} // Controlled value linked to state
+                  onChange={(e) =>
+                    setData((prevData) => ({
+                      ...prevData,
+                      choice4: e.target.value, // Update the `choice1` key with the selected value
+                    }))
+                  }
+                  disabled={!localStorage.getItem("email")}
+                ><option
+                  value="UNHCR"
+                  disabled={!localStorage.getItem("email")}
+                >
+                    UNHCR
+                  </option>
+                  <option
+                    value="UNSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    UNSC
+                  </option>
+                  <option
+                    value="MGSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    MGSC
+                  </option>
+                  <option
+                    value="IPC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    IPC
+                  </option>
+                </select>
+              </div>
+              <div className={styles.portWrap}>
+                <h4>Portfolio Preferences</h4>
+                <input type="text" placeholder="Portfolio preference 1" value={data.portfolioC41} onChange={(e) => setData((prev) => ({
+                  ...prev,
+                  portfolioC41: e.target.value
+                }))} />
+                <input type="text" placeholder="Portfolio preference 2" value={data.portfolioC42} onChange={(e) => setData((prev) => ({
+                  ...prev,
+                  portfolioC42: e.target.value
+                }))} />
+                <input type="text" placeholder="Portfolio preference 3" value={data.portfolioC43} onChange={(e) => setData((prev) => ({
+                  ...prev,
+                  portfolioC43: e.target.value
+                }))} />
+              </div>
+            </div>
           </div>
+
           <p className={styles.formPayment}>Payment</p>
           <p className={styles.formPaymentDesc}>
-            To participate in the NITS- MUN Youth Parliament 2023, a
+            To participate in the NITS-MUN Annual Conference 2025, a
             registration fee of <span>Rs 499</span> is needed to be paid by
-            every delegate which will include Lorem ipsum dolor sit amet. A nisi
-            nobis sed quia sapiente
+            every delegate. If you are participating in a group, you will need to pay a discounted price of <span>Rs 399</span>
           </p>
 
           <div className={styles.paymentCredentials}>

@@ -15,18 +15,17 @@ function App() {
           <Route path="/" element={<pages.Home />} />
           <Route path="/team" element={<pages.Team />} />
           <Route path="/events" element={<pages.Events />} />
-          <Route path="/events/youth" element={<pages.Youth />} />
-          <Route path="/events/mockmun" element={<pages.Mockmun />} />
-          <Route path="/events/annual" element={<pages.Annual />} />
+          <Route path="/events/Youth" element={<pages.Youth />} />
+          <Route path="/events/Mockmun" element={<pages.Mockmun />} />
+          <Route path="/events/Annual" element={<pages.Annual />} />
           <Route path="/contact" element={<pages.Contact />} />
           <Route path="/faqs" element={<pages.FaqSection />} />
           <Route path="/about" element={<pages.About />} />
           <Route path="/error" element={<pages.Error />} />
           <Route path="/gallery" element={<pages.Gallery />} />
           <Route path="/achievement" element={<pages.Achievement />} />
-          <Route path="/events/annual/register" element={<pages.Register />} />
-          <Route path="/events/Annual/register" element={<pages.Register />} />
-          <Route path="/events/annual/successfull" element={<pages.ApplicationSuccessfull/>} />\
+          <Route path="/register" element={<pages.Register />} />
+          <Route path="/successfull" element={<pages.ApplicationSuccessfull />} />
         </Routes>
         <Footer />
       </BrowserRouter>
