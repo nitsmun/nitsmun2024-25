@@ -109,21 +109,28 @@ const Register = () => {
     }
   };
 
-  const onSubmitHandler = async (data) => {
-    try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_APP_API}/participant/add`,
-        data,
-      );
+  const onSubmitHandler = async (data, event) => {
+    event?.preventDefault();
+    const apiCall = axios.post(
+      `${import.meta.env.VITE_APP_API}/participant/add`,
+      data,
+    );
 
+    // Use the API call as a promise in toast.promise
+    toast.promise(apiCall, {
+      loading: "Registering...Please wait!!",
+      success: "Registration successful!",
+      error: "An error occurred. Please try again.",
+    });
+
+    try {
+      const response = await apiCall;
       if (response.status === 200) {
-        toast.success("Registration successful!");
+        await new Promise((resolve) => setTimeout(resolve, 2000)); // 2s delay
         navigate("/successfull");
-      } else {
-        toast.error("Something went wrong. Please try again.");
       }
     } catch (error) {
-      toast.error("An error occurred. Please try again.");
+      console.error(error);
     }
   };
 
