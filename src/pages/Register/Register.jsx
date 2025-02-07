@@ -135,24 +135,54 @@ const Register = () => {
     );
   };
 
-  const handleImageUpload = async (e) => {
+  const handleCloudinaryUpload = async (data) => {
+    const res = await axios.post(
+      "https://api.cloudinary.com/v1_1/dhry5xscm/image/upload",
+      data,
+    );
+    setData((prev) => ({
+      ...prev,
+      paymentProof: res.data.url,
+    }));
+  };
+  const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
       const data = new FormData();
       data.append("file", file);
       data.append("upload_preset", "nitsmun_payments");
       data.append("cloud_name", "dhry5xscm");
-      const res = await axios.post(
-        "https://api.cloudinary.com/v1_1/dhry5xscm/image/upload",
-        data,
-      );
-      // setData((prev)=>{...prev,"paymentProof":res.data.url});
-      setData((prev) => ({
-        ...prev,
-        paymentProof: res.data.url,
-      }));
+
+      try {
+        toast.promise(handleCloudinaryUpload(data), {
+          loading: "Uploading image...",
+          success: "Image uploaded successfully!",
+          error: "Image upload failed. Please try again!!",
+        });
+      } catch (error) {
+        console.error("Error uploading image:", error);
+      }
     }
   };
+
+  // const handleImageUpload = async (e) => {
+  //   const file = e.target.files[0];
+  //   if (file) {
+  //     const data = new FormData();
+  //     data.append("file", file);
+  //     data.append("upload_preset", "nitsmun_payments");
+  //     data.append("cloud_name", "dhry5xscm");
+  //     const res = await axios.post(
+  //       "https://api.cloudinary.com/v1_1/dhry5xscm/image/upload",
+  //       data,
+  //     );
+  //     // setData((prev)=>{...prev,"paymentProof":res.data.url});
+  //     setData((prev) => ({
+  //       ...prev,
+  //       paymentProof: res.data.url,
+  //     }));
+  //   }
+  // };
   return (
     <div className={styles.register}>
       <h1 className={styles.registerHeading}>Register Now</h1>
