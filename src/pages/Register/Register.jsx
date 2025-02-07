@@ -360,7 +360,7 @@ const Register = () => {
                 <input
                   type="text"
                   name="name"
-                  value={selectedValue === "No" ? "" : data.institute}
+                  value={data.institute}
                   onChange={(e) =>
                     setData((prev) => ({
                       ...prev,
