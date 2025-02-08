@@ -10,7 +10,6 @@ import "swiper/css/pagination";
 
 import { Navigation, Pagination } from "swiper/modules";
 
-
 const First = () => {
   return (
     <>
@@ -79,26 +78,22 @@ const First = () => {
         </div>
       </div>
 
-
       <div className={styles.committeeone}>
         <h1 className={styles.textEx}>COMMITTEES</h1>
         <div className={styles.commiteeParent}>
-        <Swiper
-          modules={[Navigation, Pagination]}
-          spaceBetween={50}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          className={styles.swiperCont}
-        >
-          {Firstone.map((committee) => (
-            <SwiperSlide>
-              <Committee 
-                key={committee.id} 
-                committee={committee}
-              />
-            </SwiperSlide>
-          ))}
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={50}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            className={styles.swiperCont}
+          >
+            {Firstone.map((committee, index) => (
+              <SwiperSlide key={index}>
+                <Committee key={committee.id} committee={committee} />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
@@ -108,6 +103,5 @@ const First = () => {
     </>
   );
 };
-
 
 export default First;

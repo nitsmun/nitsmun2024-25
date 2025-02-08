@@ -3,7 +3,11 @@
   padding: 0;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to top, rgba(24, 37, 88, 0.8), rgba(0, 0, 0, 0.9)),
+  background: linear-gradient(
+      to top,
+      rgba(24, 37, 88, 0.8),
+      rgba(0, 0, 0, 0.9)
+    ),
     url("https://res.cloudinary.com/dffke2hbp/image/upload/v1721583405/hs8djvvjr0asytjzmrgu.png");
   background-size: cover;
   background-repeat: no-repeat;
