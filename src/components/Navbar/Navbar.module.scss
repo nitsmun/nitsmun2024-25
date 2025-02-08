@@ -10,25 +10,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // position: sticky;
   z-index: 50;
   font-family: "Jost", "sans-serif";
 
   .logo {
     display: flex;
-    flex-direction: row;
-    width: 500px;
-    height: 100px;
     align-items: center;
+    margin-left: 1em;
+    
     p {
       font-size: 2rem;
-      margin-top: 2rem;
       font-weight: 500;
+      // margin-left: 1rem;
     }
 
     img {
       width: 80px;
       height: 70px;
+      object-fit: contain;
     }
 
     @media (max-width: 1031px) {
@@ -36,177 +35,67 @@
         width: 60px;
         height: 50px;
       }
+      p {
+        font-size: 1.8rem;
+      }
     }
   }
 
   .ul {
     display: flex;
-    gap: 3rem;
-    padding: 0 1rem;
+    gap: 2rem;
     align-items: center;
-    width: 45%;
-    height: 100px;
-    margin-left: 200px;
-    font-size: 1.4rem;
+    margin-right: 2rem;
+    transition: all 0.3s ease-in-out;
+
     .navItem {
       color: #ffffff;
-    }
-    .hamburger {
-      display: flex;
-      margin-right: 1rem;
-      font-size: 1rem;
-      width: 100%;
-    }
-    @media (max-width: 1081px) {
-      gap: 0.8rem;
-    }
-    @media (max-width: 1155px) {
-      gap: 0.7rem;
-      font-size: 1.1rem;
-    }
-
-    @media (max-width: 1286px) {
-      gap: 0.8rem;
-    }
-
-    // border: 2px solid red;
-    margin-left: 200px;
-
-    @media (max-width: 1031px) {
-      gap: 1.2rem;
-    }
-    // @media screen and (min-width:350px){
-    //   display: none;
-    // }
-    // @media screen and (min-width:800px){
-    //   display: flex;
-    // }
-
-    li {
-      list-style: none;
-      color: white;
-      font-size: 1.3rem;
-      font-weight: 500;
-      padding: 1rem 2rem;
-
-      @media (max-width: 1081px) {
-        font-size: 1rem;
-        margin-right: -10px;
-        padding: 1rem 1rem;
-      }
-
-      @media (max-width: 1155px) {
-        font-size: 1.1rem;
-      }
-
       font-size: 1.2rem;
-      font-weight: 500;
-      // border: 2px solid green;
-      padding: 1rem 2rem;
-    }
-  }
-  i {
-    font-size: 2.25rem;
-    margin-right: 1rem;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
 
-    @media screen and (min-width: 800px) {
-      visibility: hidden;
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
-    @media screen and (min-width: 350px) {
-      display: flex;
-    }
-  }
-
-  @media screen and (max-width: 800px) {
-    .ul {
-      display: flex;
-      flex-direction: column;
-      overflow: hidden; /* Ensures that the content does not overflow */
-      transition: height 0.5s ease-in-out;
-      background: #02162e;
+    @media (max-width: 800px) {
       position: fixed;
-      top: 100px;
-      right: 0;
-      width: 182px;
-      margin: 0 -14px;
-      // height: auto;
-      // justify-content: space-around;
-      // min-height: 300px;
-      z-index: 1;
-
-      // .myStyle {
-      //   width: 0%;
-      // }
-
-      a {
-        display: block;
-        margin: 1px -17px;
-        color: white; /* Ensure the links are visible */
-        // text-decoration: none;
-        transition: color 0.3s ease;
-        font-size: 1rem;
-        text-align: right;
-
-        li::before {
-          content: "";
-          width: 100%;
-          background: #fff;
-          height: 2px;
-          position: absolute;
-          left: 0;
-          margin-top: 30px;
-        }
-      }
-
-      a:hover {
-        color: lightgray;
-      }
-    }
-  }
-  .hidden {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; /* Ensures that the content does not overflow */
-    transition: height 0.5s ease-in-out;
-    background: #02162e;
-    position: fixed;
-    top: 100px;
-    right: 0;
-    width: 200px;
-    z-index: 1; /* Adjust as necessary */
-    // padding-top: 150px;
-
-    @media screen and (max-width: 800px) {
-      // padding-top: 200px;
-      margin-top: 10.5rem;
-    }
-
-    a {
-      display: block;
-      margin: 15px 40px;
-      color: white; /* Ensure the links are visible */
-      // text-decoration: none;
-      transition: color 0.3s ease;
-      font-size: 1.2rem;
-      text-align: right;
-    }
-
-    ::before {
-      content: "";
+      top: 80px;
+      right: -100%;
+      flex-direction: column;
+      background: #02162e;
       width: 100%;
-      background: #fff;
-      height: 2px;
-      position: absolute;
-      left: 0;
-      margin-top: 30px;
-    }
+      max-width: 250px;
+      height: calc(80vh - 80px);
+      padding: 2rem 0;
+      margin: 0;
+      transition: right 0.3s ease-in-out;
 
-    a:hover {
-      color: lightgray;
+      &.open {
+        right: 0;
+      }
+
+      .navItem {
+        width: 100%;
+        padding: 1rem 2rem;
+        text-align: center;
+        font-size: 1.4rem;
+      }
     }
   }
-  // .hidemenu {
-  //   right: -200px;
-  // }
+
+  .hamburger {
+    display: none;
+    margin-right: 2rem;
+    cursor: pointer;
+
+    i {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 800px) {
+      display: block;
+    }
+  }
 }

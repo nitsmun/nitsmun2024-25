@@ -37,7 +37,7 @@ export const Firstone = [
     title: "IPC",
     subtitle: "(International Press Corps)",
     agenda:
-      "As the fourth pillar of democracy, the International Press Corps (IPC) plays a crucial role in shaping discourse by reporting on committee proceedings, conducting press conferences, and uncovering stories that might otherwise remain in the shadows. With sharp questioning, investigative reporting, and compelling storytelling, IPC delegates have the power to challenge narratives, hold representatives accountable, and influence global discussions.",
+      "International Press Corps (IPC) plays a crucial role in shaping discourse by reporting on committee proceedings, conducting press conferences, and uncovering stories that might otherwise remain in the shadows. ",
     bgGuideLink: "#",
   },
   // Add more committee objects as needed
