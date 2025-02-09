@@ -8,17 +8,17 @@ const Committee = ({ committee }) => {
         style={{ backgroundImage: `url(${committee.image})` }}
       >
         <div className={styles.heading}>
-          <h1>{committee.title}</h1>
-          <p>{committee.subtitle}</p>
+          {/* <h1>{committee.title}</h1>
+          <p>{committee.subtitle}</p> */}
         </div>
       </div>
       <div className={styles.rightTextCont}>
         <p>
           <span>Agenda:</span> {committee.agenda}
         </p>
-        <a href={committee.bgGuideLink} className={styles.btn}>
+        {/* <a href={committee.bgGuideLink} className={styles.btn}>
           Background Guide
-        </a>
+        </a> */}
       </div>
     </div>
   );
