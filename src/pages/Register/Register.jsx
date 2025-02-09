@@ -406,7 +406,7 @@ const Register = () => {
               disabled={!localStorage.getItem("email")}
             />
           </div>
-          <label htmlFor="IsGroup">Are you participating in a group?</label>
+          {/* <label htmlFor="IsGroup">Are you participating in a group?</label> */}
           <div className={styles.formBranch}>
             <div>
               <input

@@ -148,6 +148,11 @@
     top: 6rem;
     right: 0;
 
+    .authButtons {
+      display: flex;
+      gap: 1rem;
+    }
+
     .loginbtns {
       display: flex;
       flex-direction: row;
