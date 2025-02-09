@@ -1,5 +1,5 @@
 .navbar {
-  height: 80px;
+  height: 55px;
   width: 100%;
   background: #02162e;
   color: #ffffff;
@@ -17,16 +17,17 @@
     display: flex;
     align-items: center;
     margin-left: 1em;
-    
+
     p {
       font-size: 2rem;
       font-weight: 500;
-      // margin-left: 1rem;
+      margin-left: -0.5rem;
+      color: white;
     }
 
     img {
       width: 80px;
-      height: 70px;
+      height: 60px;
       object-fit: contain;
     }
 

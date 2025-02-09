@@ -40,13 +40,13 @@ const Hero = () => {
         {!isLoggedIn ? (
           <div className={styles.authButtons}>
             <button onClick={handleClick}>LOGIN</button>
-            <Link to="/register">
-              <button>REGISTER</button>
-            </Link>
           </div>
         ) : (
           <button onClick={handleLogout}>LOGOUT</button>
         )}
+        <Link to="/register">
+          <button className={styles.register}>REGISTER</button>
+        </Link>
       </div>
       <div className={styles.logoitems}>
         <div className={styles.logoHolder}>
