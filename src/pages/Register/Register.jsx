@@ -193,11 +193,11 @@ const Register = () => {
             <h1>Annual Conference Online Registration Form</h1>
             {!localStorage.getItem("email") ? (
               <p>
-                You need to{" "}
+                Please{" "}
                 <u onClick={handleClick} style={{ cursor: "pointer" }}>
                   Login
                 </u>{" "}
-                before registering
+                before registering.
               </p>
             ) : (
               <p>
@@ -406,7 +406,7 @@ const Register = () => {
               disabled={!localStorage.getItem("email")}
             />
           </div>
-          <label htmlFor="IsGroup">Are you participating in a group?</label>
+          {/* <label htmlFor="IsGroup">Are you participating in a group?</label> */}
           <div className={styles.formBranch}>
             <div>
               <input
