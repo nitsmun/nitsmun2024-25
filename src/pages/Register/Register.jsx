@@ -552,10 +552,14 @@ const Register = () => {
           </h4>
           <a
             href="https://docs.google.com/spreadsheets/d/1rE8QYHugXYnRQJQqBZqa5oYuvGTRKb5BIFs2sujZk48/edit?usp=sharing"
-            style={{ textDecoration: "underline", display: "inline" }}
+            style={{
+              textDecoration: "underline",
+              display: "inline",
+              fontSize: "18px",
+            }}
             target="#"
           >
-            Visit here
+            Visit here to view the portfolio matrix
           </a>
 
           <div className={styles.prefParent}>
@@ -855,10 +859,9 @@ const Register = () => {
 
           <p className={styles.formPayment}>Payment</p>
           <p className={styles.formPaymentDesc}>
-            To participate in the NITS-MUN Annual Conference 2025, a
-            registration fee of <span>Rs 499</span> is needed to be paid by
-            every delegate. If you are participating in a group, you will need
-            to pay a discounted price of <span>Rs 399</span>
+            To complete your registration for the NITS-MUN Annual Conference
+            2025, please make a payment of <span>₹299</span> using the QR code
+            provided below and upload a screenshot of the payment confirmation.
           </p>
 
           <div className={styles.paymentCredentials}>
@@ -889,7 +892,8 @@ const Register = () => {
             <div className={styles.upiImage}>
               <img
                 src="https://res.cloudinary.com/dludtk5vz/image/upload/v1738597970/WhatsApp_Image_2025-02-03_at_21.21.27_6e441ace_wtlyay.jpg"
-                alt=""
+                alt="qr"
+                style={{ objectFit: "cover" }}
               />
             </div>
           </div>
