@@ -37,7 +37,9 @@ export const Firstone = [
     title: "IPC",
     subtitle: "(International Press Corps)",
     agenda:
+
       "International Press Corps (IPC) plays crucial role in shaping discourse by reporting on committee proceedings conducting press conferences, and uncovering stories that might otherwise remain in the shadows. ",
+
     bgGuideLink: "#",
   },
   // Add more committee objects as needed
