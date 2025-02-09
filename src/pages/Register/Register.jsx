@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Register.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Toaster, toast } from "sonner";
 import { auth, provider } from "../../config";
@@ -8,9 +8,15 @@ import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
   const [selectedValue, setSelectedValue] = useState("Yes");
-  const [isGroup, setIsGroup] = useState("No");
-  const [numMembers, setNumMembers] = useState(1);
+  // const [isGroup, setIsGroup] = useState("No");
+  // const [numMembers, setNumMembers] = useState(1);
   const navigate = useNavigate();
+  const [signedin, setSignedin] = useState(false);
+
+  useEffect(() => {
+    setSignedin(signedin);
+  }, [signedin]);
+
   const [data, setData] = useState({
     name: "",
     email: localStorage.getItem("email") ?? "",
@@ -46,24 +52,24 @@ const Register = () => {
       if (data.user && data.user.email) {
         const userEmail = data.user.email.toLowerCase();
         localStorage.setItem("email", userEmail);
+        setSignedin(true);
       } else {
         console.error("Error retrieving user data during sign-in.");
       }
     });
   };
-  const handleRadioChangeNITS = (event) => {
-    event.preventDefault();
-    setSelectedValue(event.target.value);
-  };
-  const handleRadioChangeIsGroup = (event) => {
-    event.preventDefault();
-    setIsGroup(event.target.value);
-    setData((prev) => ({
-      ...prev,
-      members: [...prev.members, ""],
-    }));
-  };
-  console.log(`Members:${data.members}`);
+  useEffect(() => {
+    setSelectedValue(selectedValue);
+  }, [selectedValue]);
+  // const handleRadioChangeIsGroup = (event) => {
+  //   event.preventDefault();
+  //   setIsGroup(event.target.value);
+  //   setData((prev) => ({
+  //     ...prev,
+  //     members: [...prev.members, ""],
+  //   }));
+  // };
+  // console.log(`Members:${data.members}`);
   const onSubmitHandler = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -193,11 +199,11 @@ const Register = () => {
             <h1>Annual Conference Online Registration Form</h1>
             {!localStorage.getItem("email") ? (
               <p>
-                You need to{" "}
+                Please{" "}
                 <u onClick={handleClick} style={{ cursor: "pointer" }}>
                   Login
                 </u>{" "}
-                before registering
+                before registering.
               </p>
             ) : (
               <p>
@@ -242,7 +248,7 @@ const Register = () => {
             />
           </div>
           <label htmlFor="IsNITS">Are you a student of NIT Silchar?</label>
-          <div className={styles.formBranch}>
+          {/* <div className={styles.formBranch}>
             <div>
               <input
                 type="radio"
@@ -267,6 +273,41 @@ const Register = () => {
               />
               <span>No</span>
             </div>
+          </div> */}
+          <div
+            className={styles.myRadioButton}
+            style={{
+              gap: "2px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <button
+              style={{
+                backgroundColor: `${selectedValue === "Yes" ? "black" : "transparent"}`,
+                color: `${selectedValue === "Yes" ? "white" : "black"}`,
+              }}
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedValue("Yes");
+              }}
+            >
+              Yes
+            </button>
+            <button
+              style={{
+                backgroundColor: `${selectedValue === "No" ? "black" : "transparent"}`,
+                color: `${selectedValue === "No" ? "white" : "black"}`,
+              }}
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedValue("No");
+              }}
+            >
+              No
+            </button>
           </div>
           {selectedValue === "Yes" ? (
             <>
@@ -406,8 +447,8 @@ const Register = () => {
               disabled={!localStorage.getItem("email")}
             />
           </div>
-          <label htmlFor="IsGroup">Are you participating in a group?</label>
-          <div className={styles.formBranch}>
+          {/* <label htmlFor="IsGroup">Are you participating in a group?</label> */}
+          {/* <div className={styles.formBranch}>
             <div>
               <input
                 type="radio"
@@ -432,8 +473,8 @@ const Register = () => {
               />
               <span>No</span>
             </div>
-          </div>
-          {isGroup === "Yes" ? (
+          </div> */}
+          {/* {isGroup === "Yes" ? (
             <div>
               {Array(numMembers)
                 .fill(null)
@@ -482,7 +523,7 @@ const Register = () => {
                 </button>
               ) : null}
             </div>
-          ) : null}
+          ) : null} */}
           <label htmlFor="Experiences">Previous MUN Experiences (if any)</label>
           <div className={styles.formBranch}>
             <textarea

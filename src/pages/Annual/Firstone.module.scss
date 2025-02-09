@@ -44,7 +44,6 @@
       margin-left: 5rem;
     }
   }
-
   .content {
     width: 70%;
     height: 100%;
@@ -64,6 +63,31 @@
       font-size: 1.2rem;
       width: 60%;
       margin-right: 8rem;
+    }
+  }
+
+  .res {
+    margin-top: 1.5rem;
+    .registerButton {
+      width: 12rem;
+      padding: 12px 24px;
+      background-color: #2a5c82;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      font-size: 1.1rem;
+    }
+    .registerButton:hover {
+      background-color: #1a3c5a;
+    }
+
+    @media screen and (min-width: 800px) {
+      position: absolute;
+      left: 5rem;
+      bottom: 10rem;
     }
   }
 }
@@ -103,9 +127,10 @@
       font-size: 0.56rem;
       text-align: justify;
       margin-left: 1.7rem;
-      margin-top: 1rem;
+      margin-top: 2.4rem;
 
       @media screen and (min-width: 400px) {
+        margin-top: 1rem;
         font-size: 0.7rem;
       }
 
@@ -310,7 +335,7 @@
 
     @media screen and (min-width: 800px) {
       font-size: 4rem;
-      margin-left: -18rem;
+      // margin-left: -18rem;
     }
   }
 }

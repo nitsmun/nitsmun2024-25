@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Link } from "react-router-dom";
 
 import { Navigation, Pagination } from "swiper/modules";
 
@@ -17,6 +18,7 @@ const First = () => {
         <div className={styles.tittle}>
           <h1>ANNUAL CONFERENCE</h1>
         </div>
+
         <div className={styles.content}>
           Step into a world where ideas dance, perspectives collide, and
           innovation takes center stage! We're thrilled to unveil the theme of
@@ -37,6 +39,11 @@ const First = () => {
           in addressing concerns and playing a pivotal role in ensuring
           security. Join the conference to contribute your perspective to the
           strategic discussions.
+        </div>
+        <div className={styles.res}>
+          <Link to="/register" className={styles.registerButton}>
+            Register Now
+          </Link>
         </div>
       </div>
 
@@ -103,7 +110,7 @@ const First = () => {
         </div>
       </div>
 
-      {/*       <ExecutiveBoard /> */}
+      {/* <ExecutiveBoard /> */}
     </>
   );
 };

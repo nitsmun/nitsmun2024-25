@@ -148,6 +148,15 @@
     top: 6rem;
     right: 0;
 
+    .register {
+      margin-left: 1rem;
+    }
+
+    .authButtons {
+      display: flex;
+      gap: 1rem;
+    }
+
     .loginbtns {
       display: flex;
       flex-direction: row;
@@ -179,7 +188,6 @@
   }
 
   .logoitems {
-    // ... existing styles remain the same ...
     // border: 2px solid yellow;
     width: 100%;
     // height: 70vh;
