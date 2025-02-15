@@ -63,7 +63,10 @@ const AdminPanel = () => {
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email === "subhajyotidey2910@gmail.com") {
+    if (
+      email === "subhajyotidey2910@gmail.com" ||
+      email === "barnilsarma@gmail.com"
+    ) {
       setIsAdmin(true);
       fetchParticipants();
     } else {
