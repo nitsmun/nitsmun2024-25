@@ -14,7 +14,7 @@
     padding: 0;
     width: 100vw;
     height: 100vh;
-    padding-top: 7rem;
+    // padding-top: 1rem;
     background-color: #00000088;
     backdrop-filter: blur(4px);
     display: flex;
@@ -22,6 +22,10 @@
     align-items: center;
     justify-content: center;
     font-family: "Jost", "sans-serif";
+
+    @media screen and (min-width: 1150px) {
+      padding-top: 6rem;
+    }
 
     .tittle {
       display: flex;

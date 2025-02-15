@@ -671,6 +671,18 @@ export const Secretariatmediajr = [
     fb: "https://www.facebook.com/profile.php?id=61550363986087",
     mail: "mailto:shashwatp673@gmail.com",
   },
+  {
+    id: 8,
+    cName: "team-sec",
+    imgsrc:
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1739005148/ropplswfafszsq8fwbwb.jpg",
+    alt: "Ronak Agarwal",
+    name: "Ronak Agarwal",
+    post: "Media Team",
+    linkedin: "https://www.linkedin.com/in/shashwat-patel-5b8a67279",
+    fb: "https://www.facebook.com/profile.php?id=61550363986087",
+    mail: "Ronakagarwal6002@gmail.com",
+  },
 ];
 
 export const Secretariatresearchjr = [
@@ -934,7 +946,7 @@ export const Secretariatwebjr = [
     id: 1,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dffke2hbp/image/upload/v1725382260/vxr39cahyjtjlfcrlhnd.jpg",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1738769663/oidl3qpukzyjva1ss25k.jpg",
     alt: "Dhananjoy Das",
     name: "Dhananjoy Das",
     post: "Technical Team",

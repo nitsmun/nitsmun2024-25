@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Register.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Toaster, toast } from "sonner";
 import { auth, provider } from "../../config";
@@ -8,13 +8,15 @@ import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
   const [selectedValue, setSelectedValue] = useState("Yes");
-  const [isGroup, setIsGroup] = useState("No");
-  const [numMembers,setNumMembers]=useState(1);
-  const [committee1, setCommitee1] = useState(false);
-  const [committee2, setCommitee2] = useState(false);
-  const [committee3, setCommitee3] = useState(false);
+  // const [isGroup, setIsGroup] = useState("No");
+  // const [numMembers, setNumMembers] = useState(1);
   const navigate = useNavigate();
-  const [val, setVal] = useState("");
+  const [signedin, setSignedin] = useState(false);
+
+  useEffect(() => {
+    setSignedin(signedin);
+  }, [signedin]);
+
   const [data, setData] = useState({
     name: "",
     email: localStorage.getItem("email") ?? "",
@@ -24,10 +26,11 @@ const Register = () => {
     scholar_id: "",
     previousExperience: "",
     branch: "",
-    year: "",
-    choice1: "Commitee 1",
-    choice2: "Commitee 1",
-    choice3: "Commitee 1",
+    year: "FIRST",
+    choice1: "UNHCR",
+    choice2: "UNHCR",
+    choice3: "UNHCR",
+    choice4: "UNHCR",
     members: [],
     portfolioC11: "",
     portfolioC12: "",
@@ -37,7 +40,10 @@ const Register = () => {
     portfolioC23: "",
     portfolioC31: "",
     portfolioC32: "",
-    portfolioC33: ""
+    portfolioC33: "",
+    portfolioC41: "",
+    portfolioC42: "",
+    portfolioC43: "",
   });
 
   const handleClick = () => {
@@ -45,28 +51,25 @@ const Register = () => {
     signInWithPopup(auth, provider).then((data) => {
       if (data.user && data.user.email) {
         const userEmail = data.user.email.toLowerCase();
-        setVal(userEmail);
         localStorage.setItem("email", userEmail);
+        setSignedin(true);
       } else {
         console.error("Error retrieving user data during sign-in.");
       }
     });
   };
-  const handleRadioChangeNITS = (event) => {
-    event.preventDefault();
-    setSelectedValue(event.target.value);
-  };
-  const handleRadioChangeIsGroup = (event) => {
-    event.preventDefault();
-    setIsGroup(event.target.value);
-    setData(prev=>(
-      {
-        ...prev,
-        members:[...prev.members,""]
-      }
-    ));
-  };
-  console.log(`Members:${data.members}`);
+  useEffect(() => {
+    setSelectedValue(selectedValue);
+  }, [selectedValue]);
+  // const handleRadioChangeIsGroup = (event) => {
+  //   event.preventDefault();
+  //   setIsGroup(event.target.value);
+  //   setData((prev) => ({
+  //     ...prev,
+  //     members: [...prev.members, ""],
+  //   }));
+  // };
+  // console.log(`Members:${data.members}`);
   const onSubmitHandler = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -81,6 +84,7 @@ const Register = () => {
     formData.append("choice1", data.choice1);
     formData.append("choice2", data.choice2);
     formData.append("choice3", data.choice3);
+    formData.append("choice4", data.choice4);
     formData.append("members", data.members);
     formData.append("portfolioC11", data.portfolioC11);
     formData.append("portfolioC12", data.portfolioC12);
@@ -91,78 +95,100 @@ const Register = () => {
     formData.append("portfolioC31", data.portfolioC31);
     formData.append("portfolioC32", data.portfolioC32);
     formData.append("portfolioC33", data.portfolioC33);
+    formData.append("portfolioC41", data.portfolioC41);
+    formData.append("portfolioC42", data.portfolioC42);
+    formData.append("portfolioC43", data.portfolioC43);
 
-    //Api call
-    const response = await axios.post(
-      `${import.meta.env.VITE_APP_API}/participant/add`,
-      data,
+    // Toast with loading, success, and error states
+    toast.promise(
+      axios.post(`${import.meta.env.VITE_APP_API}/participant/add`, data),
+      {
+        loading: "Registering...",
+        success: () => {
+          setTimeout(() => navigate("/successfull"), 2000); // Delay before navigating
+          setData({
+            name: "",
+            email: "",
+            institute: "NIT SILCHAR",
+            phone: "",
+            paymentProof: "",
+            scholar_id: "",
+            previousExperience: "",
+            branch: "",
+            year: "FIRST",
+            choice1: "UNHCR",
+            choice2: "UNHCR",
+            choice3: "UNHCR",
+            choice4: "UNHCR",
+            members: [],
+            portfolioC11: "",
+            portfolioC12: "",
+            portfolioC13: "",
+            portfolioC21: "",
+            portfolioC22: "",
+            portfolioC23: "",
+            portfolioC31: "",
+            portfolioC32: "",
+            portfolioC33: "",
+            portfolioC41: "",
+            portfolioC42: "",
+            portfolioC43: "",
+          });
+          return "Registration successful!";
+        },
+        error: "Something went wrong. Please try again.",
+      },
     );
-
-    // if (response.data.success) {
-    //   setData({
-    //     name: "",
-    //     email: "",
-    //     institute: "",
-    //     paymentProof: "",
-    //     scholar_id: 0,
-    //     branch: "",
-    //     year: "",
-    //     choice1: "",
-    //     choice2: "",
-    //     choice3: ""
-    //   });
-    //   console.log(response);
-    // }
-    if (response.status === 200) {
-      toast.success("Registration successful!");
-      setData({
-        name: "",
-        email: "",
-        institute: "NIT SILCHAR",
-        phone: "",
-        paymentProof: "",
-        scholar_id: "",
-        previousExperience: "",
-        branch: "",
-        year: "",
-        choice1: "Commitee 1",
-        choice2: "Commitee 1",
-        choice3: "Commitee 1",
-        members: [],
-        portfolioC11: "",
-        portfolioC12: "",
-        portfolioC13: "",
-        portfolioC21: "",
-        portfolioC22: "",
-        portfolioC23: "",
-        portfolioC31: "",
-        portfolioC32: "",
-        portfolioC33: ""
-      });
-      navigate("/events/Annual/successfull");
-    } else {
-      toast.error("Something went wrong. Please try again.");
-    }
   };
 
-  const handleImageUpload = async (e) => {
+  const handleCloudinaryUpload = async (data) => {
+    const res = await axios.post(
+      "https://api.cloudinary.com/v1_1/dhry5xscm/image/upload",
+      data,
+    );
+    setData((prev) => ({
+      ...prev,
+      paymentProof: res.data.url,
+    }));
+  };
+  const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
       const data = new FormData();
       data.append("file", file);
       data.append("upload_preset", "nitsmun_payments");
       data.append("cloud_name", "dhry5xscm");
-      const res = await axios.post(
-        "https://api.cloudinary.com/v1_1/dhry5xscm/image/upload",
-        data,
-      );
-      // setData((prev)=>{...prev,"paymentProof":res.data.url});
-      setData((prev) => ({
-        ...prev,
-        paymentProof: res.data.url,
-      }));
+
+      try {
+        toast.promise(handleCloudinaryUpload(data), {
+          loading: "Uploading image...",
+          success: "Image uploaded successfully!",
+          error: "Image upload failed. Please try again!!",
+        });
+      } catch (error) {
+        console.error("Error uploading image:", error);
+      }
     }
   };
+
+  // const handleImageUpload = async (e) => {
+  //   const file = e.target.files[0];
+  //   if (file) {
+  //     const data = new FormData();
+  //     data.append("file", file);
+  //     data.append("upload_preset", "nitsmun_payments");
+  //     data.append("cloud_name", "dhry5xscm");
+  //     const res = await axios.post(
+  //       "https://api.cloudinary.com/v1_1/dhry5xscm/image/upload",
+  //       data,
+  //     );
+  //     // setData((prev)=>{...prev,"paymentProof":res.data.url});
+  //     setData((prev) => ({
+  //       ...prev,
+  //       paymentProof: res.data.url,
+  //     }));
+  //   }
+  // };
   return (
     <div className={styles.register}>
       <h1 className={styles.registerHeading}>Register Now</h1>
@@ -170,14 +196,14 @@ const Register = () => {
       <form action="" className={styles.registerForm}>
         <div className={styles.headingForm}>
           <div className={styles.textBox}>
-            <h1>Youth Parliament Online Registration Form</h1>
+            <h1>Annual Conference Online Registration Form</h1>
             {!localStorage.getItem("email") ? (
               <p>
-                You need to{" "}
+                Please{" "}
                 <u onClick={handleClick} style={{ cursor: "pointer" }}>
                   Login
                 </u>{" "}
-                before registering
+                before registering.
               </p>
             ) : (
               <p>
@@ -222,7 +248,7 @@ const Register = () => {
             />
           </div>
           <label htmlFor="IsNITS">Are you a student of NIT Silchar?</label>
-          <div className={styles.formBranch}>
+          {/* <div className={styles.formBranch}>
             <div>
               <input
                 type="radio"
@@ -247,6 +273,41 @@ const Register = () => {
               />
               <span>No</span>
             </div>
+          </div> */}
+          <div
+            className={styles.myRadioButton}
+            style={{
+              gap: "2px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <button
+              style={{
+                backgroundColor: `${selectedValue === "Yes" ? "black" : "transparent"}`,
+                color: `${selectedValue === "Yes" ? "white" : "black"}`,
+              }}
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedValue("Yes");
+              }}
+            >
+              Yes
+            </button>
+            <button
+              style={{
+                backgroundColor: `${selectedValue === "No" ? "black" : "transparent"}`,
+                color: `${selectedValue === "No" ? "white" : "black"}`,
+              }}
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedValue("No");
+              }}
+            >
+              No
+            </button>
           </div>
           {selectedValue === "Yes" ? (
             <>
@@ -270,7 +331,7 @@ const Register = () => {
               <div className={styles.formId}>
                 <div className={styles.year}>
                   <label htmlFor="">Year</label>
-                  <input
+                  {/* <input
                     type="text"
                     value={data.year}
                     onChange={(e) =>
@@ -280,7 +341,42 @@ const Register = () => {
                       }))
                     }
                     disabled={!localStorage.getItem("email")}
-                  />
+                  /> */}
+                  <select
+                    value={data.year}
+                    onChange={(e) =>
+                      setData((prevData) => ({
+                        ...prevData,
+                        year: e.target.value,
+                      }))
+                    }
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="FIRST"
+                    >
+                      FIRST
+                    </option>
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="SECOND"
+                    >
+                      SECOND
+                    </option>
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="THIRD"
+                    >
+                      THIRD
+                    </option>
+                    <option
+                      disabled={!localStorage.getItem("email")}
+                      value="FOURTH"
+                    >
+                      FOURTH
+                    </option>
+                  </select>
                 </div>
                 <div className={styles.year}>
                   <label htmlFor="">Scholar ID</label>
@@ -305,7 +401,7 @@ const Register = () => {
                 <input
                   type="text"
                   name="name"
-                  value={selectedValue === "No" ? "" : data.institute}
+                  value={data.institute}
                   onChange={(e) =>
                     setData((prev) => ({
                       ...prev,
@@ -351,8 +447,8 @@ const Register = () => {
               disabled={!localStorage.getItem("email")}
             />
           </div>
-          <label htmlFor="IsGroup">Are you participating in a group?</label>
-          <div className={styles.formBranch}>
+          {/* <label htmlFor="IsGroup">Are you participating in a group?</label> */}
+          {/* <div className={styles.formBranch}>
             <div>
               <input
                 type="radio"
@@ -377,40 +473,57 @@ const Register = () => {
               />
               <span>No</span>
             </div>
-          </div>
-          {
-            isGroup === "Yes" ?
-              <div>
-                {Array(numMembers).fill(null).map((_, index) => (
-                  <div key={index}><h5>Member {index+1}</h5><input type="text" value={data.members[index]} onChange={(e)=>setData(prev=>({
-                    ...prev,
-                    members: prev.members.map((member, i) =>
-                      i === index ? e.target.value : member
-                    ),
-                  }))}  placeholder={`Member ${index+1}`} /></div>
+          </div> */}
+          {/* {isGroup === "Yes" ? (
+            <div>
+              {Array(numMembers)
+                .fill(null)
+                .map((_, index) => (
+                  <div key={index}>
+                    <h5>Member {index + 1}</h5>
+                    <input
+                      type="text"
+                      value={data.members[index]}
+                      onChange={(e) =>
+                        setData((prev) => ({
+                          ...prev,
+                          members: prev.members.map((member, i) =>
+                            i === index ? e.target.value : member,
+                          ),
+                        }))
+                      }
+                      placeholder={`Member ${index + 1}`}
+                    />
+                  </div>
                 ))}
-                <button onClick={(e)=>{
+              <button
+                onClick={(e) => {
                   e.preventDefault();
-                  setNumMembers(numMembers+1);
-                  setData(prev=>(
-                    {
+                  setNumMembers(numMembers + 1);
+                  setData((prev) => ({
+                    ...prev,
+                    members: [...prev.members, ""],
+                  }));
+                }}
+              >
+                Add Member
+              </button>
+              {numMembers > 1 ? (
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setNumMembers(numMembers - 1);
+                    setData((prev) => ({
                       ...prev,
-                      members:[...prev.members,""]
-                    }
-                  ));
-                }}>Add Member</button>
-                {numMembers>1?<button onClick={(e)=>{
-                  e.preventDefault();
-                  setNumMembers(numMembers-1);
-                  setData(prev=>(
-                    {
-                      ...prev,
-                      members: prev.members.slice(0, -1)
-                    }
-                  ));
-                }}>Delete Member</button>:null}
-              </div> : null
-          }
+                      members: prev.members.slice(0, -1),
+                    }));
+                  }}
+                >
+                  Delete Member
+                </button>
+              ) : null}
+            </div>
+          ) : null} */}
           <label htmlFor="Experiences">Previous MUN Experiences (if any)</label>
           <div className={styles.formBranch}>
             <textarea
@@ -433,6 +546,22 @@ const Register = () => {
             preference are not always met and are not guaranteed.)
           </p>
 
+          <h4>
+            There are a number of portfolios available under each committee.
+            Please checkout this doc to find the portfolios
+          </h4>
+          <a
+            href="https://docs.google.com/spreadsheets/d/1rE8QYHugXYnRQJQqBZqa5oYuvGTRKb5BIFs2sujZk48/edit?usp=sharing"
+            style={{
+              textDecoration: "underline",
+              display: "inline",
+              fontSize: "18px",
+            }}
+            target="#"
+          >
+            Visit here to view the portfolio matrix
+          </a>
+
           <div className={styles.prefParent}>
             <div className={styles.prefCont}>
               <div className={styles.prefInner}>
@@ -447,46 +576,64 @@ const Register = () => {
                   }
                   disabled={!localStorage.getItem("email")}
                 >
-                  {!committee1 && (
-                    <option
-                      value="Committee 1"
-                      disabled={!localStorage.getItem("email")}
-                    >
-                      Committee 1
-                    </option>
-                  )}
-                  {!committee2 && (
-                    <option
-                      value="Committee 2"
-                      disabled={!localStorage.getItem("email")}
-                    >
-                      Committee 2
-                    </option>
-                  )}
-                  {!committee3 && (
-                    <option
-                      value="Committee 3"
-                      disabled={!localStorage.getItem("email")}
-                    >
-                      Committee 3
-                    </option>
-                  )}
+                  <option
+                    value="UNHCR"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    UNHCR
+                  </option>
+                  <option
+                    value="UNSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    UNSC
+                  </option>
+                  <option
+                    value="MGSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    MGSC
+                  </option>
+                  <option value="IPC" disabled={!localStorage.getItem("email")}>
+                    IPC
+                  </option>
                 </select>
               </div>
               <div className={styles.portWrap}>
                 <h4>Portfolio Preferences</h4>
-                <input type="text" placeholder="Portfolio Preference 1" value={data.portfolioC11} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC11: e.target.value
-                }))} />
-                <input type="text" placeholder="Portfolio Preference 2" value={data.portfolioC12} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC12: e.target.value
-                }))} />
-                <input type="text" placeholder="Portfolio Preference 3" value={data.portfolioC13} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC13: e.target.value
-                }))} />
+                <input
+                  type="text"
+                  placeholder="Portfolio Preference 1"
+                  value={data.portfolioC11}
+                  onChange={(e) =>
+                    setData((prev) => ({
+                      ...prev,
+                      portfolioC11: e.target.value,
+                    }))
+                  }
+                />
+                <input
+                  type="text"
+                  placeholder="Portfolio Preference 2"
+                  value={data.portfolioC12}
+                  onChange={(e) =>
+                    setData((prev) => ({
+                      ...prev,
+                      portfolioC12: e.target.value,
+                    }))
+                  }
+                />
+                <input
+                  type="text"
+                  placeholder="Portfolio Preference 3"
+                  value={data.portfolioC13}
+                  onChange={(e) =>
+                    setData((prev) => ({
+                      ...prev,
+                      portfolioC13: e.target.value,
+                    }))
+                  }
+                />
               </div>
             </div>
             <div className={styles.prefCont}>
@@ -502,46 +649,64 @@ const Register = () => {
                   }
                   disabled={!localStorage.getItem("email")}
                 >
-                  {!committee1 && (
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="Committee 1"
-                    >
-                      Committee 1
-                    </option>
-                  )}
-                  {!committee2 && (
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="Committee 2"
-                    >
-                      Committee 2
-                    </option>
-                  )}
-                  {!committee3 && (
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="Committee 3"
-                    >
-                      Committee 3
-                    </option>
-                  )}
+                  <option
+                    value="UNHCR"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    UNHCR
+                  </option>
+                  <option
+                    value="UNSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    UNSC
+                  </option>
+                  <option
+                    value="MGSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    MGSC
+                  </option>
+                  <option value="IPC" disabled={!localStorage.getItem("email")}>
+                    IPC
+                  </option>
                 </select>
               </div>
               <div className={styles.portWrap}>
                 <h4>Portfolio Preferences</h4>
-                <input type="text" placeholder="Portfolio Preference 1" value={data.portfolioC21} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC21: e.target.value
-                }))} />
-                <input type="text" placeholder="Portfolio Preference 2" value={data.portfolioC22} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC22: e.target.value
-                }))} />
-                <input type="text" placeholder="Portfolio Preference 3" value={data.portfolioC23} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC23: e.target.value
-                }))} />
+                <input
+                  type="text"
+                  placeholder="Portfolio Preference 1"
+                  value={data.portfolioC21}
+                  onChange={(e) =>
+                    setData((prev) => ({
+                      ...prev,
+                      portfolioC21: e.target.value,
+                    }))
+                  }
+                />
+                <input
+                  type="text"
+                  placeholder="Portfolio Preference 2"
+                  value={data.portfolioC22}
+                  onChange={(e) =>
+                    setData((prev) => ({
+                      ...prev,
+                      portfolioC22: e.target.value,
+                    }))
+                  }
+                />
+                <input
+                  type="text"
+                  placeholder="Portfolio Preference 3"
+                  value={data.portfolioC23}
+                  onChange={(e) =>
+                    setData((prev) => ({
+                      ...prev,
+                      portfolioC23: e.target.value,
+                    }))
+                  }
+                />
               </div>
             </div>
             <div className={styles.prefCont}>
@@ -557,88 +722,186 @@ const Register = () => {
                   }
                   disabled={!localStorage.getItem("email")}
                 >
-                  {!committee1 && (
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="Committee 1"
-
-                      onClick={setCommitee1}
-                    >
-                      Committee 1
-                    </option>
-                  )}
-                  {!committee2 && (
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="Committee 2"
-                      onClick={setCommitee2}
-                    >
-                      Committee 2
-                    </option>
-                  )}
-                  {!committee3 && (
-                    <option
-                      disabled={!localStorage.getItem("email")}
-                      value="Committee 3"
-                      onClick={setCommitee3}
-                    >
-                      Committee 3
-                    </option>
-                  )}
+                  <option
+                    value="UNHCR"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    UNHCR
+                  </option>
+                  <option
+                    value="UNSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    UNSC
+                  </option>
+                  <option
+                    value="MGSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    MGSC
+                  </option>
+                  <option value="IPC" disabled={!localStorage.getItem("email")}>
+                    IPC
+                  </option>
                 </select>
               </div>
               <div className={styles.portWrap}>
                 <h4>Portfolio Preferences</h4>
-                <input type="text" placeholder="Portfolio preference 1" value={data.portfolioC31} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC31: e.target.value
-                }))} />
-                <input type="text" placeholder="Portfolio preference 2" value={data.portfolioC32} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC32: e.target.value
-                }))} />
-                <input type="text" placeholder="Portfolio preference 3" value={data.portfolioC33} onChange={(e) => setData((prev) => ({
-                  ...prev,
-                  portfolioC33: e.target.value
-                }))} />
+                <input
+                  type="text"
+                  placeholder="Portfolio preference 1"
+                  value={data.portfolioC31}
+                  onChange={(e) =>
+                    setData((prev) => ({
+                      ...prev,
+                      portfolioC31: e.target.value,
+                    }))
+                  }
+                />
+                <input
+                  type="text"
+                  placeholder="Portfolio preference 2"
+                  value={data.portfolioC32}
+                  onChange={(e) =>
+                    setData((prev) => ({
+                      ...prev,
+                      portfolioC32: e.target.value,
+                    }))
+                  }
+                />
+                <input
+                  type="text"
+                  placeholder="Portfolio preference 3"
+                  value={data.portfolioC33}
+                  onChange={(e) =>
+                    setData((prev) => ({
+                      ...prev,
+                      portfolioC33: e.target.value,
+                    }))
+                  }
+                />
+              </div>
+            </div>
+            <div className={styles.prefCont}>
+              <div className={styles.prefInner}>
+                <label htmlFor="Preference 4">Preference 4</label>
+                <select
+                  value={data.choice4} // Controlled value linked to state
+                  onChange={(e) =>
+                    setData((prevData) => ({
+                      ...prevData,
+                      choice4: e.target.value, // Update the `choice1` key with the selected value
+                    }))
+                  }
+                  disabled={!localStorage.getItem("email")}
+                >
+                  <option
+                    value="UNHCR"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    UNHCR
+                  </option>
+                  <option
+                    value="UNSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    UNSC
+                  </option>
+                  <option
+                    value="MGSC"
+                    disabled={!localStorage.getItem("email")}
+                  >
+                    MGSC
+                  </option>
+                  <option value="IPC" disabled={!localStorage.getItem("email")}>
+                    IPC
+                  </option>
+                </select>
+              </div>
+              <div className={styles.portWrap}>
+                <h4>Portfolio Preferences</h4>
+                <input
+                  type="text"
+                  placeholder="Portfolio preference 1"
+                  value={data.portfolioC41}
+                  onChange={(e) =>
+                    setData((prev) => ({
+                      ...prev,
+                      portfolioC41: e.target.value,
+                    }))
+                  }
+                />
+                <input
+                  type="text"
+                  placeholder="Portfolio preference 2"
+                  value={data.portfolioC42}
+                  onChange={(e) =>
+                    setData((prev) => ({
+                      ...prev,
+                      portfolioC42: e.target.value,
+                    }))
+                  }
+                />
+                <input
+                  type="text"
+                  placeholder="Portfolio preference 3"
+                  value={data.portfolioC43}
+                  onChange={(e) =>
+                    setData((prev) => ({
+                      ...prev,
+                      portfolioC43: e.target.value,
+                    }))
+                  }
+                />
               </div>
             </div>
           </div>
+
           <p className={styles.formPayment}>Payment</p>
           <p className={styles.formPaymentDesc}>
-            To participate in the NITS- MUN Youth Parliament 2023, a
-            registration fee of <span>Rs 499</span> is needed to be paid by
-            every delegate which will include Lorem ipsum dolor sit amet. A nisi
-            nobis sed quia sapiente
+            To complete your registration for the NITS-MUN Annual Conference
+            2025, please make a payment of <span>₹299</span> using the QR code
+            provided below and upload a screenshot of the payment confirmation.
           </p>
 
           <div className={styles.paymentCredentials}>
             <div className={styles.textCredentials}>
               <div className={styles.upiCredentials}>
-                <p>Lorem ipsum dolor sit.</p>
-                <p>Lorem ipsum dolor sit.</p>
-                <p>Lorem ipsum dolor sit.</p>
+                <p>aditi.khataniar@okaxis</p>
+                {/* <p>Lorem ipsum dolor sit.</p>
+                <p>Lorem ipsum dolor sit.</p> */}
               </div>
 
               <div className={styles.proof}>
                 <p>Payment proof: </p>
                 <input type="file" onChange={handleImageUpload} />
               </div>
-
-              <button onClick={onSubmitHandler}> Submit </button>
+              <button
+                onClick={onSubmitHandler}
+                disabled={
+                  data.name === "" ||
+                  data.email === "" ||
+                  data.phone === "" ||
+                  data.institute === "" ||
+                  data.paymentProof === ""
+                }
+              >
+                Submit
+              </button>
             </div>
             <div className={styles.upiImage}>
               <img
                 src="https://res.cloudinary.com/dludtk5vz/image/upload/v1738597970/WhatsApp_Image_2025-02-03_at_21.21.27_6e441ace_wtlyay.jpg"
-                alt=""
+                alt="qr"
+                style={{ objectFit: "cover" }}
               />
             </div>
           </div>
-
+          <label>For any queries, feel free to contact us</label>
           <div className={styles.formQueries}>
-            <p>Lorem ipsum dolor sit.</p>
-            <p>Lorem ipsum dolor sit.</p>
-            <p>Lorem ipsum dolor sit.</p>
+            <p>+91{"  "}86587-72500</p>
+            <p>+91{"  "}91013-75958</p>
+            {/* <p>Lorem ipsum dolor sit.</p> */}
           </div>
         </div>
       </form>

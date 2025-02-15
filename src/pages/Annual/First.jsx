@@ -1,5 +1,15 @@
 import React from "react";
 import styles from "./Firstone.module.scss";
+import { Firstone } from "./data";
+import Committee from "./committee";
+// import ExecutiveBoard from "./ExecutiveBoard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Link } from "react-router-dom";
+
+import { Navigation, Pagination } from "swiper/modules";
 
 const First = () => {
   return (
@@ -8,6 +18,7 @@ const First = () => {
         <div className={styles.tittle}>
           <h1>ANNUAL CONFERENCE</h1>
         </div>
+
         <div className={styles.content}>
           Step into a world where ideas dance, perspectives collide, and
           innovation takes center stage! We're thrilled to unveil the theme of
@@ -28,6 +39,11 @@ const First = () => {
           in addressing concerns and playing a pivotal role in ensuring
           security. Join the conference to contribute your perspective to the
           strategic discussions.
+        </div>
+        <div className={styles.res}>
+          <Link to="/register" className={styles.registerButton}>
+            Register Now
+          </Link>
         </div>
       </div>
 
@@ -74,62 +90,27 @@ const First = () => {
         </div>
       </div>
 
-      <div className={styles.container}>
-        <h1 className={styles.textCom}>Commitees</h1>
-
-        <section className={styles.mainsectn}>
-          <div className={styles.imgbox}>
-            <div className={styles.heading}>
-              <h1>UNHRC</h1>
-              <p>(United Nations Human Resource Council)</p>
-            </div>
-          </div>
-
-          <div className={styles.textbox}>
-            <p>
-              <span>Agenda:</span> Addressing the Ongoing Atrocities in
-              Israel-Palestine with Main Focus On Violence Against Women and
-              childern
-            </p>
-
-            <button className={styles.btn}>Background Guide</button>
-          </div>
-        </section>
-      </div>
-
-      <div className={styles.executive}>
-        <h1 className={styles.textEx}>EXECUTIVE BOARD</h1>
-
-        <div className={styles.cardbody}>
-          <div className={styles.card}>
-            <div className={styles.head}>
-              <div className={styles.img1}>{/* <img src="" alt="" /> */}</div>
-              <h1>Sounak Sengupta</h1>
-            </div>
-            <p>
-              Mr Sounak Sengupta as the Chairperson for Intelligence Bureau.
-              Sounak Sengupta, a physics post graduate student, has been doing
-              MUNs since 2018. Apart from his academic persuasions, he takes
-              keen interest in debates and public speaking.
-            </p>
-          </div>
-          <div className={`${styles.card} ${styles.cardtwo}`}>
-            <div className={styles.head}>
-              <div className={styles.img2}>
-                <img src="" alt="" />
-              </div>
-              <h1>Prathmesh Repal</h1>
-            </div>
-            <p>
-              Mr. Prathamesh Repal as the Chairperson for UNHRC. As he takes the
-              helm as the Chairperson for the UNHRC simulation at NITS 2024, his
-              passion for fostering a conducive and inclusive committee
-              atmosphere shines through. He strives to uphold the essence of
-              MUNs as a breeding ground for creative ideas and solutions.
-            </p>
-          </div>
+      <div className={styles.committeeone}>
+        <h1 className={styles.textEx}>COMMITTEES</h1>
+        <div className={styles.commiteeParent}>
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={50}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            className={styles.swiperCont}
+          >
+            {Firstone.map((committee, index) => (
+              <SwiperSlide key={index}>
+                <Committee key={committee.id} committee={committee} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
+
+      {/* <ExecutiveBoard /> */}
     </>
   );
 };

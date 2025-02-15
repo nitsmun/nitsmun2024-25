@@ -1,0 +1,129 @@
+// Committee.module.scss
+.commiteeCont {
+  width: 80%;
+  margin: 0 auto;
+  height: 30rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 4rem;
+  box-shadow: -1px -1px 2px white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 800px) {
+    display: flex;
+    flex-direction: row;
+    height: 25rem;
+    width: 70%;
+  }
+
+  @media screen and (min-width: 1300px) {
+    height: 28rem;
+  }
+
+  .leftImgCont {
+    background: url("https://res.cloudinary.com/dffke2hbp/image/upload/v1722452312/esr3nnbmozekhydvmzzy.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 80%;
+    height: 55%;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    margin-top: 2rem;
+
+    @media screen and (min-width: 800px) {
+      height: 90%;
+      margin-left: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .heading {
+      h1 {
+        margin-right: 2rem;
+        font-weight: 700;
+        font-size: 1rem;
+
+        @media screen and (min-width: 1300px) {
+          font-size: 1.9rem;
+          margin-left: -19rem;
+        }
+      }
+
+      p {
+        font-size: 0.7rem;
+        margin-top: -1rem;
+
+        @media screen and (min-width: 1100px) {
+          font-size: 1rem;
+        }
+
+        @media screen and (min-width: 1300px) {
+          margin-right: 8rem;
+        }
+      }
+    }
+  }
+
+  .rightTextCont {
+    width: 80%;
+    // border: 2px solid red;
+    height: 90%;
+    color: #fff;
+
+    @media screen and (min-width: 800px) {
+      padding: 2rem;
+      width: 100%;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 1.05rem;
+
+      span {
+        font-weight: 700;
+      }
+
+      @media screen and (min-width: 800px) {
+        margin-top: 1rem;
+        font-size: 1.35rem;
+      }
+    }
+
+    .btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5rem;
+      font-size: 0.8rem;
+      // width: 9rem;
+      // height: 2rem;
+      // align-self: flex-start;
+      padding: 0.8rem 1.5rem;
+      background: #0066cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+
+      &:hover {
+        background: #0052a3;
+        transform: translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      @media screen and (min-width: 800px) {
+        width: 50%;
+        margin-left: 4rem;
+      }
+    }
+  }
+}

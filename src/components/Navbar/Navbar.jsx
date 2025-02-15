@@ -1,62 +1,86 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./Navbar.module.scss";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [menu, setMenu] = useState(0);
-  const [mobileMenu, setmobileMenu] = useState(0);
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const navbarRef = useRef(null);
+
   const toggleMenu = () => {
-    if (innerWidth < 800) {
-      mobileMenu ? setmobileMenu(0) : setmobileMenu(20);
+    if (isMobile) {
+      setMobileMenu(!mobileMenu);
     }
-    menu ? setMenu(0) : setMenu(13);
-    // console.log("Hello");
-    // const showMenu = document.querySelector(".ul");
-    // showMenu.classList.add("myStyle");
-    // }
   };
 
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobileCheck = window.innerWidth < 800;
+      setIsMobile(mobileCheck);
+      if (!mobileCheck) setMobileMenu(false);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        navbarRef.current &&
+        !navbarRef.current.contains(event.target) &&
+        isMobile &&
+        mobileMenu
+      ) {
+        setMobileMenu(false);
+      }
+    };
+
+    if (mobileMenu && isMobile) {
+      document.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [mobileMenu, isMobile]);
+
   return (
-    <>
-      <div className={styles.navbar}>
+    <div className={styles.navbar} ref={navbarRef}>
+      <Link to="/" className={styles.logoLink}>
         <div className={styles.logo}>
           <img
             src="https://res.cloudinary.com/dybbffhed/image/upload/v1720419652/mf2h9pxyvxylqialegvn.png"
-            alt=""
+            alt="NITSMUN Logo"
           />
-
           <p>NITSMUN</p>
         </div>
+      </Link>
 
-        <div className={styles.ul} style={{ height: `${mobileMenu}rem` }}>
-          <Link to="/" className={styles.navItem}>
-            Home
-          </Link>
-          <Link to="/Events" className={styles.navItem}>
-            Events
-          </Link>
-          <Link to="/about" className={styles.navItem}>
-            About Us
-          </Link>
-          <Link to="/team" className={styles.navItem}>
-            Secreteriat
-          </Link>
-          <Link to="/gallery" className={styles.navItem}>
-            Photo Gallery
-          </Link>
-          {/* <Link to="/contact" className={styles.navItem}>
-            Contact Us
-          </Link> */}
-        </div>
-        {/* <div className={styles.hidden} style={{ height: `${menu}rem` }}>
-          <Link to="/team">Secreteriat</Link>
-          <Link to="/">Photo Gallery</Link>
-        </div> */}
-        <div className={styles.hamburger}>
-          <i className="fa fa-bars" onClick={toggleMenu}></i>
-        </div>
+      <div className={`${styles.ul} ${mobileMenu ? styles.open : ""}`}>
+        <Link to="/" className={styles.navItem} onClick={toggleMenu}>
+          Home
+        </Link>
+        <Link to="/Events" className={styles.navItem} onClick={toggleMenu}>
+          Events
+        </Link>
+        <Link to="/about" className={styles.navItem} onClick={toggleMenu}>
+          About Us
+        </Link>
+        <Link to="/team" className={styles.navItem} onClick={toggleMenu}>
+          Secreteriat
+        </Link>
+        <Link to="/gallery" className={styles.navItem} onClick={toggleMenu}>
+          Photo Gallery
+        </Link>
       </div>
-    </>
+
+      <div className={styles.hamburger} onClick={toggleMenu}>
+        <i className={`fa ${mobileMenu ? "fa-times" : "fa-bars"}`}></i>
+      </div>
+    </div>
   );
 };
+
 export default Navbar;

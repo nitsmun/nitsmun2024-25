@@ -15,7 +15,12 @@
   width: 100vw;
   overflow-x: hidden;
   font-family: "Jost", "sans-serif";
-
+  select {
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
+    color: #000000;
+    border-color: rgba(122, 113, 113, 0.5);
+  }
   .registerHeading {
     font-size: 3rem;
     margin-top: 10rem;
@@ -55,6 +60,12 @@
         text-align: left;
         margin: 0;
         color: rgba(102, 102, 102, 1);
+        font-size: 2rem;
+
+        u {
+          font-weight: 600;
+          color: black;
+        }
       }
 
       h1 {
@@ -171,20 +182,20 @@
         display: flex;
         color: rgba(102, 102, 102, 1);
       }
-      .prefParent{
+      .prefParent {
         display: flex;
         align-items: center;
         justify-content: space-around;
         flex-direction: column;
-        @media screen and (min-width:600px) {
+        @media screen and (min-width: 600px) {
           flex-direction: row;
         }
-        .prefCont{
+        .prefCont {
           display: flex;
           align-items: flex-start;
           justify-content: center;
           flex-direction: column;
-          .prefInner{
+          .prefInner {
             display: flex;
             align-items: flex-start;
             justify-content: center;
@@ -196,13 +207,49 @@
               border-color: rgba(122, 113, 113, 0.5);
             }
           }
-          .portWrap{
+          .portWrap {
             display: flex;
             align-items: flex-start;
             justify-content: center;
             flex-direction: column;
 
-            input{
+            input {
+              background-color: rgba(255, 255, 255, 1);
+              outline: none;
+              border-color: rgba(122, 113, 113, 0.5);
+              height: 1.5rem;
+              color: black;
+              width: 80%;
+            }
+          }
+        }
+      }
+      .prefParent {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        @media screen and (min-width: 600px) {
+          flex-direction: row;
+        }
+        .prefCont {
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          flex-direction: column;
+          .prefInner {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+          }
+          .portWrap {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+
+            input {
               background-color: rgba(255, 255, 255, 1);
               outline: none;
               border-color: rgba(122, 113, 113, 0.5);
