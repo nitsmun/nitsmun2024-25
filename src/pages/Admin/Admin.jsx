@@ -9,6 +9,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import axios from "axios";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -39,22 +40,17 @@ const AdminPanel = () => {
 
   const fetchParticipants = async () => {
     try {
-      const response = await fetch(url, {
-        method: "GET",
+      const response = await axios.get(url, {
         headers: {
           "Content-Type": "application/json",
         },
       });
 
-      const data = await response.json();
+      // const data = await response.json();
 
-      console.log(data);
+      console.log(response.data);
 
-      if (response.ok) {
-        setParticipants(data);
-      } else {
-        alert("Failed to fetch participants");
-      }
+      setParticipants(response.data);
     } catch (error) {
       console.log(error);
     }
