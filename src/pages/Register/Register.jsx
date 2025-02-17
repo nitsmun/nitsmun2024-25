@@ -860,7 +860,7 @@ const Register = () => {
           <p className={styles.formPayment}>Payment</p>
           <p className={styles.formPaymentDesc}>
             To complete your registration for the NITS-MUN Annual Conference
-            2025, please make a payment of <span>₹299</span> using the QR code
+            2025, please make a payment of <span>₹349</span> using the QR code
             provided below and upload a screenshot of the payment confirmation.
           </p>
 
