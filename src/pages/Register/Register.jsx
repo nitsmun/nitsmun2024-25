@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Register.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Toaster, toast } from "sonner";
 import { auth, provider } from "../../config";
@@ -8,9 +8,15 @@ import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
   const [selectedValue, setSelectedValue] = useState("Yes");
-  const [isGroup, setIsGroup] = useState("No");
-  const [numMembers, setNumMembers] = useState(1);
+  // const [isGroup, setIsGroup] = useState("No");
+  // const [numMembers, setNumMembers] = useState(1);
   const navigate = useNavigate();
+  const [signedin, setSignedin] = useState(false);
+
+  useEffect(() => {
+    setSignedin(signedin);
+  }, [signedin]);
+
   const [data, setData] = useState({
     name: "",
     email: localStorage.getItem("email") ?? "",
@@ -46,24 +52,24 @@ const Register = () => {
       if (data.user && data.user.email) {
         const userEmail = data.user.email.toLowerCase();
         localStorage.setItem("email", userEmail);
+        setSignedin(true);
       } else {
         console.error("Error retrieving user data during sign-in.");
       }
     });
   };
-  const handleRadioChangeNITS = (event) => {
-    event.preventDefault();
-    setSelectedValue(event.target.value);
-  };
-  const handleRadioChangeIsGroup = (event) => {
-    event.preventDefault();
-    setIsGroup(event.target.value);
-    setData((prev) => ({
-      ...prev,
-      members: [...prev.members, ""],
-    }));
-  };
-  console.log(`Members:${data.members}`);
+  useEffect(() => {
+    setSelectedValue(selectedValue);
+  }, [selectedValue]);
+  // const handleRadioChangeIsGroup = (event) => {
+  //   event.preventDefault();
+  //   setIsGroup(event.target.value);
+  //   setData((prev) => ({
+  //     ...prev,
+  //     members: [...prev.members, ""],
+  //   }));
+  // };
+  // console.log(`Members:${data.members}`);
   const onSubmitHandler = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -242,7 +248,7 @@ const Register = () => {
             />
           </div>
           <label htmlFor="IsNITS">Are you a student of NIT Silchar?</label>
-          <div className={styles.formBranch}>
+          {/* <div className={styles.formBranch}>
             <div>
               <input
                 type="radio"
@@ -267,6 +273,41 @@ const Register = () => {
               />
               <span>No</span>
             </div>
+          </div> */}
+          <div
+            className={styles.myRadioButton}
+            style={{
+              gap: "2px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <button
+              style={{
+                backgroundColor: `${selectedValue === "Yes" ? "black" : "transparent"}`,
+                color: `${selectedValue === "Yes" ? "white" : "black"}`,
+              }}
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedValue("Yes");
+              }}
+            >
+              Yes
+            </button>
+            <button
+              style={{
+                backgroundColor: `${selectedValue === "No" ? "black" : "transparent"}`,
+                color: `${selectedValue === "No" ? "white" : "black"}`,
+              }}
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedValue("No");
+              }}
+            >
+              No
+            </button>
           </div>
           {selectedValue === "Yes" ? (
             <>
@@ -407,7 +448,7 @@ const Register = () => {
             />
           </div>
           {/* <label htmlFor="IsGroup">Are you participating in a group?</label> */}
-          <div className={styles.formBranch}>
+          {/* <div className={styles.formBranch}>
             <div>
               <input
                 type="radio"
@@ -432,8 +473,8 @@ const Register = () => {
               />
               <span>No</span>
             </div>
-          </div>
-          {isGroup === "Yes" ? (
+          </div> */}
+          {/* {isGroup === "Yes" ? (
             <div>
               {Array(numMembers)
                 .fill(null)
@@ -482,7 +523,7 @@ const Register = () => {
                 </button>
               ) : null}
             </div>
-          ) : null}
+          ) : null} */}
           <label htmlFor="Experiences">Previous MUN Experiences (if any)</label>
           <div className={styles.formBranch}>
             <textarea
@@ -511,10 +552,14 @@ const Register = () => {
           </h4>
           <a
             href="https://docs.google.com/spreadsheets/d/1rE8QYHugXYnRQJQqBZqa5oYuvGTRKb5BIFs2sujZk48/edit?usp=sharing"
-            style={{ textDecoration: "underline", display: "inline" }}
+            style={{
+              textDecoration: "underline",
+              display: "inline",
+              fontSize: "18px",
+            }}
             target="#"
           >
-            Visit here
+            Visit here to view the portfolio matrix
           </a>
 
           <div className={styles.prefParent}>
@@ -814,10 +859,9 @@ const Register = () => {
 
           <p className={styles.formPayment}>Payment</p>
           <p className={styles.formPaymentDesc}>
-            To participate in the NITS-MUN Annual Conference 2025, a
-            registration fee of <span>Rs 499</span> is needed to be paid by
-            every delegate. If you are participating in a group, you will need
-            to pay a discounted price of <span>Rs 399</span>
+            To complete your registration for the NITS-MUN Annual Conference
+            2025, please make a payment of <span>₹349</span> using the QR code
+            provided below and upload a screenshot of the payment confirmation.
           </p>
 
           <div className={styles.paymentCredentials}>
@@ -848,7 +892,8 @@ const Register = () => {
             <div className={styles.upiImage}>
               <img
                 src="https://res.cloudinary.com/dludtk5vz/image/upload/v1738597970/WhatsApp_Image_2025-02-03_at_21.21.27_6e441ace_wtlyay.jpg"
-                alt=""
+                alt="qr"
+                style={{ objectFit: "cover" }}
               />
             </div>
           </div>

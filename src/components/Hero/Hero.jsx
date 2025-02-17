@@ -3,44 +3,38 @@ import { Link } from "react-router-dom";
 import styles from "./Hero.module.scss";
 import { auth, provider } from "../../config";
 import { signInWithPopup } from "firebase/auth";
-
 const Hero = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [signedin, setSignedin] = useState(false);
 
   useEffect(() => {
-    const email = localStorage.getItem("email");
-    setIsLoggedIn(!!email);
-  }, []);
+    setSignedin(signedin);
+  }, [signedin]);
 
   const handleClick = () => {
-    signInWithPopup(auth, provider)
-      .then((data) => {
-        if (data.user?.email) {
-          const userEmail = data.user.email.toLowerCase();
-          localStorage.setItem("email", userEmail);
-          setIsLoggedIn(true);
-        }
-      })
-      .catch((error) => {
-        console.error("Login error:", error);
-      });
+    console.log("ok");
+    signInWithPopup(auth, provider).then((data) => {
+      if (data.user && data.user.email) {
+        const userEmail = data.user.email.toLowerCase();
+        localStorage.setItem("email", userEmail);
+        setSignedin(true);
+      } else {
+        console.error("Error retrieving user data during sign-in.");
+      }
+    });
   };
 
   const handleLogout = () => {
     localStorage.removeItem("email");
-    setIsLoggedIn(false);
+    setSignedin(false);
   };
-
   const logoUrl =
     "https://res.cloudinary.com/dybbffhed/image/upload/v1720263284/qjwddcaqsaptighoydzx.png";
 
   return (
     <div className={styles.hero}>
       <div className={styles.loginCont}>
-        {!isLoggedIn ? (
-          <div className={styles.authButtons}>
-            <button onClick={handleClick}>LOGIN</button>
-          </div>
+        {!localStorage.getItem("email") ? (
+          <button onClick={handleClick}>LOGIN</button>
         ) : (
           <button onClick={handleLogout}>LOGOUT</button>
         )}
