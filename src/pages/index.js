@@ -11,6 +11,8 @@ import Error from "./Error/Error";
 import Achievement from "./Achievement/Achievement";
 import Register from "./Register/Register";
 import ApplicationSuccessfull from "./Register/ApplicationSuccessfull";
+import AdminPanel from "./Admin/Admin";
+
 export {
   Home,
   Team,
@@ -25,4 +27,5 @@ export {
   Achievement,
   Register,
   ApplicationSuccessfull,
+  AdminPanel,
 };
