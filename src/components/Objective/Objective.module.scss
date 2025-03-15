@@ -21,14 +21,14 @@
 
 .left {
   height: 100vh;
-  width: 60vw;
+  width: 55vw;
   display: flex;
   flex-direction: column;
 }
 
 .right {
   height: 100vh;
-  width: 40vw;
+  width: 45vw;
 }
 
 .objhead {
@@ -59,7 +59,7 @@
 .objpic img {
   height: 400px;
   width: 430px;
-  margin-left: 110px;
+  margin-left: 50px;
   margin-top: 220px;
   background-position: center;
   background-size: cover;

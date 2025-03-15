@@ -8,16 +8,19 @@ const Objective = () => {
         <div className={styles.objhead}>OUR OBJECTIVES</div>
         <div className={styles.objpara}>
           <p className={styles.parag}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            quia similique facilis fugiat ut officiis, tempora quibusdam cumque
-            enim quod unde? Molestias nostrum neque inventor quos mollitia
-            commodi sunt iusto rerum similique consequatur illo explicabo!
-            Dolorum molestiae voluptatum, placeat ad sed natus, non, aspernatur
-            ipsam aliquid voluptate iure laudantium molestias. Sint expedita,
-            molestiae magni officia vero atque quo mollitia deleniti impedit ut!
-            Tempora expedita illo qui autem nostrum, recusandae alias natus
-            ratione sit aperiam, veniam non nesciunt pariatur, totam earum
-            cumque soluta ipsum! Quae obcaecati assumenda ad?
+            NITSMUN aspires to involve youth in international dialogue,
+            deliberate upon the dire issues of the world and shape them into
+            strong individuals who'll become the leaders of tomorrow.
+            International Model United Nations (IMUN) brings youth together from
+            around the world to learn and share ideas from a diverse set of
+            experiences and backgrounds where the Executive board, International
+            Press and International Delegates consolidate to learn about
+            diplomacy, international relations, and the United Nations
+            International Model United Nations (IMUN) brings youth together from
+            around the world to learn and share ideas from a diverse set of
+            experiences and backgrounds where the Executive board, International
+            Press and International Delegates consolidate to learn about
+            diplomacy, international relations, and the United Nations
           </p>
         </div>
       </div>

@@ -27,6 +27,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 10px;
 
     @media screen and (max-width: 800px) {
       display: flex;
@@ -42,7 +43,7 @@
 
       @media screen and (max-width: 800px) {
         margin-top: 20rem;
-        width: 75%;
+        width: 90%;
         height: 30%;
         margin-bottom: 35rem;
       }
@@ -68,13 +69,13 @@
 
         @media screen and (max-width: 800px) {
           position: absolute;
-          top: 2.5rem;
-          font-size: 3rem;
-          left: 50%;
+          top: 2.1rem;
+          font-size: 1.9rem;
+          left: 47%;
           // border: 2px solid white;
           width: 90%;
           transform: translate(-50%, -50%);
-          // margin-top: 2rem;
+          //  margin-bottom: 20rem;
         }
       }
 
@@ -102,12 +103,14 @@
 
         @media screen and (max-width: 800px) {
           height: 40%;
+          font-size: 0.9rem;
           margin-top: 2rem;
           position: absolute;
-          top: 75%;
-          left: 50%;
+          top: 65%;
+          left: 48%;
           transform: translate(-50%, -50%);
           width: 70%;
+          padding: 30px;
         }
       }
     }
