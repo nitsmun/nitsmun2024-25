@@ -32,6 +32,7 @@ function App() {
             element={<pages.ApplicationSuccessfull />}
           />
           <Route path="/admin" element={<pages.AdminPanel />} />
+          <Route path="/blog" element={<pages.Blog />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
