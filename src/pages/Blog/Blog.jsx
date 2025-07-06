@@ -1,22 +1,8 @@
 import React from "react";
 import styles from "./Blog.module.scss";
+import BlogCard from "../../components/Card/Card";
 
-const BlogCard = () => (
-  <div className={styles.blogcard}>
-    <img src="src\assets\blogcardimage.png" alt="Blog Cover" />
-    <div className={styles.blogcardcontent}>
-      <h3>UNPEACE</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-        libero et velit interdum, ac aliquet
-        odio.........&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="#">READ MORE</a>
-      </p>
-    </div>
-  </div>
-);
-
-const Blog = () => {
+const BlogPage = () => {
   return (
     <div className={styles.blogpagecontainer}>
       <h1 className={styles.pagetitle}>BLOG PAGE</h1>
@@ -29,4 +15,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogPage;
