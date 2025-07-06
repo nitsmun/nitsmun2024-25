@@ -70,6 +70,9 @@ const Footer = () => {
           <Link to="/gallery">
             <li>Gallery</li>
           </Link>
+          <Link to="/blog">
+            <li>Blog</li>
+          </Link>
           {/* </ul> */}
         </div>
       </div>
