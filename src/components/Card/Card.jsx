@@ -1,17 +1,23 @@
 import React from "react";
 import styles from "./Card.module.scss";
-import BlogImage from "../../assets/blogcardimage.png";
 
-const BlogCard = () => (
-  <div className={styles.blogcard}>
-    <img src={BlogImage} alt="Blog Cover" />
+const BlogCard = ({ title, excerpt, image, onClick }) => (
+  <div className={styles.blogcard} onClick={onClick}>
+    <img src={image} alt="Blog Cover" />
     <div className={styles.blogcardcontent}>
-      <h3>UNPEACE</h3>
+      <h3>{title}</h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-        libero et velit interdum, ac aliquet odio..........{" "}
+        {excerpt}{" "}
         <span>
-          <a href="#">READ MORE</a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              onClick();
+            }}
+          >
+            READ MORE
+          </a>
         </span>
       </p>
     </div>
