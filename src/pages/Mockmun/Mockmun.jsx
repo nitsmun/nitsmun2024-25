@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Mockmunone.module.scss";
-import { Footer } from "../../components";
-import ExecutiveBoard from "./ExecutiveBoard";
+// import { Footer } from "../../components";
+// import ExecutiveBoard from "./ExecutiveBoard";
 const Mockmun = () => {
   return (
     <>
@@ -10,13 +10,17 @@ const Mockmun = () => {
           <h1>MOCK MUN</h1>
         </div>
         <div className={styles.content}>
-          After conducting numerous conferences, both online and offline, and
-          hosting delegates from different schools and colleges from across the
-          country, NITSMUN is all set for its conference scheduled to be held on
-          the 12 and 13 March, 2022. Owing to the current situation, this
-          conference will be conducted online, giving a chance to students from
-          any nook and corner of the country or around the world to participate.
-          We will be having three committees this year
+          NITS MUN proudly presents Mock MUN 2025 on 1st February 2025, a
+          preparatory event for the Incandescence Annual MUN Conference 2025.
+          This practice session will help delegates refine their diplomatic
+          skills, understand MUN procedures, and boost confidence in public
+          speaking. Why Attend? Gain hands-on experience with MUN proceedings.
+          Improve research, diplomacy, and speaking skills. Network with
+          like-minded individuals. Receive constructive feedback from
+          experienced MUNers. The Incandescence Annual MUN Conference 2025 will
+          feature four committees, offering diverse and engaging discussions on
+          global issues. Join us for an enriching experience and prepare for the
+          main event.
         </div>
       </div>
 
@@ -74,7 +78,7 @@ const Mockmun = () => {
         </section>
       </div>
 
-      <ExecutiveBoard />
+      {/*       <ExecutiveBoard /> */}
     </>
   );
 };
