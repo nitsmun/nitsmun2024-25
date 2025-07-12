@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Blog.module.scss";
 import BlogCard from "../../components/Card/Card";
 import BlogComponent from "../../components/BlogComponent/BlogComponent";
-import blogData from "../../assets/blogData.js";
+import blogData from "../../assets/blogdata.js";
 const BlogPage = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const handleCardClick = (index) => {
