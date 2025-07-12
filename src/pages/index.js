@@ -12,6 +12,7 @@ import Achievement from "./Achievement/Achievement";
 import Register from "./Register/Register";
 import ApplicationSuccessfull from "./Register/ApplicationSuccessfull";
 import AdminPanel from "./Admin/Admin";
+import Blog from "./Blog/Blog";
 
 export {
   Home,
@@ -28,4 +29,5 @@ export {
   Register,
   ApplicationSuccessfull,
   AdminPanel,
+  Blog,
 };

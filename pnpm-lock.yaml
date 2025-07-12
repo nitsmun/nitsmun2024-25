@@ -7,6 +7,12 @@ settings:
 importers:
   .:
     dependencies:
+      "@cloudinary/react":
+        specifier: ^1.14.3
+        version: 1.14.3(react@18.3.1)
+      "@cloudinary/url-gen":
+        specifier: ^1.21.0
+        version: 1.21.0
       "@emotion/react":
         specifier: ^11.14.0
         version: 11.14.0(@types/react@18.3.18)(react@18.3.1)
@@ -67,9 +73,6 @@ importers:
       react-slider:
         specifier: ^2.0.6
         version: 2.0.6(react@18.3.1)
-      sass:
-        specifier: ^1.77.6
-        version: 1.83.4
       slick-carousel:
         specifier: ^1.8.1
         version: 1.8.1(jquery@3.7.1)
@@ -119,6 +122,9 @@ importers:
       prettier:
         specifier: ^3.3.2
         version: 3.4.2
+      sass:
+        specifier: ^1.77.6
+        version: 1.83.4
       vite:
         specifier: ^5.4.11
         version: 5.4.11(@types/node@22.10.7)(sass@1.83.4)
@@ -270,6 +276,33 @@ packages:
         integrity: sha512-L6mZmwFDK6Cjh1nRCLXpa6no13ZIioJDz7mdkzHv399pThrTa/k0nUlNaenOeh2kWu/iaOQYElEpKPUswUa9Vg==,
       }
     engines: { node: ">=6.9.0" }
+
+  "@cloudinary/html@1.13.4":
+    resolution:
+      {
+        integrity: sha512-noBk9D2VZgZkQIs5/y29OsJDmwp0FtgAlKrrp1+0Jp2HMu+68sdDJ3zi4/ZuLCnbdqthGuxP83trowG+Zsa68Q==,
+      }
+
+  "@cloudinary/react@1.14.3":
+    resolution:
+      {
+        integrity: sha512-AJ662pNAGEapRdkOOQstQHiKtXHBdoNkduWU3levugZ34ZiabBxmViISo16MtxZuBkzj96sV9ppmcq6foPqJ2w==,
+      }
+    engines: { node: ">=10" }
+    peerDependencies:
+      react: ^16.3.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
+  "@cloudinary/transformation-builder-sdk@1.17.0":
+    resolution:
+      {
+        integrity: sha512-zPHNtEpLkil+1obvLK7zHDMWAs9ZwUGI0GUKnMMkEC3pOLtKETswPBdLAjJTMH512lGc18vgdzogWdItPRN3Kg==,
+      }
+
+  "@cloudinary/url-gen@1.21.0":
+    resolution:
+      {
+        integrity: sha512-ctYcCzX3G3vcgnESTU2ET3K1XsBiXcEnBddCGV0QbR3fJhLLrIShjSMEwZoepgh4LAFOHJu9DzvLFr+E8R7c7g==,
+      }
 
   "@emotion/babel-plugin@11.13.5":
     resolution:
@@ -1652,6 +1685,30 @@ packages:
     resolution:
       {
         integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==,
+      }
+
+  "@types/lodash.clonedeep@4.5.9":
+    resolution:
+      {
+        integrity: sha512-19429mWC+FyaAhOLzsS8kZUsI+/GmBAQ0HFiCPsKGU+7pBXOQWhyrY6xNNDwUSX8SMZMJvuFVMF9O5dQOlQK9Q==,
+      }
+
+  "@types/lodash.debounce@4.0.9":
+    resolution:
+      {
+        integrity: sha512-Ma5JcgTREwpLRwMM+XwBR7DaWe96nC38uCBDFKZWbNKD+osjVzdpnUSwBcqCptrp16sSOLBAUb50Car5I0TCsQ==,
+      }
+
+  "@types/lodash@4.17.20":
+    resolution:
+      {
+        integrity: sha512-H3MHACvFUEiujabxhaI/ImO6gUrd8oOurg7LQtS7mbwIXA/cUqWrvBsaeJ23aZEPk1TAYkurjfMbSELfoCXlGA==,
+      }
+
+  "@types/node@14.18.63":
+    resolution:
+      {
+        integrity: sha512-fAtCfv4jJg+ExtXhvCkCqUKZ+4ok/JQk01qDKhL5BDDoS3AxKXhV5/MAVUZyQnSEd2GT92fkgZl0pz0Q0AzcIQ==,
       }
 
   "@types/node@22.10.7":
@@ -3281,6 +3338,12 @@ packages:
         integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==,
       }
 
+  lodash.clonedeep@4.5.0:
+    resolution:
+      {
+        integrity: sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==,
+      }
+
   lodash.debounce@4.0.8:
     resolution:
       {
@@ -4290,6 +4353,14 @@ packages:
       }
     engines: { node: ">= 0.4" }
 
+  typescript@4.9.5:
+    resolution:
+      {
+        integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==,
+      }
+    engines: { node: ">=4.2.0" }
+    hasBin: true
+
   unbox-primitive@1.1.0:
     resolution:
       {
@@ -4603,6 +4674,28 @@ snapshots:
     dependencies:
       "@babel/helper-string-parser": 7.25.9
       "@babel/helper-validator-identifier": 7.25.9
+
+  "@cloudinary/html@1.13.4":
+    dependencies:
+      "@types/lodash.clonedeep": 4.5.9
+      "@types/lodash.debounce": 4.0.9
+      "@types/node": 14.18.63
+      lodash.clonedeep: 4.5.0
+      lodash.debounce: 4.0.8
+      typescript: 4.9.5
+
+  "@cloudinary/react@1.14.3(react@18.3.1)":
+    dependencies:
+      "@cloudinary/html": 1.13.4
+      react: 18.3.1
+
+  "@cloudinary/transformation-builder-sdk@1.17.0":
+    dependencies:
+      "@cloudinary/url-gen": 1.21.0
+
+  "@cloudinary/url-gen@1.21.0":
+    dependencies:
+      "@cloudinary/transformation-builder-sdk": 1.17.0
 
   "@emotion/babel-plugin@11.13.5":
     dependencies:
@@ -5495,6 +5588,18 @@ snapshots:
   "@types/estree@1.0.6": {}
 
   "@types/json5@0.0.29": {}
+
+  "@types/lodash.clonedeep@4.5.9":
+    dependencies:
+      "@types/lodash": 4.17.20
+
+  "@types/lodash.debounce@4.0.9":
+    dependencies:
+      "@types/lodash": 4.17.20
+
+  "@types/lodash@4.17.20": {}
+
+  "@types/node@14.18.63": {}
 
   "@types/node@22.10.7":
     dependencies:
@@ -6643,6 +6748,8 @@ snapshots:
 
   lodash.camelcase@4.3.0: {}
 
+  lodash.clonedeep@4.5.0: {}
+
   lodash.debounce@4.0.8: {}
 
   lodash.merge@4.6.2: {}
@@ -7286,6 +7393,8 @@ snapshots:
       is-typed-array: 1.1.15
       possible-typed-array-names: 1.0.0
       reflect.getprototypeof: 1.0.10
+
+  typescript@4.9.5: {}
 
   unbox-primitive@1.1.0:
     dependencies:

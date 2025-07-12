@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap");
+
+.blogcard {
+  background-color: white;
+  color: black;
+  width: 210px;
+  height: 250px;
+  border: 1px solid lightgrey;
+  overflow: hidden;
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.25),
+    0 0 15px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+  position: relative;
+  flex: 1 1 200px; // grows and shrinks, minimum width 200px
+  max-width: 220px;
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+
+  img {
+    width: 90%;
+    height: 54%;
+    object-fit: cover;
+    margin-top: 15px;
+    border-radius: 11px;
+    box-shadow:
+      0px 0px 10px rgba(0, 0, 0, 0.8),
+      0px 2px 20px rgba(0, 0, 0, 0.6),
+      0px -8px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  .blogcardcontent {
+    font-family: "Jost", "sans-serif";
+    padding: 1rem;
+    position: absolute;
+    bottom: -12px;
+    padding-left: 0.9rem;
+    left: 2px;
+    z-index: 1;
+    overflow: visible;
+
+    h3 {
+      font-family: "Jost", "sans-serif";
+      font-size: 1.8rem;
+      font-weight: 800;
+      text-shadow: 2px 1px 0px #000000;
+      text-transform: uppercase;
+      text-align: left;
+      margin: 0.5rem 0;
+      letter-spacing: 6px;
+      color: white;
+    }
+
+    p {
+      font-size: 0.6rem;
+      line-height: 0.8rem;
+      text-align: left;
+      color: black;
+      font-weight: 400;
+    }
+
+    a {
+      text-align: left;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #000;
+
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap");
+.blogpagecontainer {
+  position: relative;
+  min-height: 100vh;
+  padding: 5rem 2rem 3rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    inset: 0;
+    background: url("https://res.cloudinary.com/dpvckds4h/image/upload/v1752118080/BlogBackground_u1qhky.webp")
+      no-repeat center;
+    background-size: cover;
+    filter: blur(1px) brightness(1.5);
+    z-index: 0;
+    // background-color: rgba(10, 10, 10, 0.3);
+    // background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0));
+    // backdrop-filter: blur(4px);
+
+    z-index: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(
+      78,
+      138,
+      190,
+      0.25
+    ); // ✅ dims it slightly without losing color
+    z-index: 1;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.pagetitle {
+  font-family: "Montserrat", "sans-serif";
+  font-size: 3.2rem;
+  font-weight: 800;
+  text-align: left;
+  color: white;
+  margin-left: 7rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
+}
+
+// .blogcardsgrid {
+//   display: grid;
+//   grid-template-columns: repeat(5, 1fr);
+//   gap: 2.2rem 1.5rem;
+//   justify-items: center;
+//   padding: 0 3rem;
+
+//   @media screen and (max-width: 1400px) {
+//     grid-template-columns: repeat(4, 1fr);
+//   }
+
+//   @media screen and (max-width: 1100px) {
+//     grid-template-columns: repeat(3, 1fr);
+//   }
+
+//   @media screen and (max-width: 768px) {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+
+//   @media screen and (max-width: 480px) {
+//     grid-template-columns: 1fr;
+//   }
+.blogcardsgrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.2rem 1.5rem;
+  padding: 0 3rem;
+}
+
+// }
