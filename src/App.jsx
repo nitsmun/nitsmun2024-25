@@ -28,6 +28,12 @@ function App() {
           <Route path="/register" element={<pages.Register />} />
           <Route path="/gallery" element={<pages.Gallery />} />
           <Route path="/blog" element={<pages.Blog />} />
+          <Route path="/blog/1" element={<pages.Blog1 />} />
+          <Route path="/blog/2" element={<pages.Blog2 />} />
+          <Route path="/blog/3" element={<pages.Blog3 />} />
+          <Route path="/blog/4" element={<pages.Blog4 />} />
+          <Route path="/blog/5" element={<pages.Blog5 />} />
+
           <Route
             path="/successfull"
             element={<pages.ApplicationSuccessfull />}
