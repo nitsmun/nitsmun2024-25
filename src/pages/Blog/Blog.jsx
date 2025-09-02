@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import styles from "./Blog.module.scss";
 import BlogCard from "../../components/Card/Card";
 // import BlogComponent from "../../components/BlogComponent/BlogComponent";
-import blogData from "../../assets/blogdata.js";
+import blogData from "../../assets/blogData.js";
 const BlogPage = () => {
   useEffect(() => {
     document.title = "NITSMUN | BLOG";
