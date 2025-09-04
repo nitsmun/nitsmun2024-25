@@ -33,7 +33,6 @@ function App() {
           <Route path="/blog/3" element={<pages.Blog3 />} />
           <Route path="/blog/4" element={<pages.Blog4 />} />
           <Route path="/blog/5" element={<pages.Blog5 />} />
-
           <Route
             path="/successfull"
             element={<pages.ApplicationSuccessfull />}
