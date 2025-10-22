@@ -152,6 +152,32 @@ const Youth = () => {
         <div className={styles.sponsors}>
           <div className={styles.sponsorCard}>
             <img
+              src="https://res.cloudinary.com/dpvckds4h/image/upload/v1761131665/Gplus_Logo-01_szogn1.png"
+              alt="GPlus"
+              className={styles.sponsorImg}
+            />
+          </div>
+          <div className={styles.sponsorCard}>
+            <img
+              src="https://res.cloudinary.com/dpvckds4h/image/upload/v1761131636/BPCL_Golden_Jubilee_Logo_For_Dark_Background_myblvk.png"
+              alt="BPCL"
+              className={styles.sponsorImg}
+            />
+          </div>
+          <div className={styles.sponsorCard}>
+            <img
+              src="https://res.cloudinary.com/dpvckds4h/image/upload/v1761131616/RedoQ_white_qgy4hk.png"
+              alt="RedoQ"
+              className={styles.sponsorImg}
+            />
+          </div>
+        </div>
+      </div>
+      <div className={styles.sponsorsCont}>
+        <h1 className={styles.heading}>PREVIOUS SPONSORS</h1>
+        <div className={styles.sponsors}>
+          <div className={styles.sponsorCard}>
+            <img
               src="https://res.cloudinary.com/dhry5xscm/image/upload/v1729607349/nitsmun/sachkahu_a6kcyh.png"
               alt="Sach Kahu"
               className={styles.sponsorImg}
