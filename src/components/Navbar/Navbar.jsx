@@ -74,9 +74,9 @@ const Navbar = () => {
         <Link to="/gallery" className={styles.navItem} onClick={toggleMenu}>
           Photo Gallery
         </Link>
-        <Link to="/blog" className={styles.navItem} onClick={toggleMenu}>
+        {/* <Link to="/blog" className={styles.navItem} onClick={toggleMenu}>
           Blog
-        </Link>
+        </Link> */}
       </div>
 
       <div className={styles.hamburger} onClick={toggleMenu}>

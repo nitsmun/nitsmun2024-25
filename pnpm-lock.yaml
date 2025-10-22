@@ -7,18 +7,16 @@ settings:
 importers:
   .:
     dependencies:
-
-      '@cloudinary/react':
+      "@cloudinary/react":
         specifier: ^1.14.3
         version: 1.14.3(react@18.3.1)
-      '@cloudinary/url-gen':
+      "@cloudinary/url-gen":
         specifier: ^1.21.0
         version: 1.21.0
-      '@emotion/react':
+      "@emotion/react":
         specifier: ^11.14.0
         version: 11.14.0(@types/react@18.3.18)(react@18.3.1)
-      '@emotion/styled':
-
+      "@emotion/styled":
         specifier: ^11.14.0
         version: 11.14.0(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react@18.3.1)
       "@fortawesome/fontawesome-svg-core":
@@ -27,16 +25,16 @@ importers:
       "@fortawesome/react-fontawesome":
         specifier: ^0.2.2
         version: 0.2.2(@fortawesome/fontawesome-svg-core@6.7.2)(react@18.3.1)
-      '@hookform/resolvers':
+      "@hookform/resolvers":
         specifier: ^3.10.0
         version: 3.10.0(react-hook-form@7.54.2(react@18.3.1))
-      '@material-ui/icons':
+      "@material-ui/icons":
         specifier: ^4.11.3
         version: 4.11.3(@material-ui/core@4.12.4(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       "@mui/icons-material":
         specifier: ^5.16.6
         version: 5.16.14(@mui/material@5.16.14(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.18)(react@18.3.1)
-      '@mui/material':
+      "@mui/material":
         specifier: ^5.16.14
         version: 5.16.14(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       axios:
@@ -249,59 +247,104 @@ packages:
       }
     engines: { node: ">=6.9.0" }
     peerDependencies:
-      '@babel/core': ^7.0.0-0
+      "@babel/core": ^7.0.0-0
 
-  '@babel/runtime@7.26.0':
-    resolution: {integrity: sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==}
-    engines: {node: '>=6.9.0'}
+  "@babel/runtime@7.26.0":
+    resolution:
+      {
+        integrity: sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==,
+      }
+    engines: { node: ">=6.9.0" }
 
-  '@babel/template@7.25.9':
-    resolution: {integrity: sha512-9DGttpmPvIxBb/2uwpVo3dqJ+O6RooAFOS+lB+xDqoE2PVCE8nfoHMdZLpfCQRLwvohzXISPZcgxt80xLfsuwg==}
-    engines: {node: '>=6.9.0'}
+  "@babel/template@7.25.9":
+    resolution:
+      {
+        integrity: sha512-9DGttpmPvIxBb/2uwpVo3dqJ+O6RooAFOS+lB+xDqoE2PVCE8nfoHMdZLpfCQRLwvohzXISPZcgxt80xLfsuwg==,
+      }
+    engines: { node: ">=6.9.0" }
 
-  '@babel/traverse@7.26.5':
-    resolution: {integrity: sha512-rkOSPOw+AXbgtwUga3U4u8RpoK9FEFWBNAlTpcnkLFjL5CT+oyHNuUUC/xx6XefEJ16r38r8Bc/lfp6rYuHeJQ==}
-    engines: {node: '>=6.9.0'}
+  "@babel/traverse@7.26.5":
+    resolution:
+      {
+        integrity: sha512-rkOSPOw+AXbgtwUga3U4u8RpoK9FEFWBNAlTpcnkLFjL5CT+oyHNuUUC/xx6XefEJ16r38r8Bc/lfp6rYuHeJQ==,
+      }
+    engines: { node: ">=6.9.0" }
 
-  '@babel/types@7.26.5':
-    resolution: {integrity: sha512-L6mZmwFDK6Cjh1nRCLXpa6no13ZIioJDz7mdkzHv399pThrTa/k0nUlNaenOeh2kWu/iaOQYElEpKPUswUa9Vg==}
-    engines: {node: '>=6.9.0'}
+  "@babel/types@7.26.5":
+    resolution:
+      {
+        integrity: sha512-L6mZmwFDK6Cjh1nRCLXpa6no13ZIioJDz7mdkzHv399pThrTa/k0nUlNaenOeh2kWu/iaOQYElEpKPUswUa9Vg==,
+      }
+    engines: { node: ">=6.9.0" }
 
-  '@cloudinary/html@1.13.4':
-    resolution: {integrity: sha512-noBk9D2VZgZkQIs5/y29OsJDmwp0FtgAlKrrp1+0Jp2HMu+68sdDJ3zi4/ZuLCnbdqthGuxP83trowG+Zsa68Q==}
+  "@cloudinary/html@1.13.4":
+    resolution:
+      {
+        integrity: sha512-noBk9D2VZgZkQIs5/y29OsJDmwp0FtgAlKrrp1+0Jp2HMu+68sdDJ3zi4/ZuLCnbdqthGuxP83trowG+Zsa68Q==,
+      }
 
-  '@cloudinary/react@1.14.3':
-    resolution: {integrity: sha512-AJ662pNAGEapRdkOOQstQHiKtXHBdoNkduWU3levugZ34ZiabBxmViISo16MtxZuBkzj96sV9ppmcq6foPqJ2w==}
-    engines: {node: '>=10'}
+  "@cloudinary/react@1.14.3":
+    resolution:
+      {
+        integrity: sha512-AJ662pNAGEapRdkOOQstQHiKtXHBdoNkduWU3levugZ34ZiabBxmViISo16MtxZuBkzj96sV9ppmcq6foPqJ2w==,
+      }
+    engines: { node: ">=10" }
     peerDependencies:
       react: ^16.3.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@cloudinary/transformation-builder-sdk@1.17.0':
-    resolution: {integrity: sha512-zPHNtEpLkil+1obvLK7zHDMWAs9ZwUGI0GUKnMMkEC3pOLtKETswPBdLAjJTMH512lGc18vgdzogWdItPRN3Kg==}
+  "@cloudinary/transformation-builder-sdk@1.17.0":
+    resolution:
+      {
+        integrity: sha512-zPHNtEpLkil+1obvLK7zHDMWAs9ZwUGI0GUKnMMkEC3pOLtKETswPBdLAjJTMH512lGc18vgdzogWdItPRN3Kg==,
+      }
 
-  '@cloudinary/url-gen@1.21.0':
-    resolution: {integrity: sha512-ctYcCzX3G3vcgnESTU2ET3K1XsBiXcEnBddCGV0QbR3fJhLLrIShjSMEwZoepgh4LAFOHJu9DzvLFr+E8R7c7g==}
+  "@cloudinary/url-gen@1.21.0":
+    resolution:
+      {
+        integrity: sha512-ctYcCzX3G3vcgnESTU2ET3K1XsBiXcEnBddCGV0QbR3fJhLLrIShjSMEwZoepgh4LAFOHJu9DzvLFr+E8R7c7g==,
+      }
 
-  '@emotion/babel-plugin@11.13.5':
-    resolution: {integrity: sha512-pxHCpT2ex+0q+HH91/zsdHkw/lXd468DIN2zvfvLtPKLLMo6gQj7oLObq8PhkrxOZb/gGCq03S3Z7PDhS8pduQ==}
+  "@emotion/babel-plugin@11.13.5":
+    resolution:
+      {
+        integrity: sha512-pxHCpT2ex+0q+HH91/zsdHkw/lXd468DIN2zvfvLtPKLLMo6gQj7oLObq8PhkrxOZb/gGCq03S3Z7PDhS8pduQ==,
+      }
 
-  '@emotion/cache@11.14.0':
-    resolution: {integrity: sha512-L/B1lc/TViYk4DcpGxtAVbx0ZyiKM5ktoIyafGkH6zg/tj+mA+NE//aPYKG0k8kCHSHVJrpLpcAlOBEXQ3SavA==}
+  "@emotion/cache@11.14.0":
+    resolution:
+      {
+        integrity: sha512-L/B1lc/TViYk4DcpGxtAVbx0ZyiKM5ktoIyafGkH6zg/tj+mA+NE//aPYKG0k8kCHSHVJrpLpcAlOBEXQ3SavA==,
+      }
 
-  '@emotion/hash@0.8.0':
-    resolution: {integrity: sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==}
+  "@emotion/hash@0.8.0":
+    resolution:
+      {
+        integrity: sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==,
+      }
 
-  '@emotion/hash@0.9.2':
-    resolution: {integrity: sha512-MyqliTZGuOm3+5ZRSaaBGP3USLw6+EGykkwZns2EPC5g8jJ4z9OrdZY9apkl3+UP9+sdz76YYkwCKP5gh8iY3g==}
+  "@emotion/hash@0.9.2":
+    resolution:
+      {
+        integrity: sha512-MyqliTZGuOm3+5ZRSaaBGP3USLw6+EGykkwZns2EPC5g8jJ4z9OrdZY9apkl3+UP9+sdz76YYkwCKP5gh8iY3g==,
+      }
 
-  '@emotion/is-prop-valid@1.3.1':
-    resolution: {integrity: sha512-/ACwoqx7XQi9knQs/G0qKvv5teDMhD7bXYns9N/wM8ah8iNb8jZ2uNO0YOgiq2o2poIvVtJS2YALasQuMSQ7Kw==}
+  "@emotion/is-prop-valid@1.3.1":
+    resolution:
+      {
+        integrity: sha512-/ACwoqx7XQi9knQs/G0qKvv5teDMhD7bXYns9N/wM8ah8iNb8jZ2uNO0YOgiq2o2poIvVtJS2YALasQuMSQ7Kw==,
+      }
 
-  '@emotion/memoize@0.9.0':
-    resolution: {integrity: sha512-30FAj7/EoJ5mwVPOWhAyCX+FPfMDrVecJAM+Iw9NRoSl4BBAQeqj4cApHHUXOVvIPgLVDsCFoz/hGD+5QQD1GQ==}
+  "@emotion/memoize@0.9.0":
+    resolution:
+      {
+        integrity: sha512-30FAj7/EoJ5mwVPOWhAyCX+FPfMDrVecJAM+Iw9NRoSl4BBAQeqj4cApHHUXOVvIPgLVDsCFoz/hGD+5QQD1GQ==,
+      }
 
-  '@emotion/react@11.14.0':
-    resolution: {integrity: sha512-O000MLDBDdk/EohJPFUqvnp4qnHeYkVP5B0xEG0D/L7cOKP9kefu2DXn8dj74cQfsEzUqh+sr1RzFqiL1o+PpA==}
+  "@emotion/react@11.14.0":
+    resolution:
+      {
+        integrity: sha512-O000MLDBDdk/EohJPFUqvnp4qnHeYkVP5B0xEG0D/L7cOKP9kefu2DXn8dj74cQfsEzUqh+sr1RzFqiL1o+PpA==,
+      }
     peerDependencies:
       "@types/react": "*"
       react: ">=16.8.0"
@@ -977,14 +1020,20 @@ packages:
     engines: { node: ">=6" }
     hasBin: true
 
-  '@hookform/resolvers@3.10.0':
-    resolution: {integrity: sha512-79Dv+3mDF7i+2ajj7SkypSKHhl1cbln1OGavqrsF7p6mbUv11xpqpacPsGDCTRvCSjEEIez2ef1NveSVL3b0Ag==}
+  "@hookform/resolvers@3.10.0":
+    resolution:
+      {
+        integrity: sha512-79Dv+3mDF7i+2ajj7SkypSKHhl1cbln1OGavqrsF7p6mbUv11xpqpacPsGDCTRvCSjEEIez2ef1NveSVL3b0Ag==,
+      }
     peerDependencies:
       react-hook-form: ^7.0.0
 
-  '@humanwhocodes/config-array@0.13.0':
-    resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
-    engines: {node: '>=10.10.0'}
+  "@humanwhocodes/config-array@0.13.0":
+    resolution:
+      {
+        integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==,
+      }
+    engines: { node: ">=10.10.0" }
     deprecated: Use @eslint/config-array instead
 
   "@humanwhocodes/module-importer@1.0.1":
@@ -1596,50 +1645,95 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rtsao/scc@1.1.0':
-    resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
+  "@rtsao/scc@1.1.0":
+    resolution:
+      {
+        integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==,
+      }
 
-  '@types/babel__core@7.20.5':
-    resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
+  "@types/babel__core@7.20.5":
+    resolution:
+      {
+        integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==,
+      }
 
-  '@types/babel__generator@7.6.8':
-    resolution: {integrity: sha512-ASsj+tpEDsEiFr1arWrlN6V3mdfjRMZt6LtK/Vp/kreFLnr5QH5+DhvD5nINYZXzwJvXeGq+05iUXcAzVrqWtw==}
+  "@types/babel__generator@7.6.8":
+    resolution:
+      {
+        integrity: sha512-ASsj+tpEDsEiFr1arWrlN6V3mdfjRMZt6LtK/Vp/kreFLnr5QH5+DhvD5nINYZXzwJvXeGq+05iUXcAzVrqWtw==,
+      }
 
-  '@types/babel__template@7.4.4':
-    resolution: {integrity: sha512-h/NUaSyG5EyxBIp8YRxo4RMe2/qQgvyowRwVMzhYhBCONbW8PUsg4lkFMrhgZhUe5z3L3MiLDuvyJ/CaPa2A8A==}
+  "@types/babel__template@7.4.4":
+    resolution:
+      {
+        integrity: sha512-h/NUaSyG5EyxBIp8YRxo4RMe2/qQgvyowRwVMzhYhBCONbW8PUsg4lkFMrhgZhUe5z3L3MiLDuvyJ/CaPa2A8A==,
+      }
 
-  '@types/babel__traverse@7.20.6':
-    resolution: {integrity: sha512-r1bzfrm0tomOI8g1SzvCaQHo6Lcv6zu0EA+W2kHrt8dyrHQxGzBBL4kdkzIS+jBMV+EYcMAEAqXqYaLJq5rOZg==}
+  "@types/babel__traverse@7.20.6":
+    resolution:
+      {
+        integrity: sha512-r1bzfrm0tomOI8g1SzvCaQHo6Lcv6zu0EA+W2kHrt8dyrHQxGzBBL4kdkzIS+jBMV+EYcMAEAqXqYaLJq5rOZg==,
+      }
 
-  '@types/estree@1.0.6':
-    resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
+  "@types/estree@1.0.6":
+    resolution:
+      {
+        integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==,
+      }
 
-  '@types/json5@0.0.29':
-    resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+  "@types/json5@0.0.29":
+    resolution:
+      {
+        integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==,
+      }
 
-  '@types/lodash.clonedeep@4.5.9':
-    resolution: {integrity: sha512-19429mWC+FyaAhOLzsS8kZUsI+/GmBAQ0HFiCPsKGU+7pBXOQWhyrY6xNNDwUSX8SMZMJvuFVMF9O5dQOlQK9Q==}
+  "@types/lodash.clonedeep@4.5.9":
+    resolution:
+      {
+        integrity: sha512-19429mWC+FyaAhOLzsS8kZUsI+/GmBAQ0HFiCPsKGU+7pBXOQWhyrY6xNNDwUSX8SMZMJvuFVMF9O5dQOlQK9Q==,
+      }
 
-  '@types/lodash.debounce@4.0.9':
-    resolution: {integrity: sha512-Ma5JcgTREwpLRwMM+XwBR7DaWe96nC38uCBDFKZWbNKD+osjVzdpnUSwBcqCptrp16sSOLBAUb50Car5I0TCsQ==}
+  "@types/lodash.debounce@4.0.9":
+    resolution:
+      {
+        integrity: sha512-Ma5JcgTREwpLRwMM+XwBR7DaWe96nC38uCBDFKZWbNKD+osjVzdpnUSwBcqCptrp16sSOLBAUb50Car5I0TCsQ==,
+      }
 
-  '@types/lodash@4.17.20':
-    resolution: {integrity: sha512-H3MHACvFUEiujabxhaI/ImO6gUrd8oOurg7LQtS7mbwIXA/cUqWrvBsaeJ23aZEPk1TAYkurjfMbSELfoCXlGA==}
+  "@types/lodash@4.17.20":
+    resolution:
+      {
+        integrity: sha512-H3MHACvFUEiujabxhaI/ImO6gUrd8oOurg7LQtS7mbwIXA/cUqWrvBsaeJ23aZEPk1TAYkurjfMbSELfoCXlGA==,
+      }
 
-  '@types/node@14.18.63':
-    resolution: {integrity: sha512-fAtCfv4jJg+ExtXhvCkCqUKZ+4ok/JQk01qDKhL5BDDoS3AxKXhV5/MAVUZyQnSEd2GT92fkgZl0pz0Q0AzcIQ==}
+  "@types/node@14.18.63":
+    resolution:
+      {
+        integrity: sha512-fAtCfv4jJg+ExtXhvCkCqUKZ+4ok/JQk01qDKhL5BDDoS3AxKXhV5/MAVUZyQnSEd2GT92fkgZl0pz0Q0AzcIQ==,
+      }
 
-  '@types/node@22.10.7':
-    resolution: {integrity: sha512-V09KvXxFiutGp6B7XkpaDXlNadZxrzajcY50EuoLIpQ6WWYCSvf19lVIazzfIzQvhUN2HjX12spLojTnhuKlGg==}
+  "@types/node@22.10.7":
+    resolution:
+      {
+        integrity: sha512-V09KvXxFiutGp6B7XkpaDXlNadZxrzajcY50EuoLIpQ6WWYCSvf19lVIazzfIzQvhUN2HjX12spLojTnhuKlGg==,
+      }
 
-  '@types/parse-json@4.0.2':
-    resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
+  "@types/parse-json@4.0.2":
+    resolution:
+      {
+        integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==,
+      }
 
-  '@types/prop-types@15.7.14':
-    resolution: {integrity: sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==}
+  "@types/prop-types@15.7.14":
+    resolution:
+      {
+        integrity: sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==,
+      }
 
-  '@types/react-dom@18.3.5':
-    resolution: {integrity: sha512-P4t6saawp+b/dFrUr2cvkVsfvPguwsxtH6dNIYRllMsefqFzkZk5UIjzyDOv5g1dXIPdG4Sp1yCR4Z6RCUsG/Q==}
+  "@types/react-dom@18.3.5":
+    resolution:
+      {
+        integrity: sha512-P4t6saawp+b/dFrUr2cvkVsfvPguwsxtH6dNIYRllMsefqFzkZk5UIjzyDOv5g1dXIPdG4Sp1yCR4Z6RCUsG/Q==,
+      }
     peerDependencies:
       "@types/react": ^18.0.0
 
@@ -3250,9 +3344,6 @@ packages:
         integrity: sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==,
       }
 
-  lodash.clonedeep@4.5.0:
-    resolution: {integrity: sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==}
-
   lodash.debounce@4.0.8:
     resolution:
       {
@@ -3681,8 +3772,11 @@ packages:
       react: ^18.3.1
 
   react-hook-form@7.54.2:
-    resolution: {integrity: sha512-eHpAUgUjWbZocoQYUHposymRb4ZP6d0uwUnooL2uOybA9/3tPUvoAKqEWK1WaSiTxxOfTpffNZP7QwlnM3/gEg==}
-    engines: {node: '>=18.0.0'}
+    resolution:
+      {
+        integrity: sha512-eHpAUgUjWbZocoQYUHposymRb4ZP6d0uwUnooL2uOybA9/3tPUvoAKqEWK1WaSiTxxOfTpffNZP7QwlnM3/gEg==,
+      }
+    engines: { node: ">=18.0.0" }
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
 
@@ -4267,11 +4361,6 @@ packages:
     engines: { node: ">=4.2.0" }
     hasBin: true
 
-  typescript@4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
-    hasBin: true
-
   unbox-primitive@1.1.0:
     resolution:
       {
@@ -4466,9 +4555,6 @@ packages:
         integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==,
       }
 
-  zod@3.24.1:
-    resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
-
 snapshots:
   "@ampproject/remapping@2.3.0":
     dependencies:
@@ -4603,29 +4689,7 @@ snapshots:
       "@cloudinary/html": 1.13.4
       react: 18.3.1
 
-  '@cloudinary/html@1.13.4':
-    dependencies:
-      '@types/lodash.clonedeep': 4.5.9
-      '@types/lodash.debounce': 4.0.9
-      '@types/node': 14.18.63
-      lodash.clonedeep: 4.5.0
-      lodash.debounce: 4.0.8
-      typescript: 4.9.5
-
-  '@cloudinary/react@1.14.3(react@18.3.1)':
-    dependencies:
-      '@cloudinary/html': 1.13.4
-      react: 18.3.1
-
-  '@cloudinary/transformation-builder-sdk@1.17.0':
-    dependencies:
-      '@cloudinary/url-gen': 1.21.0
-
-  '@cloudinary/url-gen@1.21.0':
-    dependencies:
-      '@cloudinary/transformation-builder-sdk': 1.17.0
-
-  '@emotion/babel-plugin@11.13.5':
+  "@cloudinary/transformation-builder-sdk@1.17.0":
     dependencies:
       "@cloudinary/url-gen": 1.21.0
 
@@ -5151,11 +5215,7 @@ snapshots:
       protobufjs: 7.4.0
       yargs: 17.7.2
 
-  '@hookform/resolvers@3.10.0(react-hook-form@7.54.2(react@18.3.1))':
-    dependencies:
-      react-hook-form: 7.54.2(react@18.3.1)
-
-  '@humanwhocodes/config-array@0.13.0':
+  "@hookform/resolvers@3.10.0(react-hook-form@7.54.2(react@18.3.1))":
     dependencies:
       react-hook-form: 7.54.2(react@18.3.1)
 
@@ -5541,19 +5601,7 @@ snapshots:
 
   "@types/node@14.18.63": {}
 
-  '@types/lodash.clonedeep@4.5.9':
-    dependencies:
-      '@types/lodash': 4.17.20
-
-  '@types/lodash.debounce@4.0.9':
-    dependencies:
-      '@types/lodash': 4.17.20
-
-  '@types/lodash@4.17.20': {}
-
-  '@types/node@14.18.63': {}
-
-  '@types/node@22.10.7':
+  "@types/node@22.10.7":
     dependencies:
       undici-types: 6.20.0
 
