@@ -200,6 +200,12 @@
             align-items: flex-start;
             justify-content: center;
             flex-direction: column;
+
+            select {
+              background-color: rgba(255, 255, 255, 1);
+              outline: none;
+              border-color: rgba(122, 113, 113, 0.5);
+            }
           }
           .portWrap {
             display: flex;
@@ -242,6 +248,15 @@
             align-items: flex-start;
             justify-content: center;
             flex-direction: column;
+
+            input {
+              background-color: rgba(255, 255, 255, 1);
+              outline: none;
+              border-color: rgba(122, 113, 113, 0.5);
+              height: 1.5rem;
+              color: black;
+              width: 80%;
+            }
           }
         }
       }
