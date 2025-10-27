@@ -15,6 +15,7 @@
     background: url("https://res.cloudinary.com/dpvckds4h/image/upload/v1752118080/BlogBackground_u1qhky.webp")
       no-repeat center;
     background-size: cover;
+    background-attachment: fixed;
     filter: blur(1px) brightness(1.5);
     z-index: 0;
     // background-color: rgba(10, 10, 10, 0.3);
