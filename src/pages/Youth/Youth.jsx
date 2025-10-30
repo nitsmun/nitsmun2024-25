@@ -155,6 +155,9 @@ const Youth = () => {
               src="https://res.cloudinary.com/dpvckds4h/image/upload/v1761131665/Gplus_Logo-01_szogn1.png"
               alt="GPlus"
               className={styles.sponsorImg}
+              onClick={() =>
+                window.open("https://www.guwahatiplus.com/", "_blank")
+              }
             />
           </div>
           <div className={styles.sponsorCard}>
@@ -162,6 +165,9 @@ const Youth = () => {
               src="https://res.cloudinary.com/dpvckds4h/image/upload/v1761131636/BPCL_Golden_Jubilee_Logo_For_Dark_Background_myblvk.png"
               alt="BPCL"
               className={styles.sponsorImg}
+              onClick={() =>
+                window.open("https://www.bharatpetroleum.in/index", "_blank")
+              }
             />
           </div>
           <div className={styles.sponsorCard}>
@@ -169,6 +175,7 @@ const Youth = () => {
               src="https://res.cloudinary.com/dpvckds4h/image/upload/v1761131616/RedoQ_white_qgy4hk.png"
               alt="RedoQ"
               className={styles.sponsorImg}
+              onClick={() => window.open("https://redoq.com/", "_blank")}
             />
           </div>
         </div>
