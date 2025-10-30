@@ -7,6 +7,7 @@ import {
   Secretariatmediajr,
   Secretariatprjr,
   Secretariatresearchjr,
+  Secretariatvideoeditingjr,
   Secretariatwebjr,
 } from "./TeamData.jsx";
 import Card from "./Card.jsx";
@@ -153,6 +154,30 @@ const Team = () => {
               <h1 className={styles.header}>Technical Team</h1>
               <div className={styles.photodesk}>
                 {Secretariatwebjr.map((item) => (
+                  <Card
+                    img={item.imgsrc}
+                    name={item.name}
+                    key={item.id}
+                    fb={item.fb ? item.fb : ""}
+                    insta={item.insta ? item.insta : ""}
+                    linkedin={item.linkedin ? item.linkedin : ""}
+                    post={item.post ? item.post : ""}
+                    mail={item.mail ? item.mail : ""}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h1
+                className={styles.header}
+                style={{ marginLeft: "20vw", marginRight: "20vw" }}
+              >
+                <hr />
+              </h1>
+              <h1 className={styles.header}>Video Editing Team</h1>
+              <div className={styles.photodesk}>
+                {Secretariatvideoeditingjr.map((item) => (
                   <Card
                     img={item.imgsrc}
                     name={item.name}
