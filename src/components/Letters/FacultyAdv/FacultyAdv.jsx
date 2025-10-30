@@ -3,7 +3,9 @@ import styles from "./FacultyAdv.module.scss";
 const FacultyAdv = () => {
   return (
     <div className={styles.FacultyAdv}>
-      <h1 className={styles.heading}>Letter From Faculty Advisor</h1>
+      <h1 className={styles.heading}>
+        Letter From Faculty Advisor (Dr. Debjit Bhowmik)
+      </h1>
       <div className={styles.innerCont}>
         <div className={styles.photoCont}>
           <img
