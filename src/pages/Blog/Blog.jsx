@@ -1,39 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
+import { useEffect } from "react";
 import styles from "./Blog.module.scss";
 import BlogCard from "../../components/Card/Card";
-import BlogComponent from "../../components/BlogComponent/BlogComponent";
-import blogData from "../../assets/blogdata.js";
+// import BlogComponent from "../../components/BlogComponent/BlogComponent";
+import blogData from "../../assets/blogData.js";
 const BlogPage = () => {
-  const [selectedIndex, setSelectedIndex] = useState(null);
-  const handleCardClick = (index) => {
-    setSelectedIndex(index);
-  };
-  const handleBack = () => {
-    setSelectedIndex(null);
-  };
+  useEffect(() => {
+    document.title = "NITSMUN | BLOG";
+  }, []);
   return (
     <div className={styles.blogpagecontainer}>
-      {selectedIndex === null ? (
-        <div>
-          <h1 className={styles.pagetitle}>BLOG PAGE</h1>
-          <div className={styles.blogcardsgrid}>
-            {/* {Array.from({ length: 10 }).map((_, idx) => (
-            <BlogCard key={idx} />
-          ))} */}
-            {blogData.map((blog, index) => (
-              <BlogCard
-                key={index}
-                title={blog.title}
-                excerpt={blog.excerpt}
-                image={blog.image}
-                onClick={() => handleCardClick(index)}
-              />
-            ))}
-          </div>
+      <div>
+        <h1 className={styles.pagetitle}>BLOG PAGE</h1>
+        <div className={styles.blogcardsgrid}>
+          {blogData.map((blog) => (
+            <BlogCard key={blog.id} blog={blog} />
+          ))}
         </div>
-      ) : (
-        <BlogComponent blog={blogData[selectedIndex]} onBack={handleBack} />
-      )}
+      </div>
     </div>
   );
 };

@@ -1,3 +1,5 @@
+//Not in Use
+
 import React from "react";
 import styles from "./BlogComponent.module.scss";
 import { IoArrowBack } from "react-icons/io5";

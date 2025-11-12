@@ -1,26 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Card.module.scss";
 
-const BlogCard = ({ title, excerpt, image, onClick }) => (
-  <div className={styles.blogcard} onClick={onClick}>
-    <img src={image} alt="Blog Cover" />
-    <div className={styles.blogcardcontent}>
-      <h3>{title}</h3>
-      <p>
-        {excerpt}{" "}
-        <span>
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              onClick();
-            }}
-          >
-            READ MORE
-          </a>
-        </span>
-      </p>
-    </div>
+const BlogCard = ({ blog }) => (
+  <div className={styles.blogcard}>
+    <Link className={styles.blogcardlink} to={blog.link}>
+      <img src={blog.image} alt="Blog Cover" />
+      <div className={styles.blogcardcontent}>
+        <h3>{blog.title}</h3>
+        <p>
+          {blog.excerpt} <span className={styles.highlighttext}>READ MORE</span>
+        </p>
+      </div>
+    </Link>
   </div>
 );
 
