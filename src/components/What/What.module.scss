@@ -3,99 +3,112 @@
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  // background: linear-gradient(
-  //     (to bottom),
-  //     rgba(39, 83, 138, 0.8),
-  //     rgba(12, 53, 105, 0.7),
-  //     rgba(39, 79, 112, 0.5),
-  //     rgba(16, 57, 90, 0.6)
-  //   ),
-  //   url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // background-size: cover;
   color: #ffffff;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
   overflow-x: hidden;
   font-family: "Jost", "sans-serif";
+  text-align: center;
 
   .headtxt {
-    margin-top: 5rem;
-    font-size: 4rem;
+    font-size: 2.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    margin-bottom: 1rem;
 
-    @media screen and (min-width: 450px) {
-      margin-top: 0rem;
-    }
-    @media screen and (min-width: 550px) {
-      margin-top: 4rem;
+    @media screen and (min-width: 768px) {
+      font-size: 4rem;
     }
   }
 
   .txtsctn {
-    // border: 2px solid black;
-    box-shadow:
-      -2px -1px 2px #fff,
-      0px 1px 2px #fff;
-    width: 90%;
-    height: 80%;
-    padding: 1rem 0;
-    border-radius: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    max-width: 1000px;
+    padding: 2.5rem 1.5rem;
+    border-radius: 2.5rem;
     background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.3)
+      135deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.05)
     );
-    backdrop-filter: blur(10px);
-    z-index: 0;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    @media screen and (min-width: 768px) {
+      width: 90%;
+      padding: 3rem 4rem;
+      border-radius: 4rem;
+    }
 
     .muntxt {
-      font-size: 8rem;
-      margin-top: 1rem;
-      z-index: 6;
+      font-weight: 900;
+      line-height: 0.9;
 
-      font-weight: 800;
-      letter-spacing: 0.5rem;
-      background: url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720416020/q9vnvxcubsljxsa0z51c.jpg")
-        20% 20%;
+      /* MOVING NITSMUN UPWARD */
+      margin-top: -1rem;
+      margin-bottom: 2rem;
+
+      background: url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720416020/q9vnvxcubsljxsa0z51c.jpg");
       background-size: cover;
-      background-clip: padding-box;
-      -webkit-text-fill-color: transparent;
+      background-position: center;
+      background-clip: text;
       -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
 
-      @media screen and (min-width: 300px) {
-        font-size: 5rem;
-      }
+      /* INCREASED FONT SIZE */
+      font-size: 4.5rem;
 
       @media screen and (min-width: 450px) {
-        font-size: 8rem;
+        font-size: 6.5rem;
+        margin-top: -2rem; // Pulls up more on tablet
+      }
+
+      @media screen and (min-width: 800px) {
+        font-size: 10rem;
+        margin-top: 2rem; // Pulls up more on desktop
+        letter-spacing: 0.8rem;
       }
     }
 
     p {
-      padding: 0 1rem;
-      z-index: 6;
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 750px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.95);
 
-      @media screen and (min-width: 450px) {
-        margin-top: -2rem;
+      @media screen and (min-width: 768px) {
+        font-size: 1.25rem;
+        /* Matches the tight layout of the moved heading */
+        margin-top: -0.5rem;
       }
     }
 
     .abtbtn {
+      display: inline-block;
+      text-decoration: none;
       background-color: rgba(39, 157, 255, 1);
-      width: 8rem;
       border-radius: 2rem;
-      margin-top: 1.5rem;
-      margin-bottom: 2.5rem;
-      transition: 0.5s;
+      margin-top: 2.5rem;
       color: #ffffff;
-      padding: 0.2rem 1rem;
-    }
+      padding: 0.8rem 3rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
 
-    .abtbtn:hover {
-      background-color: rgb(27, 133, 220);
-      outline: none;
+      &:hover {
+        background-color: #ffffff;
+        color: rgba(39, 157, 255, 1);
+        transform: scale(1.05);
+      }
     }
   }
 }
