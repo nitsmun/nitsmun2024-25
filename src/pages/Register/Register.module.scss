@@ -1,771 +1,320 @@
-.register {
-  background-image: linear-gradient(
-      (to top),
-      rgba(41, 126, 196, 0.6),
-      rgba(39, 79, 112, 0.5),
-      rgba(12, 53, 105, 0.7),
-      rgba(6, 36, 73, 0.8)
-    ),
+/* Register.module.scss */
+
+// --- Variables ---
+$primary-dark: #0f172a;
+$primary-blue: #1e40af;
+$accent-blue: #3b82f6;
+$text-main: #1f2937;
+$text-muted: #6b7280;
+$white: #ffffff;
+$error: #ef4444;
+$bg-overlay: linear-gradient(
+  135deg,
+  rgba(15, 23, 42, 0.92) 0%,
+  rgba(30, 58, 138, 0.85) 100%
+);
+
+// --- Layout ---
+.container {
+  min-height: 100vh;
+  padding: 5rem 1rem;
+  font-family: "Jost", sans-serif;
+  background: $bg-overlay,
     url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
   background-attachment: fixed;
   background-size: cover;
-  background-repeat: no-repeat;
-  font-family: $font-family_1;
+  background-position: center;
 }
+
 .mainTitle {
-  padding-top: 10rem;
-  font-size: 3rem;
-  text-transform: uppercase;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: $white;
   text-align: center;
-  font-weight: bold;
-  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.9);
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 4rem;
+  letter-spacing: -1px;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
+
 .form {
-  margin: 3rem auto 6rem;
-  width: 70%;
-  background-color: $background-color_1;
-  padding: 2rem;
-  color: $color_2;
+  max-width: 950px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 3.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  color: $text-main;
+
+  @media (max-width: 640px) {
+    padding: 1.5rem;
+    width: 95%;
+  }
 }
+
 .formHeader {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
 }
-.formHeaderText {
-  margin-top: 1rem;
-}
+
 .formTitle {
-  font-size: 1.875rem;
-  font-weight: 600;
-  color: $color_3;
-  margin-bottom: 0;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: $primary-dark;
+  line-height: 1.1;
+  margin-bottom: 1rem;
 }
+
 .formSubtitle {
-  color: $color_4;
-  font-size: 1.25rem;
-  margin-top: 0.5rem;
+  color: $text-muted;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
-.logo {
-  width: 10rem;
-  height: 9.5rem;
-  margin-top: -1rem;
+
+.logoContainer {
+  flex-shrink: 0;
+  .logo {
+    width: 140px;
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  }
 }
+
 .divider {
-  margin: 1.5rem 0;
-  border-top: 1.5px solid black;
+  margin: 2.5rem 0;
+  border: 0;
+  height: 1.5px;
+  background: linear-gradient(to right, $accent-blue, #e5e7eb, transparent);
 }
-.formContent {
-  width: 100%;
-}
-.label {
-  display: flex;
-  font-size: 1.25rem;
-  margin-top: 1rem;
-}
+
+// --- Inputs & Labels ---
+.label,
 .labelMedium {
-  display: flex;
-  font-size: 1.25rem;
-  margin-top: 1.5rem;
-  font-weight: 500;
-}
-.inputWrapper {
-  margin-top: 1rem;
-  width: 93%;
-}
-.input {
-  width: 100%;
-  height: 2.5rem;
-  padding: 0 0.5rem;
-  background-color: $background-color_2;
-  border: 1px solid rgba(122, 113, 113, 0.5);
-  outline: none;
-  color: #000000;
-  &::placeholder {
-    color: #6b7280;
-    opacity: 1; // placeholder visible
-  }
-
-  &:focus {
-    border-color: #2563eb;
-  }
-}
-.textarea {
-  width: 100%;
-  height: 10rem;
-  padding: 0.5rem;
-  background-color: $background-color_2;
-  border: 1px solid rgba(122, 113, 113, 0.5);
-  outline: none;
-  color: #000000;
-  &::placeholder {
-    color: #6b7280;
-    opacity: 1; // placeholder visible
-  }
-
-  &:focus {
-    border-color: #2563eb;
-  }
-}
-.input,
-.textarea {
-  &::-webkit-input-placeholder {
-    color: #6b7280;
-    opacity: 1;
-  }
-
-  &::-moz-placeholder {
-    color: #6b7280;
-    opacity: 1;
-  }
-
-  &:-ms-input-placeholder {
-    color: #6b7280;
-    opacity: 1;
-  }
-}
-
-.description {
-  color: $color_4;
-  font: bold;
-  margin-top: 0.5rem;
-}
-.subtitle {
-  margin-top: 1rem;
-  font-size: 1.125rem;
-}
-.link {
-  text-decoration: underline;
-  color: $color_5;
-}
-.preferencesWithin {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 1.5rem;
-}
-.preferencesOutside {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-top: 1.5rem;
-}
-.preferenceItem {
-  width: 100%;
-}
-.preferenceSelect {
-  margin-bottom: 1rem;
-}
-.preferenceLabel {
-  display: flex;
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-.portfolioTitle {
-  font-size: 1.125rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-.portfolioInput {
-  width: 90%;
-  height: 2.5rem;
-  padding: 0 0.5rem;
-  margin-bottom: 0.5rem;
-  background-color: $background-color_2;
-  border: 1px solid rgba(122, 113, 113, 0.5);
-  color: black;
-  outline: none;
-}
-.portfolioInputLast {
-  width: 90%;
-  height: 2.5rem;
-  padding: 0 0.5rem;
-  background-color: $background-color_2;
-  border: 1px solid rgba(122, 113, 113, 0.5);
-  outline: none;
-}
-.paymentTitle {
-  font-size: 1.5rem;
-  font-weight: 500;
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: $primary-dark;
   margin-top: 2rem;
-}
-.paymentDescription {
-  color: $color_4;
-  margin-top: 0.5rem;
-}
-.paymentAmount {
-  color: $color_2;
-  font-weight: 500;
-}
-.paymentContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  margin-top: 1.5rem;
-  padding: 2rem 0;
-}
-.paymentDetails {
-  flex: 1;
-}
-.upiSection {
-  margin-bottom: 1rem;
-}
-.upiLabel {
-  font-size: 1.125rem;
-  font-weight: 500;
-}
-.upiValue {
-  color: $color_4;
-}
-.paymentProofSection {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-.paymentProofLabel {
-  font-size: 1.125rem;
-}
-.fileInput {
-  width: 70%;
-  height: 2.5rem;
-  padding: 0 0.5rem;
-  background-color: $background-color_2;
-  border: 1px solid rgba(122, 113, 113, 0.5);
-  outline: none;
-}
-.submitButton {
-  margin-top: 1.5rem;
-  padding: 0.75rem 2rem;
-  background-color: rgb(118, 140, 171);
-  color: $color_1;
-  font-weight: 500;
-  font-size: 1.125rem;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  &:hover {
-    background-color: rgb(80, 95, 117);
-  }
-}
-.qrCodeContainer {
-  width: 80%;
-}
-.qrCodeImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.contactSection {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 2px solid rgb(156, 163, 175);
-}
-.contactLabel {
-  display: flex;
-  font-size: 1.125rem;
-  font-weight: 500;
   margin-bottom: 0.75rem;
 }
-.contactNumbers {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.contactNumber {
-  font-size: 1rem;
-  font-weight: 500;
-}
-.flex {
-  display: flex;
-}
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-.mt-6 {
-  margin-top: 1.5rem;
-}
-.text-red-600 {
-  color: $color_6;
-}
-.ml-1 {
-  margin-left: 0.25rem;
-}
-.mt-4 {
-  margin-top: 1rem;
-}
-.w-full {
-  width: 100%;
-}
-.h-10 {
-  height: 2.5rem;
-}
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-.bg-white {
-  background-color: $background-color_2;
-}
-.border-b-2 {
-  border-bottom-width: 2px;
-}
-.border-gray-400 {
-  border-color: $border-color_1;
-}
-.outline-none {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-.border-b-2.border-gray-400 {
-  &:focus {
-    border-color: $border-color_2;
-  }
-}
-.items-center {
-  align-items: center;
-}
-.gap-2 {
-  gap: 0.5rem;
-}
-.mt-3 {
-  margin-top: 0.75rem;
-}
-.w-4 {
-  width: 1rem;
-}
-.h-4 {
-  height: 1rem;
-}
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-.text-gray-600 {
-  color: $color_7;
-}
-.font-medium {
-  font-weight: 500;
-}
-.space-y-2 {
-  > * {
-    + {
-      * {
-        margin-top: 0.5rem;
-      }
-    }
-  }
-}
-input[type="email"].w-full {
-  &:focus {
-    border-color: $border-color_2;
-  }
-}
-input[type="text"].w-full {
-  &:focus {
-    border-color: $border-color_2;
-  }
-}
-input[type="tel"].w-full {
-  &:focus {
-    border-color: $border-color_2;
-  }
-}
-.p-4 {
-  padding: 1rem;
-}
-.bg-gray-100 {
-  background-color: $background-color_5;
-}
-.rounded {
-  border-radius: 0.25rem;
-}
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-.text-blue-600 {
-  color: $color_5;
-}
-.underline {
-  text-decoration: underline;
-}
-.break-all {
-  word-break: break-all;
-}
+
 .required {
-  color: $color_6;
+  color: $error;
   margin-left: 0.25rem;
 }
-.inputContainer {
-  margin-top: 1rem;
-}
-.textInput {
-  margin-left: -5vw;
-  width: 90%;
-  height: 2.5rem;
-  padding: 0 0.75rem;
-  background-color: $background-color_2;
-  border-bottom: 2px solid rgb(156, 163, 175);
-  outline: none;
-  color: #000000;
 
-  &:focus {
-    border-color: $border-color_2;
-  }
-}
-.checkboxContainer {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-}
-.checkbox {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
-  width: 1rem;
-  height: 1rem;
-
-  background-color: #ffffff; // WHITE always
-  border: 2px solid #ffffff; // WHITE border
-  border-radius: 3px;
-
-  cursor: pointer;
-  position: relative;
-}
-/* Checked state – still white */
-.checkbox:checked {
-  background-color: #ffffff; // stays white
-  border-color: #ffffff;
-}
-
-/* Checkmark */
-.checkbox:checked::after {
-  content: "";
-  position: absolute;
-
-  width: 4px;
-  height: 8px;
-
-  border: solid #000000; // BLACK checkmark
-  border-width: 0 2px 2px 0;
-
-  transform: rotate(45deg);
-  left: 4px;
-  top: 1px;
-}
-.checkboxLabel {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  color: $color_7;
-}
-.emailHighlight {
-  font-weight: 500;
-}
-.radioGroup {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.radioLabel {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.radio {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
-  width: 1rem;
-  height: 1rem;
-
-  background-color: #ffffff; // always white
-  border: 2px solid #ffffff; // white border
-  border-radius: 50%;
-
-  cursor: pointer;
-  position: relative;
-}
-
-/* Checked state – still white */
-.radio:checked {
-  background-color: #ffffff;
-  border-color: #ffffff;
-}
-
-/* Inner dot */
-.radio:checked::after {
-  content: "";
-  position: absolute;
-
-  width: 0.4rem;
-  height: 0.4rem;
-
-  background-color: #000000; // black dot
-  border-radius: 50%;
-
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.prizePoolSection {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background-color: $background-color_5;
-  border-radius: 0.5rem;
-  border: 1px solid rgb(209, 213, 219);
-}
-.prizePoolTitle {
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: $color_8;
+.inputWrapper {
+  width: 100%;
   margin-bottom: 1rem;
 }
-.prizeList {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  margin-bottom: 1.5rem;
-}
-.prizeItem {
-  font-size: 1.125rem;
-  color: $color_9;
-  margin-bottom: 0.75rem;
-  padding-left: 1.5rem;
-  position: relative;
-  strong {
-    font-weight: 600;
-    color: $color_8;
-  }
-}
-.contactTitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: $color_8;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-.contactList {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.contactItem {
-  font-size: 1.125rem;
-  color: $color_9;
-  margin: 0;
-}
-.contactSectionEnhanced {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 2px solid rgb(209, 213, 219);
-}
-.contactTitleEnhanced {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: $color_8;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-.contactGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-.contactCard {
-  background: rgb(118, 140, 171);
-  padding: 1.5rem;
+
+.textInput,
+.input,
+.textarea,
+.portfolioInput,
+.portfolioInputLast {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  background-color: #f8fafc;
+  border: 2px solid #e2e8f0;
   border-radius: 0.75rem;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  font-size: 1rem;
+  color: $text-main;
+  transition: all 0.2s ease;
+  outline: none;
+
+  &:focus {
+    background-color: $white;
+    border-color: $accent-blue;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
   }
-  .contactNumber {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: $color_1;
-    margin: 0 0 0.5rem 0;
-    letter-spacing: 0.5px;
-  }
-  .contactName {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: $color_10;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+
+  &::placeholder {
+    color: #94a3b8;
   }
 }
-@media (max-width: 640px) {
-  .mainTitle {
-    font-size: 1.875rem;
-  }
-  // .form {
-  // 	width: 90%;
-  // 	padding: 1.5rem;
-  // }
-  // .container {
-  //   padding-left: 1rem;
-  //   padding-right: 1rem;
-  // }
-  .container {
-    min-height: 100vh;
-    width: 100%; // ✅ FIX
-    overflow-x: hidden;
-    padding-left: 0rem;
-    padding-right: 1rem;
-  }
 
-  .form {
-    width: 80%;
-    max-width: 420px;
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
 
-    padding: 1.25rem;
-    border-radius: 0.75rem;
-    margin: 0 auto;
-    box-sizing: border-box; // ✅ IMPORTANT
-  }
-  .formTitle {
-    font-size: 1.5rem;
-  }
-  .logoContainer {
-    display: none;
-  }
-  .paymentContainer {
-    flex-direction: column;
-  }
-  .paymentProofSection {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .fileInput {
-    width: 100%;
-  }
-  .qrCodeContainer {
-    width: 60%;
-    margin: 0 auto;
-  }
-  .contactNumbers {
+// --- Radio & Checkbox ---
+.radioGroup {
+  display: flex;
+  gap: 2rem;
+  margin: 1rem 0;
+
+  @media (max-width: 480px) {
     flex-direction: column;
     gap: 0.75rem;
   }
 }
-@media (min-width: 768px) {
-  .preferencesOutside {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .contactGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-}
-.paymentBox {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 1rem;
-  padding: 2.5rem;
-  margin-top: 2.5rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+.radioLabel,
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
-.paymentTitle {
-  font-size: 1.75rem;
+.checkboxContainer {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: #f1f5f9;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.emailHighlight {
+  color: $primary-blue;
   font-weight: 700;
-  color: rgba(2, 22, 46, 1);
-  margin-bottom: 1.25rem;
+}
+
+// --- Committee Preferences Section ---
+.preferencesOutside {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.preferenceItem {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.preferenceLabel {
+  font-weight: 700;
+  color: $primary-blue;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.portfolioTitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $text-muted;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.portfolioInput,
+.portfolioInputLast {
+  margin-bottom: 0.6rem;
+}
+
+// --- Payment Section ---
+.paymentBox {
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: #f0f7ff;
+  border-radius: 1.25rem;
+  border: 1px solid #dbeafe;
 }
 
 .paymentIntro {
-  font-size: 1rem;
-  color: rgba(55, 65, 81, 1);
-  line-height: 1.7;
+  color: $text-muted;
+  font-size: 1.05rem;
+  line-height: 1.6;
   margin-bottom: 2rem;
 }
 
 .feeStructure {
   display: flex;
-  justify-content: center; // centers when only one item
-  gap: 10rem;
+  gap: 1.5rem;
   margin-bottom: 2rem;
-  flex-wrap: wrap;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
 }
 
 .feeCard {
-  background: rgb(243, 244, 246);
-  width: 180px;
-  border-radius: 0.75rem;
+  flex: 1;
+  background: $white;
   padding: 1.5rem;
+  border-radius: 1rem;
   text-align: center;
-}
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 
-.feeType {
-  font-size: 1rem;
-  font-weight: 600;
-  color: rgba(31, 41, 55, 1);
-}
+  .feeType {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: $text-muted;
+    text-transform: uppercase;
+  }
 
-.feePrice {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: rgb(37, 99, 235);
-  margin: 0.5rem 0;
-}
+  .feePrice {
+    font-size: 2rem;
+    font-weight: 800;
+    color: $primary-dark;
+    margin: 0.5rem 0;
+  }
 
-.feeNote {
-  font-size: 0.875rem;
-  color: rgba(107, 114, 128, 1);
+  .feeNote {
+    font-size: 0.85rem;
+    color: $accent-blue;
+  }
 }
 
 .inclusions {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
   margin-bottom: 2rem;
-}
 
-.inclusionsTitle {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  color: rgba(17, 24, 39, 1);
-}
+  .inclusionsTitle {
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: $primary-dark;
+  }
 
-.inclusionsList {
-  list-style: none;
-  padding: 0;
-
-  li {
-    padding-left: 1.5rem;
-    position: relative;
-    margin-bottom: 0.5rem;
-    color: rgba(31, 41, 55, 1);
-
-    &::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: rgb(34, 197, 94);
-      font-weight: bold;
+  .inclusionsList {
+    padding-left: 1.25rem;
+    li {
+      margin-bottom: 0.4rem;
+      color: $text-main;
     }
   }
 }
 
 .paymentAction {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: center;
-  margin-bottom: 2rem;
+  padding: 2rem;
+  background: $white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 .paymentLeft {
@@ -773,71 +322,140 @@ input[type="tel"].w-full {
 }
 
 .paymentProofLabel {
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.fileInput {
-  width: 100%;
+  font-weight: 700;
   margin-bottom: 1rem;
-}
-
-.submitButton {
-  background: rgb(118, 140, 171);
-  color: white;
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-
-  &:hover {
-    background: rgb(81, 97, 118);
-  }
-}
-
-.paymentRight {
-  text-align: center;
+  display: block;
 }
 
 .qrCodeImage {
-  width: 220px;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border: 1px solid #f1f5f9;
+  padding: 0.5rem;
   border-radius: 0.5rem;
 }
 
 .qrNote {
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
-  color: rgba(75, 85, 99, 1);
+  margin-top: 0.75rem;
+  font-weight: 600;
+  color: $text-muted;
 }
 
-.paymentContact {
-  border-top: 1px solid rgb(209, 213, 219);
-  padding-top: 1rem;
+.submitButton {
+  width: 100%;
+  margin-top: 1.5rem;
+  background: $primary-blue;
+  color: $white;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $primary-dark;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// --- Prize Pool & Recognition ---
+.prizePoolSection {
+  margin-top: 4rem;
+  padding: 2.5rem;
+  background: $primary-dark;
+  color: $white;
+  border-radius: 1.25rem;
+}
+
+.prizePoolTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.contactLabel {
+.prizeList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  list-style: none;
+}
+
+.prizeItem {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border-bottom: 3px solid $accent-blue;
+  text-align: center;
+
+  strong {
+    display: block;
+    color: $accent-blue;
+    margin-bottom: 0.25rem;
+  }
+}
+
+// --- Contact Section ---
+.contactSectionEnhanced {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.contactTitleEnhanced {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $primary-dark;
+  margin-bottom: 1.5rem;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contactCard {
+  background: $white;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+
+  .contactNumber {
+    font-weight: 800;
+    color: $primary-blue;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .contactName {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $text-muted;
+  }
+}
+
+// --- Utilities ---
+.description {
+  color: $text-muted;
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.link {
+  color: $accent-blue;
+  text-decoration: underline;
   font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-.contactNumber {
-  font-size: 1rem;
-  color: rgba(31, 41, 55, 1);
-}
-
-@media (max-width: 640px) {
-  .paymentAction {
-    flex-direction: column;
-  }
-
-  .qrCodeImage {
-    width: 140px;
-  }
-}
-@media (max-width: 640px) {
-  .inputContainer {
-    margin-left: 2vw;
+  &:hover {
+    color: $primary-blue;
   }
 }
