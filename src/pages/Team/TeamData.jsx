@@ -940,7 +940,7 @@ export const Secretariatjr = [
     id: 16,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dffke2hbp/image/upload/v1738769663/oidl3qpukzyjva1ss25k.jpg",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1761804600/WhatsApp_Image_2025-10-19_at_10.45.51_4829954e_si5akd.jpg",
     alt: "Dhananjoy Das",
     name: "Dhananjoy Das",
     post: "Deputy Director of Technical Operations",
