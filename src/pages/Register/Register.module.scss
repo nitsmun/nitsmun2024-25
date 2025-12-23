@@ -10,426 +10,834 @@
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  color: white;
-  min-height: 100vh;
-  width: 100vw;
-  overflow-x: hidden;
-  font-family: "Jost", "sans-serif";
-  select {
-    background-color: rgba(255, 255, 255, 1);
-    outline: none;
-    color: #000000;
-    border-color: rgba(122, 113, 113, 0.5);
+  font-family: $font-family_1;
+}
+.mainTitle {
+  padding-top: 10rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.9);
+}
+.form {
+  margin: 3rem auto 6rem;
+  width: 70%;
+  background-color: $background-color_1;
+  padding: 2rem;
+  color: $color_2;
+}
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.formHeaderText {
+  margin-top: 1rem;
+}
+.formTitle {
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: $color_3;
+  margin-bottom: 0;
+}
+.formSubtitle {
+  color: $color_4;
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+.logo {
+  width: 10rem;
+  height: 9.5rem;
+  margin-top: -1rem;
+}
+.divider {
+  margin: 1.5rem 0;
+  border-top: 1.5px solid black;
+}
+.formContent {
+  width: 100%;
+}
+.label {
+  display: flex;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+.labelMedium {
+  display: flex;
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  font-weight: 500;
+}
+.inputWrapper {
+  margin-top: 1rem;
+  width: 93%;
+}
+.input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  background-color: $background-color_2;
+  border: 1px solid rgba(122, 113, 113, 0.5);
+  outline: none;
+  color: #000000;
+  &::placeholder {
+    color: #6b7280;
+    opacity: 1; // placeholder visible
   }
-  .registerHeading {
-    font-size: 3rem;
-    margin-top: 10rem;
+
+  &:focus {
+    border-color: #2563eb;
+  }
+}
+.textarea {
+  width: 100%;
+  height: 10rem;
+  padding: 0.5rem;
+  background-color: $background-color_2;
+  border: 1px solid rgba(122, 113, 113, 0.5);
+  outline: none;
+  color: #000000;
+  &::placeholder {
+    color: #6b7280;
+    opacity: 1; // placeholder visible
+  }
+
+  &:focus {
+    border-color: #2563eb;
+  }
+}
+.input,
+.textarea {
+  &::-webkit-input-placeholder {
+    color: #6b7280;
+    opacity: 1;
+  }
+
+  &::-moz-placeholder {
+    color: #6b7280;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: #6b7280;
+    opacity: 1;
+  }
+}
+
+.description {
+  color: $color_4;
+  font: bold;
+  margin-top: 0.5rem;
+}
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+}
+.link {
+  text-decoration: underline;
+  color: $color_5;
+}
+.preferencesWithin {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.preferencesOutside {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.preferenceItem {
+  width: 100%;
+}
+.preferenceSelect {
+  margin-bottom: 1rem;
+}
+.preferenceLabel {
+  display: flex;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.portfolioTitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.portfolioInput {
+  width: 90%;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: $background-color_2;
+  border: 1px solid rgba(122, 113, 113, 0.5);
+  color: black;
+  outline: none;
+}
+.portfolioInputLast {
+  width: 90%;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  background-color: $background-color_2;
+  border: 1px solid rgba(122, 113, 113, 0.5);
+  outline: none;
+}
+.paymentTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 2rem;
+}
+.paymentDescription {
+  color: $color_4;
+  margin-top: 0.5rem;
+}
+.paymentAmount {
+  color: $color_2;
+  font-weight: 500;
+}
+.paymentContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding: 2rem 0;
+}
+.paymentDetails {
+  flex: 1;
+}
+.upiSection {
+  margin-bottom: 1rem;
+}
+.upiLabel {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.upiValue {
+  color: $color_4;
+}
+.paymentProofSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.paymentProofLabel {
+  font-size: 1.125rem;
+}
+.fileInput {
+  width: 70%;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  background-color: $background-color_2;
+  border: 1px solid rgba(122, 113, 113, 0.5);
+  outline: none;
+}
+.submitButton {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background-color: rgb(118, 140, 171);
+  color: $color_1;
+  font-weight: 500;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: rgb(80, 95, 117);
+  }
+}
+.qrCodeContainer {
+  width: 80%;
+}
+.qrCodeImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contactSection {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgb(156, 163, 175);
+}
+.contactLabel {
+  display: flex;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+.contactNumbers {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.contactNumber {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.flex {
+  display: flex;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.mt-6 {
+  margin-top: 1.5rem;
+}
+.text-red-600 {
+  color: $color_6;
+}
+.ml-1 {
+  margin-left: 0.25rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.w-full {
+  width: 100%;
+}
+.h-10 {
+  height: 2.5rem;
+}
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.bg-white {
+  background-color: $background-color_2;
+}
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+.border-gray-400 {
+  border-color: $border-color_1;
+}
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.border-b-2.border-gray-400 {
+  &:focus {
+    border-color: $border-color_2;
+  }
+}
+.items-center {
+  align-items: center;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+.mt-3 {
+  margin-top: 0.75rem;
+}
+.w-4 {
+  width: 1rem;
+}
+.h-4 {
+  height: 1rem;
+}
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-gray-600 {
+  color: $color_7;
+}
+.font-medium {
+  font-weight: 500;
+}
+.space-y-2 {
+  > * {
+    + {
+      * {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+input[type="email"].w-full {
+  &:focus {
+    border-color: $border-color_2;
+  }
+}
+input[type="text"].w-full {
+  &:focus {
+    border-color: $border-color_2;
+  }
+}
+input[type="tel"].w-full {
+  &:focus {
+    border-color: $border-color_2;
+  }
+}
+.p-4 {
+  padding: 1rem;
+}
+.bg-gray-100 {
+  background-color: $background-color_5;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.text-blue-600 {
+  color: $color_5;
+}
+.underline {
+  text-decoration: underline;
+}
+.break-all {
+  word-break: break-all;
+}
+.required {
+  color: $color_6;
+  margin-left: 0.25rem;
+}
+.inputContainer {
+  margin-top: 1rem;
+}
+.textInput {
+  margin-left: -5vw;
+  width: 90%;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  background-color: $background-color_2;
+  border-bottom: 2px solid rgb(156, 163, 175);
+  outline: none;
+  color: #000000;
+
+  &:focus {
+    border-color: $border-color_2;
+  }
+}
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 1rem;
+  height: 1rem;
+
+  background-color: #ffffff; // WHITE always
+  border: 2px solid #ffffff; // WHITE border
+  border-radius: 3px;
+
+  cursor: pointer;
+  position: relative;
+}
+/* Checked state – still white */
+.checkbox:checked {
+  background-color: #ffffff; // stays white
+  border-color: #ffffff;
+}
+
+/* Checkmark */
+.checkbox:checked::after {
+  content: "";
+  position: absolute;
+
+  width: 4px;
+  height: 8px;
+
+  border: solid #000000; // BLACK checkmark
+  border-width: 0 2px 2px 0;
+
+  transform: rotate(45deg);
+  left: 4px;
+  top: 1px;
+}
+.checkboxLabel {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: $color_7;
+}
+.emailHighlight {
+  font-weight: 500;
+}
+.radioGroup {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.radio {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 1rem;
+  height: 1rem;
+
+  background-color: #ffffff; // always white
+  border: 2px solid #ffffff; // white border
+  border-radius: 50%;
+
+  cursor: pointer;
+  position: relative;
+}
+
+/* Checked state – still white */
+.radio:checked {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Inner dot */
+.radio:checked::after {
+  content: "";
+  position: absolute;
+
+  width: 0.4rem;
+  height: 0.4rem;
+
+  background-color: #000000; // black dot
+  border-radius: 50%;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prizePoolSection {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: $background-color_5;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(209, 213, 219);
+}
+.prizePoolTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: $color_8;
+  margin-bottom: 1rem;
+}
+.prizeList {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+.prizeItem {
+  font-size: 1.125rem;
+  color: $color_9;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  strong {
+    font-weight: 600;
+    color: $color_8;
+  }
+}
+.contactTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $color_8;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contactItem {
+  font-size: 1.125rem;
+  color: $color_9;
+  margin: 0;
+}
+.contactSectionEnhanced {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid rgb(209, 213, 219);
+}
+.contactTitleEnhanced {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $color_8;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.contactCard {
+  background: rgb(118, 140, 171);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  .contactNumber {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $color_1;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 0.5px;
+  }
+  .contactName {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $color_10;
+    margin: 0;
     text-transform: uppercase;
-    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.9);
-
-    @media screen and (max-width: 500px) {
-      font-size: 2rem;
-    }
+    letter-spacing: 1px;
+  }
+}
+@media (max-width: 640px) {
+  .mainTitle {
+    font-size: 1.875rem;
+  }
+  // .form {
+  // 	width: 90%;
+  // 	padding: 1.5rem;
+  // }
+  // .container {
+  //   padding-left: 1rem;
+  //   padding-right: 1rem;
+  // }
+  .container {
+    min-height: 100vh;
+    width: 100%; // ✅ FIX
+    overflow-x: hidden;
+    padding-left: 0rem;
+    padding-right: 1rem;
   }
 
-  .registerForm {
-    margin: auto;
-    margin-top: 3rem;
-    margin-bottom: 6rem;
-    width: 70%;
-    background-color: rgba(202, 206, 220, 1);
-    height: auto;
-    padding: 2rem 3rem;
-    color: black;
+  .form {
+    width: 80%;
+    max-width: 420px;
 
-    @media screen and (max-width: 500px) {
-      padding: 1rem 2rem;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    margin: 0 auto;
+    box-sizing: border-box; // ✅ IMPORTANT
+  }
+  .formTitle {
+    font-size: 1.5rem;
+  }
+  .logoContainer {
+    display: none;
+  }
+  .paymentContainer {
+    flex-direction: column;
+  }
+  .paymentProofSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .fileInput {
+    width: 100%;
+  }
+  .qrCodeContainer {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .contactNumbers {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+@media (min-width: 768px) {
+  .preferencesOutside {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contactGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+.paymentBox {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  margin-top: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.paymentTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: rgba(2, 22, 46, 1);
+  margin-bottom: 1.25rem;
+}
+
+.paymentIntro {
+  font-size: 1rem;
+  color: rgba(55, 65, 81, 1);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.feeStructure {
+  display: flex;
+  justify-content: center; // centers when only one item
+  gap: 10rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.feeCard {
+  background: rgb(243, 244, 246);
+  width: 180px;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.feeType {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(31, 41, 55, 1);
+}
+
+.feePrice {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: rgb(37, 99, 235);
+  margin: 0.5rem 0;
+}
+
+.feeNote {
+  font-size: 0.875rem;
+  color: rgba(107, 114, 128, 1);
+}
+
+.inclusions {
+  margin-bottom: 2rem;
+}
+
+.inclusionsTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: rgba(17, 24, 39, 1);
+}
+
+.inclusionsList {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    color: rgba(31, 41, 55, 1);
+
+    &::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: rgb(34, 197, 94);
+      font-weight: bold;
     }
+  }
+}
 
-    .headingForm {
-      // padding: 2rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      height: auto;
+.paymentAction {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
 
-      .textBox {
-        margin-top: 1rem;
-      }
+.paymentLeft {
+  flex: 1;
+}
 
-      p {
-        text-align: left;
-        margin: 0;
-        color: rgba(102, 102, 102, 1);
-        font-size: 2rem;
+.paymentProofLabel {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
 
-        u {
-          font-weight: 600;
-          color: black;
-        }
-      }
+.fileInput {
+  width: 100%;
+  margin-bottom: 1rem;
+}
 
-      h1 {
-        text-align: left;
-        margin: 0;
-        font-size: 2rem;
-        color: rgba(2, 22, 46, 1);
-        font-weight: 600;
-      }
+.submitButton {
+  background: rgb(118, 140, 171);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
 
-      .imagebox {
-        img {
-          width: 10rem;
-          height: 9.5rem;
-          margin-top: -1rem;
+  &:hover {
+    background: rgb(81, 97, 118);
+  }
+}
 
-          @media screen and (max-width: 500px) {
-            display: none;
-          }
-        }
-      }
-    }
+.paymentRight {
+  text-align: center;
+}
 
-    .formCredentials {
-      // border: 2px solid black;
-      width: 100%;
-      height: 100%;
+.qrCodeImage {
+  width: 220px;
+  border-radius: 0.5rem;
+}
 
-      label {
-        display: flex;
-        font-size: 1.25rem;
-        margin-top: 1rem;
-      }
+.qrNote {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  color: rgba(75, 85, 99, 1);
+}
 
-      .formName {
-        // border: 2px solid red;
-        padding-bottom: 0.25rem;
-        padding-top: 0.25rem;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 1rem;
+.paymentContact {
+  border-top: 1px solid rgb(209, 213, 219);
+  padding-top: 1rem;
+  text-align: center;
+}
 
-        input {
-          background-color: rgba(255, 255, 255, 1);
-          outline: none;
-          border-color: rgba(122, 113, 113, 0.5);
-          width: 40%;
-          height: 1.5rem;
-          color: black;
-        }
-      }
+.contactLabel {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
 
-      .nameFields {
-        display: flex;
-        margin-top: -1rem;
-        gap: 52.5%;
-        color: rgba(102, 102, 102, 1);
-      }
+.contactNumber {
+  font-size: 1rem;
+  color: rgba(31, 41, 55, 1);
+}
 
-      .formBranch {
-        display: flex;
-        width: 100%;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+@media (max-width: 640px) {
+  .paymentAction {
+    flex-direction: column;
+  }
 
-        input {
-          width: 100%;
-          background-color: rgba(255, 255, 255, 1);
-          outline: none;
-          border-color: rgba(122, 113, 113, 0.5);
-          height: 1.5rem;
-          color: black;
-        }
-
-        textarea {
-          width: 100%;
-          background-color: rgba(255, 255, 255, 1);
-          outline: none;
-          border-color: rgba(122, 113, 113, 0.5);
-          height: 1.5rem;
-          color: black;
-          height: 10rem;
-        }
-      }
-
-      .formId {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-
-        .year {
-          // border: 2px solid black;
-          width: 40%;
-          display: flex;
-          flex-direction: column;
-
-          label {
-            margin-bottom: 1rem;
-          }
-
-          input {
-            // width: 100%;
-            background-color: rgba(255, 255, 255, 1);
-            outline: none;
-            border-color: rgba(122, 113, 113, 0.5);
-            height: 1.5rem;
-            color: black;
-          }
-        }
-      }
-
-      .desc {
-        margin-top: 0;
-        display: flex;
-        color: rgba(102, 102, 102, 1);
-      }
-      .prefParent {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        flex-direction: column;
-        @media screen and (min-width: 600px) {
-          flex-direction: row;
-        }
-        .prefCont {
-          display: flex;
-          align-items: flex-start;
-          justify-content: center;
-          flex-direction: column;
-          .prefInner {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            flex-direction: column;
-
-            select {
-              background-color: rgba(255, 255, 255, 1);
-              outline: none;
-              border-color: rgba(122, 113, 113, 0.5);
-            }
-          }
-          .portWrap {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            flex-direction: column;
-
-            input {
-              background-color: rgba(255, 255, 255, 1);
-              outline: none;
-              border-color: rgba(122, 113, 113, 0.5);
-              height: 1.5rem;
-              color: black;
-              width: 80%;
-            }
-          }
-        }
-      }
-      .prefParent {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        flex-direction: column;
-        @media screen and (min-width: 600px) {
-          flex-direction: row;
-        }
-        .prefCont {
-          display: flex;
-          align-items: flex-start;
-          justify-content: center;
-          flex-direction: column;
-          .prefInner {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            flex-direction: column;
-          }
-          .portWrap {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            flex-direction: column;
-
-            input {
-              background-color: rgba(255, 255, 255, 1);
-              outline: none;
-              border-color: rgba(122, 113, 113, 0.5);
-              height: 1.5rem;
-              color: black;
-              width: 80%;
-            }
-          }
-        }
-      }
-      .formRadio {
-        display: flex;
-        justify-content: space-between;
-
-        @media screen and (max-width: 500px) {
-          flex-direction: column;
-        }
-        .field {
-          display: flex;
-          gap: 1rem;
-
-          input {
-            color: rgba(29, 28, 65, 1);
-          }
-        }
-      }
-
-      .formPreferences {
-        // border: 2px solid black;
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-
-        @media screen and (max-width: 500px) {
-          flex-direction: column;
-        }
-
-        .field1 {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: center;
-          width: 100%;
-
-          .fields {
-            display: flex;
-            flex-direction: row;
-
-            align-items: center;
-            // border: 2px solid red;
-            width: 95%;
-            justify-content: space-between;
-
-            label {
-              margin-bottom: 1rem;
-
-              @media screen and (max-width: 500px) {
-                font-size: 1rem;
-              }
-            }
-
-            input {
-              background-color: rgba(255, 255, 255, 1);
-              outline: none;
-              border-color: rgba(122, 113, 113, 0.5);
-              height: 1.5rem;
-              color: black;
-              width: 60%;
-            }
-          }
-        }
-      }
-
-      .formPayment {
-        font-size: 1.5rem;
-        display: flex;
-      }
-
-      .formPaymentDesc {
-        text-align: left;
-        color: rgba(102, 102, 102, 1);
-
-        span {
-          color: rgba(0, 0, 0, 1);
-          font-weight: 500;
-        }
-      }
-
-      .paymentCredentials {
-        display: flex;
-        justify-content: space-between;
-        height: auto;
-        padding: 2rem 0;
-
-        @media screen and (max-width: 500px) {
-          flex-direction: column;
-        }
-
-        .textCredentials {
-          display: flex;
-          // border: 2px solid red;
-          width: 60%;
-          flex-direction: column;
-
-          @media screen and (max-width: 500px) {
-            width: 100%;
-          }
-
-          button {
-            width: auto;
-            background-color: rgba(201, 152, 78, 1);
-            margin: auto;
-          }
-
-          .upiCredentials {
-            display: flex;
-            justify-content: space-between;
-
-            @media screen and (max-width: 500px) {
-              flex-direction: column;
-            }
-          }
-
-          .proof {
-            display: flex;
-            align-items: center;
-            // gap: 1rem;
-            justify-content: space-between;
-
-            @media screen and (max-width: 500px) {
-              width: 100%;
-            }
-
-            input {
-              background-color: rgba(255, 255, 255, 1);
-              outline: none;
-              border-color: rgba(122, 113, 113, 0.5);
-              height: 1.5rem;
-              color: black;
-              width: 70%;
-
-              @media screen and (max-width: 500px) {
-                width: 100%;
-              }
-            }
-          }
-        }
-
-        .upiImage {
-          height: 14rem;
-          width: 20%;
-          // border: 2px solid black;
-
-          @media screen and (max-width: 500px) {
-            width: 60%;
-            margin: auto;
-            margin-top: 2rem;
-          }
-
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
-
-      .formQueries {
-        // border: 2px solid red;
-        display: flex;
-        padding: 0 3rem;
-        justify-content: space-between;
-
-        @media screen and (max-width: 500px) {
-          display: flex;
-          padding: 0.5rem;
-          gap: 0.5rem;
-          width: 100%;
-        }
-      }
-    }
+  .qrCodeImage {
+    width: 140px;
+  }
+}
+@media (max-width: 640px) {
+  .inputContainer {
+    margin-left: 2vw;
   }
 }
