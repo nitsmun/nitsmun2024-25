@@ -435,7 +435,6 @@
 //   }
 // }
 
-
 // .container {
 //   min-height: 100vh;
 //   width: 100vw;
@@ -744,88 +743,96 @@ $border-color_2: rgb(37, 99, 235);
 /* Adding prize pool section styles */
 /* Adding enhanced contact section styles with card layout */
 .container {
-	min-height: 100vh;
-	width: 100vw;
-	overflow-x: hidden;
-	color: $color_1;
-	background-image: linear-gradient( to top, rgba(41, 126, 196, 0.6), rgba(39, 79, 112, 0.5), rgba(12, 53, 105, 0.7), rgba(6, 36, 73, 0.8) ), url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
-	background-attachment: fixed;
-	background-size: cover;
-	background-repeat: no-repeat;
-	font-family: $font-family_1;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  color: $color_1;
+  background-image:
+    linear-gradient(
+      to top,
+      rgba(41, 126, 196, 0.6),
+      rgba(39, 79, 112, 0.5),
+      rgba(12, 53, 105, 0.7),
+      rgba(6, 36, 73, 0.8)
+    ),
+    url("https://res.cloudinary.com/dludtk5vz/image/upload/v1720088739/zuwqfzwyd3vcioexhkvi.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: $font-family_1;
 }
 .mainTitle {
-	padding-top: 10rem;
-	font-size: 3rem;
-	text-transform: uppercase;
-	text-align: center;
-	font-weight: bold;
-	text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.9);
+  padding-top: 10rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.9);
 }
 .form {
-	margin: 3rem auto 6rem;
-	width: 70%;
-	background-color: $background-color_1;
-	padding: 2rem;
-	color: $color_2;
+  margin: 3rem auto 6rem;
+  width: 70%;
+  background-color: $background-color_1;
+  padding: 2rem;
+  color: $color_2;
 }
 .formHeader {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 .formHeaderText {
-	margin-top: 1rem;
+  margin-top: 1rem;
 }
 .formTitle {
-	font-size: 1.875rem;
-	font-weight: 600;
-	color: $color_3;
-	margin-bottom: 0;
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: $color_3;
+  margin-bottom: 0;
 }
 .formSubtitle {
-	color: $color_4;
-	font-size: 1.25rem;
-	margin-top: 0.5rem;
+  color: $color_4;
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
 }
 .logo {
-	width: 10rem;
-	height: 9.5rem;
-	margin-top: -1rem;
+  width: 10rem;
+  height: 9.5rem;
+  margin-top: -1rem;
 }
 .divider {
-	margin: 1.5rem 0;
-	border-top: 1.5px solid black;
+  margin: 1.5rem 0;
+  border-top: 1.5px solid black;
 }
 .formContent {
-	width: 100%;
+  width: 100%;
 }
 .label {
-	display: flex;
-	font-size: 1.25rem;
-	margin-top: 1rem;
+  display: flex;
+  font-size: 1.25rem;
+  margin-top: 1rem;
 }
 .labelMedium {
-	display: flex;
-	font-size: 1.25rem;
-	margin-top: 1.5rem;
-	font-weight: 500;
+  display: flex;
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  font-weight: 500;
 }
 .inputWrapper {
-	margin-top: 1rem;
-  width:93%;
+  margin-top: 1rem;
+  width: 93%;
 }
 .input {
-	width: 100%;
-	height: 2.5rem;
-	padding: 0 0.5rem;
-	background-color: $background-color_2;
-	border: 1px solid rgba(122, 113, 113, 0.5);
-	outline: none;
-  color:#000000;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  background-color: $background-color_2;
+  border: 1px solid rgba(122, 113, 113, 0.5);
+  outline: none;
+  color: #000000;
   &::placeholder {
     color: #6b7280;
-    opacity:1; // placeholder visible
+    opacity: 1; // placeholder visible
   }
 
   &:focus {
@@ -833,16 +840,16 @@ $border-color_2: rgb(37, 99, 235);
   }
 }
 .textarea {
-	width: 100%;
-	height: 10rem;
-	padding: 0.5rem;
-	background-color: $background-color_2;
-	border: 1px solid rgba(122, 113, 113, 0.5);
-	outline: none;
-  color:#000000;
+  width: 100%;
+  height: 10rem;
+  padding: 0.5rem;
+  background-color: $background-color_2;
+  border: 1px solid rgba(122, 113, 113, 0.5);
+  outline: none;
+  color: #000000;
   &::placeholder {
     color: #6b7280;
-    opacity:1; // placeholder visible
+    opacity: 1; // placeholder visible
   }
 
   &:focus {
@@ -868,324 +875,323 @@ $border-color_2: rgb(37, 99, 235);
 }
 
 .description {
-	color: $color_4;
-  font:bold;
-	margin-top: 0.5rem;
+  color: $color_4;
+  font: bold;
+  margin-top: 0.5rem;
 }
 .subtitle {
-	margin-top: 1rem;
-	font-size: 1.125rem;
+  margin-top: 1rem;
+  font-size: 1.125rem;
 }
 .link {
-	text-decoration: underline;
-	color: $color_5;
+  text-decoration: underline;
+  color: $color_5;
 }
 .preferencesWithin {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
 }
 .preferencesOutside {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 2rem;
-	margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
 }
 .preferenceItem {
-	width: 100%;
+  width: 100%;
 }
 .preferenceSelect {
-	margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 .preferenceLabel {
-	display: flex;
-	font-size: 1.25rem;
-	margin-bottom: 0.5rem;
+  display: flex;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 .portfolioTitle {
-	font-size: 1.125rem;
-	font-weight: 500;
-	margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 .portfolioInput {
-	width: 90%;
-	height: 2.5rem;
-	padding: 0 0.5rem;
-	margin-bottom: 0.5rem;
-	background-color: $background-color_2;
-	border: 1px solid rgba(122, 113, 113, 0.5);
-  color:black;
-	outline: none;
+  width: 90%;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: $background-color_2;
+  border: 1px solid rgba(122, 113, 113, 0.5);
+  color: black;
+  outline: none;
 }
 .portfolioInputLast {
-	width: 90%;
-	height: 2.5rem;
-	padding: 0 0.5rem;
-	background-color: $background-color_2;
-	border: 1px solid rgba(122, 113, 113, 0.5);
-	outline: none;
+  width: 90%;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  background-color: $background-color_2;
+  border: 1px solid rgba(122, 113, 113, 0.5);
+  outline: none;
 }
 .paymentTitle {
-	font-size: 1.5rem;
-	font-weight: 500;
-	margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 2rem;
 }
 .paymentDescription {
-	color: $color_4;
-	margin-top: 0.5rem;
+  color: $color_4;
+  margin-top: 0.5rem;
 }
 .paymentAmount {
-	color: $color_2;
-	font-weight: 500;
+  color: $color_2;
+  font-weight: 500;
 }
 .paymentContainer {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	gap: 2rem;
-	margin-top: 1.5rem;
-	padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding: 2rem 0;
 }
 .paymentDetails {
-	flex: 1;
+  flex: 1;
 }
 .upiSection {
-	margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 .upiLabel {
-	font-size: 1.125rem;
-	font-weight: 500;
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 .upiValue {
-	color: $color_4;
+  color: $color_4;
 }
 .paymentProofSection {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 .paymentProofLabel {
-	font-size: 1.125rem;
+  font-size: 1.125rem;
 }
 .fileInput {
-	width: 70%;
-	height: 2.5rem;
-	padding: 0 0.5rem;
-	background-color: $background-color_2;
-	border: 1px solid rgba(122, 113, 113, 0.5);
-	outline: none;
+  width: 70%;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  background-color: $background-color_2;
+  border: 1px solid rgba(122, 113, 113, 0.5);
+  outline: none;
 }
 .submitButton {
-	margin-top: 1.5rem;
-	padding: 0.75rem 2rem;
-	background-color: rgb(118, 140, 171);
-	color: $color_1;
-	font-weight: 500;
-	font-size: 1.125rem;
-	border: none;
-	cursor: pointer;
-	transition: background-color 0.3s;
-	&:hover {
-		background-color: rgb(80, 95, 117) ;
-	}
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background-color: rgb(118, 140, 171);
+  color: $color_1;
+  font-weight: 500;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: rgb(80, 95, 117);
+  }
 }
 .qrCodeContainer {
-	width: 80%;
+  width: 80%;
 }
 .qrCodeImage {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .contactSection {
-	margin-top: 1.5rem;
-	padding-top: 1.5rem;
-	border-top: 2px solid rgb(156, 163, 175);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgb(156, 163, 175);
 }
 .contactLabel {
-	display: flex;
-	font-size: 1.125rem;
-	font-weight: 500;
-	margin-bottom: 0.75rem;
+  display: flex;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
 }
 .contactNumbers {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .contactNumber {
-	font-size: 1rem;
-	font-weight: 500;
+  font-size: 1rem;
+  font-weight: 500;
 }
 .flex {
-	display: flex;
+  display: flex;
 }
 .text-xl {
-	font-size: 1.25rem;
-	line-height: 1.75rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 .mt-6 {
-	margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 .text-red-600 {
-	color: $color_6;
+  color: $color_6;
 }
 .ml-1 {
-	margin-left: 0.25rem;
+  margin-left: 0.25rem;
 }
 .mt-4 {
-	margin-top: 1rem;
+  margin-top: 1rem;
 }
 .w-full {
-	width: 100%;
+  width: 100%;
 }
 .h-10 {
-	height: 2.5rem;
+  height: 2.5rem;
 }
 .px-3 {
-	padding-left: 0.75rem;
-	padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 .bg-white {
-	background-color: $background-color_2;
+  background-color: $background-color_2;
 }
 .border-b-2 {
-	border-bottom-width: 2px;
+  border-bottom-width: 2px;
 }
 .border-gray-400 {
-	border-color: $border-color_1;
+  border-color: $border-color_1;
 }
 .outline-none {
-	outline: 2px solid transparent;
-	outline-offset: 2px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 .border-b-2.border-gray-400 {
-	&:focus {
-		border-color: $border-color_2;
-	}
+  &:focus {
+    border-color: $border-color_2;
+  }
 }
 .items-center {
-	align-items: center;
+  align-items: center;
 }
 .gap-2 {
-	gap: 0.5rem;
+  gap: 0.5rem;
 }
 .mt-3 {
-	margin-top: 0.75rem;
+  margin-top: 0.75rem;
 }
 .w-4 {
-	width: 1rem;
+  width: 1rem;
 }
 .h-4 {
-	height: 1rem;
+  height: 1rem;
 }
 .text-base {
-	font-size: 1rem;
-	line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .text-gray-600 {
-	color: $color_7;
+  color: $color_7;
 }
 .font-medium {
-	font-weight: 500;
+  font-weight: 500;
 }
 .space-y-2 {
-	>* {
-		+ {
-			* {
-				margin-top: 0.5rem;
-			}
-		}
-	}
+  > * {
+    + {
+      * {
+        margin-top: 0.5rem;
+      }
+    }
+  }
 }
 input[type="email"].w-full {
-	&:focus {
-		border-color: $border-color_2;
-	}
+  &:focus {
+    border-color: $border-color_2;
+  }
 }
 input[type="text"].w-full {
-	&:focus {
-		border-color: $border-color_2;
-	}
+  &:focus {
+    border-color: $border-color_2;
+  }
 }
 input[type="tel"].w-full {
-	&:focus {
-		border-color: $border-color_2;
-	}
+  &:focus {
+    border-color: $border-color_2;
+  }
 }
 .p-4 {
-	padding: 1rem;
+  padding: 1rem;
 }
 .bg-gray-100 {
-	background-color: $background-color_5;
+  background-color: $background-color_5;
 }
 .rounded {
-	border-radius: 0.25rem;
+  border-radius: 0.25rem;
 }
 .text-lg {
-	font-size: 1.125rem;
-	line-height: 1.75rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 .mb-2 {
-	margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .text-blue-600 {
-	color: $color_5;
+  color: $color_5;
 }
 .underline {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 .break-all {
-	word-break: break-all;
+  word-break: break-all;
 }
 .required {
-	color: $color_6;
-	margin-left: 0.25rem;
+  color: $color_6;
+  margin-left: 0.25rem;
 }
 .inputContainer {
-	margin-top: 1rem;
-  
+  margin-top: 1rem;
 }
 .textInput {
-  margin-left:-5vw;
-	width:90%;
-	height: 2.5rem;
-	padding: 0 0.75rem;
-	background-color: $background-color_2;
-	border-bottom: 2px solid rgb(156, 163, 175);
-	outline: none;
-  color:#000000;
-  
-	&:focus {
-		border-color: $border-color_2;
-	}
+  margin-left: -5vw;
+  width: 90%;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  background-color: $background-color_2;
+  border-bottom: 2px solid rgb(156, 163, 175);
+  outline: none;
+  color: #000000;
+
+  &:focus {
+    border-color: $border-color_2;
+  }
 }
 .checkboxContainer {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
 }
 .checkbox {
-	 appearance: none;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 
   width: 1rem;
   height: 1rem;
 
-  background-color: #ffffff;     // WHITE always
-  border: 2px solid #ffffff;     // WHITE border
+  background-color: #ffffff; // WHITE always
+  border: 2px solid #ffffff; // WHITE border
   border-radius: 3px;
 
   cursor: pointer;
-  position: relative; 
+  position: relative;
 }
 /* Checked state – still white */
 .checkbox:checked {
-  background-color: #ffffff;     // stays white
+  background-color: #ffffff; // stays white
   border-color: #ffffff;
 }
 
@@ -1197,7 +1203,7 @@ input[type="tel"].w-full {
   width: 4px;
   height: 8px;
 
-  border: solid #000000;         // BLACK checkmark
+  border: solid #000000; // BLACK checkmark
   border-width: 0 2px 2px 0;
 
   transform: rotate(45deg);
@@ -1205,23 +1211,23 @@ input[type="tel"].w-full {
   top: 1px;
 }
 .checkboxLabel {
-	font-size: 1rem;
-	line-height: 1.5rem;
-	color: $color_7;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: $color_7;
 }
 .emailHighlight {
-	font-weight: 500;
+  font-weight: 500;
 }
 .radioGroup {
-	margin-top: 1rem;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .radioLabel {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 .radio {
   appearance: none;
@@ -1231,8 +1237,8 @@ input[type="tel"].w-full {
   width: 1rem;
   height: 1rem;
 
-  background-color: #ffffff;   // always white
-  border: 2px solid #ffffff;   // white border
+  background-color: #ffffff; // always white
+  border: 2px solid #ffffff; // white border
   border-radius: 50%;
 
   cursor: pointer;
@@ -1253,7 +1259,7 @@ input[type="tel"].w-full {
   width: 0.4rem;
   height: 0.4rem;
 
-  background-color: #000000;   // black dot
+  background-color: #000000; // black dot
   border-radius: 50%;
 
   top: 50%;
@@ -1262,159 +1268,160 @@ input[type="tel"].w-full {
 }
 
 .prizePoolSection {
-	margin-top: 2rem;
-	padding: 1.5rem;
-	background-color: $background-color_5;
-	border-radius: 0.5rem;
-	border: 1px solid rgb(209, 213, 219);
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: $background-color_5;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(209, 213, 219);
 }
 .prizePoolTitle {
-	font-size: 1.875rem;
-	font-weight: 700;
-	color: $color_8;
-	margin-bottom: 1rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: $color_8;
+  margin-bottom: 1rem;
 }
 .prizeList {
-	list-style: none;
-	padding-left: 0;
-  margin:0;
-	margin-bottom: 1.5rem;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  margin-bottom: 1.5rem;
 }
 .prizeItem {
-	font-size: 1.125rem;
-	color: $color_9;
-	margin-bottom: 0.75rem;
-	padding-left: 1.5rem;
-	position: relative;
-	strong {
-		font-weight: 600;
-		color: $color_8;
-	}
+  font-size: 1.125rem;
+  color: $color_9;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  strong {
+    font-weight: 600;
+    color: $color_8;
+  }
 }
 .contactTitle {
-	font-size: 1.5rem;
-	font-weight: 600;
-	color: $color_8;
-	margin-top: 1.5rem;
-	margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $color_8;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 .contactList {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .contactItem {
-	font-size: 1.125rem;
-	color: $color_9;
-	margin: 0;
+  font-size: 1.125rem;
+  color: $color_9;
+  margin: 0;
 }
 .contactSectionEnhanced {
-	margin-top: 2rem;
-	padding-top: 2rem;
-	border-top: 2px solid rgb(209, 213, 219);
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid rgb(209, 213, 219);
 }
 .contactTitleEnhanced {
-	font-size: 1.5rem;
-	font-weight: 600;
-	color: $color_8;
-	text-align: center;
-	margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $color_8;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 .contactGrid {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 .contactCard {
-	background:rgb(118, 140, 171);
-	padding: 1.5rem;
-	border-radius: 0.75rem;
-	text-align: center;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	&:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-	}
-	.contactNumber {
-		font-size: 1.125rem;
-		font-weight: 700;
-		color: $color_1;
-		margin: 0 0 0.5rem 0;
-		letter-spacing: 0.5px;
-	}
-	.contactName {
-		font-size: 0.875rem;
-		font-weight: 500;
-		color: $color_10;
-		margin: 0;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-	}
+  background: rgb(118, 140, 171);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  .contactNumber {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $color_1;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 0.5px;
+  }
+  .contactName {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $color_10;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 }
 @media (max-width: 640px) {
-	.mainTitle {
-		font-size: 1.875rem;
-	}
-	// .form {
-	// 	width: 90%;
-	// 	padding: 1.5rem;
-	// }
+  .mainTitle {
+    font-size: 1.875rem;
+  }
+  // .form {
+  // 	width: 90%;
+  // 	padding: 1.5rem;
+  // }
   // .container {
   //   padding-left: 1rem;
   //   padding-right: 1rem;
   // }
   .container {
-  min-height: 100vh;
-  width: 100%;              // ✅ FIX
-  overflow-x: hidden;
-  padding-left: 0rem;
-  padding-right: 1rem;
-}
-
+    min-height: 100vh;
+    width: 100%; // ✅ FIX
+    overflow-x: hidden;
+    padding-left: 0rem;
+    padding-right: 1rem;
+  }
 
   .form {
     width: 80%;
     max-width: 420px;
-    
+
     padding: 1.25rem;
     border-radius: 0.75rem;
-    margin:0 auto;
+    margin: 0 auto;
     box-sizing: border-box; // ✅ IMPORTANT
   }
-	.formTitle {
-		font-size: 1.5rem;
-	}
-	.logoContainer {
-		display: none;
-	}
-	.paymentContainer {
-		flex-direction: column;
-	}
-	.paymentProofSection {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-	.fileInput {
-		width: 100%;
-	}
-	.qrCodeContainer {
-		width: 60%;
-		margin: 0 auto;
-	}
-	.contactNumbers {
-		flex-direction: column;
-		gap: 0.75rem;
-	}
+  .formTitle {
+    font-size: 1.5rem;
+  }
+  .logoContainer {
+    display: none;
+  }
+  .paymentContainer {
+    flex-direction: column;
+  }
+  .paymentProofSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .fileInput {
+    width: 100%;
+  }
+  .qrCodeContainer {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .contactNumbers {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 }
 @media (min-width: 768px) {
-	.preferencesOutside {
-		grid-template-columns: repeat(2, 1fr);
-	}
-	.contactGrid {
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1.5rem;
-	}
+  .preferencesOutside {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contactGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
 }
 .paymentBox {
   background: rgba(255, 255, 255, 0.95);
@@ -1440,16 +1447,15 @@ input[type="tel"].w-full {
 
 .feeStructure {
   display: flex;
-  justify-content: center;   // centers when only one item
+  justify-content: center; // centers when only one item
   gap: 10rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
 }
 
-
 .feeCard {
   background: rgb(243, 244, 246);
-  width:180px;
+  width: 180px;
   border-radius: 0.75rem;
   padding: 1.5rem;
   text-align: center;
@@ -1581,6 +1587,6 @@ input[type="tel"].w-full {
 }
 @media (max-width: 640px) {
   .inputContainer {
-    margin-left:2vw;
+    margin-left: 2vw;
   }
 }

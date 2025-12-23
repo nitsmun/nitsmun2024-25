@@ -912,13 +912,13 @@
 
 // export default Register;
 
-"use client"
+"use client";
 
-import { useState } from "react"
-import styles from "./Register.module.scss"
+import { useState } from "react";
+import styles from "./Register.module.scss";
 
 export default function Register() {
-  const [selectedLocation, setSelectedLocation] = useState("")
+  const [selectedLocation, setSelectedLocation] = useState("");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -957,132 +957,387 @@ export default function Register() {
     accommodationRequired: "",
     course: "",
     committeePreference1: "",
-  })
+  });
 
   const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target
+    const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
-    }))
-  }
+    }));
+  };
+  /* eslint-disable indent */
 
   const getPortfolioMatrixLink = () => {
-  switch (selectedLocation) {
-    case "within":
-      return "https://docs.google.com/spreadsheets/d/1pSvvn-gLqDXOgGeLcdE4VEwuBL1jRgRTsGNsm5-1I3Q/edit?usp=sharing";
-    case "outside-nit":
-      return "https://docs.google.com/spreadsheets/d/1pSvvn-gLqDXOgGeLcdE4VEwuBL1jRgRTsGNsm5-1I3Q/edit?usp=sharing";
-    case "outside-silchar":
-      return "https://docs.google.com/spreadsheets/d/1pSvvn-gLqDXOgGeLcdE4VEwuBL1jRgRTsGNsm5-1I3Q/edit?usp=sharing";
-    default:
-      return "#";
-  }
-};
+    switch (selectedLocation) {
+      case "within":
+        return "https://docs.google.com/spreadsheets/d/1pSvvn-gLqDXOgGeLcdE4VEwuBL1jRgRTsGNsm5-1I3Q/edit?usp=sharing";
+      case "outside-nit":
+        return "https://docs.google.com/spreadsheets/d/1pSvvn-gLqDXOgGeLcdE4VEwuBL1jRgRTsGNsm5-1I3Q/edit?usp=sharing";
+      case "outside-silchar":
+        return "https://docs.google.com/spreadsheets/d/1pSvvn-gLqDXOgGeLcdE4VEwuBL1jRgRTsGNsm5-1I3Q/edit?usp=sharing";
+      default:
+        return "#";
+    }
+  };
+  /* eslint-enable indent */
 
-const PAYMENT_CONFIG = {
-  within: {
-    title: "Payment - Within NIT Silchar",
-    description: "Please Pay",
-    show: false,
+  const PAYMENT_CONFIG = {
+    within: {
+      title: "Payment - Within NIT Silchar",
+      description: "Please Pay",
+      show: false,
 
-    loc:"",
-    regularPrice: "₹349",
-    p3:"",
-    qrImage:
-      "https://res.cloudinary.com/dludtk5vz/image/upload/v1738597970/WhatsApp_Image_2025-02-03_at_21.21.27_6e441ace_wtlyay.jpg",
-  },
+      loc: "",
+      regularPrice: "₹349",
+      p3: "",
+      qrImage:
+        "https://res.cloudinary.com/dludtk5vz/image/upload/v1738597970/WhatsApp_Image_2025-02-03_at_21.21.27_6e441ace_wtlyay.jpg",
+    },
 
-  "outside-nit": {
-    title: "Payment - Outside NIT Silchar",
-    description: (
-      <>To finalize your registration for <strong>NITSMUN 2026</strong>, please complete the payment as outlined below. This fee is specifically curated for local delegates, ensuring you are part of the premier diplomatic event of the region while enjoying the full spirit of our campus festival.</>
-    ),
-    show: false,
-    loc:"",
-    regularPrice: "₹799",
-    p3:(
-      <><p className={styles.inclusionsTitle}>Inclusions</p>
-      <ul className={styles.inclusionsList}>
-        <li>Conference entry</li>
-        <li>Official delegate kit</li>
-        <li>Full access to all Incandescence artist lineups & pro-shows</li>
-      </ul></>
-    ),
-    qrImage:
-      "https://res.cloudinary.com/dludtk5vz/image/upload/v1738597970/WhatsApp_Image_2025-02-03_at_21.21.27_6e441ace_wtlyay.jpg",
-  },
+    "outside-nit": {
+      title: "Payment - Outside NIT Silchar",
+      description: (
+        <>
+          To finalize your registration for <strong>NITSMUN 2026</strong>,
+          please complete the payment as outlined below. This fee is
+          specifically curated for local delegates, ensuring you are part of the
+          premier diplomatic event of the region while enjoying the full spirit
+          of our campus festival.
+        </>
+      ),
+      show: false,
+      loc: "",
+      regularPrice: "₹799",
+      p3: (
+        <>
+          <p className={styles.inclusionsTitle}>Inclusions</p>
+          <ul className={styles.inclusionsList}>
+            <li>Conference entry</li>
+            <li>Official delegate kit</li>
+            <li>Full access to all Incandescence artist lineups & pro-shows</li>
+          </ul>
+        </>
+      ),
+      qrImage:
+        "https://res.cloudinary.com/dludtk5vz/image/upload/v1738597970/WhatsApp_Image_2025-02-03_at_21.21.27_6e441ace_wtlyay.jpg",
+    },
 
-  "outside-silchar": {
-    title: "Payment - Outside Silchar",
-    description: (
-      <>
-      To confirm your slot at <strong>NITSMUN 2026</strong>, please complete the
-      registration payment as per the structure below. Your registration fee is
-      an all-inclusive pass that covers conference participation, official MUN
-      kits, and unrestricted access to all <strong>Incandescence</strong> events.</>
-    ),
-    show: true,
-    loc:(
-      <>
-        <p className={styles.feeType}>Early Bird Registrations</p>
-        <p className={styles.feePrice}>₹2,249</p>
-        <p className={styles.feeNote}>(Valid until 31st December 2025)</p>
-      </>
-    ),
-    regularPrice: "₹2,499",
-    p3:(
-      <><p className={styles.inclusionsTitle}>Inclusions</p>
-      <ul className={styles.inclusionsList}>
-        <li>Conference entry</li>
-        <li>Official delegate kit</li>
-        <li>Full access to all Incandescence artist lineups & pro-shows</li>
-      </ul></>
-    ),
-    qrImage:
-      "https://res.cloudinary.com/dludtk5vz/image/upload/v1738597970/WhatsApp_Image_2025-02-03_at_21.21.27_6e441ace_wtlyay.jpg",
-  },
-}
-
+    "outside-silchar": {
+      title: "Payment - Outside Silchar",
+      description: (
+        <>
+          To confirm your slot at <strong>NITSMUN 2026</strong>, please complete
+          the registration payment as per the structure below. Your registration
+          fee is an all-inclusive pass that covers conference participation,
+          official MUN kits, and unrestricted access to all{" "}
+          <strong>Incandescence</strong> events.
+        </>
+      ),
+      show: true,
+      loc: (
+        <>
+          <p className={styles.feeType}>Early Bird Registrations</p>
+          <p className={styles.feePrice}>₹2,249</p>
+          <p className={styles.feeNote}>(Valid until 31st December 2025)</p>
+        </>
+      ),
+      regularPrice: "₹2,499",
+      p3: (
+        <>
+          <p className={styles.inclusionsTitle}>Inclusions</p>
+          <ul className={styles.inclusionsList}>
+            <li>Conference entry</li>
+            <li>Official delegate kit</li>
+            <li>Full access to all Incandescence artist lineups & pro-shows</li>
+          </ul>
+        </>
+      ),
+      qrImage:
+        "https://res.cloudinary.com/dludtk5vz/image/upload/v1738597970/WhatsApp_Image_2025-02-03_at_21.21.27_6e441ace_wtlyay.jpg",
+    },
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    alert("Registration submitted successfully!")
-  }
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    alert("Registration submitted successfully!");
+  };
+
+  const committeePreferencesOutside = () => (
+    <>
+      <label htmlFor="committee" className={styles.labelMedium}>
+        Committee Preferences
+      </label>
+      <p className={styles.description}>
+        (Due to limited capacity, delegates are informed that the committee
+        preference are not always met and are not guaranteed.)
+      </p>
+
+      <h4 className={styles.subtitle}>
+        There are a number of portfolios available under each committee.{" "}
+        <a
+          href={getPortfolioMatrixLink()}
+          className={styles.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit here to view the portfolio matrix
+        </a>
+      </h4>
+
+      <div className={styles.preferencesOutside}>
+        {/* Preference 1 */}
+        <div className={styles.preferenceItem}>
+          <div className={styles.preferenceSelect}>
+            <label htmlFor="choice1" className={styles.preferenceLabel}>
+              Preference 1<span className={styles.require}>*</span>
+            </label>
+            <select
+              name="choice1"
+              value={formData.choice1}
+              onChange={handleInputChange}
+              className={styles.input}
+              required
+            >
+              <option value="" disabled>
+                -- Select Committee --
+              </option>
+              <option value="AIPPM">AIPPM</option>
+              <option value="UNSC">UNSC</option>
+              <option value="SPECIALIZED">SPECIALIZED</option>
+              <option value="IPC">IPC</option>
+            </select>
+          </div>
+          <div>
+            <h4 className={styles.portfolioTitle}>Portfolio Preferences</h4>
+            <input
+              type="text"
+              name="portfolioC11"
+              placeholder="Portfolio Preference 1"
+              value={formData.portfolioC11}
+              onChange={handleInputChange}
+              className={styles.portfolioInput}
+            />
+            <input
+              type="text"
+              name="portfolioC12"
+              placeholder="Portfolio Preference 2"
+              value={formData.portfolioC12}
+              onChange={handleInputChange}
+              className={styles.portfolioInput}
+            />
+            <input
+              type="text"
+              name="portfolioC13"
+              placeholder="Portfolio Preference 3"
+              value={formData.portfolioC13}
+              onChange={handleInputChange}
+              className={styles.portfolioInputLast}
+            />
+          </div>
+        </div>
+
+        {/* Preference 2 */}
+        <div className={styles.preferenceItem}>
+          <div className={styles.preferenceSelect}>
+            <label htmlFor="choice2" className={styles.preferenceLabel}>
+              Preference 2 <span className={styles.required}>*</span>
+            </label>
+            <select
+              name="choice2"
+              value={formData.choice2}
+              onChange={handleInputChange}
+              className={styles.input}
+            >
+              <option value="" disabled>
+                -- Select Committee --
+              </option>
+              <option value="AIPPM">AIPPM</option>
+              <option value="UNSC">UNSC</option>
+              <option value="SPECIALIZED">SPECIALIZED</option>
+              <option value="IPC">IPC</option>
+            </select>
+          </div>
+          <div>
+            <h4 className={styles.portfolioTitle}>Portfolio Preferences</h4>
+            <input
+              type="text"
+              name="portfolioC21"
+              placeholder="Portfolio Preference 1"
+              value={formData.portfolioC21}
+              onChange={handleInputChange}
+              className={styles.portfolioInput}
+            />
+            <input
+              type="text"
+              name="portfolioC22"
+              placeholder="Portfolio Preference 2"
+              value={formData.portfolioC22}
+              onChange={handleInputChange}
+              className={styles.portfolioInput}
+            />
+            <input
+              type="text"
+              name="portfolioC23"
+              placeholder="Portfolio Preference 3"
+              value={formData.portfolioC23}
+              onChange={handleInputChange}
+              className={styles.portfolioInputLast}
+            />
+          </div>
+        </div>
+
+        {/* Preference 3 */}
+        <div className={styles.preferenceItem}>
+          <div className={styles.preferenceSelect}>
+            <label htmlFor="choice3" className={styles.preferenceLabel}>
+              Preference 3 <span className={styles.required}>*</span>
+            </label>
+            <select
+              name="choice3"
+              value={formData.choice3}
+              onChange={handleInputChange}
+              className={styles.input}
+            >
+              <option value="" disabled>
+                -- Select Committee --
+              </option>
+              <option value="AIPPM">AIPPM</option>
+              <option value="UNSC">UNSC</option>
+              <option value="SPECIALIZED">SPECIALIZED</option>
+              <option value="IPC">IPC</option>
+            </select>
+          </div>
+          <div>
+            <h4 className={styles.portfolioTitle}>Portfolio Preferences</h4>
+            <input
+              type="text"
+              name="portfolioC31"
+              placeholder="Portfolio Preference 1"
+              value={formData.portfolioC31}
+              onChange={handleInputChange}
+              className={styles.portfolioInput}
+            />
+            <input
+              type="text"
+              name="portfolioC32"
+              placeholder="Portfolio Preference 2"
+              value={formData.portfolioC32}
+              onChange={handleInputChange}
+              className={styles.portfolioInput}
+            />
+            <input
+              type="text"
+              name="portfolioC33"
+              placeholder="Portfolio Preference 3"
+              value={formData.portfolioC33}
+              onChange={handleInputChange}
+              className={styles.portfolioInputLast}
+            />
+          </div>
+        </div>
+
+        {/* Preference 4 */}
+        <div className={styles.preferenceItem}>
+          <div className={styles.preferenceSelect}>
+            <label htmlFor="choice4" className={styles.preferenceLabel}>
+              Preference 4 <span className={styles.required}>*</span>
+            </label>
+            <select
+              name="choice4"
+              value={formData.choice4}
+              onChange={handleInputChange}
+              className={styles.input}
+            >
+              <option value="" disabled>
+                -- Select Committee --
+              </option>
+              <option value="AIPPM">AIPPM</option>
+              <option value="UNSC">UNSC</option>
+              <option value="SPECIALIZED">SPECIALIZED</option>
+              <option value="IPC">IPC</option>
+            </select>
+          </div>
+          <div>
+            <h4 className={styles.portfolioTitle}>Portfolio Preferences</h4>
+            <input
+              type="text"
+              name="portfolioC41"
+              placeholder="Portfolio Preference 1"
+              value={formData.portfolioC41}
+              onChange={handleInputChange}
+              className={styles.portfolioInput}
+            />
+            <input
+              type="text"
+              name="portfolioC42"
+              placeholder="Portfolio Preference 2"
+              value={formData.portfolioC42}
+              onChange={handleInputChange}
+              className={styles.portfolioInput}
+            />
+            <input
+              type="text"
+              name="portfolioC43"
+              placeholder="Portfolio Preference 3"
+              value={formData.portfolioC43}
+              onChange={handleInputChange}
+              className={styles.portfolioInputLast}
+            />
+          </div>
+        </div>
+      </div>
+      <label htmlFor="previousExperience" className={styles.label}>
+        Previous MUN Experiences (if any)
+      </label>
+      <div className={styles.inputWrapper}>
+        <textarea
+          name="previousExperience"
+          placeholder="Enter Your Experience..."
+          value={formData.previousExperience}
+          onChange={handleInputChange}
+          className={styles.textarea}
+        />
+      </div>
+    </>
+  );
 
   const renderFormContent = () => {
-    if (!selectedLocation) return null
+    if (!selectedLocation) return null;
 
     const commonFields = (
       <>
         <label htmlFor="email" className={styles.label}>
-            Email <span className={styles.required}>*</span>
-          </label>
-          <div className={styles.inputContainer}>
+          Email <span className={styles.required}>*</span>
+        </label>
+        <div className={styles.inputContainer}>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            placeholder="Enter Your Email"
+            className={styles.textInput}
+            required
+          />
+          <div className={styles.checkboxContainer}>
             <input
-              type="email"
-              name="email"
-              value={formData.email}
+              type="checkbox"
+              name="recordEmail"
+              checked={formData.recordEmail}
               onChange={handleInputChange}
-              placeholder="Enter Your Email"
-              className={styles.textInput}
-              required
+              className={styles.checkbox}
             />
-            <div className={styles.checkboxContainer}>
-              <input
-                type="checkbox"
-                name="recordEmail"
-                checked={formData.recordEmail}
-                onChange={handleInputChange}
-                className={styles.checkbox}
-              />
-              <label className={styles.checkboxLabel}>
-                Record <span className={styles.emailHighlight}>84agarwalharshit@gmail.com</span> as the email to be
-                included with my response
-              </label>
-            </div>
+            <label className={styles.checkboxLabel}>
+              Record{" "}
+              <span className={styles.emailHighlight}>
+                84agarwalharshit@gmail.com
+              </span>{" "}
+              as the email to be included with my response
+            </label>
           </div>
+        </div>
 
         <label htmlFor="name" className={styles.label}>
           Name
@@ -1114,7 +1369,7 @@ const PAYMENT_CONFIG = {
           />
         </div>
       </>
-    )
+    );
 
     if (selectedLocation === "within") {
       return (
@@ -1135,12 +1390,18 @@ const PAYMENT_CONFIG = {
               <option value="" disabled>
                 -- Select Branch --
               </option>
-              <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+              <option value="Computer Science and Engineering">
+                Computer Science and Engineering
+              </option>
               <option value="Electronics and Communication Engineering">
                 Electronics and Communication Engineering
               </option>
-              <option value="Electrical Engineering">Electrical Engineering</option>
-              <option value="Mechanical Engineering">Mechanical Engineering</option>
+              <option value="Electrical Engineering">
+                Electrical Engineering
+              </option>
+              <option value="Mechanical Engineering">
+                Mechanical Engineering
+              </option>
               <option value="Civil Engineering">Civil Engineering</option>
               <option value="Electronics and Instrumentation Engineering">
                 Electronics and Instrumentation Engineering
@@ -1199,7 +1460,7 @@ const PAYMENT_CONFIG = {
             </ul>
           </div>
         </>
-      )
+      );
     }
 
     if (selectedLocation === "outside-nit") {
@@ -1272,7 +1533,7 @@ const PAYMENT_CONFIG = {
             </ul>
           </div>
         </>
-      )
+      );
     }
 
     if (selectedLocation === "outside-silchar") {
@@ -1300,8 +1561,11 @@ const PAYMENT_CONFIG = {
                 className={styles.checkbox}
               />
               <label className={styles.checkboxLabel}>
-                Record <span className={styles.emailHighlight}>84agarwalharshit@gmail.com</span> as the email to be
-                included with my response
+                Record{" "}
+                <span className={styles.emailHighlight}>
+                  84agarwalharshit@gmail.com
+                </span>{" "}
+                as the email to be included with my response
               </label>
             </div>
           </div>
@@ -1422,7 +1686,8 @@ const PAYMENT_CONFIG = {
           </div>
 
           <label htmlFor="accommodationRequired" className={styles.label}>
-            Will Accommodation be required? <span className={styles.required}>*</span>
+            Will Accommodation be required?{" "}
+            <span className={styles.required}>*</span>
           </label>
           <div className={styles.radioGroup}>
             <label className={styles.radioLabel}>
@@ -1454,7 +1719,6 @@ const PAYMENT_CONFIG = {
 
           {paymentSection({ location: selectedLocation })}
 
-
           <div className={styles.prizePoolSection}>
             <h2 className={styles.prizePoolTitle}>Prize Pool & Recognition</h2>
             <ul className={styles.prizeList}>
@@ -1473,398 +1737,76 @@ const PAYMENT_CONFIG = {
             </ul>
           </div>
         </>
-      )
+      );
     }
-  }
-  const committeePreferencesOutside = () => (
-    <>
-      <label htmlFor="committee" className={styles.labelMedium}>
-        Committee Preferences
-      </label>
-      <p className={styles.description}>
-        (Due to limited capacity, delegates are informed that the committee preference are not always met and are not
-        guaranteed.)
-      </p>
+  };
 
-     <h4 className={styles.subtitle}>
-      There are a number of portfolios available under each committee.{" "}
-      <a
-        href={getPortfolioMatrixLink()}
-        className={styles.link}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Visit here to view the portfolio matrix
-      </a>
-    </h4>
-
-
-      <div className={styles.preferencesOutside}>
-        {/* Preference 1 */}
-        <div className={styles.preferenceItem}>
-          <div className={styles.preferenceSelect}>
-            <label htmlFor="choice1" className={styles.preferenceLabel}>
-              Preference 1<span className={styles.require}>*</span>
-            </label>
-            <select name="choice1" value={formData.choice1} onChange={handleInputChange} className={styles.input} required>
-              <option value="" disabled>
-              -- Select Committee --
-              </option>            
-              <option value="AIPPM">AIPPM</option>
-              <option value="UNSC">UNSC</option>
-              <option value="SPECIALIZED">SPECIALIZED</option>
-              <option value="IPC">IPC</option>
-            </select>
-          </div>
-          <div>
-            <h4 className={styles.portfolioTitle}>Portfolio Preferences</h4>
-            <input
-              type="text"
-              name="portfolioC11"
-              placeholder="Portfolio Preference 1"
-              value={formData.portfolioC11}
-              onChange={handleInputChange}
-              className={styles.portfolioInput}
-            />
-            <input
-              type="text"
-              name="portfolioC12"
-              placeholder="Portfolio Preference 2"
-              value={formData.portfolioC12}
-              onChange={handleInputChange}
-              className={styles.portfolioInput}
-            />
-            <input
-              type="text"
-              name="portfolioC13"
-              placeholder="Portfolio Preference 3"
-              value={formData.portfolioC13}
-              onChange={handleInputChange}
-              className={styles.portfolioInputLast}
-            />
-          </div>
-        </div>
-
-        {/* Preference 2 */}
-        <div className={styles.preferenceItem}>
-          <div className={styles.preferenceSelect}>
-            <label htmlFor="choice2" className={styles.preferenceLabel}>
-              Preference 2 <span className={styles.required}>*</span>
-            </label>
-            <select name="choice2" value={formData.choice2} onChange={handleInputChange} className={styles.input}>
-              <option value="" disabled>
-              -- Select Committee --
-              </option>
-              <option value="AIPPM">AIPPM</option>
-              <option value="UNSC">UNSC</option>
-              <option value="SPECIALIZED">SPECIALIZED</option>
-              <option value="IPC">IPC</option>
-            </select>
-          </div>
-          <div>
-            <h4 className={styles.portfolioTitle}>Portfolio Preferences</h4>
-            <input
-              type="text"
-              name="portfolioC21"
-              placeholder="Portfolio Preference 1"
-              value={formData.portfolioC21}
-              onChange={handleInputChange}
-              className={styles.portfolioInput}
-            />
-            <input
-              type="text"
-              name="portfolioC22"
-              placeholder="Portfolio Preference 2"
-              value={formData.portfolioC22}
-              onChange={handleInputChange}
-              className={styles.portfolioInput}
-            />
-            <input
-              type="text"
-              name="portfolioC23"
-              placeholder="Portfolio Preference 3"
-              value={formData.portfolioC23}
-              onChange={handleInputChange}
-              className={styles.portfolioInputLast}
-            />
-          </div>
-        </div>
-
-        {/* Preference 3 */}
-        <div className={styles.preferenceItem}>
-          <div className={styles.preferenceSelect}>
-            <label htmlFor="choice3" className={styles.preferenceLabel}>
-              Preference 3 <span className={styles.required}>*</span>
-            </label>
-            <select name="choice3" value={formData.choice3} onChange={handleInputChange} className={styles.input}>
-              <option value="" disabled>
-              -- Select Committee --
-              </option>
-              <option value="AIPPM">AIPPM</option>
-              <option value="UNSC">UNSC</option>
-              <option value="SPECIALIZED">SPECIALIZED</option>
-              <option value="IPC">IPC</option>
-            </select>
-          </div>
-          <div>
-            <h4 className={styles.portfolioTitle}>Portfolio Preferences</h4>
-            <input
-              type="text"
-              name="portfolioC31"
-              placeholder="Portfolio Preference 1"
-              value={formData.portfolioC31}
-              onChange={handleInputChange}
-              className={styles.portfolioInput}
-            />
-            <input
-              type="text"
-              name="portfolioC32"
-              placeholder="Portfolio Preference 2"
-              value={formData.portfolioC32}
-              onChange={handleInputChange}
-              className={styles.portfolioInput}
-            />
-            <input
-              type="text"
-              name="portfolioC33"
-              placeholder="Portfolio Preference 3"
-              value={formData.portfolioC33}
-              onChange={handleInputChange}
-              className={styles.portfolioInputLast}
-            />
-          </div>
-        </div>
-
-        {/* Preference 4 */}
-        <div className={styles.preferenceItem}>
-          <div className={styles.preferenceSelect}>
-            <label htmlFor="choice4" className={styles.preferenceLabel}>
-              Preference 4 <span className={styles.required}>*</span>
-            </label>
-            <select name="choice4" value={formData.choice4} onChange={handleInputChange} className={styles.input}>
-              <option value="" disabled>
-              -- Select Committee --
-              </option>
-              <option value="AIPPM">AIPPM</option>
-              <option value="UNSC">UNSC</option>
-              <option value="SPECIALIZED">SPECIALIZED</option>
-              <option value="IPC">IPC</option>
-            </select>
-          </div>
-          <div>
-            <h4 className={styles.portfolioTitle}>Portfolio Preferences</h4>
-            <input
-              type="text"
-              name="portfolioC41"
-              placeholder="Portfolio Preference 1"
-              value={formData.portfolioC41}
-              onChange={handleInputChange}
-              className={styles.portfolioInput}
-            />
-            <input
-              type="text"
-              name="portfolioC42"
-              placeholder="Portfolio Preference 2"
-              value={formData.portfolioC42}
-              onChange={handleInputChange}
-              className={styles.portfolioInput}
-            />
-            <input
-              type="text"
-              name="portfolioC43"
-              placeholder="Portfolio Preference 3"
-              value={formData.portfolioC43}
-              onChange={handleInputChange}
-              className={styles.portfolioInputLast}
-            />
-          </div>
-        </div>
-      </div>
-      <label htmlFor="previousExperience" className={styles.label}>
-        Previous MUN Experiences (if any)
-      </label>
-      <div className={styles.inputWrapper}>
-        <textarea
-          name="previousExperience"
-          placeholder='Enter Your Experience...'
-          value={formData.previousExperience}
-          onChange={handleInputChange}
-          className={styles.textarea}
-        />
-      </div>
-    </>
-  )
-
-  // const paymentSection = (location) => {
-  //   return (
-  //     <>
-  //     <div className={styles.paymentBox}>
-  //       <h2 className={styles.paymentTitle}>Payment</h2>
-
-  //       <p className={styles.paymentIntro}>
-  //         To confirm your slot at <strong>NITSMUN 2026</strong>, please complete the registration payment as per the structure
-  //         below. Your registration fee is an all-inclusive pass that covers your participation in the conference, official
-  //         MUN kits, and provides you with unrestricted access to all <strong>Incandescence</strong> events, including major
-  //         artist lineups, concerts, and cultural shows scheduled across the festival.
-  //       </p>
-
-  //       {/* Fee Structure */}
-  //       <div className={styles.feeStructure}>
-  //         <div className={styles.feeCard}>
-  //           <p className={styles.feeType}>Early Bird Registration</p>
-  //           <p className={styles.feePrice}>₹2,249</p>
-  //           <p className={styles.feeNote}>Valid until 31st December 2025</p>
-  //         </div>
-
-  //         <div className={styles.feeCard}>
-  //           <p className={styles.feeType}>Regular Registration</p>
-  //           <p className={styles.feePrice}>₹2,499</p>
-  //         </div>
-  //       </div>
-
-  //       {/* Inclusions */}
-  //       <div className={styles.inclusions}>
-  //         <p className={styles.inclusionsTitle}>Inclusions</p>
-  //         <ul className={styles.inclusionsList}>
-  //           <li>Conference entry</li>
-  //           <li>Official delegate kit</li>
-  //           <li>Full access to all Incandescence artist lineups & pro-shows</li>
-  //         </ul>
-  //       </div>
-
-  //       {/* Payment Action */}
-  //       <div className={styles.paymentAction}>
-  //         <div className={styles.paymentLeft}>
-  //           <p className={styles.paymentProofLabel}>Upload payment proof</p>
-  //           <input
-  //             type="file"
-  //             accept="image/*"
-  //             onChange={(e) => {
-  //               const file = e.target.files?.[0]
-  //               if (file) {
-  //                 setFormData((prev) => ({ ...prev, paymentProof: file.name }))
-  //               }
-  //             }}
-  //             className={styles.fileInput}
-  //           />
-
-  //           <button type="submit" className={styles.submitButton}>
-  //             Submit Registration
-  //           </button>
-  //         </div>
-
-  //         <div className={styles.paymentRight}>
-  //           <img
-  //             src="https://res.cloudinary.com/dludtk5vz/image/upload/v1738597970/WhatsApp_Image_2025-02-03_at_21.21.27_6e441ace_wtlyay.jpg"
-  //             alt="Payment QR Code"
-  //             className={styles.qrCodeImage}
-  //           />
-  //           <p className={styles.qrNote}>Scan to Pay</p>
-  //         </div>
-  //       </div>
-
-  //       {/* Contact */}
-        
-  //           <div className={styles.contactSectionEnhanced}>
-  //             <h3 className={styles.contactTitleEnhanced}>For Any Queries Contact:</h3>
-  //             <div className={styles.contactGrid}>
-  //               <div className={styles.contactCard}>
-  //                 <p className={styles.contactNumber}>+91 70020 70518</p>
-  //                 <p className={styles.contactName}>Mimansa Jain</p>
-  //               </div>
-  //               <div className={styles.contactCard}>
-  //                 <p className={styles.contactNumber}>+91 73805 93079</p>
-  //                 <p className={styles.contactName}>Shashwat Patel</p>
-  //               </div>
-  //               <div className={styles.contactCard}>
-  //                 <p className={styles.contactNumber}>+91 93945 21290</p>
-  //                 <p className={styles.contactName}>Devanuj Rijal</p>
-  //               </div>
-  //             </div>
-            
-  //       </div>
-  //     </div>
-
-  //     </>
-  //   )
-  // }
   const paymentSection = ({ location }) => {
-  const data = PAYMENT_CONFIG[location]
+    const data = PAYMENT_CONFIG[location];
 
-  if (!data) return null
-  return (
-  <div className={styles.paymentBox}>
-    <h3 className={styles.contactTitleEnhanced}>Payment:</h3>
-    <p className={styles.paymentIntro}>
-      {data.description}
-    </p>
+    if (!data) return null;
+    return (
+      <div className={styles.paymentBox}>
+        <h3 className={styles.contactTitleEnhanced}>Payment:</h3>
+        <p className={styles.paymentIntro}>{data.description}</p>
 
-    {/* Fee Structure */}
-    <div className={styles.feeStructure}>
-  {data.show && (
-    <div className={styles.feeCard}>
-      {data.loc}
-    </div>
-  )}
+        {/* Fee Structure */}
+        <div className={styles.feeStructure}>
+          {data.show && <div className={styles.feeCard}>{data.loc}</div>}
 
-  <div className={styles.feeCard}>
-    <p className={styles.feeType}>Regular Registration</p>
-    <p className={styles.feePrice}>{data.regularPrice}</p>
-  </div>
-</div>
-
-
-    {/* Inclusions */}
-    <div className={styles.inclusions}>
-      {data.p3}
-    </div>
-
-    {/* Payment Action */}
-    <div className={styles.paymentAction}>
-      <div className={styles.paymentLeft}>
-        <p className={styles.paymentProofLabel}>Upload payment proof</p>
-        <input
-          type="file"
-          accept="image/*"
-          className={styles.fileInput}
-        />
-
-        <button type="submit" className={styles.submitButton}>
-          Submit Registration
-        </button>
-      </div>
-
-      <div className={styles.paymentRight}>
-        <img
-          src="https://res.cloudinary.com/dysisk9kx/image/upload/v1766475476/qr_xklcq5.webp"
-          alt="Payment QR Code"
-          className={styles.qrCodeImage}
-        />
-        <p className={styles.qrNote}>Scan to Pay</p>
-      </div>
-    </div>
-
-    {/* Contact */}
-    <div className={styles.contactSectionEnhanced}>
-      <h3 className={styles.contactTitleEnhanced}>For Any Queries Contact:</h3>
-      <div className={styles.contactGrid}>
-        <div className={styles.contactCard}>
-          <p className={styles.contactNumber}>+91 70020 70518</p>
-          <p className={styles.contactName}>Mimansa Jain</p>
+          <div className={styles.feeCard}>
+            <p className={styles.feeType}>Regular Registration</p>
+            <p className={styles.feePrice}>{data.regularPrice}</p>
+          </div>
         </div>
-        <div className={styles.contactCard}>
-          <p className={styles.contactNumber}>+91 73805 93079</p>
-          <p className={styles.contactName}>Shashwat Patel</p>
+
+        {/* Inclusions */}
+        <div className={styles.inclusions}>{data.p3}</div>
+
+        {/* Payment Action */}
+        <div className={styles.paymentAction}>
+          <div className={styles.paymentLeft}>
+            <p className={styles.paymentProofLabel}>Upload payment proof</p>
+            <input type="file" accept="image/*" className={styles.fileInput} />
+
+            <button type="submit" className={styles.submitButton}>
+              Submit Registration
+            </button>
+          </div>
+
+          <div className={styles.paymentRight}>
+            <img
+              src="https://res.cloudinary.com/dysisk9kx/image/upload/v1766475476/qr_xklcq5.webp"
+              alt="Payment QR Code"
+              className={styles.qrCodeImage}
+            />
+            <p className={styles.qrNote}>Scan to Pay</p>
+          </div>
         </div>
-        <div className={styles.contactCard}>
-          <p className={styles.contactNumber}>+91 93945 21290</p>
-          <p className={styles.contactName}>Devanuj Rijal</p>
+
+        {/* Contact */}
+        <div className={styles.contactSectionEnhanced}>
+          <h3 className={styles.contactTitleEnhanced}>
+            For Any Queries Contact:
+          </h3>
+          <div className={styles.contactGrid}>
+            <div className={styles.contactCard}>
+              <p className={styles.contactNumber}>+91 70020 70518</p>
+              <p className={styles.contactName}>Mimansa Jain</p>
+            </div>
+            <div className={styles.contactCard}>
+              <p className={styles.contactNumber}>+91 73805 93079</p>
+              <p className={styles.contactName}>Shashwat Patel</p>
+            </div>
+            <div className={styles.contactCard}>
+              <p className={styles.contactNumber}>+91 93945 21290</p>
+              <p className={styles.contactName}>Devanuj Rijal</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-)
-  }
+    );
+  };
 
   return (
     <div className={styles.container}>
@@ -1873,9 +1815,12 @@ const PAYMENT_CONFIG = {
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.formHeader}>
           <div className={styles.formHeaderText}>
-            <h1 className={styles.formTitle}>Annual Conference Online Registration Form</h1>
+            <h1 className={styles.formTitle}>
+              Annual Conference Online Registration Form
+            </h1>
             <p className={styles.formSubtitle}>
-              Please select your location and fill in the form below. We'll contact you as soon as possible.
+              Please select your location and fill in the form below. We'll
+              contact you as soon as possible.
             </p>
           </div>
 
@@ -1918,5 +1863,5 @@ const PAYMENT_CONFIG = {
         </div>
       </form>
     </div>
-  )
+  );
 }
