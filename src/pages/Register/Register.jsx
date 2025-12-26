@@ -1,49 +1,68 @@
 "use client";
 
 import { useState } from "react";
+import { supabase } from "../../lib/supabase";
 import styles from "./Register.module.scss";
+
+// dotenv.config();
+
+const CLOUDINARY_URL = import.meta.env.VITE_CLOUDINARY_UPLOAD_URL;
+const CLOUDINARY_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
 
 export default function Register() {
   const [selectedLocation, setSelectedLocation] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [file, setFile] = useState(null);
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    gender: "",
     branch: "",
-    scholarNumber: "",
+    course: "",
+    scholarnumber: "",
     year: "",
     institute: "",
+    college: "",
+    collegelocation: "",
     city: "",
     state: "",
-    previousExperience: "",
+    yearofstudy: "",
+    phonewhatsapp: "",
+    accommodationrequired: "",
+    recordemail: false,
+    previousexperience: "",
+    committeepreference1: "",
+
     choice1: "",
-    portfolioC11: "",
-    portfolioC12: "",
-    portfolioC13: "",
+    portfolioc11: "",
+    portfolioc12: "",
+    portfolioc13: "",
+
     choice2: "",
-    portfolioC21: "",
-    portfolioC22: "",
-    portfolioC23: "",
+    portfolioc21: "",
+    portfolioc22: "",
+    portfolioc23: "",
+
     choice3: "",
-    portfolioC31: "",
-    portfolioC32: "",
-    portfolioC33: "",
+    portfolioc31: "",
+    portfolioc32: "",
+    portfolioc33: "",
+
     choice4: "",
-    portfolioC41: "",
-    portfolioC42: "",
-    portfolioC43: "",
-    paymentProof: "",
-    recordEmail: false,
-    gender: "",
-    college: "",
-    collegeLocation: "",
-    yearOfStudy: "",
-    phoneWhatsapp: "",
-    accommodationRequired: "",
-    course: "",
-    committeePreference1: "",
+    portfolioc41: "",
+    portfolioc42: "",
+    portfolioc43: "",
+
+    paymentproof: "",
   });
+
+  const handleFileChange = (e) => {
+    if (e.target.files?.[0]) {
+      setFile(e.target.files[0]);
+    }
+  };
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -54,6 +73,7 @@ export default function Register() {
   };
   /* eslint-disable indent */
 
+  // Subha@29102004
   const getPortfolioMatrixLink = () => {
     switch (selectedLocation) {
       case "within":
@@ -144,10 +164,59 @@ export default function Register() {
     },
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Registration submitted successfully!");
+    setIsSubmitting(true);
+
+    try {
+      let paymentImageUrl = "";
+
+      // 1. Upload Image to Supabase Storage if file exists
+      if (file) {
+        const data = new FormData();
+        data.append("file", file);
+        data.append("upload_preset", CLOUDINARY_PRESET);
+
+        const res = await fetch(CLOUDINARY_URL, {
+          method: "POST",
+          body: data,
+        });
+
+        if (!res.ok) {
+          const errorText = await res.text();
+          console.error("Cloudinary Response Error:", errorText);
+          throw new Error(`Upload failed: ${res.statusText}`);
+        }
+
+        const cloudinaryData = await res.json();
+        paymentImageUrl = cloudinaryData.secure_url;
+
+        if (!cloudinaryData.secure_url) {
+          console.error(cloudinaryData);
+          throw new Error("Cloudinary upload failed");
+        }
+      }
+
+      // 2. Insert Data into Supabase Table
+      const { error } = await supabase.from("registrations").insert([
+        {
+          ...formData,
+          paymentproof: paymentImageUrl,
+          accommodationrequired: formData.accommodationrequired === "Yes",
+          location_type: selectedLocation,
+        },
+      ]);
+
+      if (error) throw error;
+
+      alert("Registration submitted successfully!");
+      // Reset form or redirect
+    } catch (error) {
+      console.error("Error submitting:", error.message);
+      alert("Error submitting form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const committeePreferencesOutside = () => (
@@ -199,25 +268,25 @@ export default function Register() {
             <h4 className={styles.portfolioTitle}>Portfolio Preferences</h4>
             <input
               type="text"
-              name="portfolioC11"
+              name="portfolioc11"
               placeholder="Portfolio Preference 1"
-              value={formData.portfolioC11}
+              value={formData.portfolioc11}
               onChange={handleInputChange}
               className={styles.portfolioInput}
             />
             <input
               type="text"
-              name="portfolioC12"
+              name="portfolioc12"
               placeholder="Portfolio Preference 2"
-              value={formData.portfolioC12}
+              value={formData.portfolioc12}
               onChange={handleInputChange}
               className={styles.portfolioInput}
             />
             <input
               type="text"
-              name="portfolioC13"
+              name="portfolioc13"
               placeholder="Portfolio Preference 3"
-              value={formData.portfolioC13}
+              value={formData.portfolioc13}
               onChange={handleInputChange}
               className={styles.portfolioInputLast}
             />
@@ -249,25 +318,25 @@ export default function Register() {
             <h4 className={styles.portfolioTitle}>Portfolio Preferences</h4>
             <input
               type="text"
-              name="portfolioC21"
+              name="portfolioc21"
               placeholder="Portfolio Preference 1"
-              value={formData.portfolioC21}
+              value={formData.portfolioc21}
               onChange={handleInputChange}
               className={styles.portfolioInput}
             />
             <input
               type="text"
-              name="portfolioC22"
+              name="portfolioc22"
               placeholder="Portfolio Preference 2"
-              value={formData.portfolioC22}
+              value={formData.portfolioc22}
               onChange={handleInputChange}
               className={styles.portfolioInput}
             />
             <input
               type="text"
-              name="portfolioC23"
+              name="portfolioc23"
               placeholder="Portfolio Preference 3"
-              value={formData.portfolioC23}
+              value={formData.portfolioc23}
               onChange={handleInputChange}
               className={styles.portfolioInputLast}
             />
@@ -299,27 +368,27 @@ export default function Register() {
             <h4 className={styles.portfolioTitle}>Portfolio Preferences</h4>
             <input
               type="text"
-              name="portfolioC31"
+              name="portfolioc31"
               placeholder="Portfolio Preference 1"
-              value={formData.portfolioC31}
+              value={formData.portfolioc31}
               onChange={handleInputChange}
               className={styles.portfolioInput}
             />
             <input
               type="text"
-              name="portfolioC32"
+              name="portfolioc32"
               placeholder="Portfolio Preference 2"
-              value={formData.portfolioC32}
+              value={formData.portfolioc32}
               onChange={handleInputChange}
               className={styles.portfolioInput}
             />
             <input
               type="text"
-              name="portfolioC33"
+              name="portfolioc33"
               placeholder="Portfolio Preference 3"
-              value={formData.portfolioC33}
+              value={formData.portfolioc33}
               onChange={handleInputChange}
-              className={styles.portfolioInputLast}
+              className={styles.portfolioInput}
             />
           </div>
         </div>
@@ -349,25 +418,25 @@ export default function Register() {
             <h4 className={styles.portfolioTitle}>Portfolio Preferences</h4>
             <input
               type="text"
-              name="portfolioC41"
+              name="portfolioc41"
               placeholder="Portfolio Preference 1"
-              value={formData.portfolioC41}
+              value={formData.portfolioc41}
               onChange={handleInputChange}
               className={styles.portfolioInput}
             />
             <input
               type="text"
-              name="portfolioC42"
+              name="portfolioc42"
               placeholder="Portfolio Preference 2"
-              value={formData.portfolioC42}
+              value={formData.portfolioc42}
               onChange={handleInputChange}
               className={styles.portfolioInput}
             />
             <input
               type="text"
-              name="portfolioC43"
+              name="portfolioc43"
               placeholder="Portfolio Preference 3"
-              value={formData.portfolioC43}
+              value={formData.portfolioc43}
               onChange={handleInputChange}
               className={styles.portfolioInputLast}
             />
@@ -379,9 +448,9 @@ export default function Register() {
       </label>
       <div className={styles.inputWrapper}>
         <textarea
-          name="previousExperience"
+          name="previousexperience"
           placeholder="Enter Your Experience..."
-          value={formData.previousExperience}
+          value={formData.previousexperience}
           onChange={handleInputChange}
           className={styles.textarea}
         />
@@ -410,8 +479,8 @@ export default function Register() {
           <div className={styles.checkboxContainer}>
             <input
               type="checkbox"
-              name="recordEmail"
-              checked={formData.recordEmail}
+              name="recordemail"
+              checked={formData.recordemail}
               onChange={handleInputChange}
               className={styles.checkbox}
             />
@@ -501,9 +570,9 @@ export default function Register() {
           <div className={styles.inputWrapper}>
             <input
               type="text"
-              name="scholarNumber"
+              name="scholarnumber"
               placeholder="Enter Your Scholar ID"
-              value={formData.scholarNumber}
+              value={formData.scholarnumber}
               onChange={handleInputChange}
               className={styles.textInput}
               required
@@ -641,8 +710,8 @@ export default function Register() {
             <div className={styles.checkboxContainer}>
               <input
                 type="checkbox"
-                name="recordEmail"
-                checked={formData.recordEmail}
+                name="recordemail"
+                checked={formData.recordemail}
                 onChange={handleInputChange}
                 className={styles.checkbox}
               />
@@ -732,8 +801,8 @@ export default function Register() {
           <div className={styles.inputContainer}>
             <input
               type="text"
-              name="collegeLocation"
-              value={formData.collegeLocation}
+              name="collegelocation"
+              value={formData.collegelocation}
               onChange={handleInputChange}
               placeholder="Enter Your College Location"
               className={styles.textInput}
@@ -747,8 +816,8 @@ export default function Register() {
           <div className={styles.inputContainer}>
             <input
               type="text"
-              name="yearOfStudy"
-              value={formData.yearOfStudy}
+              name="yearofstudy"
+              value={formData.yearofstudy}
               onChange={handleInputChange}
               placeholder="Enter Your Year of Study"
               className={styles.textInput}
@@ -762,8 +831,8 @@ export default function Register() {
           <div className={styles.inputContainer}>
             <input
               type="tel"
-              name="phoneWhatsapp"
-              value={formData.phoneWhatsapp}
+              name="phonewhatsapp"
+              value={formData.phonewhatsapp}
               onChange={handleInputChange}
               placeholder="Enter Your Phone Number"
               className={styles.textInput}
@@ -771,7 +840,7 @@ export default function Register() {
             />
           </div>
 
-          <label htmlFor="accommodationRequired" className={styles.label}>
+          <label htmlFor="accommodationrequired" className={styles.label}>
             Will Accommodation be required?{" "}
             <span className={styles.required}>*</span>
           </label>
@@ -779,9 +848,9 @@ export default function Register() {
             <label className={styles.radioLabel}>
               <input
                 type="radio"
-                name="accommodationRequired"
+                name="accommodationrequired"
                 value="Yes"
-                checked={formData.accommodationRequired === "Yes"}
+                checked={formData.accommodationrequired === "Yes"}
                 onChange={handleInputChange}
                 className={styles.radio}
                 required
@@ -791,9 +860,9 @@ export default function Register() {
             <label className={styles.radioLabel}>
               <input
                 type="radio"
-                name="accommodationRequired"
+                name="accommodationrequired"
                 value="No"
-                checked={formData.accommodationRequired === "No"}
+                checked={formData.accommodationrequired === "No"}
                 onChange={handleInputChange}
                 className={styles.radio}
               />
@@ -853,10 +922,21 @@ export default function Register() {
         <div className={styles.paymentAction}>
           <div className={styles.paymentLeft}>
             <p className={styles.paymentProofLabel}>Upload payment proof</p>
-            <input type="file" accept="image/*" className={styles.fileInput} />
 
-            <button type="submit" className={styles.submitButton}>
-              Submit Registration
+            <input
+              type="file"
+              accept="image/*"
+              className={styles.fileInput}
+              onChange={handleFileChange}
+              required
+            />
+
+            <button
+              type="submit"
+              className={styles.submitButton}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Submitting..." : "Submit Registration"}
             </button>
           </div>
 
