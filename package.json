@@ -23,6 +23,7 @@
     "@material-ui/icons": "^4.11.3",
     "@mui/icons-material": "^5.16.6",
     "@mui/material": "^5.16.14",
+    "@supabase/supabase-js": "^2.89.0",
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
     "firebase": "^11.2.0",
