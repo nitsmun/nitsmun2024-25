@@ -25,7 +25,7 @@ const FacultyAdv = () => {
           <br />
           This time, they are planning an even grander three-day annual
           conference with three very exciting and unique committees. Held under
-          the banner of Incandescence 2024, NITSMUN is ready to welcome all
+          the banner of Incandescence 2025, NITSMUN is ready to welcome all
           MUNners and non-MUNners from across the country.
           <br />
           <br />

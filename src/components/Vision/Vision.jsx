@@ -22,9 +22,9 @@ const Vision = () => {
             <h1 className={styles.heading}>OUR VISION</h1>
 
             <p className={styles.text}>
-              The National Institute of Technology Model United Nations Club
-              aims to empower students by providing a platform to enhance their
-              understanding of global affairs, diplomacy, and leadership.
+              The National Institute of Technology Silchar Model United Nations
+              Club aims to empower students by providing a platform to enhance
+              their understanding of global affairs, diplomacy, and leadership.
               Through engaging conferences and activities, we foster critical
               thinking, public speaking, and teamwork, preparing members for
               active participation in international discourse and promoting a
