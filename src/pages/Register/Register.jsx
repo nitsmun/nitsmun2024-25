@@ -959,6 +959,28 @@ export default function Register() {
     committeePreference1: "",
   });
 
+  const [paymentFile, setPaymentFile] = useState(null);
+
+  const [fileError, setFileError] = useState("");
+
+  const MAX_FILE_SIZE = 1 * 1024 * 1024; // 1 MB
+
+  const handleFileChange = (e) => {
+    const file = e.target.files && e.target.files[0];
+
+    if (!file) return;
+
+    if (file.size > MAX_FILE_SIZE) {
+      setFileError("File size must be less than 1 MB");
+      setPaymentFile(null);
+      e.target.value = ""; // reset input
+      return;
+    }
+
+    setFileError("");
+    setPaymentFile(file);
+  };
+
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
@@ -1062,6 +1084,10 @@ export default function Register() {
     e.preventDefault();
     console.log("Form submitted:", formData);
     alert("Registration submitted successfully!");
+    if (!paymentFile) {
+      alert("Please upload payment proof (max 1 MB).");
+      return;
+    }
   };
 
   const committeePreferencesOutside = () => (
@@ -1302,7 +1328,89 @@ export default function Register() {
       </div>
     </>
   );
+  const paymentSection = ({ location }) => {
+    const data = PAYMENT_CONFIG[location];
 
+    if (!data) return null;
+    return (
+      <div className={styles.paymentBox}>
+        <h3 className={styles.contactTitleEnhanced}>Payment:</h3>
+        <p className={styles.paymentIntro}>{data.description}</p>
+
+        {/* Fee Structure */}
+        <div className={styles.feeStructure}>
+          {data.show && <div className={styles.feeCard}>{data.loc}</div>}
+
+          <div className={styles.feeCard}>
+            <p className={styles.feeType}>Regular Registration</p>
+            <p className={styles.feePrice}>{data.regularPrice}</p>
+          </div>
+        </div>
+
+        {/* Inclusions */}
+        <div className={styles.inclusions}>{data.p3}</div>
+
+        {/* Payment Action */}
+        <div className={styles.paymentAction}>
+          <div className={styles.paymentLeft}>
+            <label className={styles.paymentProofLabel}>
+              Upload payment proof
+              <span className={styles.fileHint}>
+                (Max file size: 1 MB • JPG / PNG)
+              </span>
+            </label>
+
+            <input
+              type="file"
+              accept="image/png, image/jpeg"
+              className={styles.fileInput}
+              onChange={handleFileChange}
+            />
+
+            {fileError && <p className={styles.fileError}>{fileError}</p>}
+
+            <button
+              type="submit"
+              className={styles.submitButton}
+              disabled={!paymentFile || !!fileError}
+            >
+              Submit Registration
+            </button>
+          </div>
+
+          <div className={styles.paymentRight}>
+            <img
+              src="https://res.cloudinary.com/dysisk9kx/image/upload/v1766475476/qr_xklcq5.webp"
+              alt="Payment QR Code"
+              className={styles.qrCodeImage}
+            />
+            <p className={styles.qrNote}>Scan to Pay</p>
+          </div>
+        </div>
+
+        {/* Contact */}
+        <div className={styles.contactSectionEnhanced}>
+          <h3 className={styles.contactTitleEnhanced}>
+            For Any Queries Contact:
+          </h3>
+          <div className={styles.contactGrid}>
+            <div className={styles.contactCard}>
+              <p className={styles.contactNumber}>+91 70020 70518</p>
+              <p className={styles.contactName}>Mimansa Jain</p>
+            </div>
+            <div className={styles.contactCard}>
+              <p className={styles.contactNumber}>+91 73805 93079</p>
+              <p className={styles.contactName}>Shashwat Patel</p>
+            </div>
+            <div className={styles.contactCard}>
+              <p className={styles.contactNumber}>+91 93945 21290</p>
+              <p className={styles.contactName}>Devanuj Rijal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
   const renderFormContent = () => {
     if (!selectedLocation) return null;
 
@@ -1739,73 +1847,6 @@ export default function Register() {
         </>
       );
     }
-  };
-
-  const paymentSection = ({ location }) => {
-    const data = PAYMENT_CONFIG[location];
-
-    if (!data) return null;
-    return (
-      <div className={styles.paymentBox}>
-        <h3 className={styles.contactTitleEnhanced}>Payment:</h3>
-        <p className={styles.paymentIntro}>{data.description}</p>
-
-        {/* Fee Structure */}
-        <div className={styles.feeStructure}>
-          {data.show && <div className={styles.feeCard}>{data.loc}</div>}
-
-          <div className={styles.feeCard}>
-            <p className={styles.feeType}>Regular Registration</p>
-            <p className={styles.feePrice}>{data.regularPrice}</p>
-          </div>
-        </div>
-
-        {/* Inclusions */}
-        <div className={styles.inclusions}>{data.p3}</div>
-
-        {/* Payment Action */}
-        <div className={styles.paymentAction}>
-          <div className={styles.paymentLeft}>
-            <p className={styles.paymentProofLabel}>Upload payment proof</p>
-            <input type="file" accept="image/*" className={styles.fileInput} />
-
-            <button type="submit" className={styles.submitButton}>
-              Submit Registration
-            </button>
-          </div>
-
-          <div className={styles.paymentRight}>
-            <img
-              src="https://res.cloudinary.com/dysisk9kx/image/upload/v1766475476/qr_xklcq5.webp"
-              alt="Payment QR Code"
-              className={styles.qrCodeImage}
-            />
-            <p className={styles.qrNote}>Scan to Pay</p>
-          </div>
-        </div>
-
-        {/* Contact */}
-        <div className={styles.contactSectionEnhanced}>
-          <h3 className={styles.contactTitleEnhanced}>
-            For Any Queries Contact:
-          </h3>
-          <div className={styles.contactGrid}>
-            <div className={styles.contactCard}>
-              <p className={styles.contactNumber}>+91 70020 70518</p>
-              <p className={styles.contactName}>Mimansa Jain</p>
-            </div>
-            <div className={styles.contactCard}>
-              <p className={styles.contactNumber}>+91 73805 93079</p>
-              <p className={styles.contactName}>Shashwat Patel</p>
-            </div>
-            <div className={styles.contactCard}>
-              <p className={styles.contactNumber}>+91 93945 21290</p>
-              <p className={styles.contactName}>Devanuj Rijal</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
   };
 
   return (
