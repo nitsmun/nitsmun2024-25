@@ -43,7 +43,7 @@ const Footer = () => {
           <a href="">
             <i className="fa-solid fa-phone"></i>
           </a>
-          <p>+91 9332431234</p>
+          <p>+91 7002070518</p>
         </div>
         <hr />
         <div className={styles.email}>

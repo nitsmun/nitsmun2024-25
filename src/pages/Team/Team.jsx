@@ -77,7 +77,7 @@ const Team = () => {
               >
                 <hr />
               </h1>
-              <h1 className={styles.header}>Media & Design Team</h1>
+              <h1 className={styles.header}>Design Team</h1>
               <div className={styles.photodesk}>
                 {Secretariatmediajr.map((item) => (
                   <Card
@@ -101,7 +101,7 @@ const Team = () => {
               >
                 <hr />
               </h1>
-              <h1 className={styles.header}>Research Team</h1>
+              <h1 className={styles.header}>Research and Development Team</h1>
               <div className={styles.photodesk}>
                 {Secretariatresearchjr.map((item) => (
                   <Card
@@ -175,7 +175,7 @@ const Team = () => {
               >
                 <hr />
               </h1>
-              <h1 className={styles.header}>Video Editing Team</h1>
+              <h1 className={styles.header}>Media Team</h1>
               <div className={styles.photodesk}>
                 {Secretariatvideoeditingjr.map((item) => (
                   <Card

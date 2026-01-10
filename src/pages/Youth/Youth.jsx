@@ -8,7 +8,7 @@ const Youth = () => {
     <div className={styles.parent}>
       <div className={styles.banner}>
         <img
-          src="https://res.cloudinary.com/dffke2hbp/image/upload/v1729797741/xgjiwhxazlyvjydghbtw.jpg"
+          src="https://res.cloudinary.com/dsrnxwcmd/image/upload/v1768067403/YPbanner_bqvhgs.webp"
           alt=""
         />
       </div>
