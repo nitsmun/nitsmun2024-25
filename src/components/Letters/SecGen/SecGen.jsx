@@ -3,15 +3,18 @@ import styles from "./SecGen.module.scss";
 const FacultyAdv = () => {
   return (
     <div className={styles.FacultyAdv}>
-      <h1 className={styles.heading}>Letter From Secretary General</h1>
+      <h1 className={styles.heading}>
+        Letter From Secretary General (Bhaswar Agniwesh)
+      </h1>
       <div className={styles.innerCont}>
         <div className={styles.photoCont}>
           <img
-            src="https://res.cloudinary.com/dp92qug2f/image/upload/c_scale,w_360,f_auto,fl_lossy/v1676477071/events/nitsmun/team/Ronak_Jain_etgqal.jpg"
+            src="https://res.cloudinary.com/dffke2hbp/image/upload/v1728839678/vfl6nchbskzusc9ipnce.jpg"
             alt="Faculty Advisor"
             className={styles.photo}
           />
         </div>
+        {/* <h1 className={styles.secname}>Bhaswar Agnivesh</h1> */}
         <p className={styles.text}>
           As the Secretary-General of NITSMUN, I am thrilled to share our vision
           and mission with you all. At NITSMUN, we are dedicated to fostering a
