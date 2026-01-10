@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useState } from "react";
 import { supabase } from "../../lib/supabase";
 import styles from "./Register.module.scss";
@@ -11,6 +12,7 @@ const CLOUDINARY_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
 
 export default function Register() {
   const [selectedLocation, setSelectedLocation] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [file, setFile] = useState(null);
 
@@ -57,6 +59,24 @@ export default function Register() {
 
     paymentproof: "",
   });
+
+  useEffect(() => {
+    const getUser = async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      if (user?.email) {
+        setUserEmail(user.email);
+        setFormData((prev) => ({
+          ...prev,
+          email: user.email,
+        }));
+      }
+    };
+
+    getUser();
+  }, []);
 
   const handleFileChange = (e) => {
     if (e.target.files?.[0]) {
@@ -119,9 +139,9 @@ export default function Register() {
         <>
           <p className={styles.inclusionsTitle}>Inclusions</p>
           <ul className={styles.inclusionsList}>
-            <li>Conference entry</li>
-            <li>Official delegate kit</li>
-            <li>Full access to all Incandescence artist lineups & pro-shows</li>
+            <li>Accommodation</li>
+            <li>Delegate Passes</li>
+            <li>Fest Passes to all artist Performances at Incand 2026</li>
           </ul>
         </>
       ),
@@ -148,14 +168,14 @@ export default function Register() {
           <p className={styles.feeNote}>(Valid until 31st December 2025)</p>
         </>
       ),
-      regularPrice: "₹2,499",
+      regularPrice: "₹2,399",
       p3: (
         <>
           <p className={styles.inclusionsTitle}>Inclusions</p>
           <ul className={styles.inclusionsList}>
-            <li>Conference entry</li>
-            <li>Official delegate kit</li>
-            <li>Full access to all Incandescence artist lineups & pro-shows</li>
+            <li>Accommodation</li>
+            <li>Delegate Passes</li>
+            <li>Fest Passes to all Artist Performances at Incand 2026</li>
           </ul>
         </>
       ),
@@ -246,7 +266,7 @@ export default function Register() {
         <div className={styles.preferenceItem}>
           <div className={styles.preferenceSelect}>
             <label htmlFor="choice1" className={styles.preferenceLabel}>
-              Preference 1<span className={styles.require}>*</span>
+              Preference 1<span className={styles.required}>*</span>
             </label>
             <select
               name="choice1"
@@ -397,7 +417,7 @@ export default function Register() {
         <div className={styles.preferenceItem}>
           <div className={styles.preferenceSelect}>
             <label htmlFor="choice4" className={styles.preferenceLabel}>
-              Preference 4 <span className={styles.required}>*</span>
+              Preference 4 (Optional)
             </label>
             <select
               name="choice4"
@@ -405,9 +425,7 @@ export default function Register() {
               onChange={handleInputChange}
               className={styles.input}
             >
-              <option value="" disabled>
-                -- Select Committee --
-              </option>
+              <option value="">-- Select Committee --</option>
               <option value="AIPPM">AIPPM</option>
               <option value="UNSC">UNSC</option>
               <option value="SPECIALIZED">SPECIALIZED</option>
@@ -458,6 +476,29 @@ export default function Register() {
     </>
   );
 
+  {
+    /* Contacts */
+  }
+  const ContactSection = () => (
+    <div className={styles.contactSectionEnhanced}>
+      <h3 className={styles.contactTitleEnhanced}>For Any Queries Contact:</h3>
+      <div className={styles.contactGrid}>
+        <div className={styles.contactCard}>
+          <p className={styles.contactNumber}>+91 70020 70518</p>
+          <p className={styles.contactName}>Mimansa Jain</p>
+        </div>
+        <div className={styles.contactCard}>
+          <p className={styles.contactNumber}>+91 73805 93079</p>
+          <p className={styles.contactName}>Shashwat Patel</p>
+        </div>
+        <div className={styles.contactCard}>
+          <p className={styles.contactNumber}>+91 93945 21290</p>
+          <p className={styles.contactName}>Devanuj Rijal</p>
+        </div>
+      </div>
+    </div>
+  );
+
   const renderFormContent = () => {
     if (!selectedLocation) return null;
 
@@ -487,7 +528,7 @@ export default function Register() {
             <label className={styles.checkboxLabel}>
               Record{" "}
               <span className={styles.emailHighlight}>
-                84agarwalharshit@gmail.com
+                {userEmail || "your email"}
               </span>{" "}
               as the email to be included with my response
             </label>
@@ -604,13 +645,13 @@ export default function Register() {
                 <strong>Best Delegate:</strong> ₹5,000
               </li>
               <li className={styles.prizeItem}>
-                <strong>High Commendation:</strong> ₹3,500
+                <strong>High Commendation:</strong> ₹2,500
               </li>
               <li className={styles.prizeItem}>
-                <strong>Best Reporter (IPC):</strong> ₹3,500
+                <strong>Best Reporter (IPC):</strong> ₹3,000
               </li>
               <li className={styles.prizeItem}>
-                <strong>Best Photojournalist (IPC):</strong> ₹3,500
+                <strong>Best Photojournalist (IPC):</strong> ₹3,000
               </li>
             </ul>
           </div>
@@ -677,13 +718,13 @@ export default function Register() {
                 <strong>Best Delegate:</strong> ₹5,000
               </li>
               <li className={styles.prizeItem}>
-                <strong>High Commendation:</strong> ₹3,500
+                <strong>High Commendation:</strong> ₹2,500
               </li>
               <li className={styles.prizeItem}>
-                <strong>Best Reporter (IPC):</strong> ₹3,500
+                <strong>Best Reporter (IPC):</strong> ₹3,000
               </li>
               <li className={styles.prizeItem}>
-                <strong>Best Photojournalist (IPC):</strong> ₹3,500
+                <strong>Best Photojournalist (IPC):</strong> ₹3,000
               </li>
             </ul>
           </div>
@@ -718,7 +759,7 @@ export default function Register() {
               <label className={styles.checkboxLabel}>
                 Record{" "}
                 <span className={styles.emailHighlight}>
-                  84agarwalharshit@gmail.com
+                  {userEmail || "your email"}
                 </span>{" "}
                 as the email to be included with my response
               </label>
@@ -881,13 +922,13 @@ export default function Register() {
                 <strong>Best Delegate:</strong> ₹5,000
               </li>
               <li className={styles.prizeItem}>
-                <strong>High Commendation:</strong> ₹3,500
+                <strong>High Commendation:</strong> ₹2,500
               </li>
               <li className={styles.prizeItem}>
-                <strong>Best Reporter (IPC):</strong> ₹3,500
+                <strong>Best Reporter (IPC):</strong> ₹3,000
               </li>
               <li className={styles.prizeItem}>
-                <strong>Best Photojournalist (IPC):</strong> ₹3,500
+                <strong>Best Photojournalist (IPC):</strong> ₹3,000
               </li>
             </ul>
           </div>
@@ -949,27 +990,6 @@ export default function Register() {
             <p className={styles.qrNote}>Scan to Pay</p>
           </div>
         </div>
-
-        {/* Contact */}
-        <div className={styles.contactSectionEnhanced}>
-          <h3 className={styles.contactTitleEnhanced}>
-            For Any Queries Contact:
-          </h3>
-          <div className={styles.contactGrid}>
-            <div className={styles.contactCard}>
-              <p className={styles.contactNumber}>+91 70020 70518</p>
-              <p className={styles.contactName}>Mimansa Jain</p>
-            </div>
-            <div className={styles.contactCard}>
-              <p className={styles.contactNumber}>+91 73805 93079</p>
-              <p className={styles.contactName}>Shashwat Patel</p>
-            </div>
-            <div className={styles.contactCard}>
-              <p className={styles.contactNumber}>+91 93945 21290</p>
-              <p className={styles.contactName}>Devanuj Rijal</p>
-            </div>
-          </div>
-        </div>
       </div>
     );
   };
@@ -1026,6 +1046,7 @@ export default function Register() {
           </div>
 
           {renderFormContent()}
+          {ContactSection()}
         </div>
       </form>
     </div>

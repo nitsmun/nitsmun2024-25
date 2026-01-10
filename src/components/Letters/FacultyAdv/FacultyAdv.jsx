@@ -4,12 +4,12 @@ const FacultyAdv = () => {
   return (
     <div className={styles.FacultyAdv}>
       <h1 className={styles.heading}>
-        Letter From Faculty Advisor (Dr. Debjit Bhowmik)
+        Letter From Faculty Advisor (Dr. Shashi Kumar GK)
       </h1>
       <div className={styles.innerCont}>
         <div className={styles.photoCont}>
           <img
-            src="https://res.cloudinary.com/dhry5xscm/image/upload/v1729409434/nitsmun/debjitbhowmick_jn2bg4.jpg"
+            src="https://res.cloudinary.com/dsrnxwcmd/image/upload/v1768069478/IMG_174116766967c81c357e874_pdwlmu.webp"
             alt="Faculty Advisor"
             className={styles.photo}
           />
@@ -17,15 +17,15 @@ const FacultyAdv = () => {
         <p className={styles.text}>
           Dear Delegates, Since its inception, NITSMUN has been dedicated to
           building a strong MUN environment in the college. I personally feel
-          that their hard work and attention to detail are commendable.
-          I&apos;ve been connected to this club for quite some time, and it has
-          never disappointed me. I look forward to seeing it flourish even more
-          in the coming years.
+          that their hard work and attention to detail are commendable. I've
+          been connected to this club for quite some time, and it has never
+          disappointed me. I look forward to seeing it flourish even more in the
+          coming years.
           <br />
           <br />
           This time, they are planning an even grander three-day annual
-          conference with three very exciting and unique committees. Held under
-          the banner of Incandescence 2024, NITSMUN is ready to welcome all
+          conference with four very exciting and unique committees. Held under
+          the banner of Incandescence 2026, NITSMUN is ready to welcome all
           MUNners and non-MUNners from across the country.
           <br />
           <br />

@@ -1287,7 +1287,7 @@ export const Secretariatresearchjr = [
     id: 3,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dysisk9kx/image/upload/v1761590989/Abhishek_lzvtj9.jpg",
+      "https://res.cloudinary.com/dsrnxwcmd/image/upload/v1768076648/Abhishek.HEIC_fyvr0s.webp",
     alt: "Abhishek Sharda",
     name: "Abhishek Sharda",
     post: "Research and Development Team",
@@ -1568,7 +1568,7 @@ export const Secretariatvideoeditingjr = [
       "https://res.cloudinary.com/dysisk9kx/image/upload/v1761668168/IMG_20250824_220631_fkusyt.jpg",
     alt: "Gauriz Bidit Buragohain ",
     name: "Gauriz Bidit Buragohain ",
-    post: "Video Editing Team",
+    post: "Media Team",
     mail: "mailto:gauriz_ug_24@ee.nits.ac.in",
     linkedin:
       "https://www.linkedin.com/in/gauriz-bidit-buragohain-3431a327a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -1581,7 +1581,7 @@ export const Secretariatvideoeditingjr = [
       "https://res.cloudinary.com/dysisk9kx/image/upload/v1761668125/Pratikhya_guaojm.jpg",
     alt: "Pratikhya Das",
     name: "Pratikhya Das",
-    post: "Video Editing Team",
+    post: "Media Team",
     mail: "mailto:pratikhya766@gmail.com",
     linkedin:
       "https://www.linkedin.com/in/pratikhya-das-ab3895332?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -1594,7 +1594,7 @@ export const Secretariatvideoeditingjr = [
       "https://res.cloudinary.com/dysisk9kx/image/upload/v1761668193/bishal_hf3t1i.jpg",
     alt: "Bishal Dutta",
     name: "Bishal Dutta",
-    post: "Video Editing Team",
+    post: "Media Team",
     mail: "mailto:bishaldutta0076@gmail.com",
     linkedin:
       "https://www.linkedin.com/in/bishal-dutta-477815347?utm_source=share_via&utm_content=profile&utm_medium=member_android",
@@ -1607,7 +1607,7 @@ export const Secretariatvideoeditingjr = [
       "https://res.cloudinary.com/dysisk9kx/image/upload/v1761668004/Deepak_ovvdja.jpg",
     alt: "Deepak Raj",
     name: "Deepak Raj",
-    post: "Video Editing Team",
+    post: "Media Team",
     mail: "mailto:dg1278786@gmail.com",
     linkedin:
       "https://www.linkedin.com/in/deepak-gupta-19708a339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
