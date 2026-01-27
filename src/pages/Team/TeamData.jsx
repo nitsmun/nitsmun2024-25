@@ -1287,7 +1287,7 @@ export const Secretariatresearchjr = [
     id: 3,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dysisk9kx/image/upload/v1761590989/Abhishek_lzvtj9.jpg",
+      "https://res.cloudinary.com/dysisk9kx/image/upload/v1761590995/Abhishek_v2ztrh.jpg",
     alt: "Abhishek Sharda",
     name: "Abhishek Sharda",
     post: "Research and Development Team",
